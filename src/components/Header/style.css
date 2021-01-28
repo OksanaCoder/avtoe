@@ -1,0 +1,32 @@
+.background { 
+  background: url('../../img/back-1.png') no-repeat;
+  background-size: cover;  
+  height: 100vh;
+}
+.flex-center {
+    text-align: center;
+    margin-top: 20vh;
+}
+.selectStyle {
+  width: 300px !important;
+  border-radius: 20px !important;
+  margin-right: 10px;
+  border: none !important;
+}
+.form-style {
+  margin: 50px auto !important;
+  width: 70%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.btn-search {
+  background-color: #E23D00 !important;
+  border-radius: 20px !important;
+  border: none !important;
+  padding: 0 80px !important;
+  margin-top: 15px;
+}
+.arrow-down {
+   width: 60px;
+}

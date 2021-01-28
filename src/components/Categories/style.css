@@ -1,0 +1,16 @@
+.back-grey {
+    background: #FAFAFA;
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+.img-category {
+    margin-bottom: 10px;
+    transition: transform .6s;
+}
+.img-category:hover {
+    transform: scale(1.1);
+}
+h6 { 
+    color: #606060;
+    font-weight: bold;
+}
