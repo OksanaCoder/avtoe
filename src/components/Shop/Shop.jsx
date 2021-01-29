@@ -10,7 +10,7 @@ const Shop = () => {
                 <button className='grey-btn btn'>Купить авто</button>
                 <button className='orange-btn btn'>Аукцион</button>
             </div>
-
+            
             <CarItem />
         </div>
     )

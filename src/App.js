@@ -3,6 +3,7 @@ import './App.css';
 import Header from './components/Header/Header'
 import Categories from './components/Categories/Categories'
 import Shop from './components/Shop/Shop'
+import Advantages from './components/Advantages/Advantages'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
       <Header />
       <Categories />
       <Shop />
+      <Advantages />
     </>
   );
 }
