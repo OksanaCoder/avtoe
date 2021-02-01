@@ -1,0 +1,17 @@
+.grey-back {
+    background-color: #3F434D;
+     color: #fff;
+     margin-top: 60px;
+}
+.img-app {
+    height: 300px ;
+    width : 100%;
+    object-fit: cover;
+    object-position: top;
+    opacity:0.5;  
+}
+.center-app {
+    display: flex;
+    align-items: center;
+}
+

@@ -21,12 +21,20 @@
   align-items: center;
 }
 .btn-search {
-  background-color: #E23D00 !important;
+
+  background-color: #F7BA04 !important;
   border-radius: 20px !important;
   border: none !important;
-  padding: 0 80px !important;
   margin-top: 15px;
+
+}
+button.btn-search.btn.btn-primary {
+  color: #000 !important;
+  font-weight: 700;
+  padding: 7px 80px !important;
+
 }
 .arrow-down {
    width: 60px;
 }
+

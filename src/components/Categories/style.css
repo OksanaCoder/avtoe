@@ -1,16 +1,31 @@
-.back-grey {
-    background: #FAFAFA;
+.back-yellow {
+    background-color: #F7BA04;
+    padding-bottom: 90px; 
+    text-align: center;
     padding-top: 60px;
-    padding-bottom: 60px;
 }
 .img-category {
     margin-bottom: 10px;
     transition: transform .6s;
+    width: 200px;
 }
 .img-category:hover {
     transform: scale(1.1);
 }
-h6 { 
-    color: #606060;
-    font-weight: bold;
+
+.category-line {
+    background: #414141;
+    width: 30%;
+    padding: 17px 70px 7px;
+    border-radius: 10px;
+    margin: 10px auto;
+}
+.category-line h6 {
+    color: #fff;
+}
+.item-categ {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
 }
