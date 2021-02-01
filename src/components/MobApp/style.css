@@ -1,0 +1,14 @@
+.img-app {
+    height: 300px ;
+    width : 100%;
+    object-fit: cover;
+    object-position: top;
+    opacity:0.5;  
+}
+.center-app {
+    display: flex;
+    align-items: center;
+}
+.apps {
+
+}

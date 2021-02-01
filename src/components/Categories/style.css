@@ -6,6 +6,7 @@
 .img-category {
     margin-bottom: 10px;
     transition: transform .6s;
+    width: 200px;
 }
 .img-category:hover {
     transform: scale(1.1);
@@ -13,4 +14,17 @@
 h6 { 
     color: #606060;
     font-weight: bold;
+}
+.category-line {
+    padding: 10px 40px;
+    clip-path: polygon(0 0, 30% 0, 20% 100%, 0% 100%);
+    background-color: #F7BA04;
+    border-radius: 2px;
+    /* text-align: center; */
+    color: #000;
+}
+.category-line small {
+    font-size: 18px;
+    font-weight: 700;
+    /* text-transform: uppercase; */
 }

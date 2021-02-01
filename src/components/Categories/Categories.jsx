@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import {Container, Col, Row } from 'react-bootstrap'
 import './style.css'
-import vector from '../../img/vector-1.png'
 import img_1 from '../../img/categ-1.png'
 import img_2 from '../../img/categ-2.png'
 import img_3 from '../../img/categ-3.png'
@@ -12,7 +11,10 @@ const Categories = () => {
    return(
        <div className='back-grey'> 
           <Container >
-              <img src={vector}/>
+            {/* <h5>Вибери Категорію</h5> */}
+            <div className='category-line'>
+                <small>Choose Category</small>
+            </div>
               <Row style={{textAlign: 'center', paddingTop: "100px"}}>
                   <Col lg={3} md={6} sm={12}>
                     <img src={img_1} className='img-category'/>

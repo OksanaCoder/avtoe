@@ -1,10 +1,15 @@
 .grey-btn {
     background-color: #414141 !important;
+    font-weight: 700 !important;
     border-radius: 10px 0 0 10px !important;
 }
 .orange-btn {
-    background-color: #E24800 !important;
+    background-color: #F7BA04 !important;
     border-radius: 0 10px 10px 0 !important;
+}
+.orange-btn.btn {
+    color: #000 !important;
+    font-weight: 700;
 }
 .btn {
     border: none !important;
