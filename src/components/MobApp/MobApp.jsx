@@ -8,7 +8,7 @@ import './style.css'
 
 const MobApp = () => {
     return (
-        <div  style={{backgroundColor: '#3F434D', color: '#fff'}}>
+        <div className='grey-back'>
             <Row className='center-app'>
                 <Col lg={6} md={6} sm={12}>
                     <img src={image} className='img-app'/>

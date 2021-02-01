@@ -9,26 +9,26 @@ import img_4 from '../../img/categ-4.png'
 
 const Categories = () => {
    return(
-       <div className='back-grey'> 
+       <div className='back-yellow'> 
           <Container >
             {/* <h5>Вибери Категорію</h5> */}
             <div className='category-line'>
-                <small>Choose Category</small>
+                <h6>Choose Category</h6>
             </div>
               <Row style={{textAlign: 'center', paddingTop: "100px"}}>
-                  <Col lg={3} md={6} sm={12}>
+                  <Col lg={3} md={6} sm={12} className='item-categ'>
                     <img src={img_1} className='img-category'/>
                     <h6>Легковые</h6>
                   </Col>
-                  <Col lg={3} md={6} sm={12}>
+                  <Col lg={3} md={6} sm={12} className='item-categ'>
                     <img src={img_2} className='img-category'/>
                     <h6>Внедорожники</h6>
                   </Col>
-                  <Col lg={3} md={6} sm={12}>
+                  <Col lg={3} md={6} sm={12} className='item-categ'>
                     <img src={img_3} className='img-category'/>
                     <h6>Автобусы</h6>
                   </Col>
-                  <Col lg={3} md={6} sm={12}>
+                  <Col lg={3} md={6} sm={12} className='item-categ'>
                     <img src={img_4} className='img-category'/>
                     <h6>Мотоциклы</h6>
                   </Col>

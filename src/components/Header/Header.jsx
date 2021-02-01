@@ -12,7 +12,7 @@ const Header = () => {
             <NavBar />
             <div className='flex-center white'>
                 <h4 style={{fontSize: '35px', letterSpacing: '1px'}}>Купуй Надійно</h4>
-                <h6 style={{fontSize: '16px', letterSpacing: '3px'}}>Кредит, Лізинг, Повна Оплата</h6>
+                <h6 style={{fontSize: '16px', letterSpacing: '3px', color: 'grey !important'}}>Кредит, Лізинг, Повна Оплата</h6>
             </div>
             <Form className='white form-style row'>
             <Form.Group controlId="exampleForm.ControlSelect1" className='col-lg-4 col-md-12 col-sm-12'>
