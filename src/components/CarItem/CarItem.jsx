@@ -30,7 +30,8 @@ const CarItem = () => {
                                 <Col lg={6} md={6} sm={12}>
                                    <small style={{color: '#E24800', fontWeight: 'bold', fontSize: '30px'}}>$ 91 500</small>
                                 </Col>
-                                <Col> <button className='btn-item buy-now'>Купить сейчас</button></Col>
+                                {/* <Col> <button className='btn-item buy-now'>Купити в 1 клік</button></Col> */}
+                                <Col> <button className='btn-item buy-now'>Buy now</button></Col>
                             </Row>
                          
                                 <Row className='align-center text-center'>
@@ -44,11 +45,13 @@ const CarItem = () => {
                             
                                 <Row className='align-center'> 
                                     <Col></Col>
-                                    <Col><button  className='btn-item swap-btn' onClick={handleShow}>Предложить торг</button></Col>
+                                    {/* <Col><button  className='btn-item swap-btn' onClick={handleShow}>Запропонувати торг</button></Col> */}
+                                    <Col><button  className='btn-item swap-btn' onClick={handleShow}>Offer bidding</button></Col>
                                 </Row>
                                <Row className='align-center' >
                                    <Col>$<input type='number' placeholder='40 000' className='price-input'/></Col>
-                                   <Col><button  className='btn-item auction-btn'>Сделать ставку</button></Col>
+                                   {/* <Col><button  className='btn-item auction-btn'>Зробити ставку</button></Col> */}
+                                   <Col><button  className='btn-item auction-btn'>Make a bet</button></Col>
                                </Row>
                         </Col>
 
