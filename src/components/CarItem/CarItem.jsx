@@ -105,7 +105,7 @@ const CarItem = () => {
                     </Row>
                 </Col>
             </Row>
-            <Row style={{display: 'flex', alignItems: 'center', marginBottom: '100px'}}>
+            {/* <Row style={{display: 'flex', alignItems: 'center', marginBottom: '100px'}}>
                 <Col lg={12} md={12} sm={12}>
                     <Row>
                         <Col lg={6} md={6} sm={12}>
@@ -212,7 +212,7 @@ const CarItem = () => {
                         </Col>
                     </Row>
                 </Col>
-            </Row>
+            </Row> */}
             
            </Container>
         </div>

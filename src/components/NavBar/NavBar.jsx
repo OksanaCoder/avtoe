@@ -11,7 +11,7 @@ const NavBar = () => {
                <Navbar.Brand href="#home"><img style={{ width: '100px'}} src={logo} alt='logo'/></Navbar.Brand>
                <Navbar.Toggle aria-controls="basic-navbar-nav" />
                <Navbar.Collapse id="basic-navbar-nav">
-                  <Nav className="ml-auto">
+                  <Nav className="ml-auto" style={{display: 'flex', alignItems: 'center'}}>
                         {/* <Nav.Link className='white nav-item' href="#deets">Про нас</Nav.Link>
                         <Nav.Link className='white nav-item' href="#deets">Каталог</Nav.Link>
                         <Nav.Link className='white nav-item' href="#deets">Співпраця</Nav.Link>
@@ -21,17 +21,18 @@ const NavBar = () => {
                          <Nav.Link className='white nav-item' href="#deets">Реєстрація</Nav.Link> */}
                         <Nav.Link className='white nav-item' href="#deets">About us</Nav.Link>
                         <Nav.Link className='white nav-item' href="#deets">Our Cars</Nav.Link>
-                        <Nav.Link className='white nav-item' href="#deets">Cooperation</Nav.Link>
                         <Nav.Link className='white nav-item' href="#deets">Contacts</Nav.Link>
                         <Nav.Link className='white nav-item' href="#deets">
-                           Lang
-                           <select style={{fontSize: '20px', marginLeft: '10px', background: 'none', border: 'none', color: '#fff'}}>
-                             <option value="eng">🇬🇧     </option>
+                           + Add </Nav.Link>
+                           <Nav.Link className='white nav-item' href="#deets">Sign in / Sign up</Nav.Link>
+                           <Nav.Link className='white nav-item' href="#deets">
+                           
+                           <select style={{fontSize: '20px', background: 'none', border: 'none', color: '#fff'}}>
+                             <option value="eng">🇬🇧</option>
                              <option value="ua">🇺🇦</option>
                              <option value="ru">🇷🇺</option>           
                            </select>
                         </Nav.Link>
-                        <Nav.Link className='white nav-item' href="#deets">Sign in / Sign up</Nav.Link>
                   </Nav>
                </Navbar.Collapse>
                </Container>
