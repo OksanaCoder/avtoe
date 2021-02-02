@@ -10,8 +10,8 @@ import './style.css'
 
 const Footer = () => {
     return (
-        <div style={{background: '#222833', padding: '100px 100px 20px 100px'}}>
-            <Container>
+        <div style={{background: '#222833', padding: '100px 50px 20px 50px'}}>
+            <Container fluid>
                 <Row>
                     <Col lg={4} md={4} sm={12} className='footer-item'>
                         <img src={call} style={{color: "#fff"}} className='icon-fill'/>

@@ -13,10 +13,12 @@ import icon_5 from '../../img/laptop.png'
 const Advantages = () => {
     return (
         <div style={{background: '#EFF3FB', padding: '50px 0 50px 0'}}>
-            <Container>
+            <Container className='text-center'>
                 <div className='heading-style col-lg-12 col-md-12 col-sm-12  mb-5 mt-5'>
                     <h3>Чому ми ?</h3>
                 </div>
+            </Container>
+            <Container fluid className='pt-5 pb-5'>    
                 <Row className='mt-5'>
                     <Col lg={4} md={4} sm={12} className='text-center advantage mb-5'>
 

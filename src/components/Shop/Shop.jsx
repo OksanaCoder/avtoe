@@ -8,7 +8,7 @@ import { Row, Container } from 'react-bootstrap'
 const Shop = () => {
     return (
         <div>
-            <Container>
+            <Container fluid>
                 <Row className='flex-style'>
                     
                 <div className='heading-style col-lg-6 col-md-6 col-sm-12'>
@@ -26,7 +26,7 @@ const Shop = () => {
             </Container>
              <Featured />
          
-            <Container className='text-right mt-5'>
+            <Container className='text-right mt-5 mb-5'>
                <button className='grey-btn btn'>View all</button>
             </Container>
             {/* <CarItem /> */}

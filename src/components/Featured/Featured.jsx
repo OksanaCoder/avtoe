@@ -11,7 +11,7 @@ import { Col, Row, Container, Card } from 'react-bootstrap'
 
 const Featured = () => {
     return(
-        <Container className='mt-5 text-white'>
+        <Container className='mt-5 text-white' fluid>
             <Row>
                 <Col lg={6} md={12} sm={12}>
                     <Card className='card-style mb-3 card-height'>
@@ -22,8 +22,8 @@ const Featured = () => {
                             <h2 className='color-yellow'>$ 91 500</h2>
                             <h6 style={{color: 'grey'}}>Ринкова ціна: <small style={{fontWeight: 'bold'}} >$ 140 500</small></h6>
                             <Row className='align-center'>
-                                    <Col className='center-items'><img src={icon_2} className='white-icon'/>22 тыс. км</Col>
-                                    <Col className='center-items'><img src={icon_1} className='icon-small'/>Киев</Col>
+                                    <Col className='center-items'><img src={icon_2} className='white-icon'/>22 тис. км</Col>
+                                    <Col className='center-items'><img src={icon_1} className='icon-small'/>Київ</Col>
                                 </Row>
                                 <Row className='align-center'>
                                     <Col className='center-items'><img src={icon_3} className='icon-small'/>Бензин, 6 л.</Col>
@@ -44,8 +44,8 @@ const Featured = () => {
                             <h6>2016 Ferrari California</h6>
                             <h6 className='color-yellow'>$ 91 500</h6>
                             <Row className='align-center text-left'>
-                                    <Col className='center-items-small '><img src={icon_2} className='icon-small-2'/>22 тыс. км</Col>
-                                    <Col className='center-items-small'><img src={icon_1} className='icon-small-2'/>Киев</Col>
+                                    <Col className='center-items-small '><img src={icon_2} className='icon-small-2'/>22 тис. км</Col>
+                                    <Col className='center-items-small'><img src={icon_1} className='icon-small-2'/>Київ</Col>
                                 </Row>
                                 <Row className='align-center text-left'>
                                     <Col className='center-items-small'><img src={icon_3} className='icon-small-2'/>Бензин, 6 л.</Col>
@@ -63,8 +63,8 @@ const Featured = () => {
                             <h6>2016 Ferrari California</h6>
                             <h6 className='color-yellow'>$ 91 500</h6>
                             <Row className='align-center text-left'>
-                                    <Col className='center-items-small '><img src={icon_2} className='icon-small-2'/>22 тыс. км</Col>
-                                    <Col className='center-items-small'><img src={icon_1} className='icon-small-2'/>Киев</Col>
+                                    <Col className='center-items-small '><img src={icon_2} className='icon-small-2'/>22 тис. км</Col>
+                                    <Col className='center-items-small'><img src={icon_1} className='icon-small-2'/>Київ</Col>
                                 </Row>
                                 <Row className='align-center text-left'>
                                     <Col className='center-items-small'><img src={icon_3} className='icon-small-2'/>Бензин, 6 л.</Col>
@@ -85,8 +85,8 @@ const Featured = () => {
                             <h6>2016 Ferrari California</h6>
                             <h6 className='color-yellow'>$ 91 500</h6>
                             <Row className='align-center text-left'>
-                                    <Col className='center-items-small '><img src={icon_2} className='icon-small-2'/>22 тыс. км</Col>
-                                    <Col className='center-items-small'><img src={icon_1} className='icon-small-2'/>Киев</Col>
+                                    <Col className='center-items-small '><img src={icon_2} className='icon-small-2'/>22 тысс. км</Col>
+                                    <Col className='center-items-small'><img src={icon_1} className='icon-small-2'/>Київ</Col>
                                 </Row>
                                 <Row className='align-center text-left'>
                                     <Col className='center-items-small'><img src={icon_3} className='icon-small-2'/>Бензин, 6 л.</Col>
@@ -104,8 +104,8 @@ const Featured = () => {
                             <h6>2016 Ferrari California</h6>
                             <h6 className='color-yellow'>$ 91 500</h6>
                             <Row className='align-center text-left'>
-                                    <Col className='center-items-small '><img src={icon_2} className='icon-small-2'/>22 тыс. км</Col>
-                                    <Col className='center-items-small'><img src={icon_1} className='icon-small-2'/>Киев</Col>
+                                    <Col className='center-items-small '><img src={icon_2} className='icon-small-2'/>22 тис. км</Col>
+                                    <Col className='center-items-small'><img src={icon_1} className='icon-small-2'/>Київ</Col>
                                 </Row>
                                 <Row className='align-center text-left'>
                                     <Col className='center-items-small'><img src={icon_3} className='icon-small-2'/>Бензин, 6 л.</Col>

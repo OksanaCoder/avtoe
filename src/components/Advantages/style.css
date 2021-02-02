@@ -6,9 +6,9 @@
     font-size: 20px;
     color: #000;
 }
-/* .advantage {
-    padding : 100px !important;
-} */
+.margin-left {
+    margin-left: 70px;
+}
 .advantage p {
     color: #6F6F6F;
     font-weight: 600;

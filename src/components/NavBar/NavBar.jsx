@@ -1,14 +1,14 @@
 import React, { Component } from 'react'
 import { Container, Navbar, Nav } from 'react-bootstrap'
 import './style.css'
-import logo from '../../img/logo-1.png'
+import logo from '../../img/logo-2.png'
 
 const NavBar = () => {
    return(
        <>
             <Navbar expand="lg" style={{paddingTop: '20px'}}>
                <Container>
-               <Navbar.Brand href="#home"><img style={{ width: '100px'}} src={logo} alt='logo'/></Navbar.Brand>
+               <Navbar.Brand href="#home"><img style={{ width: '50px'}} src={logo} alt='logo'/></Navbar.Brand>
                <Navbar.Toggle aria-controls="basic-navbar-nav" />
                <Navbar.Collapse id="basic-navbar-nav">
                   <Nav className="ml-auto" style={{display: 'flex', alignItems: 'center'}}>
@@ -28,7 +28,7 @@ const NavBar = () => {
                            <Nav.Link className='white nav-item' href="#deets">
                            
                            <select style={{fontSize: '20px', background: 'none', border: 'none', color: '#fff'}}>
-                             <option value="eng">🇬🇧</option>
+                             <option value="eng">🇺🇸</option>
                              <option value="ua">🇺🇦</option>
                              <option value="ru">🇷🇺</option>           
                            </select>

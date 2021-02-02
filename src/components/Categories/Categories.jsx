@@ -10,9 +10,9 @@ import img_4 from '../../img/categ-4.png'
 const Categories = () => {
    return(
        <div className='back-yellow'> 
-          <Container>
+          <Container fluid>
             {/* <h5>Вибери Категорію</h5> */}
-            <div className='category-line'>
+            <div className='category-line margin-left'>
                 <h6>Обери Категорію</h6>
             </div>
               <Row style={{textAlign: 'center', paddingTop: "100px"}}>
