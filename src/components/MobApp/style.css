@@ -1,6 +1,6 @@
-.grey-back {
-    background-color: #3F434D;
-     color: #fff;
+.yellow-back {
+    background-color: #F7BA04;
+    color: #000;
      /* margin-top: 60px; */
 }
 .img-app {
@@ -8,7 +8,7 @@
     width : 100%;
     object-fit: cover;
     object-position: top;
-    opacity:0.5;  
+    /* opacity: 0.5;   */
 }
 .center-app {
     display: flex;
