@@ -11,11 +11,10 @@ const Categories = () => {
    return(
        <div className='back-yellow'> 
           <Container fluid>
-            {/* <h5>Вибери Категорію</h5> */}
             <div className='category-line pt-5'>
-                <h6>Обери Категорію</h6>
+                <h6 className='p-5'>Обери Категорію</h6>
             </div>
-              <Row style={{textAlign: 'center', paddingTop: "100px"}}>
+              <Row className='pt-5 pl-5 pr-5 text-center'>
                   <Col lg={3} md={6} sm={12} className='item-categ'>
                     <img src={img_1} className='img-category'/>
                     <h5>Легкові</h5>

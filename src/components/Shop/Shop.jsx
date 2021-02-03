@@ -9,7 +9,7 @@ const Shop = () => {
     return (
         <div>
             <Container fluid>
-                <Row className='flex-style'>
+                <Row className='flex-style pt-5 pl-5 pr-5'>
                     
                 <div className='heading-style col-lg-6 col-md-6 col-sm-12'>
                     <h6>Згенерована</h6>
@@ -26,7 +26,7 @@ const Shop = () => {
             </Container>
              <Featured />
          
-            <Container className='text-right mt-5 mb-5' fluid>
+            <Container className='text-right mt-2 mb-5 pr-5' fluid>
                <button className='grey-btn btn'>View all</button>
             </Container>
             {/* <CarItem /> */}

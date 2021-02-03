@@ -1,7 +1,6 @@
 .yellow-back {
     background-color: #F7BA04;
     color: #000;
-     /* margin-top: 60px; */
 }
 .img-app {
     height: 300px ;
@@ -13,7 +12,8 @@
 .center-app {
     display: flex;
     align-items: center;
-    margin-right: 0 !important ;
+    justify-content: space-between;
+    margin: 0 !important ;
 }
 
 .style-mob-app {

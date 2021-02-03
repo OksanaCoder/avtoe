@@ -29,4 +29,14 @@
 .item-categ h5 { 
     color: #fff;
     font-size: 12px;
+    text-transform: uppercase;
+    font-weight: 700;
+    border: 1px solid #fff;
+    border-radius: 20px;
+    padding: 5px 10px;
+}
+.item-categ h5:hover {
+    color: #000;
+    cursor: pointer;
+    border: 1px solid #000;
 }

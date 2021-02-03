@@ -1,3 +1,6 @@
+.margin-no {
+    margin: 0 !important;
+}
 .card-style {
     background-color:none;
     border: none;
@@ -50,6 +53,7 @@
 .img-feature {
    object-fit: cover;
    border-radius: 19px 19px 0 0 !important;
+   height: 180px;
 }
 .card-height {
     height: 710px;
