@@ -87,7 +87,7 @@ const Footer = () => {
                 </Row>
                 <Row>
                     <Col className='opacity'>
-                    <LoadScript
+                    {/* <LoadScript
                            googleMapsApiKey='AIzaSyABS95c2rEoEhNOc-7nFFD9kf3MokK582w'>
                             <GoogleMap
                             mapContainerStyle={containerStyle}
@@ -101,7 +101,7 @@ const Footer = () => {
                                 ) 
                             }
                          </GoogleMap>
-                        </LoadScript>
+                        </LoadScript> */}
                     
                     </Col>
                 </Row>

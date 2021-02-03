@@ -1,0 +1,66 @@
+@import url("https://use.typekit.net/qin7miy.css");
+body {
+  font-family: muli, sans-serif;
+}
+.background { 
+  background: #000;  
+  height: 90vh;
+  position: relative;
+  box-shadow: 0 10px 16px 0 rgb(16, 15, 15);;
+}
+.flex-center {
+    text-align: center;
+    padding-top: 10vh;
+}
+.flex-center-arrow {
+  text-align: center;
+  padding-top: 50px;
+}
+.selectStyle {
+  border-radius: 20px !important;
+  margin-right: 10px;
+  border: 1px solid #b8b8b8 !important;
+  padding: 0 0 0 27px;
+  background: #fff;
+}
+.form-style {
+  border: 3px solid #F7BA04;
+  padding: 30px;
+  background: #fff;
+  border-radius: 20px;
+  position: relative;
+  margin: 50px auto !important;
+  width: 70%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.btn-search {
+  background-color: #F7BA04 !important;
+  border-radius: 20px !important;
+  border: none !important;
+  margin-top: 15px;
+}
+button.btn-search.btn.btn-primary {
+  font-weight: 700;
+  padding: 7px 70px !important;
+
+}
+
+select {
+    appearance: none !important;
+    background-color: transparent;
+    border: none;
+    padding: 0 1em 0 0;
+    margin-right: 0;
+    width: 100%;
+    font-family: inherit;
+    font-size: inherit;
+    cursor: inherit;
+    line-height: inherit;
+  }
+
+.arrow-down {
+   width: 60px;
+}
+

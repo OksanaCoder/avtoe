@@ -2,6 +2,10 @@
     display: flex;
     justify-content: center;
     align-items: flex-start;
+    border-right: 1px solid rgba(143, 143, 143, 0.1);
+}
+.footer-item:last-child {
+    border-right: none;
 }
 
 .flex-footer {

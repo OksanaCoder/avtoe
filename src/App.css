@@ -1,10 +1,6 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+@import url("https://use.typekit.net/qin7miy.css");
+body {
+  font-family: muli, sans-serif;
 }
 
 @media (prefers-reduced-motion: no-preference) {

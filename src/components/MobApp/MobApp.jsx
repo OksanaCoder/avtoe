@@ -10,19 +10,19 @@ const MobApp = () => {
     return (
         <div className='yellow-back'>
             <Row className='center-app'>
-                <Col lg={6} md={6} sm={12}>
+                <Col lg={7} md={6} sm={12}>
                     <img src={image} className='img-app'/>
                 </Col>
-                <Col lg={6} md={6} sm={12} className='text-center'>
-                    <h3 style={{fontWeight: '700', marginTop: '20px'}}>Завантажуй Наш Мобільний Додаток</h3>
-                    <p style={{letterSpacing: '2px'}}>Будь в курсі останніх оновлень.</p>
-                    <Row className='align-center'>
-                        <Col>
-                            <img src={ios} width='150px' height='150px'/>
+                <Col lg={5} md={6} sm={12} className='text-center'>
+                    <h3 style={{fontWeight: '700', width: '60%', margin: '20px auto'}}>Завантажуй Наш Мобільний Додаток</h3>
+                    <p style={{letterSpacing: '2px'}}>Будь в курсі останніх оновлень</p>
+                    <Row className='style-mob-app'>
+                        <Col lg={6} md={6} sm={12}>
+                            <img src={ios}  height='150px' className='ml-5'/>
                             
                        </Col>
-                       <Col>
-                            <img src={android} width='170px' height='75px'/>
+                       <Col lg={6} md={6} sm={12}>
+                            <img src={android} height='75px' className='mr-5'/>
                        </Col>
                     </Row>
                 </Col>

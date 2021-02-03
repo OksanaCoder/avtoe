@@ -12,8 +12,8 @@ const Shop = () => {
                 <Row className='flex-style'>
                     
                 <div className='heading-style col-lg-6 col-md-6 col-sm-12'>
-                    <h6>Сгенерований</h6>
-                    <h3>Перечень авто</h3>
+                    <h6>Згенерована</h6>
+                    <h3>Підбірка авто</h3>
                 </div>
                 <div className='col-lg-6 col-md-6 col-sm-12' style={{textAlign: 'right'}}>
                     {/* <button className='grey-btn btn'>Купити авто</button>
@@ -26,7 +26,7 @@ const Shop = () => {
             </Container>
              <Featured />
          
-            <Container className='text-right mt-5 mb-5'>
+            <Container className='text-right mt-5 mb-5' fluid>
                <button className='grey-btn btn'>View all</button>
             </Container>
             {/* <CarItem /> */}

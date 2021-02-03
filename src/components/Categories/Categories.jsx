@@ -12,7 +12,7 @@ const Categories = () => {
        <div className='back-yellow'> 
           <Container fluid>
             {/* <h5>Вибери Категорію</h5> */}
-            <div className='category-line margin-left'>
+            <div className='category-line pt-5'>
                 <h6>Обери Категорію</h6>
             </div>
               <Row style={{textAlign: 'center', paddingTop: "100px"}}>
@@ -21,7 +21,7 @@ const Categories = () => {
                     <h5>Легкові</h5>
                   </Col>
                   <Col lg={3} md={6} sm={12} className='item-categ'>
-                    <img src={img_2} className='img-category'/>
+                    <img src={img_2} className='img-category smaller'/>
                     <h5> Позашляховики</h5>
                   </Col>
                   <Col lg={3} md={6} sm={12} className='item-categ'>

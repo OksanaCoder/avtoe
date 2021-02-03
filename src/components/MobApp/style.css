@@ -8,10 +8,16 @@
     width : 100%;
     object-fit: cover;
     object-position: top;
-    /* opacity: 0.5;   */
+    opacity: 0.5;  
 }
 .center-app {
     display: flex;
     align-items: center;
+    margin-right: 0 !important ;
 }
 
+.style-mob-app {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

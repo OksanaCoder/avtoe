@@ -1,23 +1,43 @@
 .card-style {
-    background-color:#222833 !important;
-    box-shadow: 5px 5px 5px 0 #000;
+    background-color:none;
+    border: none;
+    border-radius: 20px !important;
+    /* box-shadow: 0 1px 10px 0 #000; */
 }
 .white-icon {
     width: 22px;
     margin-right: 10px;
 }
 .a-icon-1 {
-        border: 1px solid #fff;
+        border: 1px solid #000;
         border-radius: 50%;
-        padding: 2px 7px;
+        padding: 4px 7px;
         margin-right: 10px;
+        font-weight: 700;
 }
 .color-yellow {
     color: #F7BA04;
+    font-weight: bold;
+}
+.bold {
+    font-weight: bold;
+}
+.small-grey {
+    font-weight: bold;
+    font-size: 12px;
+     
 }
 .icon-small-2 {
   width: 16px;
   margin-right: 10px;
+}
+.align-center {
+    display : flex;
+    align-items: center;
+    margin-top: 10px;
+}
+.center-items {
+    font-size: 10px;
 }
 .center-items-small {
     font-size: 10px;
@@ -29,11 +49,13 @@
 }
 .img-feature {
    object-fit: cover;
+   border-radius: 19px 19px 0 0 !important;
 }
 .card-height {
     height: 710px;
 }
-.card-text {
-    margin-top: 40px;
-    margin-left: 20px;
+.flex-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }

@@ -1,8 +1,6 @@
 .btn-item {
     border-radius: 20px;
     border: none;
-    padding: 5px;
-    width: 200px;
     -webkit-box-shadow: 0px 3px 8px 0px rgba(0, 0, 0, 0.2);
     -moz-box-shadow: 0px 3px 8px 0px rgba(0, 0, 0, 0.2);
     box-shadow: 0px 3px 8px 0px rgba(0, 0, 1, 0.2);
@@ -10,19 +8,17 @@
     font-weight: bold;
     font-size: 15px;
 }
-.align-center {
-    display : flex;
-    align-items: center;
-    margin-top: 20px;
-}
+
 .buy-now  {
     background-color: #E24800;
+    padding: 5px 20px;
 }
 .swap-btn {
     background-color: #2E2C2B;
 }
 .auction-btn {
     background-color: #F7BA04;
+    padding: 5px 40px;
 }
 .price-input {
     border :1px solid #8E8E8E;

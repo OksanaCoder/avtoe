@@ -1,14 +1,14 @@
 import React, { Component } from 'react'
 import { Container, Navbar, Nav } from 'react-bootstrap'
 import './style.css'
-import logo from '../../img/logo-2.png'
+import logo from '../../img/logo-small.png'
 
 const NavBar = () => {
    return(
        <>
             <Navbar expand="lg" style={{paddingTop: '20px'}}>
-               <Container>
-               <Navbar.Brand href="#home"><img style={{ width: '50px'}} src={logo} alt='logo'/></Navbar.Brand>
+               <Container fluid>
+               <Navbar.Brand href="#home"><img style={{ width: '40px'}} src={logo} alt='logo'/></Navbar.Brand>
                <Navbar.Toggle aria-controls="basic-navbar-nav" />
                <Navbar.Collapse id="basic-navbar-nav">
                   <Nav className="ml-auto" style={{display: 'flex', alignItems: 'center'}}>
@@ -20,7 +20,8 @@ const NavBar = () => {
                         <Nav.Link className='white nav-item' href="#deets">Увійти</Nav.Link>
                          <Nav.Link className='white nav-item' href="#deets">Реєстрація</Nav.Link> */}
                         <Nav.Link className='white nav-item' href="#deets">About us</Nav.Link>
-                        <Nav.Link className='white nav-item' href="#deets">Our Cars</Nav.Link>
+                        <Nav.Link className='white nav-item' href="#deets">Our Cars</Nav.Link>  {/* all cars */}
+                        <Nav.Link className='white nav-item' href="#deets">Співпраця</Nav.Link> {/* show cars that we are looking for */}
                         <Nav.Link className='white nav-item' href="#deets">Contacts</Nav.Link>
                         <Nav.Link className='white nav-item' href="#deets">
                            + Add </Nav.Link>

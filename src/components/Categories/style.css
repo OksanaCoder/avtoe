@@ -7,7 +7,9 @@
     margin-bottom: 10px;
     transition: transform .6s;
     width: 200px;
-
+}
+.smaller {
+    width: 150px;
 }
 .img-category:hover {
     transform: scale(1.1);
@@ -26,4 +28,5 @@
 }
 .item-categ h5 { 
     color: #fff;
+    font-size: 12px;
 }

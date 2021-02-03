@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import Header from './components/Header/Header'
+import Header from './components/Header/Header-1'
 import Categories from './components/Categories/Categories'
 import Shop from './components/Shop/Shop'
 import Advantages from './components/Advantages/Advantages'
