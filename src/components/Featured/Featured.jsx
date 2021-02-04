@@ -4,12 +4,18 @@ import imageCar from '../../img/ferrari.jpg'
 import icon_1 from '../../img/location.png'
 import icon_2 from '../../img/speedometer.png'
 import icon_3 from '../../img/petrol.png'
-import { Col, Row, Container, Card } from 'react-bootstrap'
+import { Col, Row, Container, Card, Modal, Button } from 'react-bootstrap'
 
 
 
 
 const Featured = () => {
+    const [show, setShow] = useState(false);
+
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
+
+
     return(
         <Container className='mt-5 text-white p-5' fluid>
             <Row>
@@ -19,9 +25,13 @@ const Featured = () => {
                         </Card.Img>
                         <Card.Body className='text-dark card-text'>
                             <h5 className='bold'>2016 Ferrari California</h5>
-                        <div className='flex-card'>
-                            <h6 className='color-yellow'>$ 91 500</h6>
-                            <h6 className='small-grey'>Ринкова ціна: <small style={{fontWeight: 'bold'}} >$ 140 500</small></h6>
+                        <div className='flex-card mt-3'>
+                            <h5 className='color-yellow'>$ 91 500</h5>
+                          <div>
+                          <h6 className='small-grey'>Ринкова ціна: <small style={{fontWeight: 'bold'}} >$ 140 500</small></h6>
+                          <h6 className='small-grey'>Стартова ціна: <small style={{fontWeight: 'bold'}} >$ 50 500</small></h6>
+
+                          </div>
                         </div>
                             <Row className='align-center'>
                                     <Col className='center-items'><img src={icon_2} className='white-icon'/>22 тис. км</Col>
@@ -32,9 +42,23 @@ const Featured = () => {
                                     <Col className='center-items'><small className='a-icon-1'>A</small>Автомат</Col>
                                 </Row>
                                 <Row className='display-flex justify-between mt-3'>
-                                  <Col> <button className='btn-item buy-now'>Buy now</button></Col>
-                                  <Col><button  className='btn-item auction-btn'>More</button></Col>
+                                  <Col> <button className='btn-item buy-now'>Купити</button></Col>
+                                  <Col><button  className='btn-item auction-btn' onClick={handleShow}>Деталі</button></Col>
                                 </Row>
+                                <Modal show={show} onHide={handleClose}>
+                                    <Modal.Header closeButton>
+                                    <Modal.Title>Modal heading</Modal.Title>
+                                    </Modal.Header>
+                                    <Modal.Body>Woohoo, you're reading this text in a modal!</Modal.Body>
+                                    <Modal.Footer>
+                                    <Button variant="secondary" onClick={handleClose}>
+                                        Close
+                                    </Button>
+                                    <Button variant="primary" onClick={handleClose}>
+                                        Save Changes
+                                    </Button>
+                                    </Modal.Footer>
+                                </Modal>
                         </Card.Body>
                        
                     </Card>

@@ -16,10 +16,8 @@ const Shop = () => {
                     <h3>Підбірка авто</h3>
                 </div>
                 <div className='col-lg-6 col-md-6 col-sm-12' style={{textAlign: 'right'}}>
-                    {/* <button className='grey-btn btn'>Купити авто</button>
-                    <button className='orange-btn btn'>Аукціон</button> */}
-                    <button className='grey-btn btn'>Buy car</button>
-                    <button className='orange-btn btn ml-3'>Auction</button>
+                    <button className='grey-btn btn-shop'>Купівля</button>
+                    <button className='orange-btn btn-shop ml-3'>Аукціон</button>
                 </div>
 
                 </Row>
@@ -27,7 +25,7 @@ const Shop = () => {
              <Featured />
          
             <Container className='text-right mt-2 mb-5 pr-5' fluid>
-               <button className='grey-btn btn'>View all</button>
+               <button className='grey-btn  btn-shop'>View all</button>
             </Container>
             {/* <CarItem /> */}
         </div>

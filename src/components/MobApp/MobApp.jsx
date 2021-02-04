@@ -11,8 +11,8 @@ const MobApp = () => {
         <div className='yellow-back'>
             <Row className='center-app'>
            
-                <Col lg={5} md={6} sm={12}>
-                    <h2 style={{fontWeight: '700', marginLeft: '20px'}}>Завантажуй Наш Мобільний Додаток</h2>
+                <Col lg={5} md={6} sm={12} className='text-center'>
+                    <h4 style={{fontWeight: '700'}}>Завантажуй Наш Мобільний Додаток</h4>
                     <Row className='style-mob-app text-center'>
                         <Col>
                             <img src={ios}  height='150px'/>

@@ -2,8 +2,9 @@ import React, { Component } from 'react'
 import {Container, Button, Form, Row, Col } from 'react-bootstrap'
 import './style-2.css'
 import NavBar from '../NavBar/NavBar'
-import arrow from '../../img/arrow-down.png'
-import search from '../../img/search.svg'
+// import arrow from '../../img/arrow-down.png'
+// import search from '../../img/search.svg'
+import cat from '../../img/cat-2.jpg'
 
 
 const Header = () => {
@@ -50,8 +51,8 @@ const Header = () => {
             {/* <Button className='btn-search'>Пошук</Button> */}
             <Button className='btn-search'>Пошук</Button>
             </div>
-            {/* <img width='200px' style={{position: 'absolute', right: '0', top: '100px'}} src='https://image.freepik.com/free-photo/adult-fluffy-red-cat-sitting-raised-its-front-paws-up-animal-isolated_116441-14215.jpg' /> */}
-
+            {/* <img width='100px' style={{position: 'absolute', bottom : '-80px', right: '50px'}} src='https://clyde.anayelizavalacitycouncil.com/pic/12026252_full-cat-paw-outline-clipart-cat-paw-silhouette-at-getdrawings-free-download.png' /> */}
+            {/* <img src={cat} width='200px' style={{bottom : '-80px', right: '50px'}} /> */}
             </Form>
             </Col>   
             </Row>

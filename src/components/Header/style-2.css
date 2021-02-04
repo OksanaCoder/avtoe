@@ -16,19 +16,19 @@ body {
   padding-top: 50px;
 }
 .selectStyle {
-  border-radius: 20px !important;
-  margin-right: 10px;
+  border-radius: 10px !important;
   border: 1px solid #b8b8b8 !important;
-  padding: 0 0 0 27px;
+  padding: 10px !important;
+  /* height: 30px !important; */
   background: #fff;
 }
 .form-style {
   border: 3px solid #F7BA04;
-  padding: 30px;
+  padding: 30px 20px 30px 20px;
   background: #fff;
   border-radius: 20px;
   position: relative;
-  margin: 50px auto !important;
+  margin: 40px auto !important;
   width: 70%;
   display: flex;
   justify-content: center;
