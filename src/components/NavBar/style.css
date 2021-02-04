@@ -26,6 +26,9 @@ body {
     background: #F2F5FB ;
     padding: 40px 20px;
 }
+.login-form .form-control {
+    box-shadow: 0 5px 10px #E9ECEF;
+}
 .calc_form .modal-content,
 .calc_form {
     background: #F2F5FB !important; 
@@ -38,6 +41,9 @@ body {
     border-radius: 20px !important;
     border: 1px solid #E9ECEF !important ;
     box-shadow: 0 5px 10px #E9ECEF;
+}
+.no-shadow .modal-content {
+    box-shadow: none !important;
 }
 .modal-header, 
 .modal-footer{
@@ -77,6 +83,7 @@ body {
 }
 .calc_form .form-control {
     height: 50px; 
+    box-shadow: 0 5px 10px #E9ECEF;
 }
 
 .calc_form .modal-content {

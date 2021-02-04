@@ -25,7 +25,7 @@ const Featured = () => {
                         </Card.Img>
                         <Card.Body className='text-dark card-text'>
                             <h5 className='bold'>2016 Ferrari California</h5>
-                        <div className='flex-card mt-3'>
+                         <div className='flex-card mt-3'>
                             <h5 className='color-yellow'>$ 91 500</h5>
                           <div>
                           <h6 className='small-grey'>Ринкова ціна: <small style={{fontWeight: 'bold'}} >$ 140 500</small></h6>
@@ -45,11 +45,21 @@ const Featured = () => {
                                   <Col> <button className='btn-item buy-now'>Купити</button></Col>
                                   <Col><button  className='btn-item auction-btn' onClick={handleShow}>Деталі</button></Col>
                                 </Row>
-                                <Modal show={show} onHide={handleClose}>
-                                    <Modal.Header closeButton>
-                                    <Modal.Title>Modal heading</Modal.Title>
+                                <Modal show={show} onHide={handleClose} className='no-shadow no-border-modal'>
+                                    <Modal.Header closeButton>  
+                                    <Modal.Title>Деталі авто</Modal.Title>
                                     </Modal.Header>
-                                    <Modal.Body>Woohoo, you're reading this text in a modal!</Modal.Body>
+                                    <Modal.Body>
+                                        
+                                        <Row>
+                                            <Col>
+                                              <img src={imageCar} width='100%'/>
+                                            </Col>
+                                            <Col>
+                                               
+                                            </Col>
+                                        </Row>
+                                    </Modal.Body>
                                     <Modal.Footer>
                                     <Button variant="secondary" onClick={handleClose}>
                                         Close

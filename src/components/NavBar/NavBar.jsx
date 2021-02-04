@@ -8,7 +8,7 @@ import price from '../../img/tag.svg'
 import percent from '../../img/offer.svg'
 import calendar from '../../img/calendar.svg'
 import payment from '../../img/money.svg'
-
+import { Link, BrowserRouter } from 'react-router-dom'
 
 
 
@@ -24,7 +24,8 @@ const NavBar = () => {
    const handleShow_calc = () => setShow_calc(true);
   
    return(
-       <>
+       <BrowserRouter>
+
             <Navbar expand="lg" style={{paddingTop: '20px'}}>
                <Container fluid>
                <Navbar.Brand href="#home"><img style={{ width: '40px'}} src={logo} alt='logo'/></Navbar.Brand>
@@ -32,7 +33,7 @@ const NavBar = () => {
                <Navbar.Collapse id="basic-navbar-nav">
                   <Nav className="ml-auto" style={{display: 'flex', alignItems: 'center'}}>
                         <Nav.Link className='white nav-item' href="#deets">Про Нас</Nav.Link>
-                        <Nav.Link className='white nav-item' href="#deets">Каталог</Nav.Link> 
+                          <Nav.Link className='white nav-item' href="#deets">Каталог</Nav.Link> 
                         <Nav.Link className='white nav-item' href="#deets" onClick={handleShow_calc}>Кредитний калькулятор</Nav.Link>  
                         <Nav.Link className='white nav-item' href="#deets">Співпраця</Nav.Link> 
                         <Nav.Link className='white nav-item' href="#deets">Контакти</Nav.Link>
@@ -207,7 +208,7 @@ const NavBar = () => {
                </Container>
                </Navbar>
               
-       </>
+       </BrowserRouter>
    )
 }
 

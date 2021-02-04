@@ -11,15 +11,10 @@ body {
 .flex-center {
     text-align: center;
 }
-.flex-center-arrow {
-  text-align: center;
-  padding-top: 50px;
-}
 .selectStyle {
   border-radius: 10px !important;
   border: 1px solid #b8b8b8 !important;
   padding: 10px !important;
-  /* height: 30px !important; */
   background: #fff;
 }
 .form-style {

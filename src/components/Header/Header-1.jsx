@@ -21,7 +21,7 @@ const Header = () => {
               </Col>
           <Col lg={6}>
             
-            <Form className='white form-style row' style={{position: 'relative'}}>
+            <Form className='white form-style' style={{position: 'relative'}}>
             <Form.Group controlId="exampleForm.ControlSelect1" className='col'>
                 {/* <Form.Label>Марка авто</Form.Label> */}
                 <Form.Label className='text-dark'>Brand</Form.Label>
