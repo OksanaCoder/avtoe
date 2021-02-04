@@ -17,7 +17,7 @@ const Shop = () => {
                 </div>
                 <div className='col-lg-6 col-md-6 col-sm-12' style={{textAlign: 'right'}}>
                     <button className='grey-btn btn-shop'>Купівля</button>
-                    <button className='orange-btn btn-shop ml-3'>Аукціон</button>
+                    <button className='orange-btn btn-shop ml-3 weight-bold'>Аукціон</button>
                 </div>
 
                 </Row>

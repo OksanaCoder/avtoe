@@ -23,15 +23,21 @@ body {
     width: 20px;
 }
 .login-form {
-    background: rgb(255, 255, 255);
+    background: #F2F5FB ;
     padding: 40px 20px;
+}
+.calc_form .modal-content,
+.calc_form {
+    background: #F2F5FB !important; 
+    box-shadow: none;
+    border: none !important;
 }
 .modal-content {
     background: #F2F5FB !important;
     padding: 40px 40px;
     border-radius: 20px !important;
-    border: none !important;
-    box-shadow: 0 5px 5px #000;
+    border: 1px solid #E9ECEF !important ;
+    box-shadow: 0 5px 10px #E9ECEF;
 }
 .modal-header, 
 .modal-footer{
@@ -61,4 +67,31 @@ body {
 }
 .close {
     display: none;
+}
+.line-bottom {
+    border-bottom: 1px solid #E9ECEF;
+    padding-bottom: 50px;
+}
+.icon-calc {
+    width: 30px;
+}
+.calc_form .form-control {
+    height: 50px; 
+}
+
+.calc_form .modal-content {
+    padding: 0;
+}
+.calc_form {
+    font-weight: bold;
+}
+.calc-output {
+    text-align: center;
+    margin-top: 40px;
+    border: 1px solid #F7BA04;
+    border-radius: 20px;
+    padding: 20px;
+}
+.border-right-calc {
+    border-right: 1px solid #F7BA04;;
 }
