@@ -22,7 +22,6 @@ const MobApp = () => {
                        </Col>
                        
                     </Row>
-                    <img src={cat} width='150px' style={{position: 'absolute', left: '-20px', bottom: '-50px'}}/>
                 </Col>
                 <Col lg={7} md={6} sm={12}>
                     <img src={image} className='img-app'/>

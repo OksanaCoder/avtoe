@@ -3,13 +3,24 @@ body {
   font-family: muli, sans-serif;
 }
 .background { 
-  background: #000;  
-  height: 90vh;
-  position: relative;
-  box-shadow: 0 10px 16px 0 rgb(16, 15, 15);;
+  background: black;
+  /* background: url('../../img/back.jpeg') no-repeat; */
+  background-size: cover;  
+  height: 100vh;
+}
+.white-fill {
+  filter: brightness(0) invert(1);
+  border: 2px solid #F7BA04;
+  padding: 10px;
+  border-radius: 50%;
+  transition: transform .5s;
+}
+.white-fill:hover {
+  transform: scale(1.1);
 }
 .flex-center {
     text-align: center;
+    margin-top: 40px;
 }
 .selectStyle {
   border-radius: 10px !important;
@@ -18,16 +29,16 @@ body {
   background: #fff;
 }
 .form-style {
-  border: 3px solid #F7BA04;
+  /* border: 3px solid #F7BA04; */
   padding: 30px 20px 30px 20px;
   background: #fff;
   border-radius: 20px;
   position: relative;
-  margin: 40px auto !important;
-  width: 70%;
+  margin: 40px auto 0!important;
+  /* width: 70%; */
   display: flex;
   justify-content: center;
-  flex-direction: column;
+  /* flex-direction: column; */
   align-items: center;
 }
 .btn-search {

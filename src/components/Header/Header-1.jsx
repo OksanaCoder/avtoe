@@ -1,62 +1,51 @@
 import React, { Component } from 'react'
 import {Container, Button, Form, Row, Col } from 'react-bootstrap'
 import './style-2.css'
-import NavBar from '../NavBar/NavBar'
-// import arrow from '../../img/arrow-down.png'
-// import search from '../../img/search.svg'
-import cat from '../../img/cat-2.jpg'
+import logo from '../../img/logo-small.png'
+import car from '../../img/car.png'
+import img_4 from '../../img/i-4.svg'
+import img_1 from '../../img/i-1.svg'
+import img_2 from '../../img/i-2.svg'
+import img_3 from '../../img/i-3.svg'
 
 
 const Header = () => {
    return(
        <>
        <Container fluid className='background' style={{fontWeight: '700'}}>
-            <NavBar />
+           <Row className='p-4'>
+             <Col lg={6} md={6} sm={6} className='text-left'>
+                  <img style={{ width: '30px'}} src={logo} alt='logo'/>
+             </Col>
+             <Col lg={6} md={6} sm={6} className='text-right'>
+                 <select style={{fontSize: '20px', background: 'none', border: 'none', color: '#fff'}}>
+                             <option value="ua">🇺🇦</option>
+                             <option value="ru">🇷🇺</option>           
+                  </select>
+             </Col>
+           </Row>
             <Row className='align-center'>
-              <Col lg={6}>
+              <Col>
               <div className='flex-center white'>
-                <h4 style={{fontSize: '60px', letterSpacing: '1px', fontWeight: 'bold'}}>Купуй <small style={{fontSize: '60px', letterSpacing: '1px', fontWeight: 'bold', color: '#F7BA04'}}>Надійно</small></h4>
-                <h6 style={{fontSize: '20px', letterSpacing: '3px', color: 'grey !important'}}>в Кредит, Лізинг, Повна Оплата</h6>
-            </div>
-              </Col>
-          <Col lg={6}>
-            
-            <Form className='white form-style' style={{position: 'relative'}}>
-            <Form.Group controlId="exampleForm.ControlSelect1" className='col'>
-                {/* <Form.Label>Марка авто</Form.Label> */}
-                <Form.Label className='text-dark'>Brand</Form.Label>
-                <Form.Control as="select" className='selectStyle'>
-                  <option>BMW</option>
-                </Form.Control>
-            </Form.Group>
-            <Form.Group controlId="exampleForm.ControlSelect2"  className='col'>
-                {/* <Form.Label>Рік випуску</Form.Label> */}
-                <Form.Label className='text-dark'>Year</Form.Label>
-                <Form.Control as="select" className='selectStyle'>
-                  <option>2012</option>
-                </Form.Control>
-            </Form.Group>
-            <Form.Group controlId="exampleForm.ControlSelect3"  className='col'>
-                {/* <Form.Label>Рік випуску</Form.Label> */}
-                <Form.Label className='text-dark'>Price, $</Form.Label>
-                <Form.Control as="select" className='selectStyle'>
-                  <option>0 - 3000</option>
-                  <option>3 000 - 9 000</option>
-                  <option>9 000 - 20 000</option>
-                  <option>20 000 - 50 000</option>
-                  <option>50 000 +</option>
-                </Form.Control>
-            </Form.Group>
-            <div className='col text-center'>
-            {/* <Button className='btn-search'>Пошук</Button> */}
-            <Button className='btn-search'>Пошук</Button>
-            </div>
-            {/* <img width='100px' style={{position: 'absolute', bottom : '-80px', right: '50px'}} src='https://clyde.anayelizavalacitycouncil.com/pic/12026252_full-cat-paw-outline-clipart-cat-paw-silhouette-at-getdrawings-free-download.png' /> */}
-            {/* <img src={cat} width='200px' style={{bottom : '-80px', right: '50px'}} /> */}
-            </Form>
-            </Col>   
+                <h4 style={{fontSize: '60px', letterSpacing: '1px', fontWeight: 'bold'}}>Продаємо <small style={{fontSize: '60px', letterSpacing: '1px', fontWeight: 'bold', color: '#F7BA04'}}>Своїм</small></h4>
+                <h6 style={{fontSize: '20px', letterSpacing: '3px'}}>в Кредит, Лізинг, Повна Оплата</h6>
+              </div>
+             </Col>
             </Row>
-            <img src='https://demo.vehicatheme.com/wp-content/uploads/2020/09/car-silver.png' style={{position: 'absolute', bottom: '-60px', width: '30%', left: '5%'}}/>
+       <Row className='text-center mt-5'>
+
+         <Col >
+             <img src={img_4} className='white-fill mr-2' width='70px'/>
+        
+             <img src={img_1}width='70px' className='white-fill mr-2' />
+         
+             <img src={img_2} width='70px' className='white-fill' />
+
+             <img src={img_3}width='70px' className='white-fill ml-2' />
+         </Col>
+       </Row>
+            <img src={car} style={{ opacity: '0.4', position: 'absolute', bottom: '80px', width: '35%', left: '2%'}}/>
+        
        </Container>
        </>
    )

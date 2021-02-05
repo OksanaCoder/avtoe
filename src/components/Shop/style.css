@@ -33,7 +33,7 @@
 .flex-style {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
     padding-top: 60px;
 }
 

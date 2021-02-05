@@ -118,9 +118,9 @@ const Footer = () => {
                        </ul>
                     </Col>
                 </Row>
-                <Row className='mt-5'>
+                <Row className='mt-5' style={{paddingBottom : '100px'}}>
                     
-                    <Col className='text-white text-center'><small>&copy; 2021 AVTOE</small></Col>
+                    <Col className='text-white text-center'><small>&copy; 2012 AVTOE</small></Col>
                
                 </Row>
             </Container>

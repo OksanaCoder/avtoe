@@ -3,7 +3,8 @@
 }
 .card-style {
     background-color:none;
-    border: none;
+    /* border: 1px solid #F7BA04 !important; */
+    border: none !important;
     border-radius: 20px !important;
     /* box-shadow: 0 1px 10px 0 #000; */
 }
@@ -68,4 +69,13 @@
 }
 .no-border-modal .modal-content {
     border: none !important;
+}
+
+.adv-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 1px solid rgb(225, 225, 225);
+    border-radius: 20px;
+    padding: 20px;
 }
