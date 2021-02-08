@@ -4,7 +4,7 @@ body {
 }
 .background { 
   background: black;
-  /* background: url('../../img/back.jpeg') no-repeat; */
+  /* background: url('../../img/main.jpg') center center no-repeat; */
   background-size: cover;  
   height: 100vh;
 }
@@ -64,3 +64,11 @@ select {
 }
 
 
+.logo-svg {
+  fill: red;
+}
+.highlight {
+  color: #F7BA04;
+  font-weight: 700;
+  font-size: 20px;
+}

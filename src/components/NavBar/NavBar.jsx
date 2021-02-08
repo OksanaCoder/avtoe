@@ -26,7 +26,7 @@ const NavBar = () => {
    return(
        <BrowserRouter>
 
-            <Navbar expand="lg" style={{paddingTop: '20px', marginBottom: '0'}}>
+            <Navbar expand="lg" style={{paddingTop: '20px', marginBottom: '0', position: 'relative'}}>
                <Container fluid>
                <Navbar.Brand href="#home"><img style={{ width: '40px'}} src={logo} alt='logo'/></Navbar.Brand>
                <Navbar.Toggle aria-controls="basic-navbar-nav" />

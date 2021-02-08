@@ -44,7 +44,7 @@ const ModalDetails = (props) => {
                         <h4 style={{fontWeight: 'bold'}}>2016 Ferrari California</h4>
                                    <small style={{color: '#E24800', fontWeight: 'bold', fontSize: '30px'}}>$ 91 500</small>
                                 <Row className='align-center'>
-                                    <Col className='center-items'><img src={icon_2} className='icon-small'/>22 тыс. км</Col>
+                                    <Col className='center-items'><img src={icon_2} className='icon-small'/>22 тис. км</Col>
                                     <Col className='center-items'><img src={icon_1} className='icon-small'/>Киев</Col>
                                 </Row>
                                 <Row className='align-center'>
@@ -85,13 +85,20 @@ const ModalDetails = (props) => {
                                 <Row className='mt-1 row-modal'>
                                      <Col> Контакти:
                                      </Col>
-                                     <Col className='mt-1 row-modal'>  
+                                     <Col>  
                                           <ul className='list-unstyled'>
                                               <li>+38 050 249 09 09</li>
                                               <li> +38 093 249 09 09</li>
                                               <li> +38 097 249 09 09</li>
                                           </ul>
                                           
+                                     </Col>
+                                </Row>  
+                                <Row className='mt-1 row-modal'>
+                                     <Col> Де ми знаходимось ?
+                                     </Col>
+                                     <Col>  
+                                      Київ, проспект Степана Бандери, 13
                                      </Col>
                                 </Row>  
                      
