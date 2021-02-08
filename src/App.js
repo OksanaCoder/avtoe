@@ -255,7 +255,7 @@ const App = () => {
      
       <Route path='/' exact component={Header} />
       <Route path='/catalog' exact component={Shop} />
-      <Advantages />
+      {/* <Advantages /> */}
       <MobApp />
       <Footer />
       </Router>

@@ -110,10 +110,10 @@ const Footer = () => {
                        <small className='font-footer'>Ми в соціальних мережах: </small>
                        <ul className='list-unstyled flex-footer align-center'>
                            <li>
-                               <a href='#'><img src={facebook} width='30px' className='ml-4 mr-4 icon-fill'/></a>
+                               <a href=''><img src={facebook} width='30px' className='ml-4 mr-4 icon-fill'/></a>
                            </li>
                            <li>
-                               <a href='#'><img src={instagram} className='icon-fill' width='30px'/></a>
+                               <a href='https://www.instagram.com/avtoe.ua/'><img src={instagram} className='icon-fill' width='30px'/></a>
                            </li>
                        </ul>
                     </Col>

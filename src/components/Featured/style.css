@@ -3,6 +3,7 @@
 }
 .card-style {
     background-color:none;
+    /* padding: 20px; */
     /* border: 1px solid #F7BA04 !important; */
     border: none !important;
     border-radius: 20px !important;
@@ -53,8 +54,15 @@
 }
 .img-feature {
    object-fit: cover;
-   border-radius: 19px 19px 0 0 !important;
+   /* border-radius: 19px 19px 0 0 !important; */
    height: 160px;
+   padding: 15px;
+}
+
+.img-feature-adv {
+    object-fit: cover;
+    width: 100%;
+    height: 120px;
 }
 .card-height {
     height: 710px;
@@ -75,7 +83,29 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    border: 1px solid rgb(225, 225, 225);
+    /* border: 1px solid rgb(225, 225, 225); */
     border-radius: 20px;
     padding: 20px;
+    background-color: #fff;
+}
+.short-border{ 
+    border-bottom: 1px solid #DEDEDE;
+    margin-bottom: 40px;
+}
+.short-border:last-child {
+    border: none;
+    margin-bottom: 0;
+}
+.bit-btn {
+    background-color: #E24700;
+    padding: 5px 40px;
+}
+.font-adv {
+    font-size: 15px;
+    font-weight: 700;
+}
+.font-bid-price {
+    font-weight: 700;
+    font-size: 17px;
+    color: #E24700;
 }
