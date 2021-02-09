@@ -1,0 +1,17 @@
+.back-blue {
+    background-color: #EFF3FC;
+}
+.yellow-h {
+    color: #F7BA04;
+    font-size: 30px;
+}
+.h-bold {
+    font-size: 40px;
+    font-weight: 700;
+}
+a {
+    color: black !important;
+}
+a:focus {
+    color:  #F7BA04 !important;
+}

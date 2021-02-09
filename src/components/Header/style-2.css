@@ -6,7 +6,7 @@ body {
   background: black;
   /* background: url('../../img/main.jpg') center center no-repeat; */
   background-size: cover;  
-  height: 100vh;
+  height: 90.5vh;
 }
 .white-fill {
   filter: brightness(0) invert(1);

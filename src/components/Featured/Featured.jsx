@@ -4,7 +4,7 @@ import imageCar from '../../img/ferrari.jpg'
 import icon_1 from '../../img/location.png'
 import icon_2 from '../../img/speedometer.png'
 import icon_3 from '../../img/petrol.png'
-import { Col, Row, Container, Card, Modal, Button } from 'react-bootstrap'
+import { Col, Row, Container, Card } from 'react-bootstrap'
 import ModalDetails from '../ModalDetails/ModalDetails'
 
 
