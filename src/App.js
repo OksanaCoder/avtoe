@@ -45,11 +45,11 @@ const App = () => {
         <Nav className='nav-style'>
                <Nav.Link className='nav-item' href="#deets">
                         <img src={cart}/>
-                      <Link to='/catalog' className='black-color'>Каталог</Link>    
+                      <Link to='/catalog' className='black-color'>Catalog</Link>    
                </Nav.Link>
                <Nav.Link className='nav-item' href="#deets">
                         <img src={hammer} width='20px' className='mb-1'/>
-                         Аукціон
+                         Auction
                </Nav.Link>
         </Nav>
 
@@ -59,7 +59,7 @@ const App = () => {
                   <Nav.Link href="#deets" className='nav-item'>
                         <img src={home}/>
                     <Link to='/'  className='black-color'>
-                          Головна
+                          Main
                     </Link>      
                           </Nav.Link>
                         <Nav.Link className='nav-item' href="#deets">
@@ -71,7 +71,7 @@ const App = () => {
                         <Nav.Link className=' nav-item' href="#deets" onClick={handleShow_calc}>
                         <img src={calculate}/>
                          
-                              Калькулятор
+                              Calculator
                           
                           </Nav.Link>  
                         <Nav.Link className=' nav-item' href="#deets">

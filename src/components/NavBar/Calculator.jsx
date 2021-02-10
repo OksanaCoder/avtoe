@@ -80,7 +80,7 @@ const Calculator = (props) => {
                      <Row>
                         <Col lg={6} md={6} sm={12}>
                               <Form.Label htmlFor="inlineFormInputGroup" >
-                              Ціна, $
+                              Price, $
                               </Form.Label>
                               <InputGroup className="mb-2">
                               <InputGroup.Prepend>
@@ -91,7 +91,7 @@ const Calculator = (props) => {
                         </Col>
                         <Col lg={6} md={6} sm={12}>
                               <Form.Label htmlFor="inlineFormInputGroup" >
-                              Ставка, %  
+                              Interest, %  
                               </Form.Label>
                               <InputGroup className="mb-2">
                               <InputGroup.Prepend>
@@ -104,7 +104,7 @@ const Calculator = (props) => {
                      <Row className='line-bottom mt-4'>
                         <Col lg={12} md={12} sm={12}>
                               <Form.Label htmlFor="inlineFormInputGroup" >
-                              Період (місяців)
+                              Period (months)
                               </Form.Label>
                               <InputGroup className="mb-2">
                               <InputGroup.Prepend>
@@ -129,7 +129,7 @@ const Calculator = (props) => {
                     
                        <Row className='calc-output'>
                           <Col lg={6} md={12} sm={12} className='border-right-calc'>
-                             <h5>Місячний платіж, $</h5>
+                             <h5>Monthly payment, $</h5>
                              <h4>{results.monthlyPayment}</h4>
                           </Col>
                           {/* <Col lg={4} md={12} sm={12} className='border-right-calc'>
@@ -137,7 +137,7 @@ const Calculator = (props) => {
                              <h4>{results.totalInterest}</h4>
                           </Col> */}
                           <Col lg={6} md={12} sm={12}>
-                             <h5>Загальна сума, $</h5>
+                             <h5>Total amount, $</h5>
                              <h4>{results.totalPayment}</h4>
                           </Col>
                        </Row>
@@ -145,17 +145,17 @@ const Calculator = (props) => {
                     <Row className='mt-5 text-center'>
                      <Col lg={4} md={12} sm={12}>
                        <Button variant="primary" type="submit" className='btn-form yellow-back mb-2' onClick={handleSubmit}>
-                          Порахувати
+                          Count
                         </Button>
                     </Col>
                     <Col lg={4} md={12} sm={12}>
                        <Button variant="primary" className='btn-form grey-back ml-2 mb-2' onClick={clearFields}>
-                          Очистити
+                          Clear
                         </Button>
                     </Col>
                     <Col lg={4} md={12} sm={12}>
                         <Button variant="primary" type="submit" className='btn-form grey-back' onClick={handleClose_calc}>
-                           Скасувати
+                           Cancel
                         </Button>
                     </Col>
                     
