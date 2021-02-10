@@ -107,7 +107,7 @@ const ModalDetails = (props) => {
                 </Modal.Body>
                 <Modal.Footer>
                 <Button onClick={handleClose_details} className='btn-form grey-back btn btn-primary pt-1 pl-4 pr-4 pb-1'>
-                    Скасувати
+                    Cancel
                 </Button>
                 </Modal.Footer>
                 </Modal>

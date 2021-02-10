@@ -35,7 +35,7 @@ const Featured = () => {
                                     <Col className='center-items'><small className='a-icon-1'>A</small>Автомат</Col>
                                 </Row>
                                 <Row className='display-flex justify-between mt-3'>
-                                  <Col><button  className='btn-item auction-btn' onClick={handleShow_details}>Детальніше</button></Col>
+                                  <Col><button  className='btn-item auction-btn' onClick={handleShow_details}>Details</button></Col>
                                 </Row>
                                { show_details ? (<ModalDetails {...show_details}/>) : <></> }
                         </Card.Body>
