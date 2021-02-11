@@ -44,7 +44,7 @@ const App = () => {
     <Router>
         <Navbar expand="lg" className='bottomNav'>
                <Container fluid>
-        <Nav className='nav-style'>
+        <Nav className='nav-style nav-no-col'>
                <Nav.Link className='nav-item' href="#deets">
                         <img src={cart}/>
                       <Link to='/catalog' className='black-color'>Catalog</Link>    
@@ -57,7 +57,7 @@ const App = () => {
 
                <Navbar.Toggle aria-controls="basic-navbar-nav" />
                <Navbar.Collapse id="basic-navbar-nav">
-                  <Nav className="ml-auto nav-style">
+                  <Nav className="ml-auto nav-style nav-wrap">
                   <Nav.Link href="#deets" className='nav-item'>
                         <img src={home}/>
                     <Link to='/'  className='black-color'>

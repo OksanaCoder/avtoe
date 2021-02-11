@@ -52,7 +52,7 @@ const Header = () => {
              <img src={img_3}width='70px' className='white-fill ml-2' />
          </Col>
        </Row>
-            <img src={cat} style={{ position: 'absolute', bottom: '70px', width: '30%', right: '35%'}}/>
+            <img src={cat} style={{ position: 'absolute', bottom: '9vh', width: '30%', right: '35%'}}/>
             <img src={cloud} style={{ position: 'absolute', bottom: '200px', width: '30%', right: '0%'}}/>
 
             {/* <img src={car_1} style={{ position: 'absolute', bottom: '90px', width: '30%', right: '2%'}}/> */}

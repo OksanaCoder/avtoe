@@ -16,8 +16,14 @@ const Featured = () => {
 
     return(
         <Container className='mt-5 text-white p-5' fluid>
-            <Row>
+            <Row className='align-items-center'>
                 <Col lg={9} md={12} sm={12}>
+                         
+                <div className='heading-style col text-center'>
+                    <h6>Оновлений</h6>
+                    <h3 className='text-dark'>Каталог авто</h3>
+                </div>
+               
                 <Row>
                 <Col lg={4} md={6} sm={12}>
                     <Card className='card-style mb-3'>
@@ -72,7 +78,7 @@ const Featured = () => {
                     </Card>
                 </Col>
                
-                <Col lg={4} md={6} sm={12}>
+                <Col lg={4} md={6} sm={12} >
                     <Card className='card-style mb-3'>
                         <Card.Img src={imageCar} className='img-feature'>
                         </Card.Img>
@@ -252,7 +258,7 @@ const Featured = () => {
                 
             </Row>
                 </Col>
-                <Col lg={3} md={12} sm={12} className='adv-box p-5'>
+                <Col lg={3} md={12} sm={12} className='adv-box p-5' style={{background: '#EFF3FC'}}>
                     <Row className='d-flex flex-direction-column'>
                         <Col lg={12} className='short-border'>
                         <Card className='card-style mb-3'>

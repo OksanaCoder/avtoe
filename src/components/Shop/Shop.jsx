@@ -8,17 +8,17 @@ import { Row, Container } from 'react-bootstrap'
 
 const Shop = () => {
     return (
-        <div style={{background: '#EFF3FC'}}>
+        <div style={{background: '#fff'}}>
             <Container fluid>
-                <Row className='flex-style pt-5 pl-5 pr-5'>
+                <Row className='flex-style pt-5 pl-5 pr-5' style={{background: '#23292D'}}>
                     
-                <div className='heading-style col'>
-                    <h6>Оновлений</h6>
-                    <h3>Каталог авто</h3>
+                <div className='heading-style col text-center'>
+                    <h6>Обери</h6>
+                    <h3 className='text-white'>Авто Своєї Мрії</h3>
                 </div>
                
                 </Row>
-                <Row className='pr-5 pl-5'> 
+                <Row className='pr-5 pl-5' style={{background: '#23292D', paddingBottom: '100px'}}> 
                    <Filter />
                 </Row>
             </Container>

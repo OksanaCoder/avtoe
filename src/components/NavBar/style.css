@@ -16,6 +16,9 @@ body {
 .navbar-light .navbar-nav .nav-link {
     color: #000 !important;
 }
+.nav-wrap {
+    flex-wrap: wrap;
+}
 .bottomNav {
     position: fixed !important;
     bottom: 0 !important;
