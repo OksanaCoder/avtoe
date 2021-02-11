@@ -22,6 +22,8 @@ import cart from './img/cart.svg'
 import hammer from './img/hammer.svg'
 import home from './img/home.svg'
 import Calculator from './components/NavBar/Calculator';
+import SignUpForm from './components/SignUpForm/SignUpForm';
+import LoginForm from './components/LoginForm/LoginForm';
 
 
 const App = () => {
@@ -29,11 +31,10 @@ const App = () => {
   const [show, setShow] = useState(false)
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+
   const [show1, setShow1] = useState(false)
   const handleClose1 = () => setShow1(false);
   const handleShow1 = () => setShow1(true);
-
-
 
   const [show_calc, setShow_calc] = useState(false)
   const handleShow_calc = () => setShow_calc(true);
@@ -104,76 +105,13 @@ const App = () => {
 
                {/* sign up modal */}
 
-                  <Modal show={show1} onHide={handleClose1} className='login-form'>
-                     <Modal.Header closeButton>
-                        <Modal.Title>Реєстрація</Modal.Title>
-                     </Modal.Header>
-                     <Modal.Body>
-                     <Form>
-                        <Form.Group controlId="formBasicName">
-                           <Form.Control type="text" placeholder="Username" />
-                        </Form.Group>
-                        <Form.Group controlId="formBasicEmail">
-                           <Form.Control type="email" placeholder="Email" />
-                        </Form.Group>
-                        <Form.Group controlId="formBasicPhone">
-                           <Form.Control placeholder="Номер телефону" />
-                        </Form.Group>
-
-
-                        <Form.Group controlId="formBasicPassword">
-                           <Form.Control type="password" placeholder="Пароль" />
-                        </Form.Group>
-                        <Form.Group controlId="formBasicCheckbox">
-                           <Form.Check type="checkbox" label="Я погоджуюся з умовами користування сайтом" />
-      
-                        </Form.Group>
-                       <div className='flex-form mt-5'>
-                        <Button variant="primary" type="submit" className='btn-form yellow-back'>
-                           Зареєструватись
-                        </Button>
-                        <Button variant="primary" type="submit" className='btn-form grey-back' onClick={handleClose1}>
-                           Скасувати
-                        </Button>
-                        </div>
-                  </Form>
-                     </Modal.Body>
-                     </Modal>
+            <SignUpForm show1={show1} handleShow1={handleShow1} handleClose1={handleClose1} />
 
             {/* login form modal */}
-                     <Modal show={show} onHide={handleClose} className='login-form'>
-                     <Modal.Header closeButton>
-                        <Modal.Title>Увійти в аккаунт</Modal.Title>
-                     </Modal.Header>
-                     <Modal.Body>
+            <LoginForm show={show} handleShow={handleShow} handleClose={handleClose} />       
+        </Container>
+      </Navbar>
 
-                     <Form>
-                        <Form.Group controlId="formBasicEmail">
-                           <Form.Control type="email" placeholder="Email або username" />
-                        </Form.Group>
-
-                        <Form.Group controlId="formBasicPassword">
-                           <Form.Control type="password" placeholder="Пароль" />
-                        </Form.Group>
-                        <Form.Group controlId="formBasicCheckbox" className='flex-form'>
-                           <Form.Check type="checkbox" label="Запам'ятати" />
-                           <small>Забули пароль ?</small>
-                        </Form.Group>
-                       <div className='flex-form mt-5'>
-                        <Button variant="primary" type="submit" className='btn-form yellow-back'>
-                           Увійти
-                        </Button>
-                        <Button variant="primary" type="submit" className='btn-form grey-back' onClick={handleClose}>
-                           Скасувати
-                        </Button>
-                        </div>
-                  </Form>
-                     </Modal.Body>
-                     </Modal>
-               </Container>
-               </Navbar>
-
-     
       <Route path='/' exact component={Header} />
       <Route path='/catalog' exact component={Shop} />
       <Route path='/about' exact component={About} />      
