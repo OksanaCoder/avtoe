@@ -7,17 +7,13 @@ import payment from '../../img/money.svg'
 
 const Calculator = (props) => {
     
-   const [show_calc, setShow_calc] = useState(false)
-   const handleClose_calc = () => setShow_calc(false);
    const [userValues, setUserValues] = useState({
        amount: 0,
        interest: 0,
        years: 0
    })
   
-    useEffect(() => {
-        setShow_calc(props);
-      }, [props]);
+    
       const [results, setResults] = useState({
         monthlyPayment: '',
         totalPayment: '',
@@ -30,20 +26,21 @@ const Calculator = (props) => {
       }
 
      const calculateResults = ({amount, interest, years}) => {
-        const calculatedInterest = interest / 100 / 12
-        const calculatedPayments = years * 12
-        const monthly = amount * calculatedInterest;
+        const rate = interest / 100 
+        const total = rate * amount
+        const monthly = total / years;
 
         if (isFinite(monthly)) {
             const monthlyPaymentCalculated = monthly.toFixed(2);
-            const totalPaymentCalculated = (monthly * calculatedPayments).toFixed(2);
-            const totalInterestCalculated = (monthly * calculatedPayments - amount).toFixed(2);
+            const totalPaymentCalculated = total.toFixed(2);
+            // const totalInterestCalculated = (monthly * calculatedPayments - amount).toFixed(2);
        
             // Set up results to the state to be displayed to the user
             setResults({
               monthlyPayment: monthlyPaymentCalculated,
               totalPayment: totalPaymentCalculated,
-              totalInterest: totalInterestCalculated,
+            //   totalInterest: totalInterestCalculated,
+             
               isResult: true,
             });
           }
@@ -70,7 +67,7 @@ const Calculator = (props) => {
       };
     return (
         <>
-         <Modal show={show_calc} onHide={handleClose_calc} className='login-form calc_form'>
+         <Modal show={props.show_calc} onHide={props.handleClose_calc} className='login-form calc_form'>
                      <Modal.Header closeButton>
                         <Modal.Title>Кредитний калькулятор</Modal.Title>
                      </Modal.Header>
@@ -154,7 +151,7 @@ const Calculator = (props) => {
                         </Button>
                     </Col>
                     <Col lg={4} md={12} sm={12}>
-                        <Button variant="primary" type="submit" className='btn-form grey-back' onClick={handleClose_calc}>
+                        <Button variant="primary" type="submit" className='btn-form grey-back' onClick={props.handleClose_calc}>
                            Cancel
                         </Button>
                     </Col>

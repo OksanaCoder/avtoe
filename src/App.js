@@ -37,6 +37,7 @@ const App = () => {
 
   const [show_calc, setShow_calc] = useState(false)
   const handleShow_calc = () => setShow_calc(true);
+  const handleClose_calc = () => setShow_calc(false)
   return (
     <>
     <Router>
@@ -99,7 +100,7 @@ const App = () => {
                   
                </Navbar.Collapse> 
 
-          { show_calc ? ( <Calculator />): <></> } 
+            <Calculator show_calc={show_calc} handleShow_calc={handleShow_calc} handleClose_calc={handleClose_calc}/>
 
                {/* sign up modal */}
 

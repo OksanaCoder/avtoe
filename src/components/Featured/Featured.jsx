@@ -12,6 +12,7 @@ import ModalDetails from '../ModalDetails/ModalDetails'
 const Featured = () => {
     const [show_details, setShow_details] = useState(false);
     const handleShow_details = () => setShow_details(true);
+    const handleClose_details = () => setShow_details(false);
 
     return(
         <Container className='mt-5 text-white p-5' fluid>
@@ -37,7 +38,10 @@ const Featured = () => {
                                 <Row className='display-flex justify-between mt-3'>
                                   <Col><button  className='btn-item auction-btn' onClick={handleShow_details}>Details</button></Col>
                                 </Row>
-                               { show_details ? (<ModalDetails {...show_details}/>) : <></> }
+
+
+                                {/* details modal */}
+                              <ModalDetails show_details={show_details} handleShow_details={handleShow_details} handleClose_details={handleClose_details} />
                         </Card.Body>
                        
                     </Card>

@@ -10,16 +10,11 @@ import icon_2 from '../../img/speedometer.png'
 import icon_3 from '../../img/petrol.png'
 
 const ModalDetails = (props) => {
-    const [show_details, setShow_details] = useState(props);
-
-    const handleClose_details = () => setShow_details(false);
-
-    useEffect(() => {
-        setShow_details(props);
-      }, [props]);
+   
+    
     return (
         <>
-            <Modal show={show_details} onHide={handleClose_details} className='no-shadow no-border-modal modal-details'>
+            <Modal show={props.show_details} onHide={props.handleClose_details} className='no-shadow no-border-modal modal-details'>
                 <Modal.Header closeButton>  
                 <Modal.Title style={{fontWeight: '700'}}>Деталі авто</Modal.Title>
                 </Modal.Header>
@@ -106,7 +101,7 @@ const ModalDetails = (props) => {
                     </Row>
                 </Modal.Body>
                 <Modal.Footer>
-                <Button onClick={handleClose_details} className='btn-form grey-back btn btn-primary pt-1 pl-4 pr-4 pb-1'>
+                <Button onClick={props.handleClose_details} className='btn-form grey-back btn btn-primary pt-1 pl-4 pr-4 pb-1'>
                     Cancel
                 </Button>
                 </Modal.Footer>
