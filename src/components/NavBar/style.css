@@ -86,7 +86,7 @@ body {
     border: none !important;
 }
 .btn-form {
-    border-radius: 20px !important;
+    border-radius: 10px !important;
     padding: 7px 40px !important;
 }
 .yellow-back {
@@ -125,7 +125,7 @@ body {
     text-align: center;
     margin-top: 40px;
     border: 1px solid #F7BA04;
-    border-radius: 20px;
+    border-radius: 10px;
     padding: 20px;
 }
 .border-right-calc {

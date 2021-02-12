@@ -24,7 +24,7 @@ import home from './img/home.svg'
 import Calculator from './components/NavBar/Calculator';
 import SignUpForm from './components/SignUpForm/SignUpForm';
 import LoginForm from './components/LoginForm/LoginForm';
-
+import Cooperation from './components/Cooperation/Cooperation' 
 
 const App = () => {
 
@@ -78,7 +78,10 @@ const App = () => {
                           </Nav.Link>  
                         <Nav.Link className=' nav-item' href="#deets">
                         <img src={work}/>
-                          Співпраця</Nav.Link> 
+                        <Link to='/cooperation' className='black-color'>
+                          Співпраця
+                        </Link>  
+                        </Nav.Link> 
                         <Nav.Link className=' nav-item' href="#deets">
                         <img src={read}/>
                           Журнал</Nav.Link> 
@@ -114,7 +117,8 @@ const App = () => {
 
       <Route path='/' exact component={Header} />
       <Route path='/catalog' exact component={Shop} />
-      <Route path='/about' exact component={About} />      
+      <Route path='/about' exact component={About} />  
+      <Route path='/cooperation' exact component={Cooperation} />    
       {/* <MobApp /> */}
       <Footer />
       </Router>
