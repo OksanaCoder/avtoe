@@ -18,7 +18,7 @@ const MobApp = () => {
                         <div className='d-flex align-center'>
                                 <img src={ios}  height='150px'/>
                                 <img src={android} height='75px'/>
-                      </div>
+                        </div>
                     </Container>
                         
                 </Col>

@@ -1,5 +1,5 @@
 import './App.css';
-import React, {useState} from 'react'
+import React, {useState, useRef} from 'react'
 import Header from './components/Header/Header-1'
 import Categories from './components/Categories/Categories'
 import Shop from './components/Shop/Shop'
@@ -8,8 +8,8 @@ import MobApp from './components/MobApp/MobApp'
 import Footer from './components/Footer/Footer'
 import NavBar from './components/NavBar/NavBar'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
-import { Container, Navbar, Nav, Modal, Button, Form, Row, Col, InputGroup, FormControl } from 'react-bootstrap'
+import { BrowserRouter as Router, Route, Link as BrowserLink } from 'react-router-dom'
+import { Container, Navbar, Nav} from 'react-bootstrap'
 import './components/NavBar/style.css'
 import logo from './img/logo-small.png'
 import person from './img/person.svg'
@@ -25,9 +25,12 @@ import Calculator from './components/NavBar/Calculator';
 import SignUpForm from './components/SignUpForm/SignUpForm';
 import LoginForm from './components/LoginForm/LoginForm';
 import Cooperation from './components/Cooperation/Cooperation' 
+import Magazine from './components/Magazine/Magazine' 
+import { Link } from 'react-scroll'
+
 
 const App = () => {
-
+ 
   const [show, setShow] = useState(false)
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -39,6 +42,7 @@ const App = () => {
   const [show_calc, setShow_calc] = useState(false)
   const handleShow_calc = () => setShow_calc(true);
   const handleClose_calc = () => setShow_calc(false)
+
   return (
     <>
     <Router>
@@ -47,7 +51,7 @@ const App = () => {
         <Nav className='nav-style nav-no-col'>
                <Nav.Link className='nav-item' href="#deets">
                         <img src={cart}/>
-                      <Link to='/catalog' className='black-color'>Catalog</Link>    
+                      <BrowserLink to='/catalog' className='black-color'>Catalog</BrowserLink>    
                </Nav.Link>
                <Nav.Link className='nav-item' href="#deets">
                         <img src={hammer} width='20px' className='mb-1'/>
@@ -60,15 +64,15 @@ const App = () => {
                   <Nav className="ml-auto nav-style nav-wrap">
                   <Nav.Link href="#deets" className='nav-item'>
                         <img src={home}/>
-                    <Link to='/'  className='black-color'>
+                    <BrowserLink to='/'  className='black-color'>
                           Main
-                    </Link>      
+                    </BrowserLink>      
                           </Nav.Link>
                         <Nav.Link className='nav-item' href="#deets">
                         <img src={book}/>
-                      <Link to='/about' className='black-color'>
+                      <BrowserLink to='/about' className='black-color'>
                          Про Нас
-                      </Link> 
+                      </BrowserLink> 
                           </Nav.Link>
                         <Nav.Link className=' nav-item' href="#deets" onClick={handleShow_calc}>
                         <img src={calculate}/>
@@ -78,16 +82,25 @@ const App = () => {
                           </Nav.Link>  
                         <Nav.Link className=' nav-item' href="#deets">
                         <img src={work}/>
-                        <Link to='/cooperation' className='black-color'>
+                        <BrowserLink to='/cooperation' className='black-color'>
                           Співпраця
-                        </Link>  
+                        </BrowserLink>  
                         </Nav.Link> 
                         <Nav.Link className=' nav-item' href="#deets">
                         <img src={read}/>
-                          Журнал</Nav.Link> 
+                        <BrowserLink to='/magazine'  className='black-color'>
+                          Журнал
+                        </BrowserLink>  
+                        </Nav.Link> 
                         <Nav.Link className=' nav-item' href="#deets">
                         <img src={email}/>
-                          Контакти</Nav.Link>
+                        <Link className='black-color' 
+                              to='footer'
+                              spy={true}
+                              smooth={true}>
+                          Контакти
+                        </Link>
+                        </Nav.Link>
                            <Nav.Link className=' nav-item' href="#deets"  onClick={handleShow}>
                              <img src={person} />
                             Увійти
@@ -120,6 +133,8 @@ const App = () => {
       <Route path='/about' exact component={About} />  
       <Route path='/cooperation' exact component={Cooperation} />    
       {/* <MobApp /> */}
+      <Route path='/magazine' exact component={Magazine} />    
+
       <Footer />
       </Router>
     </>

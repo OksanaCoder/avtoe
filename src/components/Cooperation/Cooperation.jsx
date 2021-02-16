@@ -12,12 +12,12 @@ const Cooperation = () => {
    
               <Row className='flex-style pt-5 pl-5 pr-5' style={{background: '#23292D'}}>
                     
-                    <div className='heading-style col text-center pb-5'>
+                    <div className='heading-style col text-center p-5'>
                         <h6>Ми</h6>
                         <h3 className='text-white'>Купимо Ваше Авто</h3>
                         <small className='text-white'>(української реєстрації)</small>
-                        <Row className='mt-4'>
-                            <Col className='text-white text-left'>
+                        <Row className='mt-4 align-center'>
+                            <Col className='text-white text-center' lg={6} md={6} sm={12}>
                                 <small>Телефонуйте за номером:</small>
                                 <ul className='list-unstyled'>
                                     <li>+38 050 249 09 09</li>
@@ -26,7 +26,7 @@ const Cooperation = () => {
                                 </ul>
 
                             </Col>
-                            <Col className='text-white text-right'>
+                            <Col className='text-white text-center' lg={6} md={6} sm={12}>
                                 <small>Або відправляйте email за адресою:</small>
                                  <p>avtoe@i.ua</p>
                             </Col>
