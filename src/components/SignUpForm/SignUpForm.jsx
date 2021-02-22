@@ -33,6 +33,7 @@ const SignUpForm = (props) => {
 
    const handleChange = (e) => {
      setUser({
+         ...state, 
         [e.target.name] : [e.target.value]
      })
    }
