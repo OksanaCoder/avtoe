@@ -3,14 +3,14 @@ import { Modal, Button, Form } from 'react-bootstrap'
 
 const SignUpForm = (props) => {
   const [user, setUser] = useState({
-     firstname,
-     lastname, 
-     username,
-     email,
-     password, 
-     dob,
-     phone,
-     role
+     firstname:"",
+     lastname:"", 
+     username:"",
+     email:"",
+     password:"", 
+     dob:"",
+     phone:"",
+     role:""
   })
 
 
@@ -46,27 +46,27 @@ const SignUpForm = (props) => {
                      <Modal.Body>
                      <Form onSubmit={handleSubmit}>
                         <Form.Group controlId="formBasicFirstName">
-                           <Form.Control type="text" placeholder="Firs tname" value={firstname} onChange={handleChange} name='firstname'/>
+                           <Form.Control type="text" placeholder="Firs tname" value={user.firstname} onChange={handleChange} name='firstname'/>
                         </Form.Group>
                         <Form.Group controlId="formBasicLastName">
-                           <Form.Control type="text" placeholder="Last name" value={lastname} onChange={handleChange} name='lastname'/>
+                           <Form.Control type="text" placeholder="Last name" value={user.lastname} onChange={handleChange} name='lastname'/>
                         </Form.Group>
                         <Form.Group controlId="formBasicName">
-                           <Form.Control type="text" placeholder="User name" value={username} onChange={handleChange} name='username'/>
+                           <Form.Control type="text" placeholder="User name" value={user.username} onChange={handleChange} name='username'/>
                         </Form.Group>
                         <Form.Group controlId="formBasicEmail">
-                           <Form.Control type="email" placeholder="Email" value={email}  onChange={handleChange} name='email'/>
+                           <Form.Control type="email" placeholder="Email" value={user.email}  onChange={handleChange} name='email'/>
                         </Form.Group>
          
                         <Form.Group controlId="formBasicPassword">
-                           <Form.Control type="password" placeholder="Пароль" value={password}  onChange={handleChange} name='password' />
+                           <Form.Control type="password" placeholder="Пароль" value={user.password}  onChange={handleChange} name='password' />
                         </Form.Group>
                   
                         <Form.Group controlId="formBasicDateOfBirth">
-                           <Form.Control type="date" value={dob}  onChange={handleChange} name='dob'/>
+                           <Form.Control type="date" value={user.dob}  onChange={handleChange} name='dob'/>
                         </Form.Group>
                         <Form.Group controlId="formBasicPhone">
-                           <Form.Control placeholder="Номер телефону" value={phone}  onChange={handleChange} name='phone'/>
+                           <Form.Control placeholder="Номер телефону" value={user.phone}  onChange={handleChange} name='phone'/>
                         </Form.Group>
                         <Form.Group controlId="formBasicCheckbox">
                            <Form.Check type="checkbox" label="Я погоджуюся з умовами користування сайтом" />
