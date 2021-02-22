@@ -1,7 +1,42 @@
-import React  from 'react'
+import React, { useEffect, useState }  from 'react'
 import { Modal, Button, Form } from 'react-bootstrap'
 
 const SignUpForm = (props) => {
+  const [user, setUser] = useState({
+     firstname,
+     lastname, 
+     username,
+     email,
+     password, 
+     dob,
+     phone,
+     role
+  })
+
+
+   const handleSubmit = (e) => {
+      e.preventDefault()
+      fetch('https://avtoe-back.herokuapp.com/users/register', {
+         method: 'POST',
+         headers: {
+            'Content-Type' : 'application/json'
+         },
+         body: JSON.stringify(user)
+      })
+      .then(data => data.json())
+      .then((res) => {
+         console.log(res)
+         setUser('')
+      })
+      .catch((err) => console.log('error'))
+   }
+
+   const handleChange = (e) => {
+     setUser({
+        [e.target.name] : [e.target.value]
+     })
+   }
+
     return (
         <>
          <Modal show={props.show1} onHide={props.handleClose1} className='login-form'>
@@ -9,20 +44,29 @@ const SignUpForm = (props) => {
                         <Modal.Title>Реєстрація</Modal.Title>
                      </Modal.Header>
                      <Modal.Body>
-                     <Form>
+                     <Form onSubmit={handleSubmit}>
+                        <Form.Group controlId="formBasicFirstName">
+                           <Form.Control type="text" placeholder="Firs tname" value={firstname} onChange={handleChange} name='firstname'/>
+                        </Form.Group>
+                        <Form.Group controlId="formBasicLastName">
+                           <Form.Control type="text" placeholder="Last name" value={lastname} onChange={handleChange} name='lastname'/>
+                        </Form.Group>
                         <Form.Group controlId="formBasicName">
-                           <Form.Control type="text" placeholder="Username" />
+                           <Form.Control type="text" placeholder="User name" value={username} onChange={handleChange} name='username'/>
                         </Form.Group>
                         <Form.Group controlId="formBasicEmail">
-                           <Form.Control type="email" placeholder="Email" />
+                           <Form.Control type="email" placeholder="Email" value={email}  onChange={handleChange} name='email'/>
+                        </Form.Group>
+         
+                        <Form.Group controlId="formBasicPassword">
+                           <Form.Control type="password" placeholder="Пароль" value={password}  onChange={handleChange} name='password' />
+                        </Form.Group>
+                  
+                        <Form.Group controlId="formBasicDateOfBirth">
+                           <Form.Control type="date" value={dob}  onChange={handleChange} name='dob'/>
                         </Form.Group>
                         <Form.Group controlId="formBasicPhone">
-                           <Form.Control placeholder="Номер телефону" />
-                        </Form.Group>
-
-
-                        <Form.Group controlId="formBasicPassword">
-                           <Form.Control type="password" placeholder="Пароль" />
+                           <Form.Control placeholder="Номер телефону" value={phone}  onChange={handleChange} name='phone'/>
                         </Form.Group>
                         <Form.Group controlId="formBasicCheckbox">
                            <Form.Check type="checkbox" label="Я погоджуюся з умовами користування сайтом" />
@@ -32,7 +76,7 @@ const SignUpForm = (props) => {
                         <Button variant="primary" type="submit" className='btn-form yellow-back'>
                            Зареєструватись
                         </Button>
-                        <Button variant="primary" type="submit" className='btn-form grey-back' onClick={props.handleClose1}>
+                        <Button variant="primary" className='btn-form grey-back' onClick={props.handleClose1}>
                            Скасувати
                         </Button>
                         </div>
