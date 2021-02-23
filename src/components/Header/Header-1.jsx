@@ -34,7 +34,7 @@ const Header = () => {
               <Col>
               <div className='flex-center white'>
               <h6 style={{fontSize: '30px', letterSpacing: '3px'}}>Що шукаєш ?</h6>
-              <input type='text' placeholder='' className='search-line'/>
+              <input type='text' placeholder='BMW X5' className='search-line'/>
                 {/* <h6 style={{fontSize: '30px', letterSpacing: '3px'}}>Мрієш Про Власне Авто ?</h6> */}
                 {/* <h4 style={{fontSize: '60px', letterSpacing: '1px', fontWeight: 'bold'}}>АВТО <small style={{fontSize: '60px', letterSpacing: '1px', fontWeight: 'bold', color: '#F7BA04'}}>Є</small>!</h4> */}
                 {/* <h6 style={{fontSize: '20px', letterSpacing: '3px'}}><small className='highlight'>Апетитні</small> умови також <small className='highlight'>Є</small></h6> */}
@@ -47,11 +47,11 @@ const Header = () => {
          <Col >
              <img src={img_4} className='white-fill mr-2' width='70px'/>
         
-             <img src={img_1}width='70px' className='white-fill mr-2' />
+             <img src={img_1} width='70px' className='white-fill mr-2' />
          
              <img src={img_2} width='70px' className='white-fill' />
 
-             <img src={img_3}width='70px' className='white-fill ml-2' />
+             <img src={img_3} width='70px' className='white-fill ml-2' />
          </Col>
        </Row>
             {/* <img src={cat} style={{ position: 'absolute', bottom: '9vh', width: '30%', right: '35%'}}/>
