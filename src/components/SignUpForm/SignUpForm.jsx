@@ -1,7 +1,12 @@
-import React, { useEffect, useState }  from 'react'
-import { Modal, Button, Form } from 'react-bootstrap'
+import React, { useEffect, useState,useRef }  from 'react'
+import { Modal, Button, Form } from 'react-bootstrap';
+import moment from 'moment';
+import axios from 'axios';
 
 const SignUpForm = (props) => {
+   
+  const form = useRef();
+  const checkBtn = useRef();
   const [user, setUser] = useState({
      firstname:"",
      lastname:"", 
@@ -11,30 +16,114 @@ const SignUpForm = (props) => {
      dob:"",
      phone:""
   })
+  const [firstname, setFirstname] = useState("");
+  const [lastname, setLastname] = useState("");
+  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [dob, setDob] = useState("");
+  const [phone, setPhone]=useState("");
+  const [successful, setSuccessful] = useState(false);
 
+  const API_URL = process.env.REACT_APP_URL;
 
-   const handleSubmit = (e) => {
+const register = (firstname, lastname,username, email, password,dob,phone) => {
+  return axios.post(API_URL + "/users/register", {
+   firstname, lastname,
+    username,
+    email,
+    password,
+    dob,phone
+  });
+};
+   const handleSubmit = async (e) => {
       e.preventDefault()
-      fetch('https://avtoe-back.herokuapp.com/users/register', {
-         method: 'POST',
-         headers: {
-            'Content-Type' : 'application/json'
-         },
-         body: JSON.stringify(user)
-      })
-      .then(data => data.json())
-      .then((res) => {
-         console.log(res)
-         setUser('')
-      })
-      .catch((err) => console.log('error'))
+      const succesregv= await register(firstname, lastname,username, email, password,dob,phone);
+      //form.current.validateAll()
+      if(succesregv){
+         alert("Registered Successfully")
+      }else{
+         console.log("please check login")
+      }
+      // if(checkBtn.current.context._errors.length ===0){
+      //   const succesregv= await register(firstname, lastname,username, email, password,dob,phone);
+      //   if(succesregv){
+      //      alert("Registered Successfully")
+      //   }else{
+      //      console.log("please check login")
+      //   }
+      // }
+      
+      // fetch('https://avtoe-back.herokuapp.com/users/register', {
+      //    method: 'POST',
+      //    headers: {
+      //       'Content-Type' : 'application/json'
+      //    },
+      //    body: JSON.stringify(user)
+      // })
+      // .then(data => data.json())
+      // .then((res) => {
+      //    console.log(res)
+      //    setUser('')
+      // })
+      // .catch((err) => console.log('error'))
+   //    axios({
+   //       method: 'post',
+   //       url: 'https://avtoe-back.herokuapp.com/users/register',
+   //       data: user,
+   //       headers: {'Content-Type': 'multipart/form-data' }
+   //       })
+   //       .then(function (response) {
+   //           //handle success
+   //           //setUser('')
+   //           console.log(response);
+             
+   //       })
+   //       .catch(function (response) {
+   //           //handle error
+   //           console.log(response);
+   //       });
+   // }
    }
-
-   const handleChange = (e) => {
-     setUser({
-        [e.target.name] : [e.target.value]
-     })
-   }
+   const onChangeFirstname = (e) => {
+      const firstname= e.target.value;
+      setFirstname(firstname);
+    };
+  
+    const onChangeLastname = (e) => {
+      const lastname= e.target.value;
+      setLastname(lastname);
+    };
+  
+    const onChangeUsername = (e) => {
+      const username = e.target.value;
+      setUsername(username);
+    };
+    const onChangeEmail = (e) => {
+    
+      const email = e.target.value;
+      setEmail(email)
+    };
+  
+    const onChangePassword = (e) => {
+    ;
+      const password = e.target.value;
+      setPassword(password);
+    };
+  
+    const onChangeDob = (e) => {
+      const dob = e.target.value;
+      setDob(dob);
+    };
+    const onChangePhone= (e) => {
+      const phone = e.target.value;
+      setPhone(phone);
+    };
+   // const handleChange = (e) => {
+   //   setUser({
+   //      [e.target.name] : [e.target.value]
+   //   })
+   // }
 
     return (
         <>
@@ -45,27 +134,27 @@ const SignUpForm = (props) => {
                      <Modal.Body>
                      <Form onSubmit={handleSubmit}>
                         <Form.Group controlId="formBasicFirstName">
-                           <Form.Control type="text" placeholder="Firs tname" value={user.firstname} onChange={handleChange} name='firstname'/>
+                           <Form.Control type="text" placeholder="Firs tname" value={firstname} onChange={onChangeFirstname} name='firstname'/>
                         </Form.Group>
                         <Form.Group controlId="formBasicLastName">
-                           <Form.Control type="text" placeholder="Last name" value={user.lastname} onChange={handleChange} name='lastname'/>
+                           <Form.Control type="text" placeholder="Last name" value={lastname} onChange={onChangeLastname} name='lastname'/>
                         </Form.Group>
                         <Form.Group controlId="formBasicName">
-                           <Form.Control type="text" placeholder="User name" value={user.username} onChange={handleChange} name='username'/>
+                           <Form.Control type="text" placeholder="User name" value={username} onChange={ onChangeUsername} name='username'/>
                         </Form.Group>
                         <Form.Group controlId="formBasicEmail">
-                           <Form.Control type="email" placeholder="Email" value={user.email}  onChange={handleChange} name='email'/>
+                           <Form.Control type="email" placeholder="Email" value={email}  onChange={onChangeEmail} name='email'/>
                         </Form.Group>
          
                         <Form.Group controlId="formBasicPassword">
-                           <Form.Control type="password" placeholder="Пароль" value={user.password}  onChange={handleChange} name='password' />
+                           <Form.Control type="password" placeholder="Пароль" value={password}  onChange={onChangePassword} name='password' />
                         </Form.Group>
                   
                         <Form.Group controlId="formBasicDateOfBirth">
-                           <Form.Control type="date" value={user.dob}  onChange={handleChange} name='dob'/>
+                           <Form.Control type="date" value={moment(dob).format("YYYY-MM-DD")}  onChange={onChangeDob} name='dob'/>
                         </Form.Group>
                         <Form.Group controlId="formBasicPhone">
-                           <Form.Control placeholder="Номер телефону" value={user.phone}  onChange={handleChange} name='phone'/>
+                           <Form.Control placeholder="Номер телефону" value={phone}  onChange={onChangePhone} name='phone'/>
                         </Form.Group>
              
                         <Form.Group controlId="formBasicCheckbox">
