@@ -33,9 +33,11 @@ const Header = () => {
             <Row className='align-center'>
               <Col>
               <div className='flex-center white'>
-                <h6 style={{fontSize: '30px', letterSpacing: '3px'}}>Мрієш Про Власне Авто ?</h6>
-                <h4 style={{fontSize: '60px', letterSpacing: '1px', fontWeight: 'bold'}}>АВТО <small style={{fontSize: '60px', letterSpacing: '1px', fontWeight: 'bold', color: '#F7BA04'}}>Є</small>!</h4>
-                <h6 style={{fontSize: '20px', letterSpacing: '3px'}}><small className='highlight'>Апетитні</small> умови також <small className='highlight'>Є</small></h6>
+              <h6 style={{fontSize: '30px', letterSpacing: '3px'}}>Що шукаєш ?</h6>
+              <input type='text' placeholder='' className='search-line'/>
+                {/* <h6 style={{fontSize: '30px', letterSpacing: '3px'}}>Мрієш Про Власне Авто ?</h6> */}
+                {/* <h4 style={{fontSize: '60px', letterSpacing: '1px', fontWeight: 'bold'}}>АВТО <small style={{fontSize: '60px', letterSpacing: '1px', fontWeight: 'bold', color: '#F7BA04'}}>Є</small>!</h4> */}
+                {/* <h6 style={{fontSize: '20px', letterSpacing: '3px'}}><small className='highlight'>Апетитні</small> умови також <small className='highlight'>Є</small></h6> */}
 
               </div>
              </Col>
@@ -52,8 +54,8 @@ const Header = () => {
              <img src={img_3}width='70px' className='white-fill ml-2' />
          </Col>
        </Row>
-            <img src={cat} style={{ position: 'absolute', bottom: '9vh', width: '30%', right: '35%'}}/>
-            <img src={cloud} style={{ position: 'absolute', bottom: '200px', width: '30%', right: '0%'}}/>
+            {/* <img src={cat} style={{ position: 'absolute', bottom: '9vh', width: '30%', right: '35%'}}/>
+            <img src={cloud} style={{ position: 'absolute', bottom: '200px', width: '30%', right: '0%'}}/> */}
 
             {/* <img src={car_1} style={{ position: 'absolute', bottom: '90px', width: '30%', right: '2%'}}/> */}
             {/* <img src={car_2} style={{ position: 'absolute', bottom: '100px', width: '30%', right: '30%', opacity:'0.3'}}/> */}
