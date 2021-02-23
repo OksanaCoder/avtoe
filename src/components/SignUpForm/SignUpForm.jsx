@@ -9,8 +9,7 @@ const SignUpForm = (props) => {
      email:"",
      password:"", 
      dob:"",
-     phone:"",
-     role:""
+     phone:""
   })
 
 
@@ -68,9 +67,7 @@ const SignUpForm = (props) => {
                         <Form.Group controlId="formBasicPhone">
                            <Form.Control placeholder="Номер телефону" value={user.phone}  onChange={handleChange} name='phone'/>
                         </Form.Group>
-                        <Form.Group controlId="formBasicRole">
-                           <Form.Control placeholder="Role" value={user.role}  onChange={handleChange} name='role'/>
-                        </Form.Group>
+             
                         <Form.Group controlId="formBasicCheckbox">
                            <Form.Check type="checkbox" label="Я погоджуюся з умовами користування сайтом" />
       
