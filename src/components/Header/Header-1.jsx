@@ -1,21 +1,40 @@
-import React, { Component } from 'react'
+import React, { useRef, useState, useEffect, useCallback } from 'react'
 import {Container, Button, Form, Row, Col } from 'react-bootstrap'
 import './style-2.css'
-import logo from '../../img/logo.svg'
-import car from '../../img/white.png'
-import woman from '../../img/woman.png'
-import car_1 from '../../img/white-2.png'
-import car_2 from '../../img/black-1.png'
-import man from '../../img/man.png'
-import cat from '../../img/caty.png'
-import cloud from '../../img/cloud.png'
+import search from '../../img/search.png'
 import img_4 from '../../img/i-4.svg'
 import img_1 from '../../img/i-1.svg'
 import img_2 from '../../img/i-2.svg'
 import img_3 from '../../img/i-3.svg'
-
+import Flip from 'react-reveal/Flip';
+import  Advantages from '../Advantages/Advantages'
+import { useTransition, animated } from 'react-spring'
 
 const Header = () => {
+  const ref = useRef([])
+  const [items, set] = useState([])
+  const transitions = useTransition(items, null, {
+    from: { fontSize: '3rem', opacity: 0, height: 0, innerHeight: 0, transform: 'perspective(600px) rotateX(0deg)', color: '#fff' },
+    enter: [
+      { opacity: 1, height: 80, innerHeight: 80 },
+      { transform: 'perspective(600px) rotateX(180deg)', color: '#F7BA07' },
+      { transform: 'perspective(600px) rotateX(0deg)' },
+    ],
+    leave: [{ color: '#F7BA07' }, { innerHeight: 0 }, { opacity: 0, height: 0 }],
+    update: { color: '#fff' },
+  })
+
+  const reset = useCallback(() => {
+    ref.current.map(clearTimeout)
+    ref.current = []
+    set([])
+    ref.current.push(setTimeout(() => set(['Мрієш про власне авто ?']), 2000))
+    ref.current.push(setTimeout(() => set(['У AVTOE']), 5000))
+    ref.current.push(setTimeout(() => set(['Апетитні умови']), 6000))
+    ref.current.push(setTimeout(() => set(['Що цікавить ?']), 9000))
+  }, [])
+
+  useEffect(() => void reset(), [])
    return(
        <>
        <Container fluid className='background' style={{fontWeight: '700'}}>
@@ -30,11 +49,20 @@ const Header = () => {
                   </select>
              </Col>
            </Row>
+        
             <Row className='align-center'>
+              
               <Col>
               <div className='flex-center white'>
-              <h6 style={{fontSize: '30px', letterSpacing: '3px'}}>Що шукаєш ?</h6>
-              <input type='text' placeholder='BMW X5' className='search-line'/>
+    
+              {transitions.map(({ item, props: { innerHeight, ...rest }, key }) => (
+                <animated.div className="transitions-item" key={key} style={rest} onClick={reset}>
+                <animated.div style={{ overflow: 'hidden', height: innerHeight }}>{item}</animated.div>
+              </animated.div>
+      ))}
+
+              <input type='text' placeholder='BMW X5  ' className='search-line'/>
+              <img src={search}  width='20px'/>
                 {/* <h6 style={{fontSize: '30px', letterSpacing: '3px'}}>Мрієш Про Власне Авто ?</h6> */}
                 {/* <h4 style={{fontSize: '60px', letterSpacing: '1px', fontWeight: 'bold'}}>АВТО <small style={{fontSize: '60px', letterSpacing: '1px', fontWeight: 'bold', color: '#F7BA04'}}>Є</small>!</h4> */}
                 {/* <h6 style={{fontSize: '20px', letterSpacing: '3px'}}><small className='highlight'>Апетитні</small> умови також <small className='highlight'>Є</small></h6> */}
@@ -42,6 +70,7 @@ const Header = () => {
               </div>
              </Col>
             </Row>
+     
        <Row className='text-center mt-5'>
 
          <Col >
@@ -54,13 +83,15 @@ const Header = () => {
              <img src={img_3} width='70px' className='white-fill ml-2' />
          </Col>
        </Row>
-            {/* <img src={cat} style={{ position: 'absolute', bottom: '9vh', width: '30%', right: '35%'}}/>
-            <img src={cloud} style={{ position: 'absolute', bottom: '200px', width: '30%', right: '0%'}}/> */}
+            {/* <img src={cat} style={{ position: 'absolute', bottom: '9vh', width: '30%', right: '35%'}}/>*/}
+            {/* <img src={hignFive} style={{ position: 'absolute', bottom: '500px', width: '15%', right: '0'}}/> 
+            <img src={mew} style={{ position: 'absolute', bottom: '50px', left: '40%', width: '30%'}}/>  */}
 
             {/* <img src={car_1} style={{ position: 'absolute', bottom: '90px', width: '30%', right: '2%'}}/> */}
             {/* <img src={car_2} style={{ position: 'absolute', bottom: '100px', width: '30%', right: '30%', opacity:'0.3'}}/> */}
         
        </Container>
+       <Advantages />
        </>
    )
 }
