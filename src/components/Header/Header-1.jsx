@@ -14,7 +14,7 @@ const Header = () => {
   const ref = useRef([])
   const [items, set] = useState([])
   const transitions = useTransition(items, null, {
-    from: { fontSize: '3rem', opacity: 0, height: 0, innerHeight: 0, transform: 'perspective(600px) rotateX(0deg)', color: '#fff' },
+    from: { fontSize: '3rem', opacity: 0, height: 0, innerHeight: 0, transform: 'perspective(300px) rotateX(0deg)', color: '#fff' },
     enter: [
       { opacity: 1, height: 80, innerHeight: 80 },
       { transform: 'perspective(300px) rotateX(180deg)', color: '#F7BA07' },

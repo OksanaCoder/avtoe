@@ -70,13 +70,13 @@ const App = () => {
                <Navbar.Collapse id="basic-navbar-nav"> */}
               
               
-                        <Nav.Link className=' nav-item' href="#deets">
-                        <img className='img-small' src={read}/>
-                        <BrowserLink to='/magazine'  className='black-color'>
+                        {/* <Nav.Link className=' nav-item' href="#deets">
+                        <img className='img-small' src={read}/> */}
+                        {/* <BrowserLink to='/magazine'  className='black-color'>
                           Журнал
                         </BrowserLink>  
-                        </Nav.Link> 
-                        <Nav.Link className=' nav-item' href="#deets">
+                        </Nav.Link>  */}
+                        {/* <Nav.Link className=' nav-item' href="#deets">
                         <img className='img-small' src={email}/>
                         <Link className='black-color' 
                               to='footer'
@@ -84,7 +84,7 @@ const App = () => {
                               smooth={true}>
                           Контакти
                         </Link>
-                        </Nav.Link>
+                        </Nav.Link> */}
                     </Nav>
                         <Nav className='ml-auto nav-style-mob'>
                            <Nav.Link className=' nav-item' href="#deets"  onClick={handleShow}>
