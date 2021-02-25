@@ -29,9 +29,7 @@ const Header = () => {
     ref.current = []
     set([])
     ref.current.push(setTimeout(() => set(['Мрієш про власне авто ?']), 500))
-    ref.current.push(setTimeout(() => set(['У AVTOE для тебе']), 2000))
-    ref.current.push(setTimeout(() => set(['Апетитні пропозиції']), 2000))
-    ref.current.push(setTimeout(() => set(['Що шукаєш ?']), 5000))
+    ref.current.push(setTimeout(() => set(['У AVTOE для тебе апетитні пропозиції']), 2000))
   }, [])
 
   useEffect(() => void reset(), [])
