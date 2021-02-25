@@ -8,19 +8,20 @@ import img_2 from '../../img/i-2.svg'
 import img_3 from '../../img/i-3.svg'
 import Flip from 'react-reveal/Flip';
 import  Advantages from '../Advantages/Advantages'
+import SliderCars from '../SliderCars/SliderCars'
 import { useTransition, animated } from 'react-spring'
 
 const Header = () => {
   const ref = useRef([])
   const [items, set] = useState([])
   const transitions = useTransition(items, null, {
-    from: { fontSize: '3rem', opacity: 0, height: 0, innerHeight: 0, transform: 'perspective(300px) rotateX(0deg)', color: '#fff' },
+    from: { fontSize: '3rem', opacity: 0, height: 0, innerHeight: 0, transform: 'perspective(0) rotateX(0deg)', color: '#fff' },
     enter: [
       { opacity: 1, height: 80, innerHeight: 80 },
-      { transform: 'perspective(300px) rotateX(180deg)', color: '#F7BA07' },
-      { transform: 'perspective(300px) rotateX(0deg)' },
+      { transform: 'perspective(0) rotateX(180deg)', color: '#F7BA07' },
+      { transform: 'perspective(0) rotateX(0deg)' },
     ],
-    leave: [{ color: '#F7BA07' }, { innerHeight: 0 }, { opacity: 0, height: 0 }, { transform: 'perspective(300px) rotateX(0deg)' }],
+    leave: [{ color: '#F7BA07' }, { innerHeight: 0 }, { opacity: 0, height: 0 }, { transform: 'perspective(0) rotateX(0deg)' }],
     update: { color: '#fff' },
   })
 
@@ -89,7 +90,9 @@ const Header = () => {
             {/* <img src={car_2} style={{ position: 'absolute', bottom: '100px', width: '30%', right: '30%', opacity:'0.3'}}/> */}
         
        </Container>
+       <SliderCars />
        <Advantages />
+       
        </>
    )
 }
