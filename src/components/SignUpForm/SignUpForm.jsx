@@ -29,62 +29,26 @@ const SignUpForm = (props) => {
 
 const register = (firstname, lastname,username, email, password,dob,phone) => {
   return axios.post(API_URL + "/users/register", {
-   firstname, lastname,
+   firstname, 
+   lastname,
     username,
     email,
     password,
-    dob,phone
+    dob,
+    phone
   });
 };
    const handleSubmit = async (e) => {
       e.preventDefault()
       const succesregv= await register(firstname, lastname,username, email, password,dob,phone);
-      //form.current.validateAll()
+      
       if(succesregv){
          alert("Registered Successfully")
       }else{
          console.log("please check login")
       }
-      // if(checkBtn.current.context._errors.length ===0){
-      //   const succesregv= await register(firstname, lastname,username, email, password,dob,phone);
-      //   if(succesregv){
-      //      alert("Registered Successfully")
-      //   }else{
-      //      console.log("please check login")
-      //   }
-      // }
+     
       
-      // fetch('https://avtoe-back.herokuapp.com/users/register', {
-      //    method: 'POST',
-      //    headers: {
-      //       'Content-Type' : 'application/json'
-      //    },
-      //    body: JSON.stringify(user)
-      // })
-      // .then(data => data.json())
-      // .then((res) => {
-      //    console.log(res)
-      //    setUser('')
-      // })
-      // .catch((err) => console.log('error'))
-   //    axios({
-   //       method: 'post',
-   //       url: 'https://avtoe-back.herokuapp.com/users/register',
-   //       data: user,
-   //       headers: {'Content-Type': 'multipart/form-data' }
-   //       })
-   //       .then(function (response) {
-   //           //handle success
-   //           //setUser('')
-   //           console.log(response);
-             
-   //       })
-   //       .catch(function (response) {
-   //           //handle error
-   //           console.log(response);
-   //       });
-   // }
-   }
    const onChangeFirstname = (e) => {
       const firstname= e.target.value;
       setFirstname(firstname);
@@ -106,7 +70,7 @@ const register = (firstname, lastname,username, email, password,dob,phone) => {
     };
   
     const onChangePassword = (e) => {
-    ;
+    
       const password = e.target.value;
       setPassword(password);
     };
@@ -119,11 +83,6 @@ const register = (firstname, lastname,username, email, password,dob,phone) => {
       const phone = e.target.value;
       setPhone(phone);
     };
-   // const handleChange = (e) => {
-   //   setUser({
-   //      [e.target.name] : [e.target.value]
-   //   })
-   // }
 
     return (
         <>

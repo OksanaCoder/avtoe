@@ -1,7 +1,7 @@
 
 import React, {useState}  from 'react'
 import { Modal, Button, Form } from 'react-bootstrap'
-
+import './style.css'
 
 const LoginForm = (props) => {
     const [userLog, setUserLog] = useState({
@@ -42,11 +42,11 @@ const LoginForm = (props) => {
 
             <Form onSubmit={handleSubmit}>
                 <Form.Group controlId="formBasicEmail">
-                <Form.Control type="email" placeholder="Email або username" onChange={handleChange} value={userLog.email} name="email"/>
+                <Form.Control type="email" placeholder="Email або username" onChange={handleChange} value={userLog.email} name="email" className="input-style"/>
                 </Form.Group>
 
                 <Form.Group controlId="formBasicPassword">
-                <Form.Control type="password" placeholder="Пароль" onChange={handleChange} value={userLog.password} value="password"/>
+                <Form.Control type="password" placeholder="Пароль" onChange={handleChange} value={userLog.password} value="password" className="input-style" />
                 </Form.Group>
                 <Form.Group controlId="formBasicCheckbox" className='flex-form'>
                 <Form.Check type="checkbox" label="Запам'ятати" />
