@@ -55,56 +55,56 @@ const SliderCars = () => {
     return (
         <>
       <Slider {...settings}>
-        <Card className='p-3'>
+        <Card className='p-3 card-slider'>
         <img className='slider-img' src={imageCar}/>
         <Card.Body>
                 <h6 className='font-slider'>Ferra 2020</h6>
                 <h6 className='price-slider'>$ 20 000</h6>
         </Card.Body>      
         </Card>
-      <Card className='p-3'>
+      <Card className='p-3 card-slider'>
       <img className='slider-img' src={imageCar_1}/>
       <Card.Body>
                 <h6 className='font-slider'>Ferra 2020</h6>
                 <h6 className='price-slider'>$ 20 000</h6>
         </Card.Body>   
       </Card>
-      <Card className='p-3'>
+      <Card className='p-3 card-slider'>
       <img className='slider-img' src={imageCar_2}/>
       <Card.Body>
                 <h6 className='font-slider'>Ferra 2020</h6>
                 <h6 className='price-slider'>$ 20 000</h6>
         </Card.Body>   
       </Card>
-      <Card className='p-3'>
+      <Card className='p-3 card-slider'>
       <img className='slider-img' src={imageCar}/>
       <Card.Body>
                 <h6 className='font-slider'>Ferra 2020</h6>
                 <h6 className='price-slider'>$ 20 000</h6>
         </Card.Body>   
       </Card>
-      <Card className='p-3'>
+      <Card className='p-3 card-slider'>
       <img className='slider-img' src={imageCar}/>
       <Card.Body>
                 <h6 className='font-slider'>Ferra 2020</h6>
                 <h6 className='price-slider'>$ 20 000</h6>
         </Card.Body>   
       </Card>
-      <Card className='p-3'>
+      <Card className='p-3 card-slider'>
       <img className='slider-img' src={imageCar_1}/>
       <Card.Body>
                 <h6 className='font-slider'>Ferra 2020</h6>
                 <h6 className='price-slider'>$ 20 000</h6>
         </Card.Body>   
       </Card>
-      <Card className='p-3'>
+      <Card className='p-3 card-slider'>
       <img className='slider-img' src={imageCar_2}/>
       <Card.Body>
                 <h6 className='font-slider'>Ferra 2020</h6>
                 <h6 className='price-slider'>$ 20 000</h6>
         </Card.Body>   
       </Card>
-      <Card className='p-3'>
+      <Card className='p-3 card-slider'>
       <img className='slider-img' src={imageCar}/>
       <Card.Body>
                 <h6 className='font-slider'>Ferra 2020</h6>

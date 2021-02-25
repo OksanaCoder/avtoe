@@ -1,6 +1,6 @@
 import React from 'react'
 import './style.css'
-import { Container, Row, Col } from 'react-bootstrap'
+import { Container, Row, Col, Card } from 'react-bootstrap'
 import head from '../../img/adv.png'
 import icon from '../../img/money.png'
 import icon_1 from '../../img/credit-card.png'
@@ -22,16 +22,16 @@ const Advantages = () => {
                 </div>
             </Container>
             <Container fluid className='p-5'>    
-                <Row className='mt-3'>
-                    <Col lg={4} md={6} sm={12} className='text-center advantage mb-5'>
-
+                <Row className='m-auto text-center' >
+                    <Col lg={4} md={6} sm={12} className='text-left advantage mb-5'>
+                 
                         <img src={icon} className='icon-adv mt-4 mb-5' />
-                     <div>
+                
                         <h6 className='header-6'>Кредит та Лiзинг</h6>
                         <p>Варіанти розрахунку: кредит, лізинг або обмін авто з доплатою.</p>
-                     </div>    
+                
                     </Col>
-                    <Col lg={4} md={6} sm={12} className='text-center advantage mb-5'>
+                    <Col lg={4} md={6} sm={12} className='text-left advantage mb-5'>
                        
                         <img src={icon_1} className='icon-adv mt-4 mb-5'/>
                      <div>  
@@ -39,7 +39,7 @@ const Advantages = () => {
                         <p>Готiвковий та безготiвковий розрахунок.</p>
                       </div>  
                     </Col>
-                    <Col lg={4} md={6} sm={12} className='text-center advantage'>
+                    <Col lg={4} md={6} sm={12} className='text-left advantage'>
                          
                          <img src={icon_2} className='icon-adv mt-4 mb-5'/>
                       <div>
@@ -48,7 +48,7 @@ const Advantages = () => {
                       </div>
                     </Col>
                    
-                    <Col lg={4} md={6} sm={12} className='text-center advantage mb-5'>
+                    <Col lg={4} md={6} sm={12} className='text-left advantage mb-5'>
                        
                         <img src={icon_3} className='icon-adv mt-4 mb-5'/>
                         <div>
@@ -56,7 +56,7 @@ const Advantages = () => {
                           <p>Більше 20 років на українському авторинку.</p>
                         </div>  
                     </Col>
-                    <Col lg={4} md={6} sm={12} className='text-center advantage mb-5'>
+                    <Col lg={4} md={6} sm={12} className='text-left advantage mb-5'>
                         
                         <img src={icon_4} className='icon-adv mt-4 mb-5'/>
                         <div>
@@ -64,7 +64,7 @@ const Advantages = () => {
                           <p>Знижки на додатковi послуги (мийки, автоклуби, станцiї).</p>
                         </div>
                     </Col>
-                    <Col lg={4} md={6} sm={12} className='text-center advantage mb-5'>
+                    <Col lg={4} md={6} sm={12} className='text-left advantage mb-5'>
                        
                         <img src={icon_5} className='icon-adv mt-4 mb-5'/>
                         <div>

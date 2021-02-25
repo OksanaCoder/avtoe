@@ -12,3 +12,6 @@
   font-weight: 800;
   color: #F7BA07;
 }
+.card-slider {
+    border:none !important;
+}

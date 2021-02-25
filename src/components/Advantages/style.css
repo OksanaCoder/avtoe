@@ -1,5 +1,8 @@
 .icon-adv {
     width: 50px;
+    background: #F7BA07;
+    padding: 10px;
+    border-radius: 50%;
 }
 .header-6 {
     font-weight: bold;
@@ -12,7 +15,6 @@
 .advantage p {
     color: #6F6F6F;
     font-weight: 600;
-    padding-right : 100px;
-    padding-left : 100px;
+    
     font-size: 12px;
 }
