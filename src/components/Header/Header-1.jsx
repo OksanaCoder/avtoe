@@ -17,7 +17,7 @@ const Header = () => {
     from: { fontSize: '3rem', opacity: 0, height: 0, innerHeight: 0, transform: 'perspective(300px) rotateX(0deg)', color: '#fff' },
     enter: [
       { opacity: 1, height: 80, innerHeight: 80 },
-      { transform: 'perspective(300px) rotateX(180deg)', color: '#F7BA07' },
+      { transform: 'perspective(300px) rotateX(60deg)', color: '#F7BA07' },
       { transform: 'perspective(300px) rotateX(0deg)' },
     ],
     leave: [{ color: '#F7BA07' }, { innerHeight: 0 }, { opacity: 0, height: 0 }],
@@ -29,7 +29,7 @@ const Header = () => {
     ref.current = []
     set([])
     ref.current.push(setTimeout(() => set(['Мрієш про власне авто ?']), 500))
-    ref.current.push(setTimeout(() => set(['У AVTOE', 'для тебе']), 2000))
+    ref.current.push(setTimeout(() => set(['У AVTOE для тебе']), 2000))
     ref.current.push(setTimeout(() => set(['Апетитні пропозиції']), 3000))
     ref.current.push(setTimeout(() => set(['Що шукаєш ?']), 5000))
   }, [])

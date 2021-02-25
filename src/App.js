@@ -47,7 +47,7 @@ const App = () => {
     <>
     <Router>
         <Navbar expand="lg" className='bottomNav'>
-               <Container fluid>
+               <Container fluid className='display-flex justify-content-around'>
       <Nav className='mob-nav'> 
         <Nav className='nav-style nav-no-col nav-style-mob'>
                <Nav.Link href="#deets" className='nav-item'>
@@ -85,8 +85,7 @@ const App = () => {
                           Контакти
                         </Link>
                         </Nav.Link> */}
-                    </Nav>
-                        <Nav className='ml-auto nav-style-mob'>
+                
                            <Nav.Link className=' nav-item' href="#deets"  onClick={handleShow}>
                              <img className='img-small' src={person} />
                             Увійти
