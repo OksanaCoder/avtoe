@@ -27,7 +27,7 @@ import LoginForm from './components/LoginForm/LoginForm';
 import Cooperation from './components/Cooperation/Cooperation' 
 import Magazine from './components/Magazine/Magazine' 
 import { Link } from 'react-scroll'
-
+import './components/NavBar/style.css'
 
 const App = () => {
  
@@ -48,52 +48,36 @@ const App = () => {
     <Router>
         <Navbar expand="lg" className='bottomNav'>
                <Container fluid>
-        <Nav className='nav-style nav-no-col'>
+      <Nav className='mob-nav'> 
+        <Nav className='nav-style nav-no-col nav-style-mob'>
+               <Nav.Link href="#deets" className='nav-item'>
+                        <img className='img-small' src={home}/>
+                    <BrowserLink to='/'  className='black-color'>
+                          Головна
+                    </BrowserLink>      
+               </Nav.Link>
                <Nav.Link className='nav-item' href="#deets">
-                        <img src={cart}/>
+                        <img className='img-small' src={cart}/>
                       <BrowserLink to='/catalog' className='black-color'>Catalog</BrowserLink>    
                </Nav.Link>
                <Nav.Link className='nav-item' href="#deets">
-                        <img src={hammer} width='20px' className='mb-1'/>
+                        <img src={hammer} width='20px' className='mb-1 img-small'/>
                          Auction
                </Nav.Link>
-        </Nav>
+  
 
-               <Navbar.Toggle aria-controls="basic-navbar-nav" />
-               <Navbar.Collapse id="basic-navbar-nav">
-                  <Nav className="ml-auto nav-style nav-wrap">
-                  <Nav.Link href="#deets" className='nav-item'>
-                        <img src={home}/>
-                    <BrowserLink to='/'  className='black-color'>
-                          Main
-                    </BrowserLink>      
-                          </Nav.Link>
-                        <Nav.Link className='nav-item' href="#deets">
-                        <img src={book}/>
-                      <BrowserLink to='/about' className='black-color'>
-                         Про Нас
-                      </BrowserLink> 
-                          </Nav.Link>
-                        <Nav.Link className=' nav-item' href="#deets" onClick={handleShow_calc}>
-                        <img src={calculate}/>
-                         
-                              Calculator
-                          
-                          </Nav.Link>  
+               {/* <Navbar.Toggle aria-controls="basic-navbar-nav" />
+               <Navbar.Collapse id="basic-navbar-nav"> */}
+              
+              
                         <Nav.Link className=' nav-item' href="#deets">
-                        <img src={work}/>
-                        <BrowserLink to='/cooperation' className='black-color'>
-                          Співпраця
-                        </BrowserLink>  
-                        </Nav.Link> 
-                        <Nav.Link className=' nav-item' href="#deets">
-                        <img src={read}/>
+                        <img className='img-small' src={read}/>
                         <BrowserLink to='/magazine'  className='black-color'>
                           Журнал
                         </BrowserLink>  
                         </Nav.Link> 
                         <Nav.Link className=' nav-item' href="#deets">
-                        <img src={email}/>
+                        <img className='img-small' src={email}/>
                         <Link className='black-color' 
                               to='footer'
                               spy={true}
@@ -101,21 +85,23 @@ const App = () => {
                           Контакти
                         </Link>
                         </Nav.Link>
+                    </Nav>
+                        <Nav className='ml-auto nav-style-mob'>
                            <Nav.Link className=' nav-item' href="#deets"  onClick={handleShow}>
-                             <img src={person} />
+                             <img className='img-small' src={person} />
                             Увійти
                             
                               </Nav.Link>
                               <Nav.Link className=' nav-item' href="#deets" onClick={handleShow1}>
-                             <img src={person} />
+                             <img className='img-small' src={person} />
                            Реєстрація
                             
                               </Nav.Link>
-                             
-                        
-                  </Nav>
+                        </Nav> 
+                        </Nav>
+              
                   
-               </Navbar.Collapse> 
+               {/* </Navbar.Collapse>  */}
 
             <Calculator show_calc={show_calc} handleShow_calc={handleShow_calc} handleClose_calc={handleClose_calc}/>
 

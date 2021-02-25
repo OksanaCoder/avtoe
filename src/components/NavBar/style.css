@@ -133,3 +133,27 @@ body {
 .btn-nav {
     padding : 10px;
 }
+
+@media (max-width: 500px) {
+    .img-small {
+       width: 15px !important;
+    }
+    .nav-item {
+        font-size: 10px;
+        margin-left: 20px;
+    }
+    .nav-style {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+   .mob-nav {
+       display: flex;
+       flex-wrap: wrap;
+       justify-content: space-between;
+   }
+   .nav-style-mob {
+       text-align: center;
+       margin: 0 auto;
+   }
+}
