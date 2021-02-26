@@ -1,8 +1,8 @@
 .icon-adv {
-    width: 50px;
-    background: #F7BA07;
-    padding: 10px;
-    border-radius: 50%;
+    width: 30px;
+    margin-right: 20px;
+    background: #076DFD;
+    padding: 5px;
 }
 .header-6 {
     font-weight: bold;
@@ -17,4 +17,17 @@
     font-weight: 600;
     
     font-size: 12px;
+}
+.row-column {
+    display: flex;
+    align-items: flex-start;
+
+}
+.text-400 {
+    font-weight: 200;
+}
+.flex-between {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
 }

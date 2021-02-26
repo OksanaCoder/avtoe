@@ -3,6 +3,7 @@
     justify-content: center;
     align-items: flex-start;
     border-right: 1px solid rgba(143, 143, 143, 0.1);
+    margin-bottom: 50px !important;
 }
 .footer-item:last-child {
     border-right: none;
@@ -29,6 +30,9 @@
 .opacity:hover {
     opacity: 1;
     transition: all 0.4s ease-out;  
+}
+.col-sm-12 {
+    width: auto !important;
 }
 @media (max-width: 500px) {
     .footer-item {

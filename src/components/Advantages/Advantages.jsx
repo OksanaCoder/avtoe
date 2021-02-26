@@ -8,69 +8,80 @@ import icon_2 from '../../img/quality.png'
 import icon_3 from '../../img/certification.png'
 import icon_4 from '../../img/competitive.png'
 import icon_5 from '../../img/laptop.png'
-
+import car_adv from '../../img/car-adv.png'
 
 const Advantages = () => {
     return (
-        <div style={{background: '#EFF3FB', padding: '50px 0 50px 0'}}>
-            <Container className='text-center'>
-                <div className='heading-style col-lg-12 col-md-12 col-sm-12  mb-5 mt-5'>
+        <div style={{background: '#262626', padding: '100px 0 50px 0'}}>
+            <Container>
+                <Row>
+                    <Col lg={6} md={6} sm={12} className='mt-2'>
+                    <div className='heading-style p-5'>
                
-                    <h6>Чому</h6>
-                    <h3>AVTOE ?</h3>
-               
-                </div>
-            </Container>
-            <Container fluid className='p-5'>    
-                <Row className='m-auto text-center' >
-                    <Col lg={4} md={6} sm={12} className='text-left advantage mb-5'>
-                 
-                        <img src={icon} className='icon-adv mt-4 mb-5' />
-                
-                        <h6 className='header-6'>Кредит та Лiзинг</h6>
-                        <p>Варіанти розрахунку: кредит, лізинг або обмін авто з доплатою.</p>
-                
+                        <h6>Чому</h6>
+                        <h3>AVTOE ?</h3>
+                    
+                    </div>
+                    <img src={car_adv} style={{width: '100%', marginTop: '50px', marginBottom: '60px'}}/>
                     </Col>
-                    <Col lg={4} md={6} sm={12} className='text-left advantage mb-5'>
-                       
-                        <img src={icon_1} className='icon-adv mt-4 mb-5'/>
-                     <div>  
-                        <h6 className='header-6'>Зручний спосіб оплати</h6>
-                        <p>Готiвковий та безготiвковий розрахунок.</p>
-                      </div>  
-                    </Col>
-                    <Col lg={4} md={6} sm={12} className='text-left advantage'>
-                         
-                         <img src={icon_2} className='icon-adv mt-4 mb-5'/>
-                      <div>
-                         <h6 className='header-6'>Якicть</h6>
-                         <p>Топова діагностика на предмет серйозних пошкоджень.</p>
-                      </div>
-                    </Col>
-                   
-                    <Col lg={4} md={6} sm={12} className='text-left advantage mb-5'>
-                       
-                        <img src={icon_3} className='icon-adv mt-4 mb-5'/>
-                        <div>
-                          <h6 className='header-6'>Досвiд</h6>
-                          <p>Більше 20 років на українському авторинку.</p>
-                        </div>  
-                    </Col>
-                    <Col lg={4} md={6} sm={12} className='text-left advantage mb-5'>
-                        
-                        <img src={icon_4} className='icon-adv mt-4 mb-5'/>
-                        <div>
-                          <h6 className='header-6'>Вигода</h6>
-                          <p>Знижки на додатковi послуги (мийки, автоклуби, станцiї).</p>
-                        </div>
-                    </Col>
-                    <Col lg={4} md={6} sm={12} className='text-left advantage mb-5'>
-                       
-                        <img src={icon_5} className='icon-adv mt-4 mb-5'/>
-                        <div>
-                          <h6 className='header-6'>Європейська практика</h6>
-                          <p>Покупка авто в онлайн режимі з гарантією якості.</p>
-                        </div>
+                    <Col lg={6} md={6} sm={12} className='p-5'>
+                        <Row className='row-column text-left'>
+                      
+                            <Col className='mb-5 text-white flex-between'>
+
+                                <img src={icon} className='icon-adv' />
+                             
+                             <div>
+                                    <h5 className='bold'>Кредит та Лiзинг</h5>
+                                    <p className='text-400'>Варіанти розрахунку: кредит, лізинг або обмін авто з доплатою.</p>
+                            </div>
+                            </Col>
+                            <Col className='mb-5 text-white flex-between'>
+
+                             <img src={icon_1} className='icon-adv'/>
+                             
+                             <div>
+                                    <h5 className='bold'>Зручний спосіб оплати</h5>
+                                    <p className='text-400'>Готiвковий та безготiвковий розрахунок.</p>
+                            </div>
+                            </Col>
+                            <Col className='mb-5 text-white flex-between'>
+
+                                <img src={icon_2} className='icon-adv' />
+                             
+                             <div>
+                                    <h5 className='bold'>Якicть</h5>
+                                    <p className='text-400'>Варіанти розрахунку: кредит, лізинг або обмін авто з доплатою.</p>
+                            </div>
+                            </Col>
+                            <Col className='mb-5 text-white flex-between'>
+
+                                <img src={icon_3} className='icon-adv' />
+                             
+                             <div>
+                                    <h5 className='bold'>Досвiд</h5>
+                                    <p className='text-400'>Більше 20 років на українському авторинку.</p>
+                            </div>
+                            </Col>
+                            <Col className='mb-5 text-white flex-between'>
+
+                                <img src={icon_4} className='icon-adv' />
+                             
+                             <div>
+                                    <h5 className='bold'>Вигода</h5>
+                                    <p className='text-400'>Знижки на додатковi послуги (мийки, автоклуби, станцiї).</p>
+                            </div>
+                            </Col>
+                            <Col className='mb-5 text-white flex-between'>
+
+                                <img src={icon_5} className='icon-adv' />
+                             
+                             <div>
+                                    <h5 className='bold'>Європейська практика</h5>
+                                    <p className='text-400'>Покупка авто в онлайн режимі з гарантією якості.</p>
+                            </div>
+                            </Col>
+                        </Row>
                     </Col>
                 </Row>
             </Container>
