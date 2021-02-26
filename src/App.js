@@ -52,13 +52,13 @@ const App = () => {
         <Nav className='nav-style nav-no-col nav-style-mob'>
                <Nav.Link href="#deets" className='nav-item'>
                         <img className='img-small' src={home}/>
-                    <BrowserLink to='/'  className='black-color'>
+                    <BrowserLink to='/'  className='text-white'>
                           Головна
                     </BrowserLink>      
                </Nav.Link>
                <Nav.Link className='nav-item' href="#deets">
                         <img className='img-small' src={cart}/>
-                      <BrowserLink to='/catalog' className='black-color'>Catalog</BrowserLink>    
+                      <BrowserLink to='/catalog' className='text-white'>Catalog</BrowserLink>    
                </Nav.Link>
                <Nav.Link className='nav-item' href="#deets">
                         <img src={hammer} width='20px' className='mb-1 img-small'/>

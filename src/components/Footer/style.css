@@ -8,9 +8,9 @@
     border-right: none;
 }
 
-.flex-footer {
+/* .flex-footer {
     display: flex;
-}
+} */
 .font-footer {
     font-size: 16px;
 }
@@ -29,4 +29,15 @@
 .opacity:hover {
     opacity: 1;
     transition: all 0.4s ease-out;  
+}
+@media (max-width: 500px) {
+    .footer-item {
+        border: none;
+        display: flex;
+        /* flex-direction: column; */
+        justify-content: center;
+        margin-bottom: 20px;
+    }
+  
+    
 }

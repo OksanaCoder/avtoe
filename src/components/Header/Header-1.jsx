@@ -6,36 +6,23 @@ import img_4 from '../../img/i-4.svg'
 import img_1 from '../../img/i-1.svg'
 import img_2 from '../../img/i-2.svg'
 import img_3 from '../../img/i-3.svg'
-import Flip from 'react-reveal/Flip';
+import image1 from '../../img/fera.png'
+import image2 from '../../img/slider-2.png'
+import image3 from '../../img/slider-1.png'
+import BackgroundSlider from 'react-background-slider'
+
 import  Advantages from '../Advantages/Advantages'
 import SliderCars from '../SliderCars/SliderCars'
-import { useTransition, animated } from 'react-spring'
 
 const Header = () => {
-  const ref = useRef([])
-  const [items, set] = useState([])
-  const transitions = useTransition(items, null, {
-    from: { fontSize: '3rem', opacity: 0, height: 0, innerHeight: 0, transform: 'perspective(0) rotateX(0deg)', color: '#fff' },
-    enter: [
-      { opacity: 1, height: 80, innerHeight: 80 },
 
-    ],
-    leave: [{ color: '#F7BA07' }, { innerHeight: 0 }, { opacity: 0, height: 0 }, { transform: 'perspective(0) rotateX(0deg)' }],
-    update: { color: '#fff' },
-  })
-
-  const reset = useCallback(() => {
-    ref.current.map(clearTimeout)
-    ref.current = []
-    set([])
-    ref.current.push(setTimeout(() => set(['Мрієш про власне авто ?']), 0))
-    ref.current.push(setTimeout(() => set(['У AVTOE для тебе апетитні пропозиції']), 1000))
-  }, [])
-
-  useEffect(() => void reset(), [])
    return(
        <>
-       <Container fluid className='background' style={{fontWeight: '700'}}>
+         <Container className='background' fluid style={{fontWeight: '700'}}>
+        <BackgroundSlider className='background'
+          images={[image1, image2, image3]}
+          duration={3} transition={2} /> 
+     
            <Row className='p-4'>
              <Col lg={6} md={6} sm={6} className='text-left'>
                   {/* <img style={{ width: '30px'}} src={logo} alt='logo' className='logo-svg'/> */}
@@ -52,18 +39,19 @@ const Header = () => {
               
               <Col>
               <div className='flex-center white'>
-    
+{/*     
               {transitions.map(({ item, props: { innerHeight, ...rest }, key }) => (
                 <animated.div className="transitions-item" key={key} style={rest} onClick={reset}>
                 <animated.div style={{ overflow: 'hidden', height: innerHeight }}>{item}</animated.div>
               </animated.div>
-      ))}
-
+      ))} */}
+                <h6 style={{fontSize: '1rem', fontWeight: 'bold',}}>Мрієш Про Власне Авто ?</h6> 
+                
+                <h4 style={{fontSize: '3rem', fontWeight: 'bold', color: '#036DFD', lineHeight: '1'}}><small style={{fontSize: '2rem', fontWeight: 'bold', color: '#fff'}}>У</small> AVTOE <small style={{fontSize: '2rem', fontWeight: 'bold', color: '#fff'}}>для тебе апетитні пропозиції</small></h4>
+              
               <input type='text' placeholder='BMW X5  ' className='search-line'/>
               <img src={search}  width='20px'/>
-                {/* <h6 style={{fontSize: '30px', letterSpacing: '3px'}}>Мрієш Про Власне Авто ?</h6> */}
-                {/* <h4 style={{fontSize: '60px', letterSpacing: '1px', fontWeight: 'bold'}}>АВТО <small style={{fontSize: '60px', letterSpacing: '1px', fontWeight: 'bold', color: '#F7BA04'}}>Є</small>!</h4> */}
-                {/* <h6 style={{fontSize: '20px', letterSpacing: '3px'}}><small className='highlight'>Апетитні</small> умови також <small className='highlight'>Є</small></h6> */}
+                  {/* <h6 style={{fontSize: '20px', letterSpacing: '3px'}}><small className='highlight'>Апетитні</small> умови також <small className='highlight'>Є</small></h6> */}
 
               </div>
              </Col>
@@ -89,6 +77,7 @@ const Header = () => {
             {/* <img src={car_2} style={{ position: 'absolute', bottom: '100px', width: '30%', right: '30%', opacity:'0.3'}}/> */}
         
        </Container>
+      
        <SliderCars />
        <Advantages />
        

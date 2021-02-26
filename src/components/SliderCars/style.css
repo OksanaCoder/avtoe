@@ -6,12 +6,25 @@
 .font-slider {
    font-size: 20px;
    font-weight: 800;
+   color: #fff;
 }
 
 .price-slider {
   font-weight: 800;
-  color: #F7BA07;
+  color: #fff;
 }
 .card-slider {
     border:none !important;
+    background: #262626 !important;
 }
+
+.slick-prev {
+    left: 2% !important;
+    z-index: 1;
+
+  }
+  .slick-next {
+    right: 2% !important;
+    z-index: 1;
+  }
+  

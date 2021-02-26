@@ -16,7 +16,6 @@ const SliderCars = () => {
         speed: 1000,
         slidesToShow: 4,
         slidesToScroll: 1,
-        arrows: true,
         autoplay: true,
         responsive: [
             {
@@ -54,7 +53,7 @@ const SliderCars = () => {
       };
     return (
         <>
-      <Slider {...settings}>
+      <Slider {...settings} style={{background: '#262626'}}>
         <Card className='p-3 card-slider'>
         <img className='slider-img' src={imageCar}/>
         <Card.Body>
