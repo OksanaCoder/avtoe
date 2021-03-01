@@ -106,7 +106,16 @@ const SliderCars = () => {
       </Card>
       </Col>
         </Row>
+        
+        <Row>
+          <Col className='text-right'>
+             <button className='btn-item auction-btn'>Весь перелік</button>
+          </Col>
+        </Row>
+     
       </Container>
+
+    
     </div>
                     
          
