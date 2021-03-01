@@ -18,7 +18,7 @@ const Advantages = () => {
                     <Col lg={6} md={6} sm={12} className='mt-2'>
                     <div className='heading-style p-5'>
                
-                        <h6>Чому</h6>
+                        <h6 className='blue-line'>Чому</h6>
                         <h3>AVTOE ?</h3>
                     
                     </div>

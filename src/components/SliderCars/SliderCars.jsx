@@ -6,114 +6,108 @@ import imageCar from '../../img/ferrari.jpg'
 import imageCar_1 from '../../img/toyota.jpg'
 import imageCar_2 from '../../img/camry.jpg'
 import './style.css'
-import { Col, Row, Card } from 'react-bootstrap'
+import { Col, Row, Card, Container } from 'react-bootstrap'
 
 
 const SliderCars = () => {
-    var settings = {
-        dots: false,
-        infinite: true,
-        speed: 1000,
-        slidesToShow: 4,
-        slidesToScroll: 1,
-        autoplay: true,
-        responsive: [
-            {
-              breakpoint: 1024,
-              settings: {
-                slidesToShow: 3,
-                slidesToScroll: 3,
-                infinite: true,
-                dots: true
-              }
-            },
-            {
-              breakpoint: 600,
-              settings: {
-                slidesToShow: 2,
-                slidesToScroll: 2,
-                initialSlide: 2
-              }
-            },
-            {
-              breakpoint: 480,
-              settings: {
-                slidesToShow: 1,
-                slidesToScroll: 1
-              }
-            },
-            {
-                breakpoint: 480,
-                settings: {
-                  slidesToShow: 1,
-                  slidesToScroll: 1
-                }
-              }
-          ]
-      };
+   
     return (
         <>
-      <Slider {...settings} style={{background: '#262626'}}>
-        <Card className='p-3 card-slider'>
-        <img className='slider-img' src={imageCar}/>
-        <Card.Body>
-                <h6 className='font-slider'>Ferra 2020</h6>
-                <h6 className='price-slider'>$ 20 000</h6>
-        </Card.Body>      
-        </Card>
-      <Card className='p-3 card-slider'>
-      <img className='slider-img' src={imageCar_1}/>
-      <Card.Body>
-                <h6 className='font-slider'>Ferra 2020</h6>
-                <h6 className='price-slider'>$ 20 000</h6>
-        </Card.Body>   
-      </Card>
-      <Card className='p-3 card-slider'>
+      <div style={{background: '#262626', paddingBottom: '50px'}}>
+        <Container>
+        <Row>
+        <div className='heading-style p-5 mt-5'>
+               
+               <h6 className='blue-line'>Останні</h6>
+               <h3>Оновлення</h3>
+           
+           </div>
+        </Row>
+
+   
+        <Row>
+
+       <Col lg={3} md={6} sm={12}>
+          <Card className='p-3 card-slider mb-4'>
+            <img className='slider-img' src={imageCar}/>
+            <Card.Body className='flex-footer'>
+         
+                   <h6 className='font-slider'>Ferra 2020</h6>
+                    <h6 className='price-slider'>$ 20 000</h6>
+          
+              {/* <button className='more-btn'></button> */}
+            
+            </Card.Body>      
+          </Card>
+        </Col>
+        <Col lg={3} md={6} sm={12}>
+          <Card className='p-3 card-slider mb-4'>
+          <img className='slider-img' src={imageCar_1}/>
+          <Card.Body>
+                    <h6 className='font-slider'>Ferra 2020</h6>
+                    <h6 className='price-slider'>$ 20 000</h6>
+            </Card.Body>   
+          </Card>
+       </Col>
+       <Col lg={3} md={6} sm={12}>
+      <Card className='p-3 card-slider mb-4'>
       <img className='slider-img' src={imageCar_2}/>
       <Card.Body>
                 <h6 className='font-slider'>Ferra 2020</h6>
                 <h6 className='price-slider'>$ 20 000</h6>
         </Card.Body>   
       </Card>
-      <Card className='p-3 card-slider'>
+      </Col>
+      <Col lg={3} md={6} sm={12}>
+      <Card className='p-3 card-slider mb-4'>
       <img className='slider-img' src={imageCar}/>
       <Card.Body>
                 <h6 className='font-slider'>Ferra 2020</h6>
                 <h6 className='price-slider'>$ 20 000</h6>
         </Card.Body>   
       </Card>
-      <Card className='p-3 card-slider'>
+      </Col>
+      </Row>
+      <Row>
+      <Col lg={3} md={6} sm={12}>
+      <Card className='p-3 card-slider mb-4'>
       <img className='slider-img' src={imageCar}/>
       <Card.Body>
                 <h6 className='font-slider'>Ferra 2020</h6>
                 <h6 className='price-slider'>$ 20 000</h6>
         </Card.Body>   
       </Card>
-      <Card className='p-3 card-slider'>
+      </Col>
+      <Col lg={3} md={6} sm={12}>
+      <Card className='p-3 card-slider mb-4'>
       <img className='slider-img' src={imageCar_1}/>
       <Card.Body>
                 <h6 className='font-slider'>Ferra 2020</h6>
                 <h6 className='price-slider'>$ 20 000</h6>
         </Card.Body>   
       </Card>
-      <Card className='p-3 card-slider'>
+      </Col>
+      <Col lg={3} md={6} sm={12}>
+      <Card className='p-3 card-slider mb-4'>
       <img className='slider-img' src={imageCar_2}/>
       <Card.Body>
                 <h6 className='font-slider'>Ferra 2020</h6>
                 <h6 className='price-slider'>$ 20 000</h6>
         </Card.Body>   
       </Card>
-      <Card className='p-3 card-slider'>
+      </Col>
+      <Col lg={3} md={6} sm={12}>
+      <Card className='p-3 card-slider mb-4'>
       <img className='slider-img' src={imageCar}/>
       <Card.Body>
                 <h6 className='font-slider'>Ferra 2020</h6>
                 <h6 className='price-slider'>$ 20 000</h6>
         </Card.Body>   
       </Card>
-      
-     
-    
-    </Slider>
+      </Col>
+        </Row>
+      </Container>
+    </div>
                     
          
           

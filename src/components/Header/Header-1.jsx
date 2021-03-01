@@ -15,7 +15,10 @@ import  Advantages from '../Advantages/Advantages'
 import SliderCars from '../SliderCars/SliderCars'
 
 const Header = () => {
-
+   const [ isPicked, setPicked ] = useState(false)
+   const handleClick = () => {
+     setPicked(!isPicked)
+   }
    return(
        <>
          <Container className='background' fluid style={{fontWeight: '700'}}>
@@ -27,11 +30,9 @@ const Header = () => {
              <Col lg={6} md={6} sm={6} className='text-left'>
                   {/* <img style={{ width: '30px'}} src={logo} alt='logo' className='logo-svg'/> */}
              </Col>
-             <Col lg={6} md={6} sm={6} className='text-right'>
-                 <select style={{fontSize: '20px', background: 'none', border: 'none', color: '#fff'}}>
-                             <option value="ua">🇺🇦</option>
-                             <option value="ru">🇷🇺</option>           
-                  </select>
+             <Col lg={6} md={6} sm={6} className='text-right flex-right'>
+                  <button onClick={handleClick} className={!isPicked ? 'active-link' : 'not-active'}><h6>UA</h6></button>
+                  <button onClick={handleClick} className={isPicked ? 'active-link' : 'not-active'}><h6 className='ml-3'>RU</h6></button>
              </Col>
            </Row>
         
@@ -39,19 +40,13 @@ const Header = () => {
               
               <Col>
               <div className='flex-center white'>
-{/*     
-              {transitions.map(({ item, props: { innerHeight, ...rest }, key }) => (
-                <animated.div className="transitions-item" key={key} style={rest} onClick={reset}>
-                <animated.div style={{ overflow: 'hidden', height: innerHeight }}>{item}</animated.div>
-              </animated.div>
-      ))} */}
+
                 <h6 style={{fontSize: '1rem', fontWeight: 'bold',}}>Мрієш Про Власне Авто ?</h6> 
                 
                 <h4 style={{fontSize: '3rem', fontWeight: 'bold', color: '#036DFD', lineHeight: '1'}}><small style={{fontSize: '2rem', fontWeight: 'bold', color: '#fff'}}>У</small> AVTOE <small style={{fontSize: '2rem', fontWeight: 'bold', color: '#fff'}}>для тебе апетитні пропозиції</small></h4>
               
               <input type='text' placeholder='BMW X5  ' className='search-line'/>
               <img src={search}  width='20px'/>
-                  {/* <h6 style={{fontSize: '20px', letterSpacing: '3px'}}><small className='highlight'>Апетитні</small> умови також <small className='highlight'>Є</small></h6> */}
 
               </div>
              </Col>
@@ -69,13 +64,7 @@ const Header = () => {
              <img src={img_3} width='70px' className='white-fill ml-2' />
          </Col>
        </Row>
-            {/* <img src={cat} style={{ position: 'absolute', bottom: '9vh', width: '30%', right: '35%'}}/>*/}
-            {/* <img src={hignFive} style={{ position: 'absolute', bottom: '500px', width: '15%', right: '0'}}/> 
-            <img src={mew} style={{ position: 'absolute', bottom: '50px', left: '40%', width: '30%'}}/>  */}
-
-            {/* <img src={car_1} style={{ position: 'absolute', bottom: '90px', width: '30%', right: '2%'}}/> */}
-            {/* <img src={car_2} style={{ position: 'absolute', bottom: '100px', width: '30%', right: '30%', opacity:'0.3'}}/> */}
-        
+           
        </Container>
       
        <SliderCars />
