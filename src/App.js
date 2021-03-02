@@ -13,7 +13,7 @@ import { Container, Navbar, Nav} from 'react-bootstrap'
 import './components/NavBar/style.css'
 import logo from './img/logo-small.png'
 import person from './img/person.svg'
-import book from './img/book.svg'
+import mail from './img/mail.png'
 import calculate from './img/calculate.svg'
 import read from './img/read.svg'
 import email from './img/email.svg'
@@ -26,7 +26,7 @@ import SignUpForm from './components/SignUpForm/SignUpForm';
 import LoginForm from './components/LoginForm/LoginForm';
 import Cooperation from './components/Cooperation/Cooperation' 
 import Magazine from './components/Magazine/Magazine' 
-import { Link } from 'react-scroll'
+
 import './components/NavBar/style.css'
 
 
@@ -114,7 +114,7 @@ const App = () => {
             <LoginForm show={show} handleShow={handleShow} handleClose={handleClose} />       
         </Container>
       </Navbar>
-      <button сlassName='request-btn'>Залишити запит</button>
+      <img className='img-mail' src={mail}/>
      
 
 
