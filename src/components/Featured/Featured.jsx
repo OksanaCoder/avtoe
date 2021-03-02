@@ -15,15 +15,9 @@ const Featured = () => {
     const handleClose_details = () => setShow_details(false);
 
     return(
-        <Container className='mt-5 text-white p-5' fluid>
+        <Container className=' text-white ' fluid>
             <Row className='align-items-center'>
                 <Col lg={9} md={12} sm={12}>
-                         
-                <div className='heading-style col text-center'>
-                    <h6>Оновлений</h6>
-                    <h3 className='text-dark'>Каталог авто</h3>
-                </div>
-               
                 <Row>
                 <Col lg={4} md={6} sm={12}>
                     <Card className='card-style mb-3'>

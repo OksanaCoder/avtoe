@@ -9,8 +9,8 @@ import { Row, Container } from 'react-bootstrap'
 const Shop = () => {
     return (
         <div style={{background: '#fff'}}>
-            <Container fluid>
-                <Row className='flex-style pt-5 pl-5 pr-5' style={{background: '#23292D'}}>
+            <Container fluid style={{padding: '0'}}>
+                <Row className='flex-style padding-filter m-0' style={{background: '#23292D'}}>
                     
                 <div className='heading-style col text-center'>
                     <h6>Обери</h6>
@@ -18,18 +18,11 @@ const Shop = () => {
                 </div>
                
                 </Row>
-                <Row className='pr-5 pl-5' style={{background: '#23292D', paddingBottom: '100px'}}> 
+             
                    <Filter />
-                </Row>
+      
             </Container>
-             <Featured />
-         
-            {/* <Container className='text-right mt-2 mb-5 pr-5' fluid>
-               
-                <button className='grey-btn  btn-shop'>Весь перелік</button>
-              
-            </Container> */}
-            {/* <CarItem /> */}
+            <Featured />
         </div>
     )
 }

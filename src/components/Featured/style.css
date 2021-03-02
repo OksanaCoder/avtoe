@@ -3,7 +3,7 @@
 }
 .card-style {
     background-color: #fff !important;
-    border: none !important;
+    border: 1px solid #DEDEDE !important;
     border-radius: 10px !important;
 }
 .white-icon {
@@ -81,7 +81,7 @@
     flex-direction: column;
     justify-content: space-between;
     /* border: 1px solid rgb(225, 225, 225); */
-    border-radius: 10px;
+    border-radius: 0;
     padding: 20px;
     background-color: #fff;
 }
