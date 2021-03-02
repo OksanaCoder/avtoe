@@ -31,10 +31,13 @@
     margin-top: 10px;
 }
 .a-icon {
-    border: 1px solid #000;
+    border: 2px solid #000;
     border-radius: 50%;
     padding: 2px 7px;
     margin-right: 10px;
+    color: #000;
+    font-weight: bold;
+    font-size: 10px;
 }
 .icon-small{ 
     width: 22px;
@@ -91,9 +94,10 @@ button.btn-bid.btn.btn-primary{
     justify-content: space-around;
 }
 .car-item-style {
-    border: 1px solid #EBEBEB;
+    border: none;
     border-radius: 10px;
     padding: 20px;
+    box-shadow: 0 0px 40px 5px #2f2c2b;
 }
 .row {
     margin-right: 0 !important;
