@@ -10,6 +10,11 @@ body {
     align-items: center;
     flex-direction: row;
 }
+.link-nav:focus,
+.nav-item:focus {
+    color: #000 !important; 
+}
+
 .ing-small {
     color: #fff !important;
 }

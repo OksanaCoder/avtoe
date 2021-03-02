@@ -17,6 +17,20 @@ body {
   color: #000 !important;
   text-decoration: none;
 }
+ .request-btn {
+  position: fixed !important;
+  right: 0;
+  border: none ;
+  background: #076DFD ;
+  border-radius: 50%;
+  -webkit-box-shadow: 0px 1px 44px 8px rgba(7, 109, 253, 0.2);
+  -moz-box-shadow: 0px 1px 44px 8px rgba(7, 109, 253, 0.2);
+  box-shadow: 0px 1px 44px 8px rgba(7, 109, 253, 0.2);
+
+}
+.text-white:hover {
+  text-decoration: none;
+}
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
