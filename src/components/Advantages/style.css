@@ -21,8 +21,9 @@
 .row-column {
     display: flex;
     align-items: flex-start;
-
+   
 }
+
 .text-400 {
     font-weight: 200;
 }
@@ -31,3 +32,4 @@
     justify-content: center;
     align-items: flex-start;
 }
+

@@ -10,9 +10,10 @@ import image3 from '../../img/fera.png'
 import image2 from '../../img/slider-2.png'
 import image1 from '../../img/slider-1.png'
 import BackgroundSlider from 'react-background-slider'
-
+import Calculators from '../Calculators/Calculators'
 import  Advantages from '../Advantages/Advantages'
 import SliderCars from '../SliderCars/SliderCars'
+import CarItem from '../CarItem/CarItem'
 
 const Header = () => {
    const [ isPicked, setPicked ] = useState(false)
@@ -66,9 +67,11 @@ const Header = () => {
        </Row>
            
        </Container>
-      
-       <SliderCars />
+       <CarItem />
+       <Calculators />
+       {/* <SliderCars /> */}
        <Advantages />
+
        
        </>
    )

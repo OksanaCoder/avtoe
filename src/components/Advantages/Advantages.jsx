@@ -12,19 +12,22 @@ import car_adv from '../../img/car-adv.png'
 
 const Advantages = () => {
     return (
-        <div style={{background: '#262626', padding: '100px 0 50px 0'}}>
-            <Container>
-                <Row>
-                    <Col lg={6} md={6} sm={12} className='mt-2'>
-                    <div className='heading-style p-5'>
-               
-                        <h6 className='blue-line'>Чому</h6>
-                        <h3>AVTOE ?</h3>
+        <div style={{background: '#262626'}} className='p-5'>
+            <Container fluid>
+               <Row>
+                <div className='heading-style mt-5 p-5'>
                     
-                    </div>
-                    <img src={car_adv} style={{width: '100%', marginTop: '50px', marginBottom: '60px'}}/>
+                    <h6 className='blue-line'> Чому</h6>
+                    <h3>AVTOE ?</h3>
+                
+                </div>
+                </Row> 
+                <Row style={{display: 'flex', alignItems: 'center'}}>
+                    <Col lg={6} md={6} sm={12}>
+                   
+                    <img src={car_adv} style={{width: '50%', marginTop: '50px', marginBottom: '60px'}}/>
                     </Col>
-                    <Col lg={6} md={6} sm={12} className='p-5'>
+                    <Col lg={6} md={6} sm={12} className='pb-5'>
                         <Row className='row-column text-left'>
                       
                             <Col className='mb-5 text-white flex-between'>
@@ -45,6 +48,8 @@ const Advantages = () => {
                                     <p className='text-400'>Готiвковий та безготiвковий розрахунок.</p>
                             </div>
                             </Col>
+                        </Row>
+                        <Row className='row-column text-left'>
                             <Col className='mb-5 text-white flex-between'>
 
                                 <img src={icon_2} className='icon-adv' />
@@ -63,6 +68,8 @@ const Advantages = () => {
                                     <p className='text-400'>Більше 20 років на українському авторинку.</p>
                             </div>
                             </Col>
+                            </Row>
+                            <Row className='row-column text-left'>
                             <Col className='mb-5 text-white flex-between'>
 
                                 <img src={icon_4} className='icon-adv' />
@@ -81,9 +88,11 @@ const Advantages = () => {
                                     <p className='text-400'>Покупка авто в онлайн режимі з гарантією якості.</p>
                             </div>
                             </Col>
+                            </Row>
+                            </Col>
                         </Row>
-                    </Col>
-                </Row>
+                
+            
             </Container>
         </div>
     )
