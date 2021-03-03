@@ -10,7 +10,7 @@ import './style.css'
         <>
       
          <Row className='color-light-dark p-5 '>
-                <div className='heading-style p-5 mt-5'>
+                <div className='heading-style'>
                     
                     <h6 className='blue-line'>Авто</h6>
                     <h3>в Кредит</h3>

@@ -23,3 +23,8 @@
 .col-no-gap {
     padding: 0 !important;
 }
+@media (max-width: 500px) {
+    div.text-left.col-lg-5.col-md-6.col-sm-12 {
+        padding: 0 !important;
+    }
+}

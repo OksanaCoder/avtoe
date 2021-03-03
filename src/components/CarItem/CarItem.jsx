@@ -19,7 +19,7 @@ const CarItem = () => {
         <div>
             <Container className='p-5 text-white' fluid style={{background: '#262626'}}>
             <Row>
-                <div className='heading-style p-5 mt-5'>
+                <div className='heading-style'>
                     
                     <h6 className='blue-line'>Останні</h6>
                     <h3>Оновлення</h3>

@@ -14,9 +14,9 @@ const SliderCars = () => {
     return (
         <>
       <div style={{background: '#262626', paddingBottom: '50px'}}>
-        <Container>
+        <Container fluid>
         <Row>
-        <div className='heading-style p-5 mt-5'>
+        <div className='heading-style  pl-5 pt-5 pb-5'>
                
                <h6 className='blue-line'>Останні</h6>
                <h3>Оновлення</h3>

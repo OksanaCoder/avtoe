@@ -15,7 +15,7 @@ const Advantages = () => {
         <div style={{background: '#262626'}} className='p-5'>
             <Container fluid>
                <Row>
-                <div className='heading-style mt-5 p-5'>
+                <div className='heading-style'>
                     
                     <h6 className='blue-line'> Чому</h6>
                     <h3>AVTOE ?</h3>
@@ -25,7 +25,7 @@ const Advantages = () => {
                 <Row style={{display: 'flex', alignItems: 'center'}}>
                     <Col lg={6} md={6} sm={12}>
                    
-                    <img src={car_adv} style={{width: '50%', marginTop: '50px', marginBottom: '60px'}}/>
+                    <img src={car_adv} style={{width: '90%', marginTop: '50px', marginBottom: '60px'}}/>
                     </Col>
                     <Col lg={6} md={6} sm={12} className='pb-5'>
                         <Row className='row-column text-left'>

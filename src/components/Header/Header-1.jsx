@@ -67,9 +67,9 @@ const Header = () => {
        </Row>
            
        </Container>
-       <CarItem />
+       {/* <CarItem /> */}
+       <SliderCars />
        <Calculators />
-       {/* <SliderCars /> */}
        <Advantages />
 
        
