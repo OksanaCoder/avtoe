@@ -103,3 +103,11 @@ button.btn-bid.btn.btn-primary{
     margin-right: 0 !important;
     margin-left: 0 !important;
 }
+@media ( max-width: 500px) {
+    div.col-lg-3.col-md-6.col-sm-12 {
+        padding: 0 !important;
+    }
+    div.car-item-style.align-center.row {
+        padding: 0 !important;
+    }
+}

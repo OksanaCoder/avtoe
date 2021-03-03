@@ -26,7 +26,7 @@ import SignUpForm from './components/SignUpForm/SignUpForm';
 import LoginForm from './components/LoginForm/LoginForm';
 import Cooperation from './components/Cooperation/Cooperation' 
 import Magazine from './components/Magazine/Magazine' 
-
+import Auction from './components/Auction/Auction'
 import './components/NavBar/style.css'
 
 
@@ -64,7 +64,7 @@ const App = () => {
                </Nav.Link>
                <Nav.Link className='nav-item'>
                         <img src={hammer} width='20px' className='mb-1 img-small link-nav'/>
-                         Auction
+                        <BrowserLink to='/auction' className='text-white link-nav'>Auction</BrowserLink>   
                </Nav.Link>
   
 
@@ -121,6 +121,7 @@ const App = () => {
       <Route path='/' exact component={Header} />
       <Route path='/catalog' exact component={Shop} />
       <Route path='/about' exact component={About} />  
+      <Route path='/auction' exact component={Auction} />  
       <Route path='/cooperation' exact component={Cooperation} />    
       <MobApp />
       <Route path='/magazine' exact component={Magazine} />    
