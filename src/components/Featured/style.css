@@ -2,20 +2,23 @@
     margin: 0 !important;
 }
 .card-style {
-    background-color: #fff !important;
-    border: 1px solid #DEDEDE !important;
-    border-radius: 10px !important;
+    border: none;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0px 40px 5px #2f2c2b;
+    background: #2f2c2b !important;
+    color: #fff !important;
 }
 .white-icon {
     width: 22px;
     margin-right: 10px;
 }
 .a-icon-1 {
-        border: 1px solid #000;
-        border-radius: 50%;
-        padding: 4px 7px;
-        margin-right: 10px;
-        font-weight: 700;
+   border: 1px solid #000;
+   border-radius: 50%;
+   padding: 4px 7px;
+   margin-right: 10px;
+   font-weight: 700;
 }
 .color-yellow {
     color: #F7BA04;
@@ -107,4 +110,25 @@
     font-size: 17px;
     color: #E24700;
 }
+div.adv-box.p-5.col-lg-3.col-md-12.col-sm-12 {
+    padding: 0 !important;
+}
+.container-fluid {
+    padding: 0 !important;
+}
+@media (max-width: 500px) {
+    div.adv-box.p-5.col-lg-3.col-md-12.col-sm-12 {
+        padding: 0 !important;
+    }
+    div.col-lg-9.col-md-12.col-sm-12 {
+        padding: 0 !important;
+    }
+    
+}
 
+@media (max-width: 1024px) {
+    .short-border {
+        border-bottom: none;
+        
+    }
+}

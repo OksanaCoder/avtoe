@@ -16,14 +16,14 @@ const Featured = () => {
 
     return(
         <Container className=' text-white ' fluid>
-            <Row className='align-items-center'>
+            <Row className='align-items-center' style={{background: '#262626'}}>
                 <Col lg={9} md={12} sm={12}>
                 <Row>
                 <Col lg={4} md={6} sm={12}>
                     <Card className='card-style mb-3'>
                         <Card.Img src={imageCar} className='img-feature'>
                         </Card.Img>
-                        <Card.Body className='text-dark card-text'>
+                        <Card.Body className='card-text'>
                             <h5 className='bold'>2016 Ferrari California</h5>
                             <h5 className='color-yellow'>$ 91 500</h5>
                        
@@ -51,7 +51,7 @@ const Featured = () => {
                     <Card className='card-style mb-3'>
                         <Card.Img src={imageCar} className='img-feature'>
                         </Card.Img>
-                        <Card.Body className='text-dark card-text'>
+                        <Card.Body className='card-text'>
                             <h5 className='bold'>2016 Ferrari California</h5>
                             <h5 className='color-yellow'>$ 91 500</h5>
                        
@@ -76,7 +76,7 @@ const Featured = () => {
                     <Card className='card-style mb-3'>
                         <Card.Img src={imageCar} className='img-feature'>
                         </Card.Img>
-                        <Card.Body className='text-dark card-text'>
+                        <Card.Body className='card-text'>
                             <h5 className='bold'>2016 Ferrari California</h5>
                             <h5 className='color-yellow'>$ 91 500</h5>
                        
@@ -103,7 +103,7 @@ const Featured = () => {
                     <Card className='card-style mb-3'>
                         <Card.Img src={imageCar} className='img-feature'>
                         </Card.Img>
-                        <Card.Body className='text-dark card-text'>
+                        <Card.Body className='card-text'>
                             <h5 className='bold'>2016 Ferrari California</h5>
                             <h5 className='color-yellow'>$ 91 500</h5>
                        
@@ -128,7 +128,7 @@ const Featured = () => {
                     <Card className='card-style mb-3'>
                         <Card.Img src={imageCar} className='img-feature'>
                         </Card.Img>
-                        <Card.Body className='text-dark card-text'>
+                        <Card.Body className='card-text'>
                             <h5 className='bold'>2016 Ferrari California</h5>
                             <h5 className='color-yellow'>$ 91 500</h5>
                        
@@ -153,7 +153,7 @@ const Featured = () => {
                     <Card className='card-style mb-3'>
                         <Card.Img src={imageCar} className='img-feature'>
                         </Card.Img>
-                        <Card.Body className='text-dark card-text'>
+                        <Card.Body className='card-text'>
                             <h5 className='bold'>2016 Ferrari California</h5>
                             <h5 className='color-yellow'>$ 91 500</h5>
                        
@@ -179,7 +179,7 @@ const Featured = () => {
                     <Card className='card-style mb-3'>
                         <Card.Img src={imageCar} className='img-feature'>
                         </Card.Img>
-                        <Card.Body className='text-dark card-text'>
+                        <Card.Body className='card-text'>
                             <h5 className='bold'>2016 Ferrari California</h5>
                             <h5 className='color-yellow'>$ 91 500</h5>
                        
@@ -204,7 +204,7 @@ const Featured = () => {
                     <Card className='card-style mb-3'>
                         <Card.Img src={imageCar} className='img-feature'>
                         </Card.Img>
-                        <Card.Body className='text-dark card-text'>
+                        <Card.Body className='card-text'>
                             <h5 className='bold'>2016 Ferrari California</h5>
                             <h5 className='color-yellow'>$ 91 500</h5>
                        
@@ -229,7 +229,7 @@ const Featured = () => {
                     <Card className='card-style mb-3'>
                         <Card.Img src={imageCar} className='img-feature'>
                         </Card.Img>
-                        <Card.Body className='text-dark card-text'>
+                        <Card.Body className='card-text'>
                             <h5 className='bold'>2016 Ferrari California</h5>
                             <h5 className='color-yellow'>$ 91 500</h5>
                        
@@ -252,13 +252,15 @@ const Featured = () => {
                 
             </Row>
                 </Col>
-                <Col lg={3} md={12} sm={12} className='adv-box p-5' style={{background: '#EFF3FC'}}>
+
+
+                <Col lg={3} md={12} sm={12} className='adv-box pt-5' style={{background: '#EFF3FC'}}>
                     <Row className='d-flex flex-direction-column'>
-                        <Col lg={12} className='short-border'>
+                        <Col lg={12} md={6} sm={12} className='short-border'>
                         <Card className='card-style mb-3'>
                         <Card.Img src={imageCar} className='img-feature-adv'>
                         </Card.Img>
-                        <Card.Body className='text-dark card-text'>
+                        <Card.Body className='card-text'>
                             <small className='font-adv'>2016 Ferrari California</small>
                             <p className='font-adv'>Cтартова ціна: <small className='font-bid-price'>$ 30 500</small></p>
                              <Row className='display-flex justify-between mt-3'>
@@ -267,11 +269,11 @@ const Featured = () => {
                         </Card.Body>     
                         </Card>      
                      </Col>
-                     <Col lg={12} className='short-border'>
+                     <Col lg={12} md={6} sm={12}  className='short-border'>
                         <Card className='card-style mb-3'>
                         <Card.Img src={imageCar} className='img-feature-adv'>
                         </Card.Img>
-                        <Card.Body className='text-dark card-text'>
+                        <Card.Body className='card-text'>
                             <small className='font-adv'>2016 Ferrari California</small>
                             <p className='font-adv'>Cтартова ціна: <small className='font-bid-price'>$ 30 500</small></p>
                              <Row className='display-flex justify-between mt-3'>
@@ -280,11 +282,11 @@ const Featured = () => {
                         </Card.Body>     
                         </Card>      
                      </Col>
-                     <Col lg={12} className='short-border'>
+                     <Col lg={12} md={6} sm={12}  className='short-border'>
                         <Card className='card-style mb-3'>
                         <Card.Img src={imageCar} className='img-feature-adv'>
                         </Card.Img>
-                        <Card.Body className='text-dark card-text'>
+                        <Card.Body className='card-text'>
                             <small className='font-adv'>2016 Ferrari California</small>
                             <p className='font-adv'>Cтартова ціна: <small className='font-bid-price'>$ 30 500</small></p>
                              <Row className='display-flex justify-between mt-3'>
@@ -293,11 +295,11 @@ const Featured = () => {
                         </Card.Body>     
                         </Card>      
                      </Col>
-                     <Col lg={12} className='short-border'>
+                     <Col lg={12} md={6} sm={12}  className='short-border'>
                         <Card className='card-style mb-3'>
                         <Card.Img src={imageCar} className='img-feature-adv'>
                         </Card.Img>
-                        <Card.Body className='text-dark card-text'>
+                        <Card.Body className='card-text'>
                             <small className='font-adv'>2016 Ferrari California</small>
                             <p className='font-adv'>Cтартова ціна: <small className='font-bid-price'>$ 30 500</small></p>
                              <Row className='display-flex justify-between mt-3'>

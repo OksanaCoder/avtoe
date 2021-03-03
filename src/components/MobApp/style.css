@@ -27,4 +27,7 @@
     div.text-left.col-lg-5.col-md-6.col-sm-12 {
         padding: 0 !important;
     }
+    .font-25-700 {
+       padding: 20px;
+    }
 }

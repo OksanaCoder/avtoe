@@ -12,7 +12,7 @@ body {
 }
 .link-nav:focus,
 .nav-item:focus {
-    color: #000 !important; 
+    color: #fff !important; 
 }
 
 .ing-small {
