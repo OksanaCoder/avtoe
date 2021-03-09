@@ -1,5 +1,5 @@
 import './App.css';
-import React, {useState, useRef} from 'react'
+import React, {useState, useRef, useEffect} from 'react'
 import Header from './components/Header/Header-1'
 import Categories from './components/Categories/Categories'
 import Shop from './components/Shop/Shop'
@@ -28,10 +28,26 @@ import Cooperation from './components/Cooperation/Cooperation'
 import Magazine from './components/Magazine/Magazine' 
 import Auction from './components/Auction/Auction'
 import './components/NavBar/style.css'
-
+import RequestForm from './components/RequestForm/RequestForm'
 
 const App = () => {
- 
+
+  // const [data, setData] = useState(null)
+  //  useEffect(() => {
+  //    callBackAPI()
+  //  }, [])
+
+  // const callBackAPI = async () => {
+  //     const response = await fetch('/express_backend')
+  //     const body = await response.json()
+   
+  //     if(response.status !== 200) {
+  //       throw Error(body.message)
+  //     }
+  //    console.log(body)
+   
+  //  }
+
   const [show, setShow] = useState(false)
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -44,6 +60,10 @@ const App = () => {
   const handleShow_calc = () => setShow_calc(true);
   const handleClose_calc = () => setShow_calc(false)
 
+
+  const [show_form, setShow_form] = useState(false)
+  const handleShowForm = () => setShow_form(true)
+  const handleCloseForm = () => setShow_form(false)
   return (
     <>
     <Router>
@@ -114,8 +134,9 @@ const App = () => {
             <LoginForm show={show} handleShow={handleShow} handleClose={handleClose} />       
         </Container>
       </Navbar>
-      <img className='img-mail' src={mail}/>
-     
+      
+      <img className='img-mail' src={mail} onClick={handleShowForm}/>
+      <RequestForm show={show_form} handleShowForm={handleShowForm} handleCloseForm={handleCloseForm} />
 
 
       <Route path='/' exact component={Header} />

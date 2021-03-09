@@ -4,42 +4,51 @@ import moment from "moment";
 import axios from "axios";
 import './style.css'
 import { Redirect } from 'react-router-dom';
-
-
-const SignUpForm = (props) => {
+const RequestForm = (props) => {
    console.log(props)
-
+  const [firstname, setFirstname] = useState("");
+  const [lastname, setLastname] = useState("");
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [dob, setDob] = useState("");
   const [phone, setPhone] = useState("");
 
   const API_URL = process.env.REACT_APP_URL;
 
   const register = (
+    firstname,
+    lastname,
     username,
     email,
     password,
+    dob,
     phone
   ) => {
     return axios.post(API_URL + "/users/register", {
+      firstname,
+      lastname,
       username,
       email,
       password,
+      dob,
       phone,
     });
   };
   const handleSubmit = async (e) => {
     e.preventDefault();
     const succesregv = await register(
+      firstname,
+      lastname,
       username,
       email,
       password,
+      dob,
       phone
     );
     //form.current.validateAll()
     if (succesregv) {
-      alert("Реєстрація пройшла успішно!");
+      alert("Registered Successfully");
       props.handleClose1()
       //props.history.push("/");
       return <Redirect to="/" />;
@@ -47,6 +56,15 @@ const SignUpForm = (props) => {
     } else {
       console.log("please check login");
     }
+  };
+  const onChangeFirstname = (e) => {
+    const firstname = e.target.value;
+    setFirstname(firstname);
+  };
+
+  const onChangeLastname = (e) => {
+    const lastname = e.target.value;
+    setLastname(lastname);
   };
 
   const onChangeUsername = (e) => {
@@ -63,6 +81,10 @@ const SignUpForm = (props) => {
     setPassword(password);
   };
 
+  const onChangeDob = (e) => {
+    const dob = e.target.value;
+    setDob(dob);
+  };
   const onChangePhone = (e) => {
     const phone = e.target.value;
     setPhone(phone);
@@ -80,6 +102,26 @@ const SignUpForm = (props) => {
         </Modal.Header>
         <Modal.Body>
           <Form onSubmit={handleSubmit}>
+            <Form.Group controlId="formBasicFirstName">
+              <Form.Control
+                type="text"
+                placeholder="Firs tname"
+                value={firstname}
+                onChange={onChangeFirstname}
+                name="firstname"
+                className="input-style"
+              />
+            </Form.Group>
+            <Form.Group controlId="formBasicLastName">
+              <Form.Control
+                type="text"
+                placeholder="Last name"
+                value={lastname}
+                onChange={onChangeLastname}
+                name="lastname"
+                className="input-style"
+              />
+            </Form.Group>
             <Form.Group controlId="formBasicName">
               <Form.Control
                 type="text"
@@ -108,6 +150,16 @@ const SignUpForm = (props) => {
                 value={password}
                 onChange={onChangePassword}
                 name="password"
+                className="input-style"
+              />
+            </Form.Group>
+
+            <Form.Group controlId="formBasicDateOfBirth">
+              <Form.Control
+                type="date"
+                value={moment(dob).format("YYYY-MM-DD")}
+                onChange={onChangeDob}
+                name="dob"
                 className="input-style"
               />
             </Form.Group>
@@ -152,4 +204,4 @@ const SignUpForm = (props) => {
   );
 };
 
-export default SignUpForm;
+export default RequestForm;
