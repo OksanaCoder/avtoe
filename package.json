@@ -35,6 +35,7 @@
     "react-scroll": "^1.8.1",
     "react-slick": "^0.28.0",
     "react-spring": "^8.0.27",
+    "serve": "^11.3.2",
     "slick-carousel": "^1.8.1",
     "swiper": "^6.4.15",
     "web-vitals": "^0.2.4"
