@@ -135,9 +135,9 @@ const App = () => {
         </Container>
       </Navbar>
       
-      <img className='img-mail' src={mail} onClick={handleShowForm}/>
-      <RequestForm show={show_form} handleShowForm={handleShowForm} handleCloseForm={handleCloseForm} />
-
+      <Nav.Link onClick={handleShowForm}><img className='img-mail' src={mail} /></Nav.Link>
+      <RequestForm show_form={show_form} handleShowForm={handleShowForm} handleCloseForm={handleCloseForm} />
+       
 
       <Route path='/' exact component={Header} />
       <Route path='/catalog' exact component={Shop} />
