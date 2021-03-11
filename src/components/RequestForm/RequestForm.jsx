@@ -75,7 +75,7 @@ const RequestForm = (props) => {
             <Form.Group controlId="formBasicFirstName">
               <Form.Control
                 type="text"
-                placeholder="Username"
+                placeholder="Ім'я"
                 value={username}
                 onChange={onChangeUsername}
                 name="Ім'я"

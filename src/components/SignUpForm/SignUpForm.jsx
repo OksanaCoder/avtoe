@@ -83,7 +83,7 @@ const SignUpForm = (props) => {
             <Form.Group controlId="formBasicName">
               <Form.Control
                 type="text"
-                placeholder="User name"
+                placeholder="Ім'я"
                 value={username}
                 onChange={onChangeUsername}
                 name="username"
