@@ -93,8 +93,8 @@ const App = () => {
               
               
                         {/* <Nav.Link className=' nav-item' href="#deets">
-                        <img className='img-small' src={read}/> */}
-                        {/* <BrowserLink to='/magazine'  className='black-color'>
+                        <img className='img-small' src={read}/> 
+                         <BrowserLink to='/magazine'  className='black-color'>
                           Журнал
                         </BrowserLink>  
                         </Nav.Link>  */}

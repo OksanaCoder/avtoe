@@ -9,7 +9,8 @@ import ModalDetails from '../ModalDetails/ModalDetails'
 import axios from 'axios';
 import { Redirect } from 'react-router-dom';
 
-const CarItem = () => {
+const CarItem = ({data}) => {
+    
     const [show_details, setShow_details] = useState(false);
     const handleShow_details = () => setShow_details(true);
     const handleClose_details = () => setShow_details(false);
@@ -26,6 +27,9 @@ const CarItem = () => {
     const [phone, setPhone] = useState("");
     const [price, setPrice] = useState("")
     const [comment, setComment] = useState("")
+
+
+
 
   const API_URL = process.env.REACT_APP_URL;
   const offer = (username, phone, price, comment) => {
@@ -74,6 +78,7 @@ const CarItem = () => {
         alert("Помилка :(")
     }
   };
+  console.log("data is ", data)
     return (
         <div>
             <Container className='text-white pb-5' fluid style={{background: '#262626'}}>
@@ -87,26 +92,29 @@ const CarItem = () => {
             </Row>
 
                     <Row className=' align-center'>
-                      
-                        <Col lg={3} md={6} sm={12}>             
+
+                 {data.map(item => {
+                     return(
+                         <>
+                    <Col lg={3} md={6} sm={12}>             
                       <Card className='card-style mb-3'>
                         <Card.Img src={imageCar} className='img-feature'>
                         </Card.Img>
                         <Card.Body className='card-text'>
-                            <h5 className='bold'>2016 Ferrari California</h5>
-                            <h5 className='color-yellow'>$ 91 500</h5>
+                            <h5 className='bold'>{item.name}</h5>
+                            <h5 className='color-yellow'>$ {item.price}</h5>
                        
                             <Row className='align-center'>
-                                    <Col className='center-items'><img src={icon_2} className='white-icon'/>22 тис. км</Col>
-                                    <Col className='center-items'><img src={icon_1} className='icon-small'/>Київ</Col>
+                                    <Col className='center-items'><img src={icon_2} className='white-icon'/>{item.mileage}</Col>
+                                    <Col className='center-items'><img src={icon_1} className='icon-small'/>{item.city}</Col>
                                 </Row>
                                 <Row className='align-center'>
-                                    <Col className='center-items'><img src={icon_3} className='icon-small'/>Бензин, 6 л.</Col>
-                                    <Col className='center-items'><small className='a-icon-1'>A</small>Автомат</Col>
+                                    <Col className='center-items'><img src={icon_3} className='icon-small'/>{item.fuel}</Col>
+                                    <Col className='center-items'><small className='a-icon-1'>A</small>{item.type}</Col>
                                 </Row>
                                 <Row>
                                     <Col>
-                                       <p className='start-price mt-3'>Стартова ціна: $ <small className='start-price'>40 000</small></p>
+                                       <p className='start-price mt-3'>Стартова ціна: $ <small className='start-price'>{item.startPrice}</small></p>
                                    </Col>
                                 </Row> 
                                 <Row className='display-flex mt-3'>
@@ -125,12 +133,11 @@ const CarItem = () => {
                     </Card>
                         </Col>
 
-                      
-                        <Modal
+                            <Modal
                             show={show_4} 
                             onHide={handleClose_4}
                             className="login-form"
-                        >
+                            >
                             <Modal.Header closeButton>
                             <Modal.Title>Запропонувати торг</Modal.Title>
                             </Modal.Header>
@@ -145,7 +152,7 @@ const CarItem = () => {
                                     name="username"
                                     className="input-style"
                                 />
-                            
+
                                 </Form.Group>
 
                                 <Form.Group controlId="formBasicPhoneNumber">
@@ -169,116 +176,14 @@ const CarItem = () => {
                                 />
                                 </Form.Group>
                                 <Form.Group controlId="exampleForm.ControlTextarea1">
-                                   
-                                   <Form.Control    className='border-style'  
-                                                    as="textarea" rows={3} 
-                                                    placeholder='Твій коментарій'
-                                                    value={comment}
-                                                    onChange={onChangeComment}
-                                                    />
-                               </Form.Group>
-                                <Button
-                                    variant="primary"
-                                    type="submit"
-                                    className="btn-form yellow-back"
-                                    onClick={handleSubmit}
-                                >
-                                    Відправити
-                                </Button>
-                            
-                            </Form>
-                            </Modal.Body>
-                        </Modal>
-
-                        <Col lg={3} md={6} sm={12}>             
-                      <Card className='card-style mb-3'>
-                        <Card.Img src={imageCar} className='img-feature'>
-                        </Card.Img>
-                        <Card.Body className='card-text'>
-                            <h5 className='bold'>2016 Ferrari California</h5>
-                            <h5 className='color-yellow'>$ 91 500</h5>
-                       
-                            <Row className='align-center'>
-                                    <Col className='center-items'><img src={icon_2} className='white-icon'/>22 тис. км</Col>
-                                    <Col className='center-items'><img src={icon_1} className='icon-small'/>Київ</Col>
-                                </Row>
-                                <Row className='align-center'>
-                                    <Col className='center-items'><img src={icon_3} className='icon-small'/>Бензин, 6 л.</Col>
-                                    <Col className='center-items'><small className='a-icon-1'>A</small>Автомат</Col>
-                                </Row>
-                                <Row>
-                                    <Col>
-                                       <p className='start-price mt-3'>Стартова ціна: $ <small className='start-price'>40 000</small></p>
-                                   </Col>
-                                </Row> 
-                                <Row className='display-flex mt-3'>
-                                  <Col><button  className='btn-item auction-btn' onClick={handleShow_details}>Детальніше</button></Col>
-                                  {/* <Col> <button className='btn-item buy-now'>Детальніше</button></Col> */}
-                                  <Col>   <button  className='btn-item swap-btn mt-3' onClick={handleShow_4}>Запропонувати торг</button></Col>
                                 
-                                  {/* <Col>  <button  className='btn-item auction-btn'>Зробити ставку</button></Col> */}
-                                </Row>
-
-
-                                {/* details modal */}
-                              <ModalDetails show_details={show_details} handleShow_details={handleShow_details} handleClose_details={handleClose_details} />
-                        </Card.Body>
-                       
-                    </Card>
-                        </Col>
-
-                      
-                        <Modal
-                            show={show_4} 
-                            onHide={handleClose_4}
-                            className="login-form"
-                        >
-                            <Modal.Header closeButton>
-                            <Modal.Title>Запропонувати торг</Modal.Title>
-                            </Modal.Header>
-                            <Modal.Body>
-                            <Form onSubmit={handleSubmit}>
-                                <Form.Group controlId="formBasicEmail">
-                                <Form.Control
-                                    type="text"
-                                    placeholder="Ім'я"
-                                    onChange={onChangeUsername}
-                                    value={username}
-                                    name="username"
-                                    className="input-style"
-                                />
-                            
-                                </Form.Group>
-
-                                <Form.Group controlId="formBasicPhoneNumber">
-                                <Form.Control
-                                    type="number"
-                                    placeholder="Номер телефону"
-                                    onChange={onChangePhone}
-                                    value={phone}
-                                    className="input-style mb-4"
-                                />
-                                </Form.Group>
-
-
-                                <Form.Group controlId="formBasicPrice">
-                                <Form.Control
-                                    type="number"
-                                    placeholder="Твоя ціна, $"
-                                    onChange={onChangePrice}
-                                    value={price}
-                                    className="input-style mb-4"
-                                />
-                                </Form.Group>
-                                <Form.Group controlId="exampleForm.ControlTextarea1">
-                                   
-                                   <Form.Control    className='border-style'  
+                                <Form.Control    className='border-style'  
                                                     as="textarea" rows={3} 
                                                     placeholder='Твій коментарій'
                                                     value={comment}
                                                     onChange={onChangeComment}
                                                     />
-                               </Form.Group>
+                            </Form.Group>
                                 <Button
                                     variant="primary"
                                     type="submit"
@@ -287,212 +192,15 @@ const CarItem = () => {
                                 >
                                     Відправити
                                 </Button>
-                            
+
                             </Form>
                             </Modal.Body>
-                        </Modal>
-                        <Col lg={3} md={6} sm={12}>             
-                      <Card className='card-style mb-3'>
-                        <Card.Img src={imageCar} className='img-feature'>
-                        </Card.Img>
-                        <Card.Body className='card-text'>
-                            <h5 className='bold'>2016 Ferrari California</h5>
-                            <h5 className='color-yellow'>$ 91 500</h5>
-                       
-                            <Row className='align-center'>
-                                    <Col className='center-items'><img src={icon_2} className='white-icon'/>22 тис. км</Col>
-                                    <Col className='center-items'><img src={icon_1} className='icon-small'/>Київ</Col>
-                                </Row>
-                                <Row className='align-center'>
-                                    <Col className='center-items'><img src={icon_3} className='icon-small'/>Бензин, 6 л.</Col>
-                                    <Col className='center-items'><small className='a-icon-1'>A</small>Автомат</Col>
-                                </Row>
-                                <Row>
-                                    <Col>
-                                       <p className='start-price mt-3'>Стартова ціна: $ <small className='start-price'>40 000</small></p>
-                                   </Col>
-                                </Row> 
-                                <Row className='display-flex mt-3'>
-                                  <Col><button  className='btn-item auction-btn' onClick={handleShow_details}>Детальніше</button></Col>
-                                  {/* <Col> <button className='btn-item buy-now'>Детальніше</button></Col> */}
-                                  <Col>   <button  className='btn-item swap-btn mt-3' onClick={handleShow_4}>Запропонувати торг</button></Col>
-                                
-                                  {/* <Col>  <button  className='btn-item auction-btn'>Зробити ставку</button></Col> */}
-                                </Row>
-
-
-                                {/* details modal */}
-                              <ModalDetails show_details={show_details} handleShow_details={handleShow_details} handleClose_details={handleClose_details} />
-                        </Card.Body>
-                       
-                    </Card>
-                        </Col>
-
+                            </Modal>
+                        </>
+                           )
+                 })}     
+                   
                       
-                        <Modal
-                            show={show_4} 
-                            onHide={handleClose_4}
-                            className="login-form"
-                        >
-                            <Modal.Header closeButton>
-                            <Modal.Title>Запропонувати торг</Modal.Title>
-                            </Modal.Header>
-                            <Modal.Body>
-                            <Form onSubmit={handleSubmit}>
-                                <Form.Group controlId="formBasicEmail">
-                                <Form.Control
-                                    type="text"
-                                    placeholder="Ім'я"
-                                    onChange={onChangeUsername}
-                                    value={username}
-                                    name="username"
-                                    className="input-style"
-                                />
-                            
-                                </Form.Group>
-
-                                <Form.Group controlId="formBasicPhoneNumber">
-                                <Form.Control
-                                    type="number"
-                                    placeholder="Номер телефону"
-                                    onChange={onChangePhone}
-                                    value={phone}
-                                    className="input-style mb-4"
-                                />
-                                </Form.Group>
-
-
-                                <Form.Group controlId="formBasicPrice">
-                                <Form.Control
-                                    type="number"
-                                    placeholder="Твоя ціна, $"
-                                    onChange={onChangePrice}
-                                    value={price}
-                                    className="input-style mb-4"
-                                />
-                                </Form.Group>
-                                <Form.Group controlId="exampleForm.ControlTextarea1">
-                                   
-                                   <Form.Control    className='border-style'  
-                                                    as="textarea" rows={3} 
-                                                    placeholder='Твій коментарій'
-                                                    value={comment}
-                                                    onChange={onChangeComment}
-                                                    />
-                               </Form.Group>
-                                <Button
-                                    variant="primary"
-                                    type="submit"
-                                    className="btn-form yellow-back"
-                                    onClick={handleSubmit}
-                                >
-                                    Відправити
-                                </Button>
-                            
-                            </Form>
-                            </Modal.Body>
-                        </Modal>
-                        <Col lg={3} md={6} sm={12}>             
-                      <Card className='card-style mb-3'>
-                        <Card.Img src={imageCar} className='img-feature'>
-                        </Card.Img>
-                        <Card.Body className='card-text'>
-                            <h5 className='bold'>2016 Ferrari California</h5>
-                            <h5 className='color-yellow'>$ 91 500</h5>
-                       
-                            <Row className='align-center'>
-                                    <Col className='center-items'><img src={icon_2} className='white-icon'/>22 тис. км</Col>
-                                    <Col className='center-items'><img src={icon_1} className='icon-small'/>Київ</Col>
-                                </Row>
-                                <Row className='align-center'>
-                                    <Col className='center-items'><img src={icon_3} className='icon-small'/>Бензин, 6 л.</Col>
-                                    <Col className='center-items'><small className='a-icon-1'>A</small>Автомат</Col>
-                                </Row>
-                                <Row>
-                                    <Col>
-                                       <p className='start-price mt-3'>Стартова ціна: $ <small className='start-price'>40 000</small></p>
-                                   </Col>
-                                </Row> 
-                                <Row className='display-flex mt-3'>
-                                  <Col><button  className='btn-item auction-btn' onClick={handleShow_details}>Детальніше</button></Col>
-                                  {/* <Col> <button className='btn-item buy-now'>Детальніше</button></Col> */}
-                                  <Col>   <button  className='btn-item swap-btn mt-3' onClick={handleShow_4}>Запропонувати торг</button></Col>
-                                
-                                  {/* <Col>  <button  className='btn-item auction-btn'>Зробити ставку</button></Col> */}
-                                </Row>
-
-
-                                {/* details modal */}
-                              <ModalDetails show_details={show_details} handleShow_details={handleShow_details} handleClose_details={handleClose_details} />
-                        </Card.Body>
-                       
-                    </Card>
-                        </Col>
-
-                      
-                        <Modal
-                            show={show_4} 
-                            onHide={handleClose_4}
-                            className="login-form"
-                        >
-                            <Modal.Header closeButton>
-                            <Modal.Title>Запропонувати торг</Modal.Title>
-                            </Modal.Header>
-                            <Modal.Body>
-                            <Form onSubmit={handleSubmit}>
-                                <Form.Group controlId="formBasicEmail">
-                                <Form.Control
-                                    type="text"
-                                    placeholder="Ім'я"
-                                    onChange={onChangeUsername}
-                                    value={username}
-                                    name="username"
-                                    className="input-style"
-                                />
-                            
-                                </Form.Group>
-
-                                <Form.Group controlId="formBasicPhoneNumber">
-                                <Form.Control
-                                    type="number"
-                                    placeholder="Номер телефону"
-                                    onChange={onChangePhone}
-                                    value={phone}
-                                    className="input-style mb-4"
-                                />
-                                </Form.Group>
-
-
-                                <Form.Group controlId="formBasicPrice">
-                                <Form.Control
-                                    type="number"
-                                    placeholder="Твоя ціна, $"
-                                    onChange={onChangePrice}
-                                    value={price}
-                                    className="input-style mb-4"
-                                />
-                                </Form.Group>
-                                <Form.Group controlId="exampleForm.ControlTextarea1">
-                                   
-                                   <Form.Control    className='border-style'  
-                                                    as="textarea" rows={3} 
-                                                    placeholder='Твій коментарій'
-                                                    value={comment}
-                                                    onChange={onChangeComment}
-                                                    />
-                               </Form.Group>
-                                <Button
-                                    variant="primary"
-                                    type="submit"
-                                    className="btn-form yellow-back"
-                                    onClick={handleSubmit}
-                                >
-                                    Відправити
-                                </Button>
-                            
-                            </Form>
-                            </Modal.Body>
-                        </Modal>
                  
 
 
