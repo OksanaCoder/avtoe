@@ -135,7 +135,7 @@ const App = () => {
         </Container>
       </Navbar>
       
-      <Nav.Link onClick={handleShowForm}><img className='img-mail' src={mail} /></Nav.Link>
+      <img className='img-mail' src={mail}   onClick={handleShowForm}/>
       <RequestForm show_form={show_form} handleShowForm={handleShowForm} handleCloseForm={handleCloseForm} />
        
 
