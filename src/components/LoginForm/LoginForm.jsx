@@ -1,8 +1,12 @@
 import React, { useState } from "react";
 import { Modal, Button, Form } from "react-bootstrap";
 import axios from 'axios';
-
+import './style.css'
 import { Redirect } from 'react-router-dom';
+import ReactDOM from 'react-dom'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCoffee } from '@fortawesome/free-solid-svg-icons'
+
 
 const LoginForm = (props) => {
     
@@ -39,7 +43,7 @@ const LoginForm = (props) => {
     e.preventDefault();
     const confirmLogin = await login(email,password);
     if (confirmLogin){
-        alert("login successfully")
+        alert("loginned successfully")
         return <Redirect to="/about" />;
     }else{
         alert("Login fails")
@@ -62,11 +66,13 @@ const LoginForm = (props) => {
             <Form.Group controlId="formBasicEmail">
               <Form.Control
                 type="email"
-                placeholder="Email"
+                placeholder=" Email"
                 onChange={onChangeEmail}
                 value={email}
                 name="email"
+                className="input-style"
               />
+          
             </Form.Group>
 
             <Form.Group controlId="formBasicPassword">
@@ -75,14 +81,14 @@ const LoginForm = (props) => {
                 placeholder="Пароль"
                 onChange={onChangePassword}
                 value={password}
-               
+                className="input-style mb-4"
               />
             </Form.Group>
             <Form.Group controlId="formBasicCheckbox" className="flex-form">
               <Form.Check type="checkbox" label="Запам'ятати" />
               <small>Забули пароль ?</small>
             </Form.Group>
-            <div className="flex-form mt-5">
+            <div className="flex-form mt-5 flex-column">
               <Button
                 variant="primary"
                 type="submit"
@@ -91,14 +97,8 @@ const LoginForm = (props) => {
               >
                 Увійти
               </Button>
-              <Button
-                variant="primary"
-                type="submit"
-                className="btn-form grey-back"
-                onClick={props.handleClose}
-              >
-                Скасувати
-              </Button>
+              <p className='p-12 mt-3'>Вперше на сайті ?</p>
+              <p className='p-12-link'><a>Зареєструватись</a></p>
             </div>
           </Form>
         </Modal.Body>

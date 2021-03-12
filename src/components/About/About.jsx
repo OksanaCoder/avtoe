@@ -1,11 +1,13 @@
 import React from 'react'
-import Advantages from '../Advantages/Advantages'
 import Header from '../Header/Header-1'
 import Videos from '../Videos/Videos'
 import org from '../../img/un.jpg'
 import { Container, Row, Col, Tabs, Tab } from 'react-bootstrap'
 import './style.css'
 import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
+import Slide from 'react-reveal/Slide';
+
+
 
 const About = () => {
     const containerStyle = {
@@ -45,7 +47,7 @@ const About = () => {
             </Row>
             <Row className='p-4 align-items-center mt-3'>
                 <Col className='text-center' lg={6} md={12} sm={12}>
-                <img src={org} width='100%' className='mb-2'/>
+                <img src={org} width='70%' className='mb-2'/>
                 </Col>
                 <Col style={{lineHeight: '2', fontSize: '20px'}} lg={6} md={12} sm={12}>  
                         Наші ключові цілі - порядок, законність і надійність ведення автобізнесу в Україні. 
@@ -66,7 +68,7 @@ const About = () => {
             </Row>
             <Row className='p-4 align-items-center mt-3'>
                 <Col lg={6} md={12} sm={12} className='text-center'>
-                <img  className='mb-2' width='100%' src="https://thumb.tildacdn.com/tild3335-6566-4562-a264-306631386566/-/format/webp/a393fc5a-7ebe-4238-b.jpg"/>
+                <img  className='mb-2' width='70%' src="https://thumb.tildacdn.com/tild3335-6566-4562-a264-306631386566/-/format/webp/a393fc5a-7ebe-4238-b.jpg"/>
                 </Col>
                 <Col lg={6} md={12} sm={12} style={{lineHeight: '2', fontSize: '20px'}}>
                 "Автобізнес - це ціла галузь економіки України, яка справно платить податки і рухає багато інших галузей вітчизняної промисловості. 
@@ -104,7 +106,6 @@ const About = () => {
             
         </Container>
 
-        <Advantages />
         <Videos />
         </div>
     )

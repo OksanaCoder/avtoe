@@ -10,11 +10,19 @@ body {
     align-items: center;
     flex-direction: row;
 }
+.link-nav:focus,
+.nav-item:focus {
+    color: #fff !important; 
+}
+
+.ing-small {
+    color: #fff !important;
+}
 .navbar-nav {
     flex-direction: row !important;
 }
 .navbar-light .navbar-nav .nav-link {
-    color: #000 !important;
+    color: #fff !important;
 }
 .nav-wrap {
     flex-wrap: wrap;
@@ -22,7 +30,7 @@ body {
 .bottomNav {
     position: fixed !important;
     bottom: 0 !important;
-    background: #F7BA04 !important;
+    background: #036DFD !important;
     z-index: 999;
     width: 100%;
 }
@@ -66,10 +74,9 @@ body {
 }
 .modal-content {
     background: #F2F5FB !important;
-    padding: 40px 40px;
+    /* padding: 40px 40px; */
     border-radius: 20px !important;
-    border: 1px solid #E9ECEF !important ;
-    box-shadow: 0 5px 10px #E9ECEF;
+    border: none !important ;
 }
 .no-shadow .modal-content {
     box-shadow: none !important;
@@ -86,11 +93,11 @@ body {
     border: none !important;
 }
 .btn-form {
-    border-radius: 10px !important;
+    border-radius: 20px !important;
     padding: 7px 40px !important;
 }
 .yellow-back {
-    background-color:  #F7BA04 !important;
+    background-color:  #036DFD !important;
 }
 .grey-back {
     background-color: #222934 !important;
@@ -101,7 +108,7 @@ body {
     align-items: center;
 }
 .close {
-    display: none;
+    font-weight: 500 !important;
 }
 .line-bottom {
     border-bottom: 1px solid #E9ECEF;
@@ -124,13 +131,39 @@ body {
 .calc-output {
     text-align: center;
     margin-top: 40px;
-    border: 1px solid #F7BA04;
+    border: 1px solid #036DFD;
     border-radius: 10px;
     padding: 20px;
 }
 .border-right-calc {
-    border-right: 1px solid #F7BA04;;
+    border-right: 1px solid #036DFD;;
 }
 .btn-nav {
     padding : 10px;
 }
+
+@media (max-width: 500px) {
+    .img-small {
+       width: 15px !important;
+    }
+    .nav-item {
+        font-size: 10px;
+        margin-left: 20px;
+    }
+    .nav-style {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+   .mob-nav {
+       display: flex;
+       /* flex-wrap: wrap; */
+       justify-content: space-between; 
+       text-align: center;
+   }
+   /* .nav-style-mob {
+       text-align: center;
+       margin: 0 auto;
+   } */
+}
+

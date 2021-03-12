@@ -3,14 +3,15 @@
     justify-content: center;
     align-items: flex-start;
     border-right: 1px solid rgba(143, 143, 143, 0.1);
+    margin-bottom: 50px !important;
 }
 .footer-item:last-child {
     border-right: none;
 }
 
-.flex-footer {
+/* .flex-footer {
     display: flex;
-}
+} */
 .font-footer {
     font-size: 16px;
 }
@@ -29,4 +30,18 @@
 .opacity:hover {
     opacity: 1;
     transition: all 0.4s ease-out;  
+}
+.col-sm-12 {
+    width: auto !important;
+}
+@media (max-width: 500px) {
+    .footer-item {
+        border: none;
+        display: flex;
+        /* flex-direction: column; */
+        justify-content: center;
+        margin-bottom: 20px;
+    }
+  
+    
 }

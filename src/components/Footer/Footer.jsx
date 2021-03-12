@@ -6,54 +6,15 @@ import home from '../../img/home.svg'
 import facebook from '../../img/facebook.svg'
 import instagram from '../../img/instagram.svg'
 import './style.css'
-import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
-
 
 
 const Footer = () => {
-    const containerStyle = {
-        width: '100%',
-        height: '400px',
-        marginTop: '40px'
-      };
-      
-      const center = {
-        lat: 50.48970142061635,
-        lng: 30.488861167016232
-      };
-
-      const locations = [
-          {
-              name: 'avtoe',
-              location: {
-                lat: 50.48970142061635,
-                lng: 30.488861167016232
-              }
-          }
-      ]
-      
-    // const { isLoaded } = useJsApiLoader({
-    //     id: 'google-map-script',
-    //     googleMapsApiKey: "AIzaSyABS95c2rEoEhNOc-7nFFD9kf3MokK582w"
-    //   })
-    
-    //   const [map, setMap] = React.useState(null)
-    
-    //   const onLoad = React.useCallback(function callback(map) {
-    //     const bounds = new window.google.maps.LatLngBounds();
-    //     map.fitBounds(bounds);
-    //     setMap(map)
-    //   }, [])
-    
-    //   const onUnmount = React.useCallback(function callback(map) {
-    //     setMap(null)
-    //   }, [])
-
+  
     return (
-        <div id='footer' style={{background: '#222833', padding: '100px 50px 20px 50px'}}>
+        <div id='footer' style={{background: '#010916', padding: '100px 50px 20px 50px'}}>
             <Container fluid>
                 <Row>
-                    <Col lg={4} md={4} sm={12} className='footer-item'>
+                    <Col lg={4} md={4} sm={12} className='footer-item font-footer'>
                         <img src={call} style={{color: "#fff"}} className='icon-fill'/>
                         <div className='ml-3 text-white'>
                         <h6>Контакти:</h6>
@@ -76,32 +37,18 @@ const Footer = () => {
                           <small className='font-footer'>avtoe@i.ua</small>
                         </div>
                     </Col>
-                    <Col lg={4} md={4} sm={12} className='text-white footer-item'>
+                    <Col lg={4} md={4} sm={12} className='text-white footer-item font-footer'>
                          <img src={home} className='icon-fill'/>
-                         <div className='ml-3'>
-                            <h6>Адреса:</h6>
-                            <small className='font-footer'>г. Киев, проспект Степана Бандеры, 13</small>
-                          </div>
-                        
+                        <div  className='ml-3'>
+                          <h6>Адреса:</h6>
+                          <small className='font-footer'>г. Киев, проспект Степана Бандеры, 13</small>
+                        </div>
                     </Col>
+                 
                 </Row>
                 <Row>
                     <Col className='opacity'>
-                    {/* <LoadScript
-                           googleMapsApiKey='AIzaSyABS95c2rEoEhNOc-7nFFD9kf3MokK582w'>
-                            <GoogleMap
-                            mapContainerStyle={containerStyle}
-                            zoom={18}
-                            center={center}
-                            >
-                           {
-                                center.lat &&
-                                ( 
-                                <Marker position={center} />
-                                ) 
-                            }
-                         </GoogleMap>
-                        </LoadScript> */}
+            
                     
                     </Col>
                 </Row>

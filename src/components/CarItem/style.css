@@ -1,5 +1,5 @@
 .btn-item {
-    border-radius: 10px;
+    border-radius: 20px;
     border: none;
     -webkit-box-shadow: 0px 3px 8px 0px rgba(0, 0, 0, 0.2);
     -moz-box-shadow: 0px 3px 8px 0px rgba(0, 0, 0, 0.2);
@@ -10,15 +10,17 @@
 }
 
 .buy-now  {
-    background-color: #E24800;
+    background-color: #fff;
+    color: #000;
     padding: 5px 20px;
 }
 .swap-btn {
-    background-color: #2E2C2B;
+    background-color: #62A6A4;
     padding: 5px 20px;
+    color: #fff;
 }
 .auction-btn {
-    background-color: #F7BA04;
+    background-color: #076DFD;
     padding: 5px 40px;
 }
 .price-input {
@@ -30,10 +32,13 @@
     margin-top: 10px;
 }
 .a-icon {
-    border: 1px solid #000;
+    border: 2px solid #000;
     border-radius: 50%;
     padding: 2px 7px;
     margin-right: 10px;
+    color: #000;
+    font-weight: bold;
+    font-size: 10px;
 }
 .icon-small{ 
     width: 22px;
@@ -66,9 +71,11 @@
 }
 .btn-bid {
     border-radius: 20px !important;
-    padding: 3px 35px !important;
     font-weight: 700 !important;
     font-size: 15px !important;
+}
+button.btn-bid.btn.btn-primary{
+    padding: 5px 35px !important;
 }
 .border-style {
     border-radius: 10px !important;
@@ -88,7 +95,20 @@
     justify-content: space-around;
 }
 .car-item-style {
-    border: 1px solid #EBEBEB;
-    border-radius: 20px;
+    border: none;
+    border-radius: 10px;
     padding: 20px;
+    box-shadow: 0 0px 40px 5px #2f2c2b;
+}
+.row {
+    margin-right: 0 !important;
+    margin-left: 0 !important;
+}
+@media ( max-width: 500px) {
+    div.col-lg-3.col-md-6.col-sm-12 {
+        padding: 0 !important;
+    }
+    div.car-item-style.align-center.row {
+        padding: 0 !important;
+    }
 }

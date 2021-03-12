@@ -1,5 +1,5 @@
 import './App.css';
-import React, {useState, useRef} from 'react'
+import React, {useState, useRef, useEffect} from 'react'
 import Header from './components/Header/Header-1'
 import Categories from './components/Categories/Categories'
 import Shop from './components/Shop/Shop'
@@ -13,7 +13,7 @@ import { Container, Navbar, Nav} from 'react-bootstrap'
 import './components/NavBar/style.css'
 import logo from './img/logo-small.png'
 import person from './img/person.svg'
-import book from './img/book.svg'
+import mail from './img/mail.png'
 import calculate from './img/calculate.svg'
 import read from './img/read.svg'
 import email from './img/email.svg'
@@ -26,11 +26,28 @@ import SignUpForm from './components/SignUpForm/SignUpForm';
 import LoginForm from './components/LoginForm/LoginForm';
 import Cooperation from './components/Cooperation/Cooperation' 
 import Magazine from './components/Magazine/Magazine' 
-import { Link } from 'react-scroll'
-
+import Auction from './components/Auction/Auction'
+import './components/NavBar/style.css'
+import RequestForm from './components/RequestForm/RequestForm'
 
 const App = () => {
- 
+
+  // const [data, setData] = useState(null)
+  //  useEffect(() => {
+  //    callBackAPI()
+  //  }, [])
+
+  // const callBackAPI = async () => {
+  //     const response = await fetch('/express_backend')
+  //     const body = await response.json()
+   
+  //     if(response.status !== 200) {
+  //       throw Error(body.message)
+  //     }
+  //    console.log(body)
+   
+  //  }
+
   const [show, setShow] = useState(false)
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -43,79 +60,69 @@ const App = () => {
   const handleShow_calc = () => setShow_calc(true);
   const handleClose_calc = () => setShow_calc(false)
 
+
+  const [show_form, setShow_form] = useState(false)
+  const handleShowForm = () => setShow_form(true)
+  const handleCloseForm = () => setShow_form(false)
   return (
     <>
     <Router>
+  
         <Navbar expand="lg" className='bottomNav'>
-               <Container fluid>
-        <Nav className='nav-style nav-no-col'>
-               <Nav.Link className='nav-item' href="#deets">
-                        <img src={cart}/>
-                      <BrowserLink to='/catalog' className='black-color'>Catalog</BrowserLink>    
-               </Nav.Link>
-               <Nav.Link className='nav-item' href="#deets">
-                        <img src={hammer} width='20px' className='mb-1'/>
-                         Auction
-               </Nav.Link>
-        </Nav>
-
-               <Navbar.Toggle aria-controls="basic-navbar-nav" />
-               <Navbar.Collapse id="basic-navbar-nav">
-                  <Nav className="ml-auto nav-style nav-wrap">
-                  <Nav.Link href="#deets" className='nav-item'>
-                        <img src={home}/>
-                    <BrowserLink to='/'  className='black-color'>
-                          Main
+               <Container fluid className='display-flex justify-content-around'>
+      <Nav className='mob-nav'> 
+        <Nav className='nav-style nav-no-col nav-style-mob'>
+               <Nav.Link className='nav-item'>
+                        <img className='img-small' src={home}/>
+                    <BrowserLink to='/'  className='text-white link-nav'>
+                          Головна
                     </BrowserLink>      
-                          </Nav.Link>
-                        <Nav.Link className='nav-item' href="#deets">
-                        <img src={book}/>
-                      <BrowserLink to='/about' className='black-color'>
-                         Про Нас
-                      </BrowserLink> 
-                          </Nav.Link>
-                        <Nav.Link className=' nav-item' href="#deets" onClick={handleShow_calc}>
-                        <img src={calculate}/>
-                         
-                              Calculator
-                          
-                          </Nav.Link>  
-                        <Nav.Link className=' nav-item' href="#deets">
-                        <img src={work}/>
-                        <BrowserLink to='/cooperation' className='black-color'>
-                          Співпраця
-                        </BrowserLink>  
-                        </Nav.Link> 
-                        <Nav.Link className=' nav-item' href="#deets">
-                        <img src={read}/>
-                        <BrowserLink to='/magazine'  className='black-color'>
+               </Nav.Link>
+               <Nav.Link className='nav-item'>
+                        <img className='img-small' src={cart}/>
+                      <BrowserLink to='/catalog' className='text-white link-nav'>Catalog</BrowserLink>    
+               </Nav.Link>
+               <Nav.Link className='nav-item'>
+                        <img src={hammer} width='20px' className='mb-1 img-small link-nav'/>
+                        <BrowserLink to='/auction' className='text-white link-nav'>Auction</BrowserLink>   
+               </Nav.Link>
+  
+
+               {/* <Navbar.Toggle aria-controls="basic-navbar-nav" />
+               <Navbar.Collapse id="basic-navbar-nav"> */}
+              
+              
+                        {/* <Nav.Link className=' nav-item' href="#deets">
+                        <img className='img-small' src={read}/> 
+                         <BrowserLink to='/magazine'  className='black-color'>
                           Журнал
                         </BrowserLink>  
-                        </Nav.Link> 
-                        <Nav.Link className=' nav-item' href="#deets">
-                        <img src={email}/>
+                        </Nav.Link>  */}
+                        {/* <Nav.Link className=' nav-item' href="#deets">
+                        <img className='img-small' src={email}/>
                         <Link className='black-color' 
                               to='footer'
                               spy={true}
                               smooth={true}>
                           Контакти
                         </Link>
-                        </Nav.Link>
-                           <Nav.Link className=' nav-item' href="#deets"  onClick={handleShow}>
-                             <img src={person} />
+                        </Nav.Link> */}
+                
+                           <Nav.Link className=' nav-item link-nav'  onClick={handleShow}>
+                             <img className='img-small' src={person} />
                             Увійти
                             
                               </Nav.Link>
-                              <Nav.Link className=' nav-item' href="#deets" onClick={handleShow1}>
-                             <img src={person} />
+                              <Nav.Link className=' nav-item link-nav' onClick={handleShow1}>
+                             <img className='img-small' src={person} />
                            Реєстрація
                             
                               </Nav.Link>
-                             
-                        
-                  </Nav>
+                        </Nav> 
+                        </Nav>
+              
                   
-               </Navbar.Collapse> 
+               {/* </Navbar.Collapse>  */}
 
             <Calculator show_calc={show_calc} handleShow_calc={handleShow_calc} handleClose_calc={handleClose_calc}/>
 
@@ -127,12 +134,17 @@ const App = () => {
             <LoginForm show={show} handleShow={handleShow} handleClose={handleClose} />       
         </Container>
       </Navbar>
+      
+      <Nav.Link onClick={handleShowForm}><img className='img-mail' src={mail} /></Nav.Link>
+      <RequestForm show_form={show_form} handleShowForm={handleShowForm} handleCloseForm={handleCloseForm} />
+       
 
       <Route path='/' exact component={Header} />
       <Route path='/catalog' exact component={Shop} />
       <Route path='/about' exact component={About} />  
+      <Route path='/auction' exact component={Auction} />  
       <Route path='/cooperation' exact component={Cooperation} />    
-      {/* <MobApp /> */}
+      <MobApp />
       <Route path='/magazine' exact component={Magazine} />    
 
       <Footer />

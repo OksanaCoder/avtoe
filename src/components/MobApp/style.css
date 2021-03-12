@@ -17,9 +17,17 @@
 }
 .font-25-700 {
     color: #fff;
-    font-size: 40px;
+    font-size: 2rem;
     font-weight: 700;
 }
 .col-no-gap {
     padding: 0 !important;
+}
+@media (max-width: 500px) {
+    div.text-left.col-lg-5.col-md-6.col-sm-12 {
+        padding: 0 !important;
+    }
+    .font-25-700 {
+       padding: 20px;
+    }
 }
