@@ -10,7 +10,7 @@ import icon_2 from '../../img/speedometer.png'
 import icon_3 from '../../img/petrol.png'
 
 const ModalDetails = (props) => {
-   
+   console.log(props, ' for modal')
     
     return (
         <>

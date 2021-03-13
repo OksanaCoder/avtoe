@@ -105,29 +105,29 @@ const CarItem = ({data}) => {
                             <h5 className='color-yellow'>$ {item.price}</h5>
                        
                             <Row className='align-center'>
-                                    <Col className='center-items'><img src={icon_2} className='white-icon'/>{item.mileage}</Col>
-                                    <Col className='center-items'><img src={icon_1} className='icon-small'/>{item.city}</Col>
+                                    <Col lg={6} md={6} sm={6} xs={6} className='center-items'><img src={icon_2} className='white-icon'/>{item.mileage} тыс. км</Col>
+                                    <Col lg={6} md={6} sm={6} xs={6} className='center-items'><img src={icon_1} className='icon-small'/>{item.city}</Col>
                                 </Row>
                                 <Row className='align-center'>
-                                    <Col className='center-items'><img src={icon_3} className='icon-small'/>{item.fuel}</Col>
-                                    <Col className='center-items'><small className='a-icon-1'>A</small>{item.type}</Col>
+                                    <Col lg={6} md={6} sm={6} xs={6} className='center-items'><img src={icon_3} className='icon-small'/>{item.fuel}</Col>
+                                    <Col lg={6} md={6} sm={6} xs={6} className='center-items'><small className='a-icon-1'>A</small>{item.type}</Col>
                                 </Row>
-                                <Row>
-                                    <Col>
+                                {/* <Row>
+                                    <Col> */}
                                        <p className='start-price mt-3'>Стартова ціна: $ <small className='start-price'>{item.startPrice}</small></p>
-                                   </Col>
-                                </Row> 
-                                <Row className='display-flex mt-3'>
-                                  <Col><button  className='btn-item auction-btn' onClick={handleShow_details}>Детальніше</button></Col>
+                                   {/* </Col>
+                                </Row>  */}
+                                <div className='display-flex mt-3'>
+                                 <button  className='btn-item auction-btn' onClick={handleShow_details}>Детальніше</button>
                                   {/* <Col> <button className='btn-item buy-now'>Детальніше</button></Col> */}
-                                  <Col>   <button  className='btn-item swap-btn mt-3' onClick={handleShow_4}>Запропонувати торг</button></Col>
+                                     <button  className='btn-item swap-btn mt-3' onClick={handleShow_4}>Запропонувати торг</button>
                                 
                                   {/* <Col>  <button  className='btn-item auction-btn'>Зробити ставку</button></Col> */}
-                                </Row>
+                                </div>
 
 
                                 {/* details modal */}
-                              <ModalDetails show_details={show_details} handleShow_details={handleShow_details} handleClose_details={handleClose_details} />
+                              <ModalDetails data={data} show_details={show_details} handleShow_details={handleShow_details} handleClose_details={handleClose_details} />
                         </Card.Body>
                        
                     </Card>
