@@ -86,7 +86,7 @@ const RequestForm = (props) => {
             <Form.Group controlId="formBasicName">
               <Form.Control
                 type="text"
-                placeholder="Модель"
+                placeholder="Що цікавить ?"
                 value={model}
                 onChange={onChangeModel}
                 name="model"
@@ -96,7 +96,7 @@ const RequestForm = (props) => {
 
             <Form.Group controlId="formBasicPhone">
               <Form.Control
-                placeholder="Номер телефону"
+                placeholder="Номер телефону для зв'язку"
                 value={phone}
                 onChange={onChangePhone}
                 name="phone"

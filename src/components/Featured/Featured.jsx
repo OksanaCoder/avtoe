@@ -6,251 +6,49 @@ import icon_2 from '../../img/speedometer.png'
 import icon_3 from '../../img/petrol.png'
 import { Col, Row, Container, Card } from 'react-bootstrap'
 import ModalDetails from '../ModalDetails/ModalDetails'
-
+import CarItemBuyNow from '../CarItemBuyNow/CarItemBuyNow'
 
 
 const Featured = () => {
+    const dataCars = [
+        {
+            name : "BMW",
+            price : "80 500",
+            mileage: 22,
+            city: "Kyiv",
+            fuel: "Бензин",
+            type: "Автомат",
+            color: "червоний",
+            year: 2014,
+            drive: "повний",
+            moreInfo : " ",
+            mainImage: [],
+            images: [],
+
+        }
+]
     const [show_details, setShow_details] = useState(false);
     const handleShow_details = () => setShow_details(true);
     const handleClose_details = () => setShow_details(false);
 
     return(
         <Container className=' text-white ' fluid>
-            <Row className='align-items-center' style={{background: '#262626'}}>
+         
+                    <div className='heading-style p-5'  style={{background: '#262626'}}>
+                        
+                        <h6 className='blue-line'>Останні</h6>
+                        <h3>Оновлення</h3>
+                    
+                    </div>
+               
+
+            <Row style={{background: '#262626'}}>
+           
                 <Col lg={9} md={12} sm={12}>
-                <Row>
-                <Col lg={4} md={6} sm={12}>
-                    <Card className='card-style mb-3'>
-                        <Card.Img src={imageCar} className='img-feature'>
-                        </Card.Img>
-                        <Card.Body className='card-text'>
-                            <h5 className='bold'>2016 Ferrari California</h5>
-                            <h5 className='color-yellow'>$ 91 500</h5>
-                       
-                            <Row className='align-center'>
-                                    <Col className='center-items'><img src={icon_2} className='white-icon'/>22 тис. км</Col>
-                                    <Col className='center-items'><img src={icon_1} className='icon-small'/>Київ</Col>
-                                </Row>
-                                <Row className='align-center'>
-                                    <Col className='center-items'><img src={icon_3} className='icon-small'/>Бензин, 6 л.</Col>
-                                    <Col className='center-items'><small className='a-icon-1'>A</small>Автомат</Col>
-                                </Row>
-                                <Row className='display-flex justify-between mt-3'>
-                                  <Col><button  className='btn-item auction-btn' onClick={handleShow_details}>Details</button></Col>
-                                </Row>
+            
+                    <CarItemBuyNow dataCars={dataCars}/>
 
-
-                                {/* details modal */}
-                              <ModalDetails show_details={show_details} handleShow_details={handleShow_details} handleClose_details={handleClose_details} />
-                        </Card.Body>
-                       
-                    </Card>
-                </Col>
-               
-                <Col lg={4} md={6} sm={12}>
-                    <Card className='card-style mb-3'>
-                        <Card.Img src={imageCar} className='img-feature'>
-                        </Card.Img>
-                        <Card.Body className='card-text'>
-                            <h5 className='bold'>2016 Ferrari California</h5>
-                            <h5 className='color-yellow'>$ 91 500</h5>
-                       
-                            <Row className='align-center'>
-                                    <Col className='center-items'><img src={icon_2} className='white-icon'/>22 тис. км</Col>
-                                    <Col className='center-items'><img src={icon_1} className='icon-small'/>Київ</Col>
-                                </Row>
-                                <Row className='align-center'>
-                                    <Col className='center-items'><img src={icon_3} className='icon-small'/>Бензин, 6 л.</Col>
-                                    <Col className='center-items'><small className='a-icon-1'>A</small>Автомат</Col>
-                                </Row>
-                                <Row className='display-flex justify-between mt-3'>
-                                  <Col><button  className='btn-item auction-btn' onClick={handleShow_details}>Детальніше</button></Col>
-                                </Row>
-                                
-                        </Card.Body>
-                       
-                    </Card>
-                </Col>
-               
-                <Col lg={4} md={6} sm={12} >
-                    <Card className='card-style mb-3'>
-                        <Card.Img src={imageCar} className='img-feature'>
-                        </Card.Img>
-                        <Card.Body className='card-text'>
-                            <h5 className='bold'>2016 Ferrari California</h5>
-                            <h5 className='color-yellow'>$ 91 500</h5>
-                       
-                            <Row className='align-center'>
-                                    <Col className='center-items'><img src={icon_2} className='white-icon'/>22 тис. км</Col>
-                                    <Col className='center-items'><img src={icon_1} className='icon-small'/>Київ</Col>
-                                </Row>
-                                <Row className='align-center'>
-                                    <Col className='center-items'><img src={icon_3} className='icon-small'/>Бензин, 6 л.</Col>
-                                    <Col className='center-items'><small className='a-icon-1'>A</small>Автомат</Col>
-                                </Row>
-                                <Row className='display-flex justify-between mt-3'>
-                                  <Col><button  className='btn-item auction-btn' onClick={handleShow_details}>Детальніше</button></Col>
-                                </Row>
-                               
-                        </Card.Body>
-                       
-                    </Card>
-                </Col>
-                
-            </Row>
-            <Row>
-                <Col lg={4} md={6} sm={12}>
-                    <Card className='card-style mb-3'>
-                        <Card.Img src={imageCar} className='img-feature'>
-                        </Card.Img>
-                        <Card.Body className='card-text'>
-                            <h5 className='bold'>2016 Ferrari California</h5>
-                            <h5 className='color-yellow'>$ 91 500</h5>
-                       
-                            <Row className='align-center'>
-                                    <Col className='center-items'><img src={icon_2} className='white-icon'/>22 тис. км</Col>
-                                    <Col className='center-items'><img src={icon_1} className='icon-small'/>Київ</Col>
-                                </Row>
-                                <Row className='align-center'>
-                                    <Col className='center-items'><img src={icon_3} className='icon-small'/>Бензин, 6 л.</Col>
-                                    <Col className='center-items'><small className='a-icon-1'>A</small>Автомат</Col>
-                                </Row>
-                                <Row className='display-flex justify-between mt-3'>
-                                  <Col><button  className='btn-item auction-btn' onClick={handleShow_details}>Детальніше</button></Col>
-                                </Row>
-                                
-                        </Card.Body>
-                       
-                    </Card>
-                </Col>
-               
-                <Col lg={4} md={6} sm={12}>
-                    <Card className='card-style mb-3'>
-                        <Card.Img src={imageCar} className='img-feature'>
-                        </Card.Img>
-                        <Card.Body className='card-text'>
-                            <h5 className='bold'>2016 Ferrari California</h5>
-                            <h5 className='color-yellow'>$ 91 500</h5>
-                       
-                            <Row className='align-center'>
-                                    <Col className='center-items'><img src={icon_2} className='white-icon'/>22 тис. км</Col>
-                                    <Col className='center-items'><img src={icon_1} className='icon-small'/>Київ</Col>
-                                </Row>
-                                <Row className='align-center'>
-                                    <Col className='center-items'><img src={icon_3} className='icon-small'/>Бензин, 6 л.</Col>
-                                    <Col className='center-items'><small className='a-icon-1'>A</small>Автомат</Col>
-                                </Row>
-                                <Row className='display-flex justify-between mt-3'>
-                                  <Col><button  className='btn-item auction-btn' onClick={handleShow_details}>Детальніше</button></Col>
-                                </Row>
-                               
-                        </Card.Body>
-                       
-                    </Card>
-                </Col>
-               
-                <Col lg={4} md={6} sm={12}>
-                    <Card className='card-style mb-3'>
-                        <Card.Img src={imageCar} className='img-feature'>
-                        </Card.Img>
-                        <Card.Body className='card-text'>
-                            <h5 className='bold'>2016 Ferrari California</h5>
-                            <h5 className='color-yellow'>$ 91 500</h5>
-                       
-                            <Row className='align-center'>
-                                    <Col className='center-items'><img src={icon_2} className='white-icon'/>22 тис. км</Col>
-                                    <Col className='center-items'><img src={icon_1} className='icon-small'/>Київ</Col>
-                                </Row>
-                                <Row className='align-center'>
-                                    <Col className='center-items'><img src={icon_3} className='icon-small'/>Бензин, 6 л.</Col>
-                                    <Col className='center-items'><small className='a-icon-1'>A</small>Автомат</Col>
-                                </Row>
-                                <Row className='display-flex justify-between mt-3'>
-                                  <Col><button  className='btn-item auction-btn' onClick={handleShow_details}>Детальніше</button></Col>
-                                </Row>                   
-                        </Card.Body>
-                       
-                    </Card>
-                </Col>
-                
-            </Row>
-            <Row>
-                <Col lg={4} md={6} sm={12}>
-                    <Card className='card-style mb-3'>
-                        <Card.Img src={imageCar} className='img-feature'>
-                        </Card.Img>
-                        <Card.Body className='card-text'>
-                            <h5 className='bold'>2016 Ferrari California</h5>
-                            <h5 className='color-yellow'>$ 91 500</h5>
-                       
-                            <Row className='align-center'>
-                                    <Col className='center-items'><img src={icon_2} className='white-icon'/>22 тис. км</Col>
-                                    <Col className='center-items'><img src={icon_1} className='icon-small'/>Київ</Col>
-                                </Row>
-                                <Row className='align-center'>
-                                    <Col className='center-items'><img src={icon_3} className='icon-small'/>Бензин, 6 л.</Col>
-                                    <Col className='center-items'><small className='a-icon-1'>A</small>Автомат</Col>
-                                </Row>
-                                <Row className='display-flex justify-between mt-3'>
-                                  <Col><button  className='btn-item auction-btn' onClick={handleShow_details}>Детальніше</button></Col>
-                                </Row>
-                               
-                        </Card.Body>
-                       
-                    </Card>
-                </Col>
-               
-                <Col lg={4} md={6} sm={12}>
-                    <Card className='card-style mb-3'>
-                        <Card.Img src={imageCar} className='img-feature'>
-                        </Card.Img>
-                        <Card.Body className='card-text'>
-                            <h5 className='bold'>2016 Ferrari California</h5>
-                            <h5 className='color-yellow'>$ 91 500</h5>
-                       
-                            <Row className='align-center'>
-                                    <Col className='center-items'><img src={icon_2} className='white-icon'/>22 тис. км</Col>
-                                    <Col className='center-items'><img src={icon_1} className='icon-small'/>Київ</Col>
-                                </Row>
-                                <Row className='align-center'>
-                                    <Col className='center-items'><img src={icon_3} className='icon-small'/>Бензин, 6 л.</Col>
-                                    <Col className='center-items'><small className='a-icon-1'>A</small>Автомат</Col>
-                                </Row>
-                                <Row className='display-flex justify-between mt-3'>
-                                  <Col><button  className='btn-item auction-btn' onClick={handleShow_details}>Детальніше</button></Col>
-                                </Row>
-                                
-                        </Card.Body>
-                       
-                    </Card>
-                </Col>
-               
-                <Col lg={4} md={6} sm={12}>
-                    <Card className='card-style mb-3'>
-                        <Card.Img src={imageCar} className='img-feature'>
-                        </Card.Img>
-                        <Card.Body className='card-text'>
-                            <h5 className='bold'>2016 Ferrari California</h5>
-                            <h5 className='color-yellow'>$ 91 500</h5>
-                       
-                            <Row className='align-center'>
-                                    <Col className='center-items'><img src={icon_2} className='white-icon'/>22 тис. км</Col>
-                                    <Col className='center-items'><img src={icon_1} className='icon-small'/>Київ</Col>
-                                </Row>
-                                <Row className='align-center'>
-                                    <Col className='center-items'><img src={icon_3} className='icon-small'/>Бензин, 6 л.</Col>
-                                    <Col className='center-items'><small className='a-icon-1'>A</small>Автомат</Col>
-                                </Row>
-                                <Row className='display-flex justify-between mt-3'>
-                                  <Col><button  className='btn-item auction-btn' onClick={handleShow_details}>Детальніше</button></Col>
-                                </Row>
-                               
-                        </Card.Body>
-                       
-                    </Card>
-                </Col>
-                
-            </Row>
+           
                 </Col>
 
 

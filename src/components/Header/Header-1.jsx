@@ -13,13 +13,15 @@ import BackgroundSlider from 'react-background-slider'
 import Calculators from '../Calculators/Calculators'
 import  Advantages from '../Advantages/Advantages'
 import SliderCars from '../SliderCars/SliderCars'
-import CarItem from '../CarItem/CarItem'
+
 
 const Header = () => {
    const [ isPicked, setPicked ] = useState(false)
    const handleClick = () => {
      setPicked(!isPicked)
    }
+
+
    return(
        <>
          <Container className='background' fluid style={{fontWeight: '700'}}>
@@ -42,7 +44,7 @@ const Header = () => {
               <Col>
               <div className='flex-center white'>
 
-                <h6 style={{fontSize: '1rem', fontWeight: 'bold',}}>Мрієш Про Власне Авто ?</h6> 
+                <h6 style={{fontSize: '1rem', fontWeight: 'bold',}}>Досить Мріяти про Авто</h6> 
                 
                 <h4 style={{fontSize: '3rem', fontWeight: 'bold', color: '#036DFD', lineHeight: '1'}}><small style={{fontSize: '2rem', fontWeight: 'bold', color: '#fff'}}>У</small> AVTOE <small style={{fontSize: '2rem', fontWeight: 'bold', color: '#fff'}}>для тебе апетитні пропозиції</small></h4>
               
@@ -67,7 +69,7 @@ const Header = () => {
        </Row>
            
        </Container>
-       {/* <CarItem /> */}
+ 
        <SliderCars />
        <Calculators />
        <Advantages />
