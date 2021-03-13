@@ -118,7 +118,7 @@ const CarItem = ({data}) => {
                                    {/* </Col>
                                 </Row>  */}
                                 <div className='display-flex mt-3'>
-                                 <button  className='btn-item auction-btn' onClick={handleShow_details}>Детальніше</button>
+                                 <button  className='btn-item auction-btn mr-2' onClick={handleShow_details}>Детальніше</button>
                                   {/* <Col> <button className='btn-item buy-now'>Детальніше</button></Col> */}
                                      <button  className='btn-item swap-btn mt-3' onClick={handleShow_4}>Запропонувати торг</button>
                                 
