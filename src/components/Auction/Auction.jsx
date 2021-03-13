@@ -21,7 +21,8 @@ const Auction = () => {
             drive: "повний",
             moreInfo : " ",
             mainImage: [],
-            images: []
+            images: [],
+
         }
     ]
     // const [data, setData]  = useState(arr)

@@ -98,8 +98,9 @@ const CarItem = ({data}) => {
                          <>
                     <Col lg={3} md={6} sm={12}>             
                       <Card className='card-style mb-3'>
-                        <Card.Img src={imageCar} className='img-feature'>
+                        <Card.Img src={imageCar} className='img-feature img-auction'>
                         </Card.Img>
+            
                         <Card.Body className='card-text'>
                             <h5 className='bold'>{item.name}</h5>
                             <h5 className='color-yellow'>$ {item.price}</h5>
