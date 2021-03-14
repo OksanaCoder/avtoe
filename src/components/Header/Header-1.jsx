@@ -46,7 +46,7 @@ const Header = () => {
 
                 <h6 style={{fontSize: '1rem', fontWeight: 'bold',}}>Досить Мріяти про Авто</h6> 
                 
-                <h4 style={{fontSize: '3rem', fontWeight: 'bold', color: '#036DFD', lineHeight: '1'}}><small style={{fontSize: '2rem', fontWeight: 'bold', color: '#fff'}}>У</small> AVTOE <small style={{fontSize: '2rem', fontWeight: 'bold', color: '#fff'}}>для тебе апетитні пропозиції</small></h4>
+                <h4 style={{fontSize: '3rem', fontWeight: 'bold', color: '#036DFD', lineHeight: '1'}}><small style={{fontSize: '2rem', fontWeight: 'bold', color: '#fff'}}>У</small> AVTOE <small style={{fontSize: '2rem', fontWeight: 'bold', color: '#fff'}}>для тебе завжди є пропозиції</small></h4>
               
               <input type='text' placeholder='BMW X5  ' className='search-line'/>
               <img src={search}  width='20px'/>

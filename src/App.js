@@ -83,7 +83,7 @@ const App = () => {
                       <BrowserLink to='/catalog' className='text-white link-nav'>Catalog</BrowserLink>    
                </Nav.Link>
                <Nav.Link className='nav-item'>
-                        <img src={hammer} width='20px' className='mb-1 img-small link-nav'/>
+                        <img src={hammer} width='20px' className='mb-1 img-small'/>
                         <BrowserLink to='/auction' className='text-white link-nav'>Auction</BrowserLink>   
                </Nav.Link>
   
@@ -98,7 +98,7 @@ const App = () => {
                          <BrowserLink to='/magazine'  className=' text-white link-nav'>
                           Журнал
                         </BrowserLink>  
-                </Nav.Link> 
+                </Nav.Link>
                {/* <Navbar.Toggle aria-controls="basic-navbar-nav" />
                <Navbar.Collapse id="basic-navbar-nav"> */}
               
