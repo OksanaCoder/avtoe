@@ -10,6 +10,7 @@ import { Col, Row, Card, Container } from 'react-bootstrap'
 import icon_1 from '../../img/location.png'
 import icon_2 from '../../img/speedometer.png'
 import icon_3 from '../../img/petrol.png'
+import arrow_down from '../../img/arrow-down.png'
 import ModalDetails from '../ModalDetails/ModalDetails'
 import CarItemBuyNow from '../CarItemBuyNow/CarItemBuyNow'
 import {Link } from "react-router-dom";
@@ -58,8 +59,8 @@ const SliderCars = () => {
   
         
         <Row>
-          <Col className='text-right'>
-             <Link to='/catalog'><button className='btn-item auction-btn'>Весь перелік</button></Link>
+          <Col className='text-center'>
+             <Link to='/catalog'><button className='btn-item auction-btn'><img width='15px' src={arrow_down}/></button></Link>
           </Col>
         </Row>
      
