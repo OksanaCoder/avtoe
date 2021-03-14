@@ -20,6 +20,8 @@ body {
 }
 .navbar-nav {
     flex-direction: row !important;
+    flex-wrap: wrap;
+    justify-content: center !important;
 }
 .navbar-light .navbar-nav .nav-link {
     color: #fff !important;
@@ -33,7 +35,10 @@ body {
     background: #036DFD !important;
     z-index: 999;
     width: 100%;
+
+
 }
+
 .nav-item {
     margin-left: 30px;
     font-weight: 600;

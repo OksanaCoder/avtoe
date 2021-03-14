@@ -87,7 +87,18 @@ const App = () => {
                         <BrowserLink to='/auction' className='text-white link-nav'>Auction</BrowserLink>   
                </Nav.Link>
   
-
+               <Nav.Link className='nav-item'>
+                        <img className='img-small' src={read}/> 
+                         <BrowserLink to='/'  className=' text-white link-nav' onClick={handleShow_calc}>
+                          Кредит
+                        </BrowserLink>  
+                </Nav.Link> 
+                <Nav.Link className='nav-item'>
+                        <img className='img-small' src={read}/> 
+                         <BrowserLink to='/magazine'  className=' text-white link-nav'>
+                          Журнал
+                        </BrowserLink>  
+                </Nav.Link> 
                {/* <Navbar.Toggle aria-controls="basic-navbar-nav" />
                <Navbar.Collapse id="basic-navbar-nav"> */}
               
@@ -144,9 +155,9 @@ const App = () => {
       <Route path='/about' exact component={About} />  
       <Route path='/auction' exact component={Auction} />  
       <Route path='/cooperation' exact component={Cooperation} />    
-      <MobApp />
+  
       <Route path='/magazine' exact component={Magazine} />    
-
+      <MobApp />
       <Footer />
       </Router>
     </>
