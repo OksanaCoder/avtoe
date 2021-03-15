@@ -9,6 +9,8 @@ import img_3 from '../../img/i-3.svg'
 import image3 from '../../img/fera.png'
 import image2 from '../../img/slider-2.png'
 import image1 from '../../img/slider-1.png'
+import logo_big from '../../img/logo-big.png'
+import logo_small from '../../img/logo-small.png'
 import BackgroundSlider from 'react-background-slider'
 import Calculators from '../Calculators/Calculators'
 import  Advantages from '../Advantages/Advantages'
@@ -29,11 +31,11 @@ const Header = () => {
           images={[image1, image2, image3]}
           duration={3} transition={2} /> 
      
-           <Row className='p-4'>
-             <Col lg={6} md={6} sm={6} className='text-left'>
-                  {/* <img style={{ width: '30px'}} src={logo} alt='logo' className='logo-svg'/> */}
+           <Row className='p-4 nav-logo-lang'>
+             <Col lg={6} md={6} sm={12} className='text-left'>
+                  <img src={logo_small} alt='logo' width='30px'/>
              </Col>
-             <Col lg={6} md={6} sm={6} className='text-right flex-right'>
+             <Col lg={6} md={6} sm={12} className='text-right flex-right'>
                   <button onClick={handleClick} className={!isPicked ? 'active-link' : 'not-active'}><h6>UA</h6></button>
                   <button onClick={handleClick} className={isPicked ? 'active-link' : 'not-active'}><h6 className='ml-3'>RU</h6></button>
              </Col>
@@ -46,7 +48,9 @@ const Header = () => {
 
                 <h6 style={{fontSize: '1rem', fontWeight: 'bold',}}>Досить Мріяти про Авто</h6> 
                 
-                <h4 style={{fontSize: '3rem', fontWeight: 'bold', color: '#036DFD', lineHeight: '1'}}><small style={{fontSize: '2rem', fontWeight: 'bold', color: '#fff'}}>У</small> AVTOE <small style={{fontSize: '2rem', fontWeight: 'bold', color: '#fff'}}>для тебе завжди є пропозиції</small></h4>
+                <h4 style={{fontSize: '3rem', fontWeight: 'bold', color: '#036DFD', lineHeight: '1'}}><small style={{fontSize: '2rem', fontWeight: 'bold', color: '#fff'}}>У</small>
+                   <img style={{ width: '150px'}} src={logo_big} alt='logo' className='ml-3 mr-4'/>
+                <small style={{fontSize: '2rem', fontWeight: 'bold', color: '#fff'}}>для тебе завжди є пропозиції</small></h4>
               
               <input type='text' placeholder='BMW X5  ' className='search-line'/>
               <img src={search}  width='20px'/>

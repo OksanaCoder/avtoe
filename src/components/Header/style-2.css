@@ -157,6 +157,9 @@ select {
 
 
 @media (max-width : 500px) {
+    .nav-logo-lang {
+      justify-content: space-between;
+    }
       .white-fill {
         width: 50px;
       }
