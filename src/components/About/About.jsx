@@ -31,16 +31,33 @@ const About = () => {
           }
       ] 
     return (
-        <div className='back-blue'>
-        <Header />
-        <Container fluid className='p-5'>
+
+    //    <div>
+    //         <Container fluid style={{padding: '0'}}>
+    //             <Row className='flex-style padding-filter m-0' style={{background: '#23292D'}}>
+                   
+    //             <div className='heading-style col text-center'>
+    //                 <div className="blue-line m-auto"></div> 
+    //                 <h6 className='mt-3'>Обери</h6>
+    //                 <h3 className='blue-color'>Авто Своєї Мрії</h3>
+    //             </div>
+               
+    //             </Row>
+             
+    //                <Filter />
+    //                <Featured />
+
+    //         </Container>
+    //     </div>
+        <div>
+        <Container fluid className='p-5 about-pad'>
        
         <Tabs defaultActiveKey="profile" id="uncontrolled-tab-example">
-            <Tab eventKey="home" title="Організація">
+            <Tab eventKey="home" title="Організація" className='tab-about'>
             <Row className='mt-5'>
             <div className='heading-style col-lg-12 col-md-12 col-sm-12  mb-5 mt-5'>
-               
-               <h6>ГРОМАДСЬКА ОРГАНІЗАЦІЯ</h6>
+               <div className="blue-line mr-auto"></div> 
+               <h6 className='text-dark mt-3'>Громадська Організація</h6>
                <h3>Всеукраїнська асоціація автобізнесменів</h3>
           
            </div>
@@ -60,8 +77,8 @@ const About = () => {
             <Tab eventKey="profile" title="Засновник">
             <Row  className='mt-5'>
             <div className='heading-style col-lg-12 col-md-12 col-sm-12  mb-5 mt-5'>
-               
-               <h6>Президент Всеукраїнської асоціації автобізнесменів</h6>
+               <div className="blue-line mr-auto"></div> 
+               <h6 className='text-dark mt-3'>Президент Всеукраїнської асоціації автобізнесменів</h6>
                <h3>Володимир Кузьменко</h3>
           
            </div>
@@ -81,7 +98,9 @@ const About = () => {
             </Row>
             </Tab>
             <Tab eventKey="map" title="Місцеположення">
+               
                 <Col>
+                <h6 className='pl-3 pt-3'>г. Киев, проспект Степана Бандеры, 13</h6>
                      <LoadScript
                            googleMapsApiKey='AIzaSyABS95c2rEoEhNOc-7nFFD9kf3MokK582w'>
                             <GoogleMap

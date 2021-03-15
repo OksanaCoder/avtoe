@@ -78,7 +78,6 @@ const App = () => {
                <Nav.Link className='nav-item'>
                <BrowserLink to='/'  className='text-white link-nav '>
                         <img className='img-small' src={home}/>
-                   
                           Головна
                     </BrowserLink>      
                </Nav.Link>
@@ -106,13 +105,19 @@ const App = () => {
                           Журнал
                         </BrowserLink>  
                 </Nav.Link>
-                <Nav.Link className='nav-item text-white link-nav'  to='/magazine'  >
-                <BrowserLink to='/cooperation'  className=' text-white link-nav'>
-                        <img className='img-small' src={search}/> 
-                      
-                          Шукаємо
-                        </BrowserLink>  
-                </Nav.Link>
+                      <Nav.Link className='nav-item text-white link-nav'>
+                      <BrowserLink to='/cooperation'  className=' text-white link-nav'>
+                              <img className='img-small' src={search}/> 
+                            
+                                Шукаємо
+                              </BrowserLink>  
+                      </Nav.Link>
+                      <Nav.Link className='nav-item text-white link-nav'>
+                      <BrowserLink to='/about'  className=' text-white link-nav'>
+                              <img className='img-small' src={search}/> 
+                                Про нас
+                              </BrowserLink>  
+                      </Nav.Link>
           
                         <Nav.Link className='nav-item link-nav'>
                         <BrowserLink className=' text-white link-nav'
@@ -130,11 +135,11 @@ const App = () => {
                             Увійти
                             
                               </Nav.Link>
-                              <Nav.Link className=' nav-item link-nav' onClick={handleShow1}>
+                              {/* <Nav.Link className=' nav-item link-nav' onClick={handleShow1}>
                              <img className='img-small' src={person} />
                            Реєстрація
                             
-                              </Nav.Link>
+                              </Nav.Link> */}
                         </Nav> 
                         </Nav>
               
@@ -158,8 +163,8 @@ const App = () => {
        
 
       <Route path='/' exact component={() => <Header reference={myRef} />}/>
+      <Route path='/about' exact component={About} />
       <Route path='/catalog' exact component={Shop} />
-      <Route path='/about' exact component={About} />  
       <Route path='/auction' exact component={Auction} />  
       <Route path='/cooperation' exact component={Cooperation} />   
       <Route path='/magazine' exact component={Magazine} />    
