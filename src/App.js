@@ -11,7 +11,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter as Router, Route, Link as BrowserLink } from 'react-router-dom'
 import { Container, Navbar, Nav} from 'react-bootstrap'
 import './components/NavBar/style.css'
-import logo from './img/logo-small.png'
 import person from './img/person.svg'
 import mail from './img/mail.png'
 import search from './img/search.svg'
