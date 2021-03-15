@@ -18,6 +18,6 @@ a:focus {
 
 @media (max-width: 500px) {
     .p-5.about-pad.container-fluid {
-        padding: 0 !important;
+        padding: 50px 0 0 0  !important;
     }
 }

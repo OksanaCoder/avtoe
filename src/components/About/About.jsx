@@ -54,7 +54,7 @@ const About = () => {
        
         <Tabs defaultActiveKey="profile" id="uncontrolled-tab-example">
             <Tab eventKey="home" title="Організація" className='tab-about'>
-            <Row className='mt-5'>
+            <Row>
             <div className='heading-style col-lg-12 col-md-12 col-sm-12  mb-5 mt-5'>
                <div className="blue-line mr-auto"></div> 
                <h6 className='text-dark mt-3'>Громадська Організація</h6>
@@ -75,7 +75,7 @@ const About = () => {
             </Row>
             </Tab>
             <Tab eventKey="profile" title="Засновник">
-            <Row  className='mt-5'>
+            <Row >
             <div className='heading-style col-lg-12 col-md-12 col-sm-12  mb-5 mt-5'>
                <div className="blue-line mr-auto"></div> 
                <h6 className='text-dark mt-3'>Президент Всеукраїнської асоціації автобізнесменів</h6>
@@ -100,7 +100,7 @@ const About = () => {
             <Tab eventKey="map" title="Місцеположення">
                
                 <Col>
-                <h6 className='pl-3 pt-3'>г. Киев, проспект Степана Бандеры, 13</h6>
+                <h6 className='pl-3 pt-3 mt-3'>г. Киев, проспект Степана Бандеры, 13</h6>
                      <LoadScript
                            googleMapsApiKey='AIzaSyABS95c2rEoEhNOc-7nFFD9kf3MokK582w'>
                             <GoogleMap
