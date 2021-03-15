@@ -10,6 +10,10 @@ body {
     align-items: center;
     flex-direction: row;
 }
+.link-nav {
+    display: flex;
+    flex-direction: column;
+}
 .link-nav:focus,
 .nav-item:focus {
     color: #fff !important; 
@@ -152,7 +156,10 @@ a.nav-item.nav-link {
     border-radius: 10px;
     box-shadow: 0 0 2px 1px #0062cc;
 }
-
+.img-small {
+    width: 20px;
+    margin: auto;
+}
 @media (max-width: 500px) {
     .img-small {
        width: 15px !important;

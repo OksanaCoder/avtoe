@@ -73,29 +73,33 @@ const App = () => {
       <Nav className='mob-nav'> 
         <Nav className='nav-style nav-no-col nav-style-mob'>
                <Nav.Link className='nav-item'>
+               <BrowserLink to='/'  className='text-white link-nav '>
                         <img className='img-small' src={home}/>
-                    <BrowserLink to='/'  className='text-white link-nav'>
+                   
                           Головна
                     </BrowserLink>      
                </Nav.Link>
                <Nav.Link className='nav-item'>
+               <BrowserLink to='/catalog' className='text-white link-nav'> 
                         <img className='img-small' src={cart}/>
-                      <BrowserLink to='/catalog' className='text-white link-nav'>Catalog</BrowserLink>    
+                       Catalog</BrowserLink>    
                </Nav.Link>
                <Nav.Link className='nav-item'>
+               <BrowserLink to='/auction' className='text-white link-nav'>
                         <img src={hammer} width='20px' className='mb-1 img-small'/>
-                        <BrowserLink to='/auction' className='text-white link-nav'>Auction</BrowserLink>   
+                      Auction</BrowserLink>   
                </Nav.Link>
   
                <Nav.Link className='nav-item'>
+               <BrowserLink to='/'  className=' text-white link-nav' onClick={handleShow_calc}>
                         <img className='img-small' src={read}/> 
-                         <BrowserLink to='/'  className=' text-white link-nav' onClick={handleShow_calc}>
                           Кредит
                         </BrowserLink>  
                 </Nav.Link> 
-                <Nav.Link className='nav-item'>
+                <Nav.Link className='nav-item text-white link-nav'  to='/magazine'  >
+                <BrowserLink to='/magazine'  className=' text-white link-nav'>
                         <img className='img-small' src={read}/> 
-                         <BrowserLink to='/magazine'  className=' text-white link-nav'>
+                      
                           Журнал
                         </BrowserLink>  
                 </Nav.Link>
