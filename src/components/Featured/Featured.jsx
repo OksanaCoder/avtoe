@@ -32,7 +32,7 @@ const Featured = () => {
     const handleClose_details = () => setShow_details(false);
 
     return(
-        <Container className=' text-white ' fluid>
+        <Container className='text-white' fluid>
          
                     <div className='heading-style p-5'  style={{background: '#262626'}}>
                         
@@ -42,74 +42,35 @@ const Featured = () => {
                     </div>
                
 
-            <Row style={{background: '#262626'}}>
+            <Row style={{background: '#262626'}} className='pb-5'>
            
-                <Col lg={9} md={12} sm={12}>
+                <Col lg={12} md={12} sm={12}>
             
                     <CarItemBuyNow dataCars={dataCars}/>
 
            
                 </Col>
 
-
-                <Col lg={3} md={12} sm={12} className='adv-box pt-5' style={{background: '#EFF3FC'}}>
+{/* 
+                <Col lg={3} md={12} sm={12} className='adv-box pt-5 mb-5' style={{background: '#000', borderRadius :'20px'}}>
                     <Row className='d-flex flex-direction-column'>
                         <Col lg={12} md={6} sm={12} className='short-border'>
                         <Card className='card-style mb-3'>
                         <Card.Img src={imageCar} className='img-feature-adv'>
                         </Card.Img>
                         <Card.Body className='card-text'>
-                            <small className='font-adv'>2016 Ferrari California</small>
-                            <p className='font-adv'>Cтартова ціна: <small className='font-bid-price'>$ 30 500</small></p>
+                            <small>2016 Ferrari California</small>
+                            <p >Cтартова ціна: <small className='font-bid-price'>$ 30 500</small></p>
                              <Row className='display-flex justify-between mt-3'>
                                   <Col><button  className='btn-item bit-btn'>Зробити ставку</button></Col>
                                 </Row>       
                         </Card.Body>     
                         </Card>      
                      </Col>
-                     <Col lg={12} md={6} sm={12}  className='short-border'>
-                        <Card className='card-style mb-3'>
-                        <Card.Img src={imageCar} className='img-feature-adv'>
-                        </Card.Img>
-                        <Card.Body className='card-text'>
-                            <small className='font-adv'>2016 Ferrari California</small>
-                            <p className='font-adv'>Cтартова ціна: <small className='font-bid-price'>$ 30 500</small></p>
-                             <Row className='display-flex justify-between mt-3'>
-                                  <Col><button  className='btn-item bit-btn'>Зробити ставку</button></Col>
-                                </Row>       
-                        </Card.Body>     
-                        </Card>      
-                     </Col>
-                     <Col lg={12} md={6} sm={12}  className='short-border'>
-                        <Card className='card-style mb-3'>
-                        <Card.Img src={imageCar} className='img-feature-adv'>
-                        </Card.Img>
-                        <Card.Body className='card-text'>
-                            <small className='font-adv'>2016 Ferrari California</small>
-                            <p className='font-adv'>Cтартова ціна: <small className='font-bid-price'>$ 30 500</small></p>
-                             <Row className='display-flex justify-between mt-3'>
-                                  <Col><button  className='btn-item bit-btn'>Зробити ставку</button></Col>
-                                </Row>       
-                        </Card.Body>     
-                        </Card>      
-                     </Col>
-                     <Col lg={12} md={6} sm={12}  className='short-border'>
-                        <Card className='card-style mb-3'>
-                        <Card.Img src={imageCar} className='img-feature-adv'>
-                        </Card.Img>
-                        <Card.Body className='card-text'>
-                            <small className='font-adv'>2016 Ferrari California</small>
-                            <p className='font-adv'>Cтартова ціна: <small className='font-bid-price'>$ 30 500</small></p>
-                             <Row className='display-flex justify-between mt-3'>
-                                  <Col><button  className='btn-item bit-btn'>Зробити ставку</button></Col>
-                                </Row>       
-                        </Card.Body>     
-                        </Card>      
-                     </Col>
-                    </Row>
-                </Col>
+                     
+              </Row>
+            </Col> */}
             </Row>
-            
         </Container>
     )
 }

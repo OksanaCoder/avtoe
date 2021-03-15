@@ -8,7 +8,7 @@ import { Row, Container } from 'react-bootstrap'
 
 const Shop = () => {
     return (
-        <div style={{background: '#fff'}}>
+        <div>
             <Container fluid style={{padding: '0'}}>
                 <Row className='flex-style padding-filter m-0' style={{background: '#23292D'}}>
                    
@@ -21,9 +21,9 @@ const Shop = () => {
                 </Row>
              
                    <Filter />
-      
+                   <Featured />
+
             </Container>
-            <Featured />
         </div>
     )
 }
