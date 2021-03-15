@@ -29,7 +29,7 @@ import './style.css'
                         <img src={bank_3} className='img-bank'/>
                     </Col>
                     <Col lg={3} md={6} sm={12}>
-                        <img src={bank_1} className='img-bank'/>
+                        <img src={bank_1} className='img-bank last'/>
                     </Col>
                 </Row>
           </Container>
