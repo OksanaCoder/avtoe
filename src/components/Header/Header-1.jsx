@@ -17,7 +17,7 @@ import  Advantages from '../Advantages/Advantages'
 import SliderCars from '../SliderCars/SliderCars'
 
 
-const Header = () => {
+const Header = ({reference}) => {
    const [ isPicked, setPicked ] = useState(false)
    const handleClick = () => {
      setPicked(!isPicked)
@@ -75,7 +75,7 @@ const Header = () => {
        </Container>
  
        <SliderCars />
-       <Calculators />
+       <Calculators reference={reference}/>
        <Advantages />
 
        

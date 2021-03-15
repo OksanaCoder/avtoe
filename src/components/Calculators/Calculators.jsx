@@ -5,11 +5,11 @@ import bank_2 from '../../img/bank-2.png'
 import  bank_3  from '../../img/bank-3.png'
 import './style.css'
 
- const Calculators = () => {
+ const Calculators = ({reference}) => {
     return (
         <>
       
-         <Row className='color-light-dark p-5 '>
+         <Row className='color-light-dark p-5 ' ref={reference}>
                 <div className='heading-style'>
                     
                     <h6 className='blue-line'>Авто</h6>

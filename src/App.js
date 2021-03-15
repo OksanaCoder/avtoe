@@ -1,5 +1,5 @@
 import './App.css';
-import React, {useState} from 'react'
+import React, { useState, useRef } from 'react'
 import Header from './components/Header/Header-1'
 import Categories from './components/Categories/Categories'
 import Shop from './components/Shop/Shop'
@@ -33,7 +33,12 @@ import RequestForm from './components/RequestForm/RequestForm'
 
 const App = () => {
 
-
+  const myRef = useRef(null)
+  const scrollToCredit = () => {
+    myRef.current.scrollIntoView({
+      behavior: "smooth"
+    })
+  }
   const scrollToBottom =  () => {
     window.scrollTo({
      top: document.documentElement.scrollHeight,
@@ -90,7 +95,7 @@ const App = () => {
                </Nav.Link>
   
                <Nav.Link className='nav-item'>
-               <BrowserLink to='/'  className=' text-white link-nav' onClick={handleShow_calc}>
+               <BrowserLink to='/'  className=' text-white link-nav' onClick={scrollToCredit}>
                         <img className='img-small' src={read}/> 
                           Кредит
                         </BrowserLink>  
@@ -155,7 +160,7 @@ const App = () => {
       <RequestForm show_form={show_form} handleShowForm={handleShowForm} handleCloseForm={handleCloseForm} />
        
 
-      <Route path='/' exact component={Header} />
+      <Route path='/' exact component={() => <Header reference={myRef} />}/>
       <Route path='/catalog' exact component={Shop} />
       <Route path='/about' exact component={About} />  
       <Route path='/auction' exact component={Auction} />  
