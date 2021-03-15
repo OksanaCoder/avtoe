@@ -39,8 +39,9 @@ body {
     background: #036DFD !important;
     z-index: 999;
     width: 100%;
-
-
+}
+.bottomNav.navbar.navbar-expand-lg.navbar-light {
+   padding: 10px 0 10px 0;
 }
 
 .nav-item {

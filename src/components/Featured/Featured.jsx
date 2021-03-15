@@ -44,11 +44,8 @@ const Featured = () => {
 
             <Row style={{background: '#262626'}} className='pb-5'>
            
-                <Col lg={12} md={12} sm={12}>
-            
+                <Col lg={12} md={12} sm={12}>           
                     <CarItemBuyNow dataCars={dataCars}/>
-
-           
                 </Col>
 
 {/* 

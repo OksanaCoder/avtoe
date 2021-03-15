@@ -17,7 +17,7 @@ import mail from './img/mail.png'
 import calculate from './img/calculate.svg'
 import read from './img/read.svg'
 import email from './img/email.svg'
-import work from './img/work.svg'
+import credit from './img/credit.svg'
 import cart from './img/cart.svg'
 import hammer from './img/hammer.svg'
 import up from './img/arrow-up.png'
@@ -96,7 +96,7 @@ const App = () => {
   
                <Nav.Link className='nav-item'>
                <BrowserLink to='/'  className=' text-white link-nav' onClick={scrollToCredit}>
-                        <img className='img-small' src={read}/> 
+                        <img className='img-small' src={credit}/> 
                           Кредит
                         </BrowserLink>  
                 </Nav.Link> 
@@ -107,16 +107,14 @@ const App = () => {
                           Журнал
                         </BrowserLink>  
                 </Nav.Link>
-               {/* <Navbar.Toggle aria-controls="basic-navbar-nav" />
-               <Navbar.Collapse id="basic-navbar-nav"> */}
-              
-              
-                        {/* <Nav.Link className=' nav-item' href="#deets">
+                <Nav.Link className='nav-item text-white link-nav'  to='/magazine'  >
+                <BrowserLink to='/cooperation'  className=' text-white link-nav'>
                         <img className='img-small' src={read}/> 
-                         <BrowserLink to='/magazine'  className='black-color'>
-                          Журнал
+                      
+                          Ищем
                         </BrowserLink>  
-                        </Nav.Link>  */}
+                </Nav.Link>
+          
                         <Nav.Link className='nav-item link-nav'>
                         <BrowserLink className=' text-white link-nav'
                                      onClick={scrollToBottom}
@@ -164,8 +162,7 @@ const App = () => {
       <Route path='/catalog' exact component={Shop} />
       <Route path='/about' exact component={About} />  
       <Route path='/auction' exact component={Auction} />  
-      <Route path='/cooperation' exact component={Cooperation} />    
-  
+      <Route path='/cooperation' exact component={Cooperation} />   
       <Route path='/magazine' exact component={Magazine} />    
       <MobApp />
       <Footer />
