@@ -14,7 +14,7 @@ import './components/NavBar/style.css'
 import logo from './img/logo-small.png'
 import person from './img/person.svg'
 import mail from './img/mail.png'
-import calculate from './img/calculate.svg'
+import search from './img/search.svg'
 import read from './img/read.svg'
 import email from './img/email.svg'
 import credit from './img/credit.svg'
@@ -109,9 +109,9 @@ const App = () => {
                 </Nav.Link>
                 <Nav.Link className='nav-item text-white link-nav'  to='/magazine'  >
                 <BrowserLink to='/cooperation'  className=' text-white link-nav'>
-                        <img className='img-small' src={read}/> 
+                        <img className='img-small' src={search}/> 
                       
-                          Ищем
+                          Шукаємо
                         </BrowserLink>  
                 </Nav.Link>
           
