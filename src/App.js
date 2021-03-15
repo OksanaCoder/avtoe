@@ -1,5 +1,5 @@
 import './App.css';
-import React, {useState, useRef, useEffect, scrollHeight, createRef} from 'react'
+import React, {useState} from 'react'
 import Header from './components/Header/Header-1'
 import Categories from './components/Categories/Categories'
 import Shop from './components/Shop/Shop'
@@ -32,6 +32,7 @@ import './components/NavBar/style.css'
 import RequestForm from './components/RequestForm/RequestForm'
 
 const App = () => {
+
 
   const scrollToBottom =  () => {
     window.scrollTo({

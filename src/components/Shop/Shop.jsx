@@ -1,5 +1,5 @@
 
-import React, { Component } from 'react';
+import React, { Component, useLayoutEffect } from 'react';
 import './style.css'
 import CarItem from '../CarItem/CarItem'
 import Featured from '../Featured/Featured'
@@ -7,6 +7,12 @@ import Filter from '../Filter/Filter'
 import { Row, Container } from 'react-bootstrap'
 
 const Shop = () => {
+
+
+    useLayoutEffect(() => {
+        window.scrollTo(0, 0)
+    });
+
     return (
         <div>
             <Container fluid style={{padding: '0'}}>

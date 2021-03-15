@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useLayoutEffect } from "react";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import './style.css'
@@ -7,6 +7,10 @@ import Filter from '../Filter/Filter'
 import { Row, Container } from 'react-bootstrap'
 
 const Auction = () => {
+    useLayoutEffect(() => {
+        window.scrollTo(0, 0)
+    });
+    
     const data = [
         {
             name : "Ferrari California",
@@ -25,7 +29,7 @@ const Auction = () => {
 
         }
     ]
-    // const [data, setData]  = useState(arr)
+
 
     return (
         <>
