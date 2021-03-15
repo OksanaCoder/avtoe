@@ -1,5 +1,5 @@
 import './App.css';
-import React, {useState, useRef, useEffect} from 'react'
+import React, {useState, useRef, useEffect, scrollHeight, createRef} from 'react'
 import Header from './components/Header/Header-1'
 import Categories from './components/Categories/Categories'
 import Shop from './components/Shop/Shop'
@@ -32,22 +32,14 @@ import RequestForm from './components/RequestForm/RequestForm'
 
 const App = () => {
 
-  // const [data, setData] = useState(null)
-  //  useEffect(() => {
-  //    callBackAPI()
-  //  }, [])
+  const contactsBottom = React.createRef(null) 
 
-  // const callBackAPI = async () => {
-  //     const response = await fetch('/express_backend')
-  //     const body = await response.json()
-   
-  //     if(response.status !== 200) {
-  //       throw Error(body.message)
-  //     }
-  //    console.log(body)
-   
-  //  }
-
+  const scrollToBottom =  () => {
+    window.scrollTo({
+     top: document.documentElement.scrollHeight,
+     behavior: "smooth"
+    })
+  }
   const [show, setShow] = useState(false)
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -113,15 +105,16 @@ const App = () => {
                           Журнал
                         </BrowserLink>  
                         </Nav.Link>  */}
-                        {/* <Nav.Link className=' nav-item' href="#deets">
+                        <Nav.Link className='nav-item link-nav'>
+                        <BrowserLink className=' text-white link-nav'
+                                     onClick={scrollToBottom}
+                                  >
+
                         <img className='img-small' src={email}/>
-                        <Link className='black-color' 
-                              to='footer'
-                              spy={true}
-                              smooth={true}>
+                        
                           Контакти
-                        </Link>
-                        </Nav.Link> */}
+                        </BrowserLink>
+                        </Nav.Link>
                 
                            <Nav.Link className=' nav-item link-nav'  onClick={handleShow}>
                              <img className='img-small' src={person} />

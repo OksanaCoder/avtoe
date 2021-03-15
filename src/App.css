@@ -21,7 +21,7 @@ body {
 .img-mail {
   width: 50px;
   position: fixed !important;
-  right: 50px;
+  right: 20px;
   bottom: 130px;
   border-radius: 50%;
   z-index: 999;
