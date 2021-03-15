@@ -20,6 +20,7 @@ import email from './img/email.svg'
 import work from './img/work.svg'
 import cart from './img/cart.svg'
 import hammer from './img/hammer.svg'
+import up from './img/arrow-up.png'
 import home from './img/home.svg'
 import Calculator from './components/NavBar/Calculator';
 import SignUpForm from './components/SignUpForm/SignUpForm';
@@ -32,14 +33,19 @@ import RequestForm from './components/RequestForm/RequestForm'
 
 const App = () => {
 
-  const contactsBottom = React.createRef(null) 
-
   const scrollToBottom =  () => {
     window.scrollTo({
      top: document.documentElement.scrollHeight,
      behavior: "smooth"
     })
+  }  
+  const scrollToTop =  () => {
+    window.scrollTo({
+      top: (0, 0),
+      behavior: "smooth"
+    })
   }
+
   const [show, setShow] = useState(false)
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -143,7 +149,8 @@ const App = () => {
         </Container>
       </Navbar>
       
-      <img className='img-mail' src={mail}   onClick={handleShowForm}/>
+      <img className='img-mail' src={mail} onClick={handleShowForm}/>
+      <img className='up' src={up} onClick={scrollToTop} />
       <RequestForm show_form={show_form} handleShowForm={handleShowForm} handleCloseForm={handleCloseForm} />
        
 
@@ -156,6 +163,7 @@ const App = () => {
       <Route path='/magazine' exact component={Magazine} />    
       <MobApp />
       <Footer />
+     
       </Router>
     </>
   );
