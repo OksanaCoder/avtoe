@@ -27,10 +27,10 @@ const Header = () => {
    return(
        <>
          <Container className='background' fluid style={{fontWeight: '700'}}>
-        <BackgroundSlider className='background'
+        {/* <BackgroundSlider className='background'
           images={[image1, image2, image3]}
-          duration={3} transition={2} /> 
-     
+          duration={3} transition={2} />  */}
+          
            <Row className='p-4 nav-logo-lang'>
              <Col lg={6} md={6} sm={12} className='text-left'>
                   <img src={logo_small} alt='logo' width='30px'/>

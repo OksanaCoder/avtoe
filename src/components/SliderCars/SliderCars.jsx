@@ -52,10 +52,11 @@ const SliderCars = () => {
                     
         </div>
                
-       
-
+       <div className='pad-none p-5'>
+           
         <CarItemBuyNow dataCars={dataCars}/>
        
+       </div>
   
         
         <Row>
