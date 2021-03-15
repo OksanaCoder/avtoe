@@ -61,7 +61,7 @@ const SliderCars = () => {
         
         <Row>
           <Col className='text-center'>
-             <Link to='/catalog'><button className='btn-item auction-btn'><img width='15px' src={arrow_down}/></button></Link>
+             <Link to='/catalog'><button className='btn-item auction-btn mt-5'><img width='15px' src={arrow_down}/></button></Link>
           </Col>
         </Row>
      
