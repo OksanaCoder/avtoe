@@ -59,7 +59,7 @@ const LoginForm = (props) => {
         className="login-form"
       >
         <Modal.Header closeButton>
-          <Modal.Title>Увійти в аккаунт</Modal.Title>
+          <Modal.Title>Log in</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <Form onSubmit={handleSubmit}>
@@ -78,15 +78,15 @@ const LoginForm = (props) => {
             <Form.Group controlId="formBasicPassword">
               <Form.Control
                 type="password"
-                placeholder="Пароль"
+                placeholder="Password"
                 onChange={onChangePassword}
                 value={password}
                 className="input-style mb-4"
               />
             </Form.Group>
             <Form.Group controlId="formBasicCheckbox" className="flex-form">
-              <Form.Check type="checkbox" label="Запам'ятати" />
-              <small>Забули пароль ?</small>
+              <Form.Check type="checkbox" label="Remember" />
+              <small>Forgot password ?</small>
             </Form.Group>
             <div className="flex-form mt-5 flex-column">
               <Button
@@ -95,10 +95,10 @@ const LoginForm = (props) => {
                 className="btn-form yellow-back"
                 onClick={handleSubmit}
               >
-                Увійти
+                Log in
               </Button>
               <p className='p-12 mt-3'>Вперше на сайті ?</p>
-              <p className='p-12-link'><a>Зареєструватись</a></p>
+              <p className='p-12-link'><a>Sign up</a></p>
             </div>
           </Form>
         </Modal.Body>

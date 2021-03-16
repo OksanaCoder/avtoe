@@ -6,7 +6,7 @@
     box-shadow: 0px 3px 8px 0px rgba(0, 0, 1, 0.2);
     color: #fff;
     font-weight: bold;
-    font-size: 15px;
+    font-size: 12px;
 }
 
 .buy-now  {
@@ -22,6 +22,11 @@
 .auction-btn {
     background-color: #076DFD;
     padding: 5px 40px;
+}
+.auction-btn-bet {
+    background-color: #ffffff;
+    padding: 5px 40px;
+    color: #000;
 }
 .price-input {
     border: 1px solid #8E8E8E;
@@ -47,6 +52,7 @@
 .center-items {
     display : flex;
     align-items: center;
+    
 }
 .float-pos {
     display: flex;
@@ -84,7 +90,7 @@ button.btn-bid.btn.btn-primary{
     align-items: center;
 }
 .start-price {
-   font-size: 15px;
+   font-size: 13px;
 }
 .start-price {
     font-weight: bold;
@@ -111,4 +117,7 @@ button.btn-bid.btn.btn-primary{
     div.car-item-style.align-center.row {
         padding: 0 !important;
     }
+    /* .card-style {
+        padding: 0 !important;
+    } */
 }

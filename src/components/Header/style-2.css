@@ -6,6 +6,7 @@ body {
   position: relative;
   width: 100vw;
   height: 95vh;
+  background: url('../../img/fera.png');
   background-size: cover;
   background-position: center;
   animation-timing-function: ease-in-out;
@@ -157,6 +158,9 @@ select {
 
 
 @media (max-width : 500px) {
+    .nav-logo-lang {
+      justify-content: space-between;
+    }
       .white-fill {
         width: 50px;
       }

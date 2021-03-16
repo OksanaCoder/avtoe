@@ -11,3 +11,19 @@
 .row-modal .col:first-child {
     font-weight: 700;
 }
+.price-details {
+    color: #F7BA04;
+    font-weight: bold;
+    font-size: 30px;
+    
+}
+@media (max-width: 500px) {
+    .row-modal .col {
+        font-size: 10px;
+    }
+    .price-details, 
+    .name-details{
+        font-size: 20px;
+        
+    }
+} 

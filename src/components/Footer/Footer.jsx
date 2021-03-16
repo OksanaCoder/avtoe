@@ -10,6 +10,7 @@ import './style.css'
 
 const Footer = () => {
   
+     
     return (
         <div id='footer' style={{background: '#010916', padding: '100px 50px 20px 50px'}}>
             <Container fluid>
@@ -57,7 +58,7 @@ const Footer = () => {
                        <small className='font-footer'>Ми в соціальних мережах: </small>
                        <ul className='list-unstyled flex-footer align-center'>
                            <li>
-                               <a href=''><img src={facebook} width='30px' className='ml-4 mr-4 icon-fill'/></a>
+                               <a href='https://www.facebook.com/avtoeukraine/'><img src={facebook} width='30px' className='ml-4 mr-4 icon-fill'/></a>
                            </li>
                            <li>
                                <a href='https://www.instagram.com/avtoe.ua/'><img src={instagram} className='icon-fill' width='30px'/></a>

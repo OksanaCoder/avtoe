@@ -1,16 +1,15 @@
 import React, { useState } from 'react'
-import './style.css'
+// import '../CarItem/style.css'
 import imageCar from '../../img/ferrari.jpg'
 import icon_1 from '../../img/location.png'
 import icon_2 from '../../img/speedometer.png'
 import icon_3 from '../../img/petrol.png'
-import countdown from '../../img/time.svg'
 import { Col, Row, Container, Modal, Button, Form, Card } from 'react-bootstrap'
 import ModalDetails from '../ModalDetails/ModalDetails'
 import axios from 'axios';
 import { Redirect } from 'react-router-dom';
 
-const CarItem = ({data}) => {
+const CarItemBuyNow = ({dataCars}) => {
     
     const [show_details, setShow_details] = useState(false);
     const handleShow_details = () => setShow_details(true);
@@ -29,7 +28,7 @@ const CarItem = ({data}) => {
     const [price, setPrice] = useState("")
     const [comment, setComment] = useState("")
 
-    
+
 
 
   const API_URL = process.env.REACT_APP_URL;
@@ -73,28 +72,20 @@ const CarItem = ({data}) => {
     e.preventDefault();
     const confirmOffer = await offer(username, phone, price, comment);
     if (confirmOffer){
-        alert("Заявку відправлено !")
+        alert("Request is sent  !")
         return <Redirect to="/auction" />;
     }else{
-        alert("Помилка :(")
+        alert("Error :(")
     }
   };
-  console.log("data is ", data)
+  console.log("data is ", dataCars)
     return (
         <div>
-            <Container className='text-white pb-5' fluid style={{background: '#262626'}}>
-            <Row className='p-5'>
-                <div className='heading-style'>
+            {/* <Container className='text-white pb-5' fluid style={{background: '#262626'}}> */}
+        
                     
-                    <h6 className='blue-line'>Останні</h6>
-                    <h3>Оновлення</h3>
-                
-                </div>
-            </Row>
 
-                    <Row className=' align-center'>
-
-                 {data.map(item => {
+                 {dataCars.map(item => {
                      return(
                          <>
                     <Col lg={3} md={6} sm={12}>             
@@ -104,35 +95,27 @@ const CarItem = ({data}) => {
                         <Card.Body className='card-text'>
                             <h5 className='bold'>{item.name}</h5>
                             <h5 className='color-yellow'>$ {item.price}</h5>
-                             <h6 style={{display: 'flex', alignItems: 'center'}}><img src={countdown} className='mt-1 mr-2' fill='#fff'/>12:12:09</h6> 
-                                {/* <Row className='align-center'>
+                       
+                            <Row className='align-center'>
                                     <Col lg={6} md={6} sm={6} xs={6} className='center-items'><img src={icon_2} className='white-icon'/>{item.mileage} тыс. км</Col>
                                     <Col lg={6} md={6} sm={6} xs={6} className='center-items'><img src={icon_1} className='icon-small'/>{item.city}</Col>
                                 </Row>
                                 <Row className='align-center'>
                                     <Col lg={6} md={6} sm={6} xs={6} className='center-items'><img src={icon_3} className='icon-small'/>{item.fuel}</Col>
                                     <Col lg={6} md={6} sm={6} xs={6} className='center-items'><small className='a-icon-1'>A</small>{item.type}</Col>
-                                </Row> */}
-                                {/* <Row>
-                                    <Col> */}
-                                       <p className='start-price mt-3'>Стартова ціна: $ <small className='start-price'>{item.startPrice}</small></p>
-                                   {/* </Col>
-                                </Row>  */}
+                                </Row>
+                       
                                 <div className='display-flex mt-3'>
-                                 {/* <button  className='btn-item auction-btn mr-' onClick={handleShow_details}>Детальніше</button> */}
-                                 <button  className='btn-item auction-btn mr-2' onClick={handleShow_details}>Details</button>
+                                 <button  className='btn-item auction-btn mr-1' onClick={handleShow_details}>More</button>
                                   {/* <Col> <button className='btn-item buy-now'>Детальніше</button></Col> */}
-                                     {/* <button  className='btn-item swap-btn mt-3' onClick={handleShow_4}>Запропонувати торг</button> */}
-
-                                     {/* <button  className='btn-item swap-btn mt-3' onClick={handleShow_4}>Suggest a price</button> */}
-
-                                  {/* <button  className='btn-item auction-btn mt-3'>Зробити ставку</button> */}
-                                    <button  className='btn-item auction-btn-bet mt-3'>Make a bet</button>
-                                 </div>
+                                     <button  className='btn-item swap-btn mt-3' onClick={handleShow_4}>Suggest your price</button>
+                                
+                                  {/* <Col>  <button  className='btn-item auction-btn'>Зробити ставку</button></Col> */}
+                                </div>
 
 
                                 {/* details modal */}
-                              <ModalDetails data={data} show_details={show_details} handleShow_details={handleShow_details} handleClose_details={handleClose_details} />
+                              <ModalDetails dataCars={dataCars} show_details={show_details} handleShow_details={handleShow_details} handleClose_details={handleClose_details} />
                         </Card.Body>
                        
                     </Card>
@@ -144,14 +127,14 @@ const CarItem = ({data}) => {
                             className="login-form"
                             >
                             <Modal.Header closeButton>
-                            <Modal.Title>Запропонувати торг</Modal.Title>
+                            <Modal.Title>Suggest your price</Modal.Title>
                             </Modal.Header>
                             <Modal.Body>
                             <Form onSubmit={handleSubmit}>
                                 <Form.Group controlId="formBasicEmail">
                                 <Form.Control
                                     type="text"
-                                    placeholder="Ім'я"
+                                    placeholder="Name"
                                     onChange={onChangeUsername}
                                     value={username}
                                     name="username"
@@ -163,7 +146,7 @@ const CarItem = ({data}) => {
                                 <Form.Group controlId="formBasicPhoneNumber">
                                 <Form.Control
                                     type="number"
-                                    placeholder="Номер телефону"
+                                    placeholder="Phone number"
                                     onChange={onChangePhone}
                                     value={phone}
                                     className="input-style mb-4"
@@ -174,7 +157,7 @@ const CarItem = ({data}) => {
                                 <Form.Group controlId="formBasicPrice">
                                 <Form.Control
                                     type="number"
-                                    placeholder="Твоя ціна, $"
+                                    placeholder="Your price, $"
                                     onChange={onChangePrice}
                                     value={price}
                                     className="input-style mb-4"
@@ -184,7 +167,7 @@ const CarItem = ({data}) => {
                                 
                                 <Form.Control    className='border-style'  
                                                     as="textarea" rows={3} 
-                                                    placeholder='Твій коментарій'
+                                                    placeholder='Message'
                                                     value={comment}
                                                     onChange={onChangeComment}
                                                     />
@@ -195,7 +178,7 @@ const CarItem = ({data}) => {
                                     className="btn-form yellow-back"
                                     onClick={handleSubmit}
                                 >
-                                    Відправити
+                                    Send
                                 </Button>
 
                             </Form>
@@ -210,11 +193,10 @@ const CarItem = ({data}) => {
 
 
                                            
-                   </Row> 
             
-           </Container>
+           {/* </Container> */}
         </div>
     )
 }
 
-export default CarItem
+export default CarItemBuyNow

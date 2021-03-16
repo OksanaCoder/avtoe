@@ -1,5 +1,6 @@
 import React from 'react'
 import { Form, Button, Col, Row } from 'react-bootstrap'
+import styles from './style.css'
 
 const Filter = () => {
     return (

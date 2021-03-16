@@ -76,14 +76,14 @@ const SignUpForm = (props) => {
         className="login-form"
       >
         <Modal.Header closeButton>
-          <Modal.Title>Реєстрація</Modal.Title>
+          <Modal.Title>Sign up</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <Form onSubmit={handleSubmit}>
             <Form.Group controlId="formBasicName">
               <Form.Control
                 type="text"
-                placeholder="Ім'я"
+                placeholder="Name"
                 value={username}
                 onChange={onChangeUsername}
                 name="username"
@@ -104,7 +104,7 @@ const SignUpForm = (props) => {
             <Form.Group controlId="formBasicPassword">
               <Form.Control
                 type="password"
-                placeholder="Пароль"
+                placeholder="Password"
                 value={password}
                 onChange={onChangePassword}
                 name="password"
@@ -113,7 +113,7 @@ const SignUpForm = (props) => {
             </Form.Group>
             <Form.Group controlId="formBasicPhone">
               <Form.Control
-                placeholder="Номер телефону"
+                placeholder="Phone number"
                 value={phone}
                 onChange={onChangePhone}
                 name="phone"
@@ -133,10 +133,10 @@ const SignUpForm = (props) => {
                 type="submit"
                 className="btn-form yellow-back"
               >
-                Зареєструватись
+                Sign up
               </Button>
-              <p className='p-12 mt-3'>Є аккаунт ?</p>
-              <p className='p-12-link'><a>Увійти</a></p>
+              <p className='p-12 mt-3'>Have an account ?</p>
+              <p className='p-12-link'><a>Log in</a></p>
               {/* <Button
                 variant="primary"
                 className="btn-form grey-back"

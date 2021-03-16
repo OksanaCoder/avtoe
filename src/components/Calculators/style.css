@@ -17,6 +17,9 @@
 
 @media (max-width: 500px) {
     .img-bank {
-        margin-bottom: 70px;
+        margin-bottom: 80px;
+    }
+    .last{
+        margin-bottom: 0;
     }
 }

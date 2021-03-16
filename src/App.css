@@ -21,8 +21,8 @@ body {
 .img-mail {
   width: 50px;
   position: fixed !important;
-  right: 50px;
-  bottom: 100px;
+  right: 20px;
+  bottom: 130px;
   border-radius: 50%;
   z-index: 999;
   -webkit-box-shadow: 0px 0px 20px 0px rgba(7, 109, 253);
@@ -34,7 +34,19 @@ body {
   animation-iteration-count: infinite;
   animation-timing-function: linear;
 }
-
+.up {
+  width: 50px;
+  height: 50px;
+  position: fixed !important;
+  right: 20px;
+  bottom: 190px;
+  border-radius: 50%;
+  z-index: 999;
+  /* -webkit-box-shadow: 0px 0px 20px 0px rgba(7, 109, 253);
+  -moz-box-shadow: 0px 0px 20px 0px rgba(7, 109, 253);
+  box-shadow: 0px 0px 20px 0px rgba(7, 109, 253); */
+  background: rgba(7, 109, 253);
+}
 
 @keyframes pulse_animation {
     0% { transform: scale(1); }

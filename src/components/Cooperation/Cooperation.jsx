@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useLayoutEffect } from 'react'
 import { Row, Col, Card } from 'react-bootstrap'
 import camry from '../../img/camry.jpg'
 import wol from '../../img/wol.jpg'
@@ -7,14 +7,20 @@ import './style.css'
 
 
 const Cooperation = () => {
+
+    useLayoutEffect(() => {
+        window.scrollTo(0, 0)
+    });
+
     return (
         <>
    
-              <Row className='flex-style pt-5 pl-5 pr-5' style={{background: '#23292D'}}>
+              <Row className='flex-style pl-5 pr-5' style={{background: '#23292D'}}>
                     
-                    <div className='heading-style col text-center p-5'>
-                        <h6>Ми</h6>
-                        <h3 className='text-white'>Купимо Ваше Авто</h3>
+                    <div className='heading-style col text-center pb-5'>
+                    <div className="blue-line m-auto"></div> 
+                       <h6 className='mt-3'>Ми</h6>
+                       <h3 className='blue-color'>Купимо Ваше Авто</h3>
                         <small className='text-white'>(української реєстрації)</small>
                         <Row className='mt-4 align-center'>
                             <Col className='text-white text-center' lg={6} md={6} sm={12}>
