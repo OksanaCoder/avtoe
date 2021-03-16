@@ -3,7 +3,8 @@ import { Container, Row, Col } from 'react-bootstrap'
 import bank_1 from '../../img/bank-1.png'
 import bank_2 from '../../img/bank-2.png'
 import  bank_3  from '../../img/bank-3.png'
-import bank_4 from '../../img/accordbank.png'
+import bank_4 from '../../img/tac.png'
+import bank_5 from '../../img/hap.png'
 import './style.css'
 
  const Calculators = ({reference}) => {
