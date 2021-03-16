@@ -12,19 +12,19 @@ const RequestForm = (props) => {
   
   const [username, setUserName] = useState("");
   const [phone, setPhone] = useState("");
-  const [model, setModel] = useState("")
+  const [comment, setModel] = useState("")
 
   const API_URL = process.env.REACT_APP_URL;
 
   const register = (
     username,
     phone,
-    model
+    comment
   ) => {
     return axios.post(API_URL + "/requests", {
       username,
       phone,
-      model
+      comment
     });
   };
   const handleSubmit = async (e) => {
@@ -32,7 +32,7 @@ const RequestForm = (props) => {
     const succesregv = await register(
       username,
       phone,
-      model
+      comment
     );
     //form.current.validateAll()
     if (succesregv) {
@@ -56,8 +56,8 @@ const RequestForm = (props) => {
     (phone);
   };
   const onChangeModel = (e) => {
-    const model = e.target.value;
-    setModel(model);
+    const comment = e.target.value;
+    setModel(comment);
   };
 
   return (
@@ -68,7 +68,7 @@ const RequestForm = (props) => {
         className="login-form"
       >
         <Modal.Header closeButton>
-          <Modal.Title>Залишити заявку</Modal.Title>
+          <Modal.Title>Leave request</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <Form onSubmit={handleSubmit}>
@@ -86,17 +86,17 @@ const RequestForm = (props) => {
             <Form.Group controlId="formBasicName">
               <Form.Control
                 type="text"
-                placeholder="Що цікавить ?"
-                value={model}
+                placeholder="Your message"
+                value={comment}
                 onChange={onChangeModel}
-                name="model"
+                name="comment"
                 className="input-style"
               />
             </Form.Group>
 
             <Form.Group controlId="formBasicPhone">
               <Form.Control
-                placeholder="Номер телефону для зв'язку"
+                placeholder="Phone number"
                 value={phone}
                 onChange={onChangePhone}
                 name="phone"
@@ -109,7 +109,7 @@ const RequestForm = (props) => {
                 type="submit"
                 className="btn-form yellow-back"
               >
-                Відправити
+                Send
               </Button>
            
               {/* <Button

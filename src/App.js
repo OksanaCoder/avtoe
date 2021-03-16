@@ -16,6 +16,7 @@ import mail from './img/mail.png'
 import search from './img/search.svg'
 import read from './img/read.svg'
 import email from './img/email.svg'
+import about from './img/info.svg'
 import credit from './img/credit.svg'
 import cart from './img/cart.svg'
 import hammer from './img/hammer.svg'
@@ -78,7 +79,7 @@ const App = () => {
                <Nav.Link className='nav-item'>
                <BrowserLink to='/'  className='text-white link-nav '>
                         <img className='img-small' src={home}/>
-                          Головна
+                          Main
                     </BrowserLink>      
                </Nav.Link>
                <Nav.Link className='nav-item'>
@@ -102,7 +103,7 @@ const App = () => {
                 <BrowserLink to='/magazine'  className=' text-white link-nav'>
                         <img className='img-small' src={read}/> 
                       
-                          Журнал
+                          Magazine
                         </BrowserLink>  
                 </Nav.Link>
                       <Nav.Link className='nav-item text-white link-nav'>
@@ -114,7 +115,7 @@ const App = () => {
                       </Nav.Link>
                       <Nav.Link className='nav-item text-white link-nav'>
                       <BrowserLink to='/about'  className=' text-white link-nav'>
-                              <img className='img-small' src={search}/> 
+                              <img className='img-small' src={about}/> 
                                 Про нас
                               </BrowserLink>  
                       </Nav.Link>
@@ -132,14 +133,14 @@ const App = () => {
                 
                            <Nav.Link className=' nav-item link-nav'  onClick={handleShow}>
                              <img className='img-small' src={person} />
-                            Увійти
+                            Log in
                             
                               </Nav.Link>
-                              {/* <Nav.Link className=' nav-item link-nav' onClick={handleShow1}>
+                              <Nav.Link className=' nav-item link-nav' onClick={handleShow1}>
                              <img className='img-small' src={person} />
-                           Реєстрація
+                           Sign Up
                             
-                              </Nav.Link> */}
+                              </Nav.Link>
                         </Nav> 
                         </Nav>
               

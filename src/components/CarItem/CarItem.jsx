@@ -4,6 +4,7 @@ import imageCar from '../../img/ferrari.jpg'
 import icon_1 from '../../img/location.png'
 import icon_2 from '../../img/speedometer.png'
 import icon_3 from '../../img/petrol.png'
+import countdown from '../../img/time.svg'
 import { Col, Row, Container, Modal, Button, Form, Card } from 'react-bootstrap'
 import ModalDetails from '../ModalDetails/ModalDetails'
 import axios from 'axios';
@@ -28,7 +29,7 @@ const CarItem = ({data}) => {
     const [price, setPrice] = useState("")
     const [comment, setComment] = useState("")
 
-
+    
 
 
   const API_URL = process.env.REACT_APP_URL;
@@ -98,33 +99,36 @@ const CarItem = ({data}) => {
                          <>
                     <Col lg={3} md={6} sm={12}>             
                       <Card className='card-style mb-3'>
-                        <Card.Img src={imageCar} className='img-feature img-auction'>
+                        <Card.Img src={imageCar} className='img-feature'>
                         </Card.Img>
-            
                         <Card.Body className='card-text'>
                             <h5 className='bold'>{item.name}</h5>
                             <h5 className='color-yellow'>$ {item.price}</h5>
-                       
-                            <Row className='align-center'>
+                             <h6 style={{display: 'flex', alignItems: 'center'}}><img src={countdown} className='mt-1 mr-2' fill='#fff'/>12:12:09</h6> 
+                                {/* <Row className='align-center'>
                                     <Col lg={6} md={6} sm={6} xs={6} className='center-items'><img src={icon_2} className='white-icon'/>{item.mileage} тыс. км</Col>
                                     <Col lg={6} md={6} sm={6} xs={6} className='center-items'><img src={icon_1} className='icon-small'/>{item.city}</Col>
                                 </Row>
                                 <Row className='align-center'>
                                     <Col lg={6} md={6} sm={6} xs={6} className='center-items'><img src={icon_3} className='icon-small'/>{item.fuel}</Col>
                                     <Col lg={6} md={6} sm={6} xs={6} className='center-items'><small className='a-icon-1'>A</small>{item.type}</Col>
-                                </Row>
+                                </Row> */}
                                 {/* <Row>
                                     <Col> */}
                                        <p className='start-price mt-3'>Стартова ціна: $ <small className='start-price'>{item.startPrice}</small></p>
                                    {/* </Col>
                                 </Row>  */}
                                 <div className='display-flex mt-3'>
-                                 <button  className='btn-item auction-btn mr-2' onClick={handleShow_details}>Детальніше</button>
+                                 {/* <button  className='btn-item auction-btn mr-' onClick={handleShow_details}>Детальніше</button> */}
+                                 <button  className='btn-item auction-btn mr-2' onClick={handleShow_details}>Details</button>
                                   {/* <Col> <button className='btn-item buy-now'>Детальніше</button></Col> */}
-                                     <button  className='btn-item swap-btn mt-3' onClick={handleShow_4}>Запропонувати торг</button>
-                                
-                                  {/* <Col>  <button  className='btn-item auction-btn'>Зробити ставку</button></Col> */}
-                                </div>
+                                     {/* <button  className='btn-item swap-btn mt-3' onClick={handleShow_4}>Запропонувати торг</button> */}
+
+                                     {/* <button  className='btn-item swap-btn mt-3' onClick={handleShow_4}>Suggest a price</button> */}
+
+                                  {/* <button  className='btn-item auction-btn mt-3'>Зробити ставку</button> */}
+                                    <button  className='btn-item auction-btn-bet mt-3'>Make a bet</button>
+                                 </div>
 
 
                                 {/* details modal */}

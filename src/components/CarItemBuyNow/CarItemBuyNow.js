@@ -72,10 +72,10 @@ const CarItemBuyNow = ({dataCars}) => {
     e.preventDefault();
     const confirmOffer = await offer(username, phone, price, comment);
     if (confirmOffer){
-        alert("Заявку відправлено !")
+        alert("Request is sent  !")
         return <Redirect to="/auction" />;
     }else{
-        alert("Помилка :(")
+        alert("Error :(")
     }
   };
   console.log("data is ", dataCars)
@@ -106,9 +106,9 @@ const CarItemBuyNow = ({dataCars}) => {
                                 </Row>
                        
                                 <div className='display-flex mt-3'>
-                                 <button  className='btn-item auction-btn mr-1' onClick={handleShow_details}>Детальніше</button>
+                                 <button  className='btn-item auction-btn mr-1' onClick={handleShow_details}>More</button>
                                   {/* <Col> <button className='btn-item buy-now'>Детальніше</button></Col> */}
-                                     <button  className='btn-item swap-btn mt-3' onClick={handleShow_4}>Запропонувати торг</button>
+                                     <button  className='btn-item swap-btn mt-3' onClick={handleShow_4}>Suggest your price</button>
                                 
                                   {/* <Col>  <button  className='btn-item auction-btn'>Зробити ставку</button></Col> */}
                                 </div>
@@ -127,14 +127,14 @@ const CarItemBuyNow = ({dataCars}) => {
                             className="login-form"
                             >
                             <Modal.Header closeButton>
-                            <Modal.Title>Запропонувати торг</Modal.Title>
+                            <Modal.Title>Suggest your price</Modal.Title>
                             </Modal.Header>
                             <Modal.Body>
                             <Form onSubmit={handleSubmit}>
                                 <Form.Group controlId="formBasicEmail">
                                 <Form.Control
                                     type="text"
-                                    placeholder="Ім'я"
+                                    placeholder="Name"
                                     onChange={onChangeUsername}
                                     value={username}
                                     name="username"
@@ -146,7 +146,7 @@ const CarItemBuyNow = ({dataCars}) => {
                                 <Form.Group controlId="formBasicPhoneNumber">
                                 <Form.Control
                                     type="number"
-                                    placeholder="Номер телефону"
+                                    placeholder="Phone number"
                                     onChange={onChangePhone}
                                     value={phone}
                                     className="input-style mb-4"
@@ -157,7 +157,7 @@ const CarItemBuyNow = ({dataCars}) => {
                                 <Form.Group controlId="formBasicPrice">
                                 <Form.Control
                                     type="number"
-                                    placeholder="Твоя ціна, $"
+                                    placeholder="Your price, $"
                                     onChange={onChangePrice}
                                     value={price}
                                     className="input-style mb-4"
@@ -167,7 +167,7 @@ const CarItemBuyNow = ({dataCars}) => {
                                 
                                 <Form.Control    className='border-style'  
                                                     as="textarea" rows={3} 
-                                                    placeholder='Твій коментарій'
+                                                    placeholder='Message'
                                                     value={comment}
                                                     onChange={onChangeComment}
                                                     />
@@ -178,7 +178,7 @@ const CarItemBuyNow = ({dataCars}) => {
                                     className="btn-form yellow-back"
                                     onClick={handleSubmit}
                                 >
-                                    Відправити
+                                    Send
                                 </Button>
 
                             </Form>

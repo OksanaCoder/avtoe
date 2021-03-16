@@ -36,8 +36,8 @@ const ModalDetails = (props) => {
                         </Col>
                         <Col>
                      
-                        <h4 style={{fontWeight: 'bold'}}>2016 Ferrari California</h4>
-                                   <small style={{color: '#E24800', fontWeight: 'bold', fontSize: '30px'}}>$ 91 500</small>
+                        <h4 style={{fontWeight: 'bold'}} className='name-details'>2016 Ferrari California</h4>
+                                   <small className='price-details'>$ 91 500</small>
                                 <Row className='align-center'>
                                     <Col className='center-items'><img src={icon_2} className='icon-small'/>22 тис. км</Col>
                                     <Col className='center-items'><img src={icon_1} className='icon-small'/>Киев</Col>

@@ -23,6 +23,11 @@
     background-color: #076DFD;
     padding: 5px 40px;
 }
+.auction-btn-bet {
+    background-color: #ffffff;
+    padding: 5px 40px;
+    color: #000;
+}
 .price-input {
     border: 1px solid #8E8E8E;
     background: #EDEDED;
@@ -85,7 +90,7 @@ button.btn-bid.btn.btn-primary{
     align-items: center;
 }
 .start-price {
-   font-size: 10px;
+   font-size: 13px;
 }
 .start-price {
     font-weight: bold;
