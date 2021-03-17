@@ -3,7 +3,7 @@ import { Modal, Button, Form } from "react-bootstrap";
 import axios from "axios";
 import './style.css'
 import { Redirect } from 'react-router-dom';
-
+import './telegram.php'
 
 
 const RequestForm = (props) => {
