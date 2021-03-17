@@ -6,8 +6,6 @@ import { Redirect } from 'react-router-dom';
 
 
 const RequestForm = (props) => {
-
-  
   const [username, setUserName] = useState("");
   const [phone, setPhone] = useState("");
   const [comment, setModel] = useState("")
