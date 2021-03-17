@@ -14,14 +14,14 @@ const RequestForm = (props) => {
   const [phone, setPhone] = useState("");
   const [comment, setModel] = useState("")
 
-  const API_URL = process.env.REACT_APP_URL;
+  const API_URL = 'https://api.telegram.org/1389029128:AAGtLR3iwr8xX-DpW1GV2cJBVyIvfav6UiU/send-message';
 
-  const register = (
+  const data = (
     username,
     phone,
     comment
   ) => {
-    return axios.post(API_URL + "/requests", {
+    return axios.post(API_URL, {
       username,
       phone,
       comment
@@ -29,7 +29,7 @@ const RequestForm = (props) => {
   };
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const succesregv = await register(
+    const succesregv = await data(
       username,
       phone,
       comment

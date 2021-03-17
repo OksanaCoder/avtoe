@@ -15,7 +15,16 @@ a {
 a:focus {
     color:  #F7BA04 !important;
 }
-
+/* a#uncontrolled-tab-example-tab-map.nav-item.nav-link {
+    border: none ;
+    box-shadow: none ;
+}
+a#uncontrolled-tab-example-tab-map.nav-item.nav-link .active{
+    border: none ;
+    box-shadow: none;
+    color: #000;
+    font-weight: bold;
+} */
 @media (max-width: 500px) {
     .p-5.about-pad.container-fluid {
         padding: 50px 0 0 0  !important;
