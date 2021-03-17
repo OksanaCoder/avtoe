@@ -1,6 +1,5 @@
 import React, {  useState } from "react";
 import { Modal, Button, Form } from "react-bootstrap";
-import moment from "moment";
 import axios from "axios";
 import './style.css'
 import { Redirect } from 'react-router-dom';
@@ -14,8 +13,11 @@ const RequestForm = (props) => {
   const [phone, setPhone] = useState("");
   const [comment, setModel] = useState("")
 
-  const API_URL = 'https://api.telegram.org/1389029128:AAGtLR3iwr8xX-DpW1GV2cJBVyIvfav6UiU/send-message';
+  const API_URL = 'https://api.telegram.org/bot1747833143:AAGmm2CnUrkYCyHIdVzEkgJVg2HfNUCba28/getUpdates';
 
+  const chat_id = '987210358'
+
+  console.log(API_URL)
   const data = (
     username,
     phone,
@@ -71,14 +73,14 @@ const RequestForm = (props) => {
           <Modal.Title>Leave request</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <Form onSubmit={handleSubmit}>
+          <Form method='POST' action='telegram.php'>
             <Form.Group controlId="formBasicFirstName">
               <Form.Control
                 type="text"
                 placeholder="Ім'я"
                 value={username}
                 onChange={onChangeUsername}
-                name="Ім'я"
+                name="name"
                 className="input-style"
               />
             </Form.Group>
