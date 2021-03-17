@@ -3,9 +3,8 @@ import { Modal, Button, Form } from "react-bootstrap";
 import axios from "axios";
 import './style.css'
 import { Redirect } from 'react-router-dom';
-// import './telegram.php'
 
-1
+
 const RequestForm = (props) => {
 
   
@@ -19,26 +18,6 @@ const RequestForm = (props) => {
 
   console.log(API_URL)
 
-
-  // const sendMessage = (e) => {
-  //   const chat_id = '987210358';
-  //   const parse_mode = "HTML";
-  //   const textValue = '<a href="' + username + '"><br>' + comment + '</b>' + phone + ' </a>';
- 
-  // const requestOptionsPush = {
-  //   method: 'POST',
-  //   headers: {
-  //        'Accept' : 'application/json, text/plain, */*',
-  //        'Content-Type' : 'application/json',
-  //   },
-  //   body: JSON.stringify(
-  //     { chat_id: chat_id, parse_mode: parse_mode, caption: textValue }
-  //   )
-  // };
-  // fetch('https://api.telegram.org/bot1747833143:AAGmm2CnUrkYCyHIdVzEkgJVg2HfNUCba28/send-message', requestOptionsPush)
-  // .then(response => response.json())
-
-  // }
 
   const data = (
     username,
