@@ -3,21 +3,43 @@ import { Modal, Button, Form } from "react-bootstrap";
 import axios from "axios";
 import './style.css'
 import { Redirect } from 'react-router-dom';
-import './telegram.php'
+// import './telegram.php'
 
-
+1
 const RequestForm = (props) => {
 
   
   const [username, setUserName] = useState("");
   const [phone, setPhone] = useState("");
   const [comment, setModel] = useState("")
-
-  const API_URL = 'https://api.telegram.org/bot1747833143:AAGmm2CnUrkYCyHIdVzEkgJVg2HfNUCba28/getUpdates';
-
-  const chat_id = '987210358'
+  const bodyMessage = `Имя: ${username}\nСообщение: ${comment}\nНомер тел: ${phone}`;
+  const API_URL = `https://api.telegram.org/bot1747833143:AAGmm2CnUrkYCyHIdVzEkgJVg2HfNUCba28/sendMessage?chat\_id=987210358&text=${bodyMessage}%20there&parse\_mode=HTML`;
+ 
+  // const chat_id = '987210358'
 
   console.log(API_URL)
+
+
+  // const sendMessage = (e) => {
+  //   const chat_id = '987210358';
+  //   const parse_mode = "HTML";
+  //   const textValue = '<a href="' + username + '"><br>' + comment + '</b>' + phone + ' </a>';
+ 
+  // const requestOptionsPush = {
+  //   method: 'POST',
+  //   headers: {
+  //        'Accept' : 'application/json, text/plain, */*',
+  //        'Content-Type' : 'application/json',
+  //   },
+  //   body: JSON.stringify(
+  //     { chat_id: chat_id, parse_mode: parse_mode, caption: textValue }
+  //   )
+  // };
+  // fetch('https://api.telegram.org/bot1747833143:AAGmm2CnUrkYCyHIdVzEkgJVg2HfNUCba28/send-message', requestOptionsPush)
+  // .then(response => response.json())
+
+  // }
+
   const data = (
     username,
     phone,
@@ -39,7 +61,7 @@ const RequestForm = (props) => {
     //form.current.validateAll()
     if (succesregv) {
       alert("Заявка відправлена !");
-      props.handleClose1()
+      // props.handleClose1()
       //props.history.push("/");
       return <Redirect to="/" />;
 
@@ -73,7 +95,7 @@ const RequestForm = (props) => {
           <Modal.Title>Leave request</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <Form method='POST' action='telegram.php'>
+          <Form onSubmit={handleSubmit}>
             <Form.Group controlId="formBasicFirstName">
               <Form.Control
                 type="text"
@@ -107,6 +129,7 @@ const RequestForm = (props) => {
             </Form.Group>
             <div className="text-center mt-5 flex-column">
               <Button
+                onClick={handleSubmit}
                 variant="primary"
                 type="submit"
                 className="btn-form yellow-back"
@@ -127,6 +150,6 @@ const RequestForm = (props) => {
       </Modal>
     </>
   );
-};
+}
 
-export default RequestForm;
+export default RequestForm
