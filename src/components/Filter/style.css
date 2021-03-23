@@ -19,24 +19,11 @@
 input#react-select-2-input {
   width: 100% !important;
 }
-/* .css-1rhbuit-multiValue {
-  background-color: none !important;
-  color: #fff !important;
-  border-radius: 2px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  margin: 2px;
-  min-width: 0;
-  box-sizing: border-box;
-} */
-/* .css-b8ldur-Input {
-  display: none !important;
-}
 
 @media (max-width: 500px) {
-  .css-b8ldur-Input {
-    display: inline-block !important;
+
+  .optionStyle {
+    width: 200px !important;
   }
-} */
+  
+  }
