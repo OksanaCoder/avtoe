@@ -48,7 +48,7 @@ const Auction = () => {
                    <Filter />
       
             </Container>
-           
+            
                     <CarItem  data={data}/> 
           
             

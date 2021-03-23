@@ -33,13 +33,13 @@ const Featured = () => {
 
     return(
         <Container className='text-white' fluid>
-         
+{/*          
                     <div className='heading-style p-5'  style={{background: '#262626'}}>
                         
                         <h6 className='blue-line'>Останні</h6>
                         <h3>Оновлення</h3>
                     
-                    </div>
+                    </div> */}
                
 
             <Row style={{background: '#262626'}} className='pb-5'>
