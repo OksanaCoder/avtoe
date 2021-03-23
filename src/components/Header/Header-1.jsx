@@ -14,7 +14,7 @@ import logo_small from '../../img/logo-small.png'
 import BackgroundSlider from 'react-background-slider'
 import Calculators from '../Calculators/Calculators'
 import  Advantages from '../Advantages/Advantages'
-import SliderCars from '../SliderCars/SliderCars'
+import Featured from '../Featured/Featured'
 
 
 const Header = ({reference}) => {
@@ -74,7 +74,7 @@ const Header = ({reference}) => {
            
        </Container>
  
-       <SliderCars />
+       <Featured />
        <Calculators reference={reference}/>
        <Advantages />
 
