@@ -9,14 +9,14 @@ import icon_1 from '../../img/location.png'
 import icon_2 from '../../img/speedometer.png'
 import icon_3 from '../../img/petrol.png'
 
-const ModalDetails = (props) => {
-   console.log(props, ' for modal')
+const ModalDetails = ({show_details, data, handleClose_details}) => {
+   console.log(data, ' for modal')
     
     return (
         <>
-        {props.data.map((item, index) =>{
+        {data.map((item, index) =>{
             return(
-            <Modal key={index} show={props.show_details} onHide={props.handleClose_details} className='no-shadow no-border-modal modal-details'>
+            <Modal key={index} show={show_details} onHide={handleClose_details} className='no-shadow no-border-modal modal-details'>
                 <Modal.Header closeButton>  
                 <Modal.Title style={{fontWeight: '700'}}>Деталі авто</Modal.Title>
                 </Modal.Header>
@@ -103,7 +103,7 @@ const ModalDetails = (props) => {
                     </Row>
                 </Modal.Body>
                 <Modal.Footer className='mt-3'>
-                <Button onClick={props.handleClose_details} className='btn-cancel-modal'>
+                <Button onClick={handleClose_details} className='btn-cancel-modal'>
                     Cancel
                 </Button>
                 { item.typeSale == 'auction' &&  <button  className='btn-item auction-btn-bet'>Make a bet</button>}

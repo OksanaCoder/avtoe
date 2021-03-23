@@ -10,7 +10,6 @@
 }
 .css-yk16xz-control{
   background: none !important;
-  /* border: none !important; */
   border-radius: 20px;
 }
 .css-g1d714-ValueContaine {
@@ -21,9 +20,7 @@ input#react-select-2-input {
 }
 
 @media (max-width: 500px) {
-
   .optionStyle {
     width: 200px !important;
   }
-  
-  }
+}
