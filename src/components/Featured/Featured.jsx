@@ -6,11 +6,11 @@ import icon_2 from '../../img/speedometer.png'
 import icon_3 from '../../img/petrol.png'
 import { Col, Row, Container, Card } from 'react-bootstrap'
 import ModalDetails from '../ModalDetails/ModalDetails'
-import CarItemBuyNow from '../CarItemBuyNow/CarItemBuyNow'
+import CarItem from '../CarItem/CarItem'
 
 
 const Featured = () => {
-    const dataCars = [
+    const data = [
         {
             name : "BMW",
             price : "80 500",
@@ -24,7 +24,7 @@ const Featured = () => {
             moreInfo : " ",
             mainImage: [],
             images: [],
-
+            typeSale: 'buy now'
         }
 ]
     const [show_details, setShow_details] = useState(false);
@@ -45,7 +45,7 @@ const Featured = () => {
             <Row style={{background: '#262626'}} className='pb-5'>
            
                 <Col lg={12} md={12} sm={12}>           
-                    <CarItemBuyNow dataCars={dataCars}/>
+                    <CarItem data={data}/>
                 </Col>
 
 {/* 

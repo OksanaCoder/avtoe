@@ -26,7 +26,8 @@ const Auction = () => {
             moreInfo : " ",
             mainImage: [],
             images: [],
-
+            typeSale: 'auction',
+            time: '14:10:05'
         }
     ]
 

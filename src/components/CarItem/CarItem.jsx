@@ -104,18 +104,22 @@ const CarItem = ({data}) => {
                         <Card.Body className='card-text'>
                             <h5 className='bold'>{item.name}</h5>
                             <h5 className='color-yellow'>$ {item.price}</h5>
-                             <h6 style={{display: 'flex', alignItems: 'center'}}><img src={countdown} className='mt-1 mr-2' fill='#fff'/>12:12:09</h6> 
-                                {/* <Row className='align-center'>
-                                    <Col lg={6} md={6} sm={6} xs={6} className='center-items'><img src={icon_2} className='white-icon'/>{item.mileage} тыс. км</Col>
-                                    <Col lg={6} md={6} sm={6} xs={6} className='center-items'><img src={icon_1} className='icon-small'/>{item.city}</Col>
-                                </Row>
-                                <Row className='align-center'>
-                                    <Col lg={6} md={6} sm={6} xs={6} className='center-items'><img src={icon_3} className='icon-small'/>{item.fuel}</Col>
-                                    <Col lg={6} md={6} sm={6} xs={6} className='center-items'><small className='a-icon-1'>A</small>{item.type}</Col>
-                                </Row> */}
-                                {/* <Row>
-                                    <Col> */}
-                                       <p className='start-price mt-3'>Стартова ціна: $ <small className='start-price'>{item.startPrice}</small></p>
+                            {item.time ?  <h6 style={{display: 'flex', alignItems: 'center'}}><img src={countdown} className='mt-1 mr-2' fill='#fff'/>12:12:09</h6> :
+                              null
+                             }
+                          
+                                    { item.startPrice ? <p className='start-price mt-3'>Стартова ціна: $ <small className='start-price'>{item.startPrice}</small></p> :
+                                      <>
+                                        <Row className='align-center'>
+                                            <Col lg={6} md={6} sm={6} xs={6} className='center-items'><img src={icon_2} className='white-icon'/>{item.mileage} тыс. км</Col>
+                                            <Col lg={6} md={6} sm={6} xs={6} className='center-items'><img src={icon_1} className='icon-small'/>{item.city}</Col>
+                                        </Row>
+                                        <Row className='align-center'>
+                                            <Col lg={6} md={6} sm={6} xs={6} className='center-items'><img src={icon_3} className='icon-small'/>{item.fuel}</Col>
+                                            <Col lg={6} md={6} sm={6} xs={6} className='center-items'><small className='a-icon-1'>A</small>{item.type}</Col>
+                                        </Row>
+                                      </>
+                                    }
                                    {/* </Col>
                                 </Row>  */}
                                 <div className='display-flex mt-3'>
@@ -127,7 +131,6 @@ const CarItem = ({data}) => {
                                      {/* <button  className='btn-item swap-btn mt-3' onClick={handleShow_4}>Suggest a price</button> */}
 
                                   {/* <button  className='btn-item auction-btn mt-3'>Зробити ставку</button> */}
-                                    <button  className='btn-item auction-btn-bet mt-3'>Make a bet</button>
                                  </div>
 
 
