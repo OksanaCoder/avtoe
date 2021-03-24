@@ -76,51 +76,51 @@ const App = () => {
                <Container fluid className='display-flex justify-content-around'>
       <Nav className='mob-nav'> 
         <Nav className='nav-style nav-no-col nav-style-mob'>
-               <Nav.Link className='nav-item'>
-               <BrowserLink to='/'  className='text-white link-nav '>
+               <Nav.Link className='nav-item button-nav'>
+               <BrowserLink to='/'  className='text-white link-nav'>
                         <img className='img-small' src={home}/>
                           Main
                     </BrowserLink>      
                </Nav.Link>
-               <Nav.Link className='nav-item'>
+               <Nav.Link className='nav-item button-nav'>
                <BrowserLink to='/catalog' className='text-white link-nav'> 
                         <img className='img-small' src={cart}/>
                        Catalog</BrowserLink>    
                </Nav.Link>
-               <Nav.Link className='nav-item'>
+               <Nav.Link className='nav-item button-nav'>
                <BrowserLink to='/auction' className='text-white link-nav'>
                         <img src={hammer} width='20px' className='mb-1 img-small'/>
                       Auction</BrowserLink>   
                </Nav.Link>
   
-               <Nav.Link className='nav-item'>
+               <Nav.Link className='nav-item button-nav'>
                <BrowserLink to='/'  className=' text-white link-nav' onClick={scrollToCredit}>
                         <img className='img-small' src={credit}/> 
                           Кредит
                         </BrowserLink>  
                 </Nav.Link> 
-                <Nav.Link className='nav-item text-white link-nav'  to='/magazine'  >
+                <Nav.Link className='nav-item text-white link-nav button-nav'  to='/magazine'  >
                 <BrowserLink to='/magazine'  className=' text-white link-nav'>
                         <img className='img-small' src={read}/> 
                       
                           Magazine
                         </BrowserLink>  
                 </Nav.Link>
-                      <Nav.Link className='nav-item text-white link-nav'>
+                      <Nav.Link className='nav-item text-white link-nav button-nav'>
                       <BrowserLink to='/cooperation'  className=' text-white link-nav'>
                               <img className='img-small' src={search}/> 
                             
                                 Шукаємо
                               </BrowserLink>  
                       </Nav.Link>
-                      <Nav.Link className='nav-item text-white link-nav'>
+                      <Nav.Link className='nav-item text-white link-nav button-nav'>
                       <BrowserLink to='/about'  className=' text-white link-nav'>
                               <img className='img-small' src={about}/> 
                                 Про нас
                               </BrowserLink>  
                       </Nav.Link>
           
-                        <Nav.Link className='nav-item link-nav'>
+                        <Nav.Link className='nav-item link-nav button-nav'>
                         <BrowserLink className=' text-white link-nav'
                                      onClick={scrollToBottom}
                                   >
@@ -131,12 +131,12 @@ const App = () => {
                         </BrowserLink>
                         </Nav.Link>
                 
-                           <Nav.Link className=' nav-item link-nav'  onClick={handleShow}>
+                           <Nav.Link className=' nav-item link-nav button-nav'  onClick={handleShow}>
                              <img className='img-small' src={person} />
                             Log in
                             
                               </Nav.Link>
-                              <Nav.Link className=' nav-item link-nav' onClick={handleShow1}>
+                              <Nav.Link className=' nav-item link-nav button-nav' onClick={handleShow1}>
                              <img className='img-small' src={person} />
                            Sign Up
                             
