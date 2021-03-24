@@ -28,7 +28,7 @@ import Cooperation from './components/Cooperation/Cooperation'
 import Magazine from './components/Magazine/Magazine' 
 import Auction from './components/Auction/Auction'
 import './components/NavBar/style.css'
-import RequestForm from './components/RequestForm/RequestForm'
+import CarItem from './components/CarItem/CarItem'
 import Catalog from './components/Catalog/Catalog';
 
 const App = () => {
@@ -204,6 +204,8 @@ const App = () => {
       <Route path='/' exact component={() => <Header reference={myRef} />}/>
       <Route path='/about' exact component={About} />
       <Route path='/catalog' exact component={() => <Catalog data={data}/>} />
+      {/* <Route path='/catalog/carItem/' exact component={() => <CarItem data={data}/>} />
+      <Route path='/auction/carItem/' exact component={() => <CarItem data={data}/>} /> */}
       <Route path='/auction' exact component={() => <Auction data={data} />} />  
       <Route path='/cooperation' exact component={Cooperation} />   
       <Route path='/magazine' exact component={Magazine} />    

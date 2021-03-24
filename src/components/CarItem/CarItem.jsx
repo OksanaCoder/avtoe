@@ -124,7 +124,7 @@ const CarItem = (data) => {
                                 <div className='display-flex mt-3'>
                                  {/* <button  className='btn-item auction-btn mr-' onClick={handleShow_details}>Детальніше</button> */}
                                  {/* <button  className='btn-item auction-btn mr-2' onClick={showDetails}>Details</button> */}
-                                 <Link  className='btn-item auction-btn mr-2' to={`/carItem/${item.id}`}>Details</Link>
+                                 <Link  className='btn-item auction-btn mr-2' to={`/carItem/${item.name}/${item.id}`}>Details</Link>
                                  
                                   {/* <Col> <button className='btn-item buy-now'>Детальніше</button></Col> */}
                                      {/* <button  className='btn-item swap-btn mt-3' onClick={handleShow_4}>Запропонувати торг</button> */}
@@ -143,7 +143,7 @@ const CarItem = (data) => {
                         </Col>
 
                         <Route
-                                    exact path={`/carItem/${item.id}`}
+                                    exact path={`/carItem/${item.name}/${item.id}`}
                                     render={({match}) => (
                                     <CarDetails item={data.find(item => item.id === match.params.id)}/>
                                     )}
