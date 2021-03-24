@@ -12,6 +12,7 @@ import CarItem from '../CarItem/CarItem'
 const Featured = () => {
     const data = [
         {
+            id: 2,
             name : "BMW",
             price : "80 500",
             mileage: 22,

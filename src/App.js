@@ -20,7 +20,6 @@ import about from './img/info.svg'
 import credit from './img/credit.svg'
 import cart from './img/cart.svg'
 import hammer from './img/hammer.svg'
-import up from './img/arrow-up.png'
 import home from './img/home.svg'
 import Calculator from './components/NavBar/Calculator';
 import SignUpForm from './components/SignUpForm/SignUpForm';
@@ -32,6 +31,9 @@ import './components/NavBar/style.css'
 import RequestForm from './components/RequestForm/RequestForm'
 
 const App = () => {
+  const [loggedIn, setLoggedIn]  = useState(false)
+  const [registered, setRegistered] = useState(false) 
+
 
   const myRef = useRef(null)
   const scrollToCredit = () => {
@@ -45,12 +47,7 @@ const App = () => {
      behavior: "smooth"
     })
   }  
-  const scrollToTop =  () => {
-    window.scrollTo({
-      top: (0, 0),
-      behavior: "smooth"
-    })
-  }
+
 
   const [show, setShow] = useState(false)
   const handleClose = () => setShow(false);
@@ -130,12 +127,14 @@ const App = () => {
                           Контакти
                         </BrowserLink>
                         </Nav.Link>
-                
-                           <Nav.Link className=' nav-item link-nav button-nav'  onClick={handleShow}>
+                     
+                           <Nav.Link  className=' nav-item link-nav button-nav'  onClick={handleShow}>
+                           <BrowserLink to='/login' className=' text-white link-nav'>
                              <img className='img-small' src={person} />
                             Log in
-                            
+                            </BrowserLink>  
                               </Nav.Link>
+                        
                               <Nav.Link className=' nav-item link-nav button-nav' onClick={handleShow1}>
                              <img className='img-small' src={person} />
                            Sign Up
@@ -159,10 +158,9 @@ const App = () => {
       </Navbar>
       
       <img className='img-mail' src={mail} onClick={handleShowForm}/>
-      <img className='up' src={up} onClick={scrollToTop} />
       <RequestForm show_form={show_form} handleShowForm={handleShowForm} handleCloseForm={handleCloseForm} />
        
-
+      <Route path="/login" component={LoginForm} />
       <Route path='/' exact component={() => <Header reference={myRef} />}/>
       <Route path='/about' exact component={About} />
       <Route path='/catalog' exact component={Shop} />

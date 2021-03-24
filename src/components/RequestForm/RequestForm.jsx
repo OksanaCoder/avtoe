@@ -10,8 +10,14 @@ const RequestForm = (props) => {
   const [phone, setPhone] = useState("");
   const [comment, setModel] = useState("")
   const [errors, setErrors] = useState("")
-  const bodyMessage = `Имя: ${username} Сообщение: ${comment} Номер тел: ${phone}`;
-  const API_URL = `https://api.telegram.org/bot1747833143:AAGmm2CnUrkYCyHIdVzEkgJVg2HfNUCba28/sendMessage?chat\_id=987210358&text=${bodyMessage}%20there&parse\_mode=HTML`;
+  const bodyMessage = `Имя: ${username}
+                     
+                       Сообщение: ${comment}  
+                      
+                       Номер тел: ${phone}`;
+  // return <div className="pre-line">{bodyMessage}</div>
+  
+  const API_URL = `https://api.telegram.org/bot1747833143:AAGmm2CnUrkYCyHIdVzEkgJVg2HfNUCba28/sendMessage?chat\_id=987210358&text=${bodyMessage}&parse\_mode=HTML`;
  
   // const chat_id = '987210358'
 

@@ -12,7 +12,8 @@ const Auction = () => {
     });
     
     const data = [
-        {
+        { 
+            id: 1,
             name : "Ferrari California",
             price : "91 500",
             mileage: 22,
