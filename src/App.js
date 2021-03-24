@@ -2,7 +2,7 @@ import './App.css';
 import React, { useState, useRef } from 'react'
 import Header from './components/Header/Header-1'
 import Categories from './components/Categories/Categories'
-import Shop from './components/Shop/Shop'
+import Shop from './components/Catalog/Catalog'
 import About from './components/About/About'
 import MobApp from './components/MobApp/MobApp'
 import Footer from './components/Footer/Footer'
@@ -29,8 +29,46 @@ import Magazine from './components/Magazine/Magazine'
 import Auction from './components/Auction/Auction'
 import './components/NavBar/style.css'
 import RequestForm from './components/RequestForm/RequestForm'
+import Catalog from './components/Catalog/Catalog';
 
 const App = () => {
+  const data = [
+    { 
+        id: 1,
+        name : "Ferrari California",
+        price : "91 500",
+        mileage: 22,
+        city: "Kyiv",
+        fuel: "Бензин",
+        type: "Автомат",
+        startPrice: "40 000", 
+        color: "червоний",
+        year: 2014,
+        drive: "повний",
+        moreInfo : " ",
+        mainImage: [],
+        images: [],
+        typeSale: 'auction',
+        time: '14:10:05'
+    },
+    {
+        id: 2,
+        name : "BMW",
+        price : "80 500",
+        mileage: 22,
+        city: "Kyiv",
+        fuel: "Бензин",
+        type: "Автомат",
+        color: "червоний",
+        year: 2014,
+        drive: "повний",
+        moreInfo : " ",
+        mainImage: [],
+        images: [],
+        typeSale: 'buy now'
+    }
+]
+
   const [loggedIn, setLoggedIn]  = useState(false)
   const [registered, setRegistered] = useState(false) 
 
@@ -163,8 +201,8 @@ const App = () => {
       <Route path="/login" component={LoginForm} />
       <Route path='/' exact component={() => <Header reference={myRef} />}/>
       <Route path='/about' exact component={About} />
-      <Route path='/catalog' exact component={Shop} />
-      <Route path='/auction' exact component={Auction} />  
+      <Route path='/catalog' exact component={() => <Catalog data={data}/>} />
+      <Route path='/auction' exact component={() => <Auction data={data} />} />  
       <Route path='/cooperation' exact component={Cooperation} />   
       <Route path='/magazine' exact component={Magazine} />    
       <MobApp />

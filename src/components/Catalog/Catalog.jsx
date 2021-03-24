@@ -2,11 +2,10 @@
 import React, { Component, useLayoutEffect } from 'react';
 import './style.css'
 import CarItem from '../CarItem/CarItem'
-import Featured from '../Featured/Featured'
 import Filter from '../Filter/Filter'
-import { Row, Container } from 'react-bootstrap'
+import { Row, Container, Col } from 'react-bootstrap'
 
-const Catalog = () => {
+const Catalog = (data) => {
 
 
     useLayoutEffect(() => {

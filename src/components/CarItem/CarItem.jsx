@@ -9,8 +9,8 @@ import { Col, Row, Container, Modal, Button, Form, Card } from 'react-bootstrap'
 import { Route, Link } from "react-router-dom";
 import CarDetails from '../CarDetails/CarDetails'
 
-const CarItem = ({data}) => {
-    
+const CarItem = (data) => {
+    console.log(data.data.data, 'data in car item')
     // const [show_details, setShow_details] = useState(false);
     // const handleShow_details = () => setShow_details(true);
     // const handleClose_details = () => setShow_details(false);
@@ -78,7 +78,7 @@ const CarItem = ({data}) => {
   //       alert("Помилка :(")
   //   }
   // };
-  console.log("data is ", data)
+
     return (
         <div>
             <Container className='text-white pb-5' fluid style={{background: '#262626'}}>
@@ -93,7 +93,7 @@ const CarItem = ({data}) => {
 
                     <Row className=' align-center'>
 
-                 {data.map(item => {
+                 {data.data.data.map(item => {
                      return(
                          <>
                     <Col lg={3} md={6} sm={12}>             
@@ -145,7 +145,7 @@ const CarItem = ({data}) => {
                         <Route
                                     exact path={`/carItem/${item.id}`}
                                     render={({match}) => (
-                                    <CarDetails item={items.find(item => item.id === match.params.id)}/>
+                                    <CarDetails item={data.find(item => item.id === match.params.id)}/>
                                     )}
                                     />
 </>
