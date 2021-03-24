@@ -11,7 +11,7 @@ import image2 from '../../img/slider-2.png'
 import image1 from '../../img/slider-1.png'
 import logo_big from '../../img/logo-big.png'
 import logo_small from '../../img/logo-small.png'
-import BackgroundSlider from 'react-background-slider'
+import MobApp from '../../components/MobApp/MobApp'
 import Calculators from '../Calculators/Calculators'
 import  Advantages from '../Advantages/Advantages'
 
@@ -73,10 +73,10 @@ const Header = ({reference}) => {
        </Row>
            
        </Container>
- 
+       
        <Calculators reference={reference}/>
        <Advantages />
-
+       <MobApp />
        
        </>
    )
