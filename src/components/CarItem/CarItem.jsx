@@ -133,10 +133,7 @@ const CarItem = ({data}) => {
 
                                   {/* <button  className='btn-item auction-btn mt-3'>Зробити ставку</button> */}
                                  </div>
-                                 <Route
-                                    exact path={`/carItem/${item.id}`}
-                                    render={CarDetails}
-                                    />
+                                 
 
                                 {/* details modal */}
                               {/* <ModalDetails data={data} show_details={show_details} handleShow_details={handleShow_details} handleClose_details={handleClose_details} /> */}
@@ -144,6 +141,13 @@ const CarItem = ({data}) => {
                        
                     </Card>
                         </Col>
+
+                        <Route
+                                    exact path={`/carItem/${item.id}`}
+                                    render={({match}) => (
+                                    <CarDetails item={items.find(item => item.id === match.params.id)}/>
+                                    )}
+                                    />
 </>
                            )
                  })}     
@@ -157,6 +161,7 @@ const CarItem = ({data}) => {
             
            </Container>
         </div>
+        
     )
 }
 

@@ -10,12 +10,11 @@ import icon_2 from '../../img/speedometer.png'
 import icon_3 from '../../img/petrol.png'
 import { useParams } from 'react-router-dom';
 
-const CarDetails = ({match, props}) => {
+const CarDetails = ({item}) => {
 //    console.log(props, ' for modal')
    const [loggedIn, setLoggedIn]  = useState(false)
    
-    const { params : { id},
-        } = match;
+//    const { id } = props.match.params
    
   
         
@@ -25,7 +24,7 @@ const CarDetails = ({match, props}) => {
 
     return (
         <>
-       <h4>{id}</h4>
+       <h4>{item.name}</h4>
               {/* <Container fluid>
                  <h4>Деталі авто</h4>
                  {match.data.map((item, index) =>{
