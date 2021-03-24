@@ -29,6 +29,22 @@ const Auction = () => {
             images: [],
             typeSale: 'auction',
             time: '14:10:05'
+        },
+        {
+            id: 2,
+            name : "BMW",
+            price : "80 500",
+            mileage: 22,
+            city: "Kyiv",
+            fuel: "Бензин",
+            type: "Автомат",
+            color: "червоний",
+            year: 2014,
+            drive: "повний",
+            moreInfo : " ",
+            mainImage: [],
+            images: [],
+            typeSale: 'buy now'
         }
     ]
 

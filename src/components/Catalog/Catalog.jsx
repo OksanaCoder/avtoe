@@ -6,7 +6,7 @@ import Featured from '../Featured/Featured'
 import Filter from '../Filter/Filter'
 import { Row, Container } from 'react-bootstrap'
 
-const Shop = () => {
+const Catalog = () => {
 
 
     useLayoutEffect(() => {
@@ -27,11 +27,16 @@ const Shop = () => {
                 </Row>
              
                    <Filter />
-                   <Featured />
+                   <Row style={{background: '#262626'}} className='pb-5'>
+           
+                        <Col lg={12} md={12} sm={12}>           
+                            <CarItem data={data} />
+                        </Col>
 
+                    </Row>
             </Container>
         </div>
     )
 }
 
-export default Shop
+export default Catalog
