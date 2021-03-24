@@ -53,15 +53,10 @@ const LoginForm = (props) => {
 
   return (
     <>
-      <Modal
-        show={props.show}
-        onHide={props.handleClose}
-        className="login-form"
-      >
-        <Modal.Header closeButton>
-          <Modal.Title>Log in</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
+
+<div className='login-form'>
+          <h3>Log in</h3>
+  
           <Form onSubmit={handleSubmit}>
             <Form.Group controlId="formBasicEmail">
               <Form.Control
@@ -101,8 +96,7 @@ const LoginForm = (props) => {
               <p className='p-12-link'><a>Sign up</a></p>
             </div>
           </Form>
-        </Modal.Body>
-      </Modal>
+          </div>     
     </>
   );
 };

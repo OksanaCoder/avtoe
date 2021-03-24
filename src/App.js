@@ -166,17 +166,18 @@ const App = () => {
                         </BrowserLink>
                         </Nav.Link>
                      
-                           <Nav.Link  className=' nav-item link-nav button-nav'  onClick={handleShow}>
-                           <BrowserLink to='/login' className=' text-white link-nav'>
-                             <img className='img-small' src={person} />
-                            Log in
-                            </BrowserLink>  
+                           <Nav.Link  className=' nav-item link-nav button-nav'>
+                                <BrowserLink to='/login' className=' text-white link-nav'>
+                                  <img className='img-small' src={person} />
+                                  Log in
+                                </BrowserLink>  
                               </Nav.Link>
                         
-                              <Nav.Link className=' nav-item link-nav button-nav' onClick={handleShow1}>
-                             <img className='img-small' src={person} />
-                           Sign Up
-                            
+                              <Nav.Link className=' nav-item link-nav button-nav'>
+                                <BrowserLink to='/register' className=' text-white link-nav'>
+                                    <img className='img-small' src={person} />
+                                  Sign Up
+                                </BrowserLink>  
                               </Nav.Link>
                         </Nav> 
                         </Nav>
@@ -188,17 +189,18 @@ const App = () => {
 
                {/* sign up modal */}
 
-            <SignUpForm show1={show1} handleShow1={handleShow1} handleClose1={handleClose1} />
+            {/* <SignUpForm show1={show1} handleShow1={handleShow1} handleClose1={handleClose1} /> */}
 
             {/* login form modal */}
-            <LoginForm show={show} handleShow={handleShow} handleClose={handleClose} />       
+            {/* <LoginForm show={show} handleShow={handleShow} handleClose={handleClose} />        */}
         </Container>
       </Navbar>
       
       <img className='img-mail' src={mail} onClick={handleShowForm}/>
-      <RequestForm show_form={show_form} handleShowForm={handleShowForm} handleCloseForm={handleCloseForm} />
+      {/* <RequestForm show_form={show_form} handleShowForm={handleShowForm} handleCloseForm={handleCloseForm} /> */}
        
       <Route path="/login" component={LoginForm} />
+      <Route path="/register" component={SignUpForm} />
       <Route path='/' exact component={() => <Header reference={myRef} />}/>
       <Route path='/about' exact component={About} />
       <Route path='/catalog' exact component={() => <Catalog data={data}/>} />

@@ -70,15 +70,8 @@ const SignUpForm = (props) => {
 
   return (
     <>
-      <Modal
-        show={props.show1}
-        onHide={props.handleClose1}
-        className="login-form"
-      >
-        <Modal.Header closeButton>
-          <Modal.Title>Sign up</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
+      <div className='login-form'>
+        <h3>Sign Up</h3>
           <Form onSubmit={handleSubmit}>
             <Form.Group controlId="formBasicName">
               <Form.Control
@@ -146,8 +139,7 @@ const SignUpForm = (props) => {
               </Button> */}
             </div>
           </Form>
-        </Modal.Body>
-      </Modal>
+       </div>
     </>
   );
 };
