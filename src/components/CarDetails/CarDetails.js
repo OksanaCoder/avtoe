@@ -1,6 +1,6 @@
 
 import React,  { useState, useEffect } from 'react'
-import { Col, Row, Container, Card, Modal, Button } from 'react-bootstrap'
+import { Col, Row, Container,Table} from 'react-bootstrap'
 import imageCar from '../../img/ferrari.jpg'
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from 'react-responsive-carousel';
@@ -55,6 +55,22 @@ const CarDetails = ({item}) => {
                                        {item.time}
                                      </Col>
                         </Row> 
+                        <Row className='mt-1 row-modal mb-4'>
+                                     <Col> Кiлькiсть ставок:
+                                     </Col>
+                                     <Col>  
+                                       {/* {item.bids.length} */}
+                                       0
+                                     </Col>
+                        </Row> 
+                        <Row className='mt-4 pb-5 row-modal'>
+                                    <Col>
+                                        Початкова ставка: 
+                                    </Col>
+                                    <Col>
+                                       {item.startPrice}
+                                    </Col>
+                       </Row>
                     </>    
                   )}
                 </Col>
@@ -126,20 +142,64 @@ const CarDetails = ({item}) => {
                                        <button  className='btn-item buy-now'>Buy now</button>
                                     </Col>
                                 </Row> 
-                             { item.typeSale == 'auction' &&  (<Row className='mt-4 pb-5 row-modal'>
+                             { item.typeSale == 'auction' &&  (
+                               <>
+                                <Row className='mt-4 pb-5 row-modal'>
                                     <Col>
                                         $ <input type='number'/>
                                     </Col>
                                     <Col>
                                        <button  className='btn-item auction-btn-bet' onClick={checkUser}>Make a bid</button>
                                     </Col>
-                                </Row>)}
+                                </Row>
+
+                               
+                              </>
+                           )}
                                   
                     </Col>
                 </Row>
-            
-              
-        
+ { item.typeSale === 'auction' && ( 
+     <>
+      <h5 className='p-5'>Posted bids</h5>
+      <Row>
+         
+            <Col>
+            <Table striped bordered hover>
+                <thead>
+                    <tr>
+                        <th>Bid amount</th>
+                        <th>Username</th>
+                        <th>Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                    <td>$3,000</td>
+                    <td>Mark</td>
+                    <td>14:04:11</td>
+                    </tr>
+                    <tr>
+                    <td>$3,000</td>
+                    <td>Mark</td>
+                    <td>14:04:11</td>
+                    </tr>
+                    <tr>
+                    <td>$3,000</td>
+                    <td>Mark</td>
+                    <td>14:04:11</td>
+                    </tr>
+                    <tr>
+                    <td>$3,000</td>
+                    <td>Mark</td>
+                    <td>14:04:11</td>
+                    </tr>
+                </tbody>
+                </Table>
+                </Col>
+            </Row>
+              </>
+              )}
               </Container>
             
                     
