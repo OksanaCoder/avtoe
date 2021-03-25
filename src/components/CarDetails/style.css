@@ -34,6 +34,11 @@
 .weight-thin {
     font-weight: 400;
 }
+.current-bid {
+    background: #076DFD;
+    color: #fff;
+    font-weight: 700;
+}
 @media (max-width: 500px) {
     .row-modal .col {
         font-size: 10px;

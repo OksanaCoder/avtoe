@@ -175,9 +175,9 @@ const CarDetails = ({item}) => {
                 </thead>
                 <tbody>
                     <tr>
-                    <td>$3,000</td>
-                    <td>Mark</td>
-                    <td>14:04:11</td>
+                    <td className='current-bid'>$3,000</td>
+                    <td className='current-bid'>Mark</td>
+                    <td className='current-bid'>14:04:11</td>
                     </tr>
                     <tr>
                     <td>$3,000</td>
