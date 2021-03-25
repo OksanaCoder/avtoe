@@ -14,9 +14,6 @@ const CarDetails = ({item}) => {
    console.log(item, ' for car details')
    const [loggedIn, setLoggedIn]  = useState(false)
    
-//    const { id } = props.match.params
-   
-   
         
    const checkUser = () => {
     
@@ -24,12 +21,13 @@ const CarDetails = ({item}) => {
 
     return (
         <>
-                <Container fluid>
-                 <h4>Деталі авто</h4>
-     
+                <Container fluid className='pb-5'>
+                    <div className='p-5'>                    
+                        <h5 className='blue-line'></h5>         
+                        <h5 className='header-details'>Деталі авто</h5> 
+                    </div>
                  <Row>
-             
-                        <Col>
+                <Col>
                         <Carousel>
                             <div>
                                 <img src={imageCar} />
@@ -40,20 +38,39 @@ const CarDetails = ({item}) => {
                             <div>
                                 <img  src={imageCar}/>
                             </div>
-                        </Carousel>
-                        </Col>
-                        <Col>
+                        </Carousel>   
+                  { item.typeSale === 'auction' && ( 
+                   <>
+                   <Row className='mt-1 row-modal'>
+                                     <Col> ID аукцiону:
+                                     </Col>
+                                     <Col>  
+                                       #{item.id}
+                                     </Col>
+                        </Row>     
+                        <Row className='mt-1 row-modal mb-4'>
+                                     <Col> До кiнця торгiв залишилось:
+                                     </Col>
+                                     <Col>  
+                                       {item.time}
+                                     </Col>
+                        </Row> 
+                    </>    
+                  )}
+                </Col>
+                <Col>
                      
-                        <h4 style={{fontWeight: 'bold'}} className='name-details'>{item.name}</h4>
-                                   <small className='price-details'>$ {item.price}</small>
-                                <Row className='align-center'>
+                        <h4 style={{fontWeight: 'bold'}} className='pl-3 mb-4'>{item.name}</h4>
+                            
+                                <Row className='align-center mt-3'>
                                     <Col className='center-items'><img src={icon_2} className='icon-small'/>{item.mileage} тис. км</Col>
                                     <Col className='center-items'><img src={icon_1} className='icon-small'/>{item.city}</Col>
                                 </Row>
-                                <Row className='align-center'>
+                                <Row className='align-center mb-3'>
                                     <Col className='center-items'><img src={icon_3} className='icon-small'/>{item.fuel}</Col>
                                     <Col className='center-items'><small className='a-icon'>A</small>{item.type}</Col>
                                 </Row>
+                                
                                  <Row className='mt-4 row-modal'>
                                      <Col> Рік випуску:
                                      </Col>
@@ -73,11 +90,9 @@ const CarDetails = ({item}) => {
                                      </Col>
                                 </Row>  
                                 <Row className='mt-1 row-modal'>
-                                     <Col> Опис:
-                                     </Col>
-                                     <Col> {item.description}
-                                     </Col>
-                                </Row>   
+                                     <Col>Опис:</Col>
+                                     <Col>{item.description}</Col>
+                               </Row>   
                                 <Row className='mt-1 row-modal'>
                                      <Col> Додаткова інформація:
                                      </Col>
@@ -103,13 +118,27 @@ const CarDetails = ({item}) => {
                                       Київ, проспект Степана Бандери, 13
                                      </Col>
                                 </Row>  
-                     
-                        </Col>
-                    </Row>
+                                <Row className='align-center mt-4'>
+                                    <Col>
+                                       <small className='price-details'>$ {item.price}</small>
+                                    </Col>
+                                    <Col>
+                                       <button  className='btn-item buy-now'>Buy now</button>
+                                    </Col>
+                                </Row> 
+                             { item.typeSale == 'auction' &&  (<Row className='mt-4 pb-5 row-modal'>
+                                    <Col>
+                                        $ <input type='number'/>
+                                    </Col>
+                                    <Col>
+                                       <button  className='btn-item auction-btn-bet' onClick={checkUser}>Make a bid</button>
+                                    </Col>
+                                </Row>)}
+                                  
+                    </Col>
+                </Row>
             
-                <div className='mt-3'>
-                  { item.typeSale == 'auction' &&  <button  className='btn-item auction-btn-bet' onClick={checkUser}>Make a bet</button>}
-                </div>
+              
         
               </Container>
             

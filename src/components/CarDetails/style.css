@@ -27,7 +27,13 @@
     font-size: 12px;
     background: #262626;
 }
-
+.header-details{
+    font-size: 40px;
+    font-weight: 700;
+}
+.weight-thin {
+    font-weight: 400;
+}
 @media (max-width: 500px) {
     .row-modal .col {
         font-size: 10px;
