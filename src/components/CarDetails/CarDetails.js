@@ -8,12 +8,19 @@ import './style.css'
 import icon_1 from '../../img/location.png'
 import icon_2 from '../../img/speedometer.png'
 import icon_3 from '../../img/petrol.png'
-import { useParams } from 'react-router-dom';
+import ModalContactUs from '../ModalContactUs/ModalContactUs'
 
 const CarDetails = ({item}) => {
    console.log(item, ' for car details')
    const [loggedIn, setLoggedIn]  = useState(false)
-   
+   const [open, setOpenModal] = useState(false)
+
+   const openModal = () => {
+       setOpenModal(true)
+   }
+   const closeModal = () => {
+       setOpenModal(false)
+   }
         
    const checkUser = () => {
     
@@ -25,8 +32,9 @@ const CarDetails = ({item}) => {
                     <div className='p-5'>                    
                         <h5 className='blue-line'></h5>         
                         <h5 className='header-details'>Деталі авто</h5> 
+                        { item.typeSale === 'auction' && (<h6 className='mt-3'>{item.name}</h6>)}
                     </div>
-                 <Row>
+                <Row>
                 <Col>
                         <Carousel>
                             <div>
@@ -76,7 +84,10 @@ const CarDetails = ({item}) => {
                 </Col>
                 <Col>
                      
-                        <h4 style={{fontWeight: 'bold'}} className='pl-3 mb-4'>{item.name}</h4>
+                { item.typeSale === 'auction' ? (
+                    <h4 style={{fontWeight: 'bold'}} className='pl-3 mb-4'>Current bid: $ 12,306.00</h4>
+                ) : (  <h4 style={{fontWeight: 'bold'}} className='pl-3 mb-4'>{item.name}</h4> )}
+               
                             
                                 <Row className='align-center mt-3'>
                                     <Col className='center-items'><img src={icon_2} className='icon-small'/>{item.mileage} тис. км</Col>
@@ -139,9 +150,11 @@ const CarDetails = ({item}) => {
                                        <small className='price-details'>$ {item.price}</small>
                                     </Col>
                                     <Col>
-                                       <button  className='btn-item buy-now'>Buy now</button>
+                                       <button  className='btn-item buy-now' onClick={openModal}>Buy now</button>
                                     </Col>
                                 </Row> 
+
+                                <ModalContactUs open={open} onHide={closeModal} closeModal={closeModal}/>
                              { item.typeSale == 'auction' &&  (
                                <>
                                 <Row className='mt-4 pb-5 row-modal'>
