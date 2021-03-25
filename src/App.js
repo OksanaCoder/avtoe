@@ -28,7 +28,7 @@ import Cooperation from './components/Cooperation/Cooperation'
 import Magazine from './components/Magazine/Magazine' 
 import Auction from './components/Auction/Auction'
 import './components/NavBar/style.css'
-import CarItem from './components/CarItem/CarItem'
+import CarDetails from './components/CarDetails/CarDetails'
 import Catalog from './components/Catalog/Catalog';
 
 const App = () => {
@@ -209,8 +209,14 @@ const App = () => {
       <Route path='/auction' exact component={() => <Auction data={data} />} />  
       <Route path='/cooperation' exact component={Cooperation} />   
       <Route path='/magazine' exact component={Magazine} />    
-   
-      <Footer />
+      <Route
+            exact
+            path="/carDetails/:id"
+            render={({ match }) => (
+              <CarDetails item={data.find((item) => String(item.id) === String(match.params.id))} />
+            )}
+          />
+        <Footer />
      
       </Router>
     </>

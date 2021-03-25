@@ -11,12 +11,12 @@ import icon_3 from '../../img/petrol.png'
 import { useParams } from 'react-router-dom';
 
 const CarDetails = ({item}) => {
-//    console.log(props, ' for modal')
+   console.log(item, ' for car details')
    const [loggedIn, setLoggedIn]  = useState(false)
    
 //    const { id } = props.match.params
    
-  
+   
         
    const checkUser = () => {
     
@@ -24,12 +24,9 @@ const CarDetails = ({item}) => {
 
     return (
         <>
-       <h4>{item.name}</h4>
-              {/* <Container fluid>
+                <Container fluid>
                  <h4>Деталі авто</h4>
-                 {match.data.map((item, index) =>{
-                 return(
-                     <>
+     
                  <Row>
              
                         <Col>
@@ -113,11 +110,9 @@ const CarDetails = ({item}) => {
                 <div className='mt-3'>
                   { item.typeSale == 'auction' &&  <button  className='btn-item auction-btn-bet' onClick={checkUser}>Make a bet</button>}
                 </div>
-                </>
-             )
-            })}
+        
               </Container>
-               */}
+            
                     
                  
             
