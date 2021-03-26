@@ -18,13 +18,32 @@ import Select from 'react-select';
 const Header = ({reference, data}) => {
    const [ isPicked, setPicked ] = useState(false)
    const [ searchItem, setSearchItem ] = useState('')
-   console.log(data)
+   console.log(data, 'for search bar')
    
    const handleClick = () => {
      setPicked(!isPicked)
      
    }
 
+  //  const options = () => {
+  //    data.map(item => {
+  //      return {
+  //        value: item.name, 
+  //        label: item.name
+  //       }
+  //    })
+  //  }
+  const renderList = () => {
+    return data.map(data =>({label:data.name,value:data.name}))
+   }
+
+  //  const name  = data.map(i => {
+  //    return i.name
+  //  })
+
+  // const dataList = [
+  //   { label: name, label: name}
+  // ]
 
    return(
        <>
@@ -60,8 +79,9 @@ const Header = ({reference, data}) => {
               <Select
                   className='search-line'
                   placeholder='Пошук...'
-                  options={data}
-                  onChange={opt => console.log(opt.name)}
+                  options={renderList()}
+          
+                  onChange={opt => console.log(opt)}
                      />
               </div>
    
