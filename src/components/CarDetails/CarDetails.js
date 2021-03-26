@@ -8,6 +8,7 @@ import './style.css'
 import icon_1 from '../../img/location.png'
 import icon_2 from '../../img/speedometer.png'
 import icon_3 from '../../img/petrol.png'
+import hammer from '../../img/hammer-white.jpeg'
 import ModalContactUs from '../ModalContactUs/ModalContactUs'
 
 const CarDetails = ({item}) => {

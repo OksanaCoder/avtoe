@@ -6,21 +6,23 @@ import img_4 from '../../img/i-4.svg'
 import img_1 from '../../img/i-1.svg'
 import img_2 from '../../img/i-2.svg'
 import img_3 from '../../img/i-3.svg'
-import image3 from '../../img/fera.png'
-import image2 from '../../img/slider-2.png'
-import image1 from '../../img/slider-1.png'
 import logo_big from '../../img/logo-big.png'
 import logo_small from '../../img/logo-small.png'
 import MobApp from '../../components/MobApp/MobApp'
 import Calculators from '../Calculators/Calculators'
 import  Advantages from '../Advantages/Advantages'
+import Select from 'react-select';
 
 
 
-const Header = ({reference}) => {
+const Header = ({reference, data}) => {
    const [ isPicked, setPicked ] = useState(false)
+   const [ searchItem, setSearchItem ] = useState('')
+   console.log(data)
+   
    const handleClick = () => {
      setPicked(!isPicked)
+     
    }
 
 
@@ -52,10 +54,17 @@ const Header = ({reference}) => {
                    <img style={{ width: '150px'}} src={logo_big} alt='logo' className='ml-3 mr-4'/>
                 <small style={{fontSize: '2rem', fontWeight: 'bold', color: '#fff'}}>для тебе завжди є пропозиції</small></h4>
               
-              <input type='text' placeholder='BMW X5  ' className='search-line'/>
-              <img src={search}  width='20px'/>
-
+              {/* <input type='text' placeholder='BMW X5' className='search-line' onChange={(e) => setSearchItem(e.target.value)} value={searchItem}/> */}
+              {/* <img src={search}  width='20px'/> */}
+       
+              <Select
+                  className='search-line'
+                  placeholder='Пошук...'
+                  options={data}
+                  onChange={opt => console.log(opt.name)}
+                     />
               </div>
+   
              </Col>
             </Row>
      

@@ -125,21 +125,21 @@ select {
 }
 
 .search-line {
-  background: none;
-  border: none;
-  border-bottom: 1px solid #036DFD;
+  border: none !important;
+  border-bottom: 1px solid #036DFD !important;
   border-radius: 0%;
   width: 300px;
+  margin: auto;
   padding-top: 20px;
-  transition: .5s;
+  /* transition: .5s; */
 }
 
 .search-line:focus {
    outline: none !important;
-   transform: translateY(10px);
+   /* transform: translateY(10px); */
    width: 400px;
    color: #fff;
-   text-transform: uppercase;
+ 
 }
 .search-line::after {
 
@@ -155,7 +155,14 @@ select {
 .search-line:focus::placeholder {
    color: transparent;
 }
-
+.search-output {
+  background: #fff;
+  width: 41%;
+  margin: 0 0 0 28%;
+  color: #000;
+  text-align: left;
+  font-weight: 300;
+}
 
 @media (max-width : 500px) {
     .nav-logo-lang {

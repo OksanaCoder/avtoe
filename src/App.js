@@ -201,7 +201,7 @@ const App = () => {
        
       <Route path="/login" component={LoginForm} />
       <Route path="/register" component={SignUpForm} />
-      <Route path='/' exact component={() => <Header reference={myRef} />}/>
+      <Route path='/' exact component={() => <Header reference={myRef} data={data}/>}/>
       <Route path='/about' exact component={About} />
       <Route path='/catalog' exact component={() => <Catalog data={data}/>} />
       {/* <Route path='/catalog/carItem/' exact component={() => <CarItem data={data}/>} />
