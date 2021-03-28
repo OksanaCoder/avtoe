@@ -12,19 +12,30 @@ import MobApp from '../../components/MobApp/MobApp'
 import Calculators from '../Calculators/Calculators'
 import  Advantages from '../Advantages/Advantages'
 import Select from 'react-select';
+import { useHistory } from "react-router-dom";
 
 
 
 const Header = ({reference, data}) => {
    const [ isPicked, setPicked ] = useState(false)
    const [ searchItem, setSearchItem ] = useState('')
+   const [selected, setSelected] = useState('')
    console.log(data, 'for search bar')
-   
+   let history = useHistory();
+   const customStyles = {
+    option: (provided, state) => ({
+      ...provided,
+      color: state.isSelected ? 'black' : 'black',
+    })
+   }
    const handleClick = () => {
      setPicked(!isPicked)
      
    }
-
+   const handleChange = (newVal) => {
+     setSelected(newVal)
+     history.push(`/carDetails/${newVal.id}`)
+   }
   //  const options = () => {
   //    data.map(item => {
   //      return {
@@ -74,17 +85,21 @@ const Header = ({reference, data}) => {
                 <small style={{fontSize: '2rem', fontWeight: 'bold', color: '#fff'}}>для тебе завжди є пропозиції</small></h4>
               
               {/* <input type='text' placeholder='BMW X5' className='search-line' onChange={(e) => setSearchItem(e.target.value)} value={searchItem}/> */}
-              {/* <img src={search}  width='20px'/> */}
-       
+              
               <Select
                   className='search-line'
                   placeholder='Пошук...'
                   options={renderList()}
-          
-                  onChange={opt => console.log(opt)}
+                  styles={customStyles}
+                  onChange={handleChange}
+                  value={selected}
                      />
               </div>
-   
+              {/* <img src={search}  width='20px'
+              onClick={() => {
+                setSelected(data.find(item => item.name === selected))
+              }}/> */}
+       
              </Col>
             </Row>
      
