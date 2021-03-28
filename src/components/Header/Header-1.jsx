@@ -34,6 +34,7 @@ const Header = ({reference, data}) => {
    }
    const handleChange = (newVal) => {
      setSelected(newVal)
+     console.log(newVal , 'newVal')
      history.push(`/carDetails/${newVal.id}`)
    }
   //  const options = () => {
@@ -45,7 +46,7 @@ const Header = ({reference, data}) => {
   //    })
   //  }
   const renderList = () => {
-    return data.map(data =>({label:data.name,value:data.name}))
+    return data.map(data =>({label:data.name,value:data.name, id:data.id}))
    }
 
   //  const name  = data.map(i => {
