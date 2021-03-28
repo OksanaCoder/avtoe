@@ -30,6 +30,8 @@ import Auction from './components/Auction/Auction'
 import './components/NavBar/style.css'
 import CarDetails from './components/CarDetails/CarDetails'
 import Catalog from './components/Catalog/Catalog';
+import RequestForm from './components/RequestForm/RequestForm'
+import CarItem from './components/CarItem/CarItem';
 
 const App = () => {
   const data = [
@@ -49,7 +51,8 @@ const App = () => {
         mainImage: [],
         images: [],
         typeSale: 'auction',
-        time: '14:10:05'
+        time: '14:10:05',
+        typeCar: 'passenger'
     },
     {
         id: 2,
@@ -65,7 +68,8 @@ const App = () => {
         moreInfo : " ",
         mainImage: [],
         images: [],
-        typeSale: 'buy now'
+        typeSale: 'buy now',
+        typeCar: 'suv'
     }
 ]
 
@@ -197,7 +201,7 @@ const App = () => {
       </Navbar>
       
       <img className='img-mail' src={mail} onClick={handleShowForm}/>
-      {/* <RequestForm show_form={show_form} handleShowForm={handleShowForm} handleCloseForm={handleCloseForm} /> */}
+      <RequestForm show_form={show_form} handleShowForm={handleShowForm} handleCloseForm={handleCloseForm} />
        
       <Route path="/login" component={LoginForm} />
       <Route path="/register" component={SignUpForm} />
@@ -216,6 +220,7 @@ const App = () => {
               <CarDetails item={data.find((item) => String(item.id) === String(match.params.id))} />
             )}
           />
+        {/* <Route exact path="/catalog/:typeCar" render={({ match }) => ( <Catalog  data={data} filteredData={data.filter((item) => String(item.typeCar) === String(match.params.typeCar))} />)}/> */}
         <Footer />
      
       </Router>

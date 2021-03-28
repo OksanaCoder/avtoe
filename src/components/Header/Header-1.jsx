@@ -12,7 +12,7 @@ import MobApp from '../../components/MobApp/MobApp'
 import Calculators from '../Calculators/Calculators'
 import  Advantages from '../Advantages/Advantages'
 import Select from 'react-select';
-import { useHistory } from "react-router-dom";
+import { useHistory, Link } from "react-router-dom";
 
 
 
@@ -107,13 +107,15 @@ const Header = ({reference, data}) => {
        <Row className='text-center mt-5'>
 
          <Col >
-             <img src={img_4} className='white-fill mr-2' width='70px'/>
-        
-             <img src={img_1} width='70px' className='white-fill mr-2' />
-         
-             <img src={img_2} width='70px' className='white-fill' />
 
-             <img src={img_3} width='70px' className='white-fill ml-2' />
+              <Link  to={`/catalog/passanger`}><img src={img_4} className='white-fill mr-2' width='70px'/></Link> 
+                    
+              <Link  to={`/catalog/bike`}> <img src={img_1} width='70px' className='white-fill mr-2' /></Link>
+
+              <Link  to={`/catalog/suv`}> <img src={img_2} width='70px' className='white-fill' /></Link>
+
+              <Link  to={`/catalog/bus`}> <img src={img_3} width='70px' className='white-fill ml-2' /></Link>
+
          </Col>
        </Row>
            

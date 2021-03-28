@@ -34,7 +34,7 @@ const Catalog = (data) => {
 
                     </Row>
             </Container>
-       
+        
         </div>
     )
 }
