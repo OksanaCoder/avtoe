@@ -1,27 +1,28 @@
 import React, {  useState } from "react";
 import { Modal, Button, Form } from "react-bootstrap";
-import moment from "moment";
 import axios from "axios";
 import './style.css'
 import { Redirect } from 'react-router-dom';
 
 
-
 const RequestForm = (props) => {
-
-  
   const [username, setUserName] = useState("");
   const [phone, setPhone] = useState("");
   const [comment, setModel] = useState("")
+  const bodyMessage = `Имя: ${username}\nСообщение: ${comment}\nНомер тел: ${phone}`;
+  const API_URL = `https://api.telegram.org/bot1747833143:AAGmm2CnUrkYCyHIdVzEkgJVg2HfNUCba28/sendMessage?chat\_id=987210358&text=${bodyMessage}%20there&parse\_mode=HTML`;
+ 
+  // const chat_id = '987210358'
 
-  const API_URL = process.env.REACT_APP_URL;
+  console.log(API_URL)
 
-  const register = (
+
+  const data = (
     username,
     phone,
     comment
   ) => {
-    return axios.post(API_URL + "/requests", {
+    return axios.post(API_URL, {
       username,
       phone,
       comment
@@ -29,7 +30,7 @@ const RequestForm = (props) => {
   };
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const succesregv = await register(
+    const succesregv = await data(
       username,
       phone,
       comment
@@ -37,7 +38,7 @@ const RequestForm = (props) => {
     //form.current.validateAll()
     if (succesregv) {
       alert("Заявка відправлена !");
-      props.handleClose1()
+      // props.handleClose1()
       //props.history.push("/");
       return <Redirect to="/" />;
 
@@ -78,7 +79,7 @@ const RequestForm = (props) => {
                 placeholder="Ім'я"
                 value={username}
                 onChange={onChangeUsername}
-                name="Ім'я"
+                name="name"
                 className="input-style"
               />
             </Form.Group>
@@ -105,6 +106,7 @@ const RequestForm = (props) => {
             </Form.Group>
             <div className="text-center mt-5 flex-column">
               <Button
+                onClick={handleSubmit}
                 variant="primary"
                 type="submit"
                 className="btn-form yellow-back"
@@ -125,6 +127,6 @@ const RequestForm = (props) => {
       </Modal>
     </>
   );
-};
+}
 
-export default RequestForm;
+export default RequestForm
