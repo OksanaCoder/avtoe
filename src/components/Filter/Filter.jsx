@@ -9,7 +9,7 @@ const Filter = () => {
         { value: 1990, label: 1990},
         { value: 1991, label: 1991},
         { value: 1992, label: 1992},
-        { value: 1993, label: 1993},
+        { value: 1993, label: 1992},
         { value: 1994, label: 1994},
         { value: 1995, label: 1995},
         { value: 1996, label: 1996},
