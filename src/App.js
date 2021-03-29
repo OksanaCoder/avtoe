@@ -220,6 +220,12 @@ const App = () => {
               <CarDetails item={data.find((item) => String(item.id) === String(match.params.id))} />
             )}
           />
+          <Route
+            exact
+            path="/catalog/typeCar"
+            render={({ match }) => (
+              <Catalog item={ data.filter((v) => String(v.typeCar) === String(match.params.typeCar)) } />
+            )}/>
         {/* <Route exact path="/catalog/:typeCar" render={({ match }) => ( <Catalog  data={data} filteredData={data.filter((item) => String(item.typeCar) === String(match.params.typeCar))} />)}/> */}
         <Footer />
      
