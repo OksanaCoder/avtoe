@@ -1,9 +1,7 @@
 {
   "recommendations": [
-    "dbaeumer.vscode-eslint",
     "esbenp.prettier-vscode",
     "EditorConfig.EditorConfig",
-    "eamodio.gitlens",
     "vscode-icons-team.vscode-icons"
   ]
 }
