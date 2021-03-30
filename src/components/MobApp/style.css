@@ -1,0 +1,33 @@
+.yellow-back {
+    background-color: #F7BA04;
+    color: #000;
+}
+.img-app {
+    height: 330px;
+    width : 100%;
+    object-fit: cover;
+    object-position: top;
+    opacity: 0.5;  
+}
+.center-app {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 !important ;
+}
+.font-25-700 {
+    color: #fff;
+    font-size: 2rem;
+    font-weight: 700;
+}
+.col-no-gap {
+    padding: 0 !important;
+}
+@media (max-width: 500px) {
+    div.text-left.col-lg-5.col-md-6.col-sm-12 {
+        padding: 0 !important;
+    }
+    .font-25-700 {
+       padding: 20px;
+    }
+}

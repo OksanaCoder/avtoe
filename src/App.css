@@ -1,0 +1,96 @@
+@import url("https://use.typekit.net/qin7miy.css");
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+.black-color {
+  color: #000 ;
+}
+.black-color:hover {
+  color: #000;
+  text-decoration: none;
+}
+.black-color:focus {
+  color: #000 !important;
+  text-decoration: none;
+}
+.black-color:active {
+  color: #000 !important;
+  text-decoration: none;
+}
+.blue-line {
+  border-top: 3px solid rgba(7, 109, 253);
+  width: 50px;
+  padding-top: 15px;
+}
+.img-mail {
+  width: 50px;
+  position: fixed !important;
+  right: 20px;
+  bottom: 130px;
+  border-radius: 50%;
+  z-index: 999;
+  -webkit-box-shadow: 0px 0px 20px 0px rgba(7, 109, 253);
+  -moz-box-shadow: 0px 0px 20px 0px rgba(7, 109, 253);
+  box-shadow: 0px 0px 20px 0px rgba(7, 109, 253);
+  animation-name: pulse_animation;
+  animation-duration: 4000ms;
+  transform-origin:70% 70%;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+.up {
+  width: 50px;
+  height: 50px;
+  position: fixed !important;
+  right: 20px;
+  bottom: 190px;
+  border-radius: 50%;
+  z-index: 999;
+  /* -webkit-box-shadow: 0px 0px 20px 0px rgba(7, 109, 253);
+  -moz-box-shadow: 0px 0px 20px 0px rgba(7, 109, 253);
+  box-shadow: 0px 0px 20px 0px rgba(7, 109, 253); */
+  background: rgba(7, 109, 253);
+}
+
+@keyframes pulse_animation {
+    0% { transform: scale(1); }
+    30% { transform: scale(1); }
+    40% { transform: scale(1.08); }
+    50% { transform: scale(1); }
+    60% { transform: scale(1); }
+    70% { transform: scale(1.05); }
+    80% { transform: scale(1); }
+    100% { transform: scale(1); }
+}
+.text-white:hover {
+  text-decoration: none;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

@@ -1,0 +1,57 @@
+@import url("https://use.typekit.net/qin7miy.css");
+body {
+  font-family: muli, sans-serif;
+}
+.background { 
+  background: url('../../img/back-1.png') no-repeat;
+  background-size: cover;  
+  height: 100vh;
+}
+.flex-center {
+    text-align: center;
+    padding-top: 20vh;
+}
+.flex-center-arrow {
+  text-align: center;
+  padding-top: 50px;
+}
+.selectStyle {
+  width: 300px !important;
+  border-radius: 20px !important;
+  margin-right: 10px;
+  border: 1px solid #e7edf3;
+  box-shadow: 1px 0 0 rgb(196 196 196 / 24%);
+  padding: 0 0 0 27px;
+  background: #fff;
+}
+.form-style {
+  border: 1px solid #e7edf3;
+  box-shadow: 1px 10px 0 0 rgb(196 196 196 / 24%);
+  padding: 30px 0 10px 50px;
+  background: #fff;
+  border-radius: 20px;
+  position: relative;
+  margin: 50px auto !important;
+  width: 70%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.btn-search {
+
+  background-color: #F7BA04 !important;
+  border-radius: 20px !important;
+  border: none !important;
+  margin-top: 15px;
+
+}
+button.btn-search.btn.btn-primary {
+  color: #000 !important;
+  font-weight: 700;
+  padding: 7px 80px !important;
+
+}
+.arrow-down {
+   width: 60px;
+}
+

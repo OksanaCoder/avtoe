@@ -1,0 +1,35 @@
+.icon-adv {
+    width: 30px;
+    margin-right: 20px;
+    background: #076DFD;
+    padding: 5px;
+}
+.header-6 {
+    font-weight: bold;
+    font-size: 15px;
+    color: #000;
+}
+.margin-left {
+    margin-left: 70px;
+}
+.advantage p {
+    color: #6F6F6F;
+    font-weight: 600;
+    
+    font-size: 12px;
+}
+.row-column {
+    display: flex;
+    align-items: flex-start;
+   
+}
+
+.text-400 {
+    font-weight: 200;
+}
+.flex-between {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+

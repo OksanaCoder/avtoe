@@ -1,0 +1,42 @@
+.back-yellow {
+    background-color: #F7BA04;
+    padding-bottom: 90px; 
+    padding-top: 60px;
+}
+.img-category {
+    margin-bottom: 10px;
+    transition: transform .6s;
+    width: 200px;
+}
+.smaller {
+    width: 150px;
+}
+.img-category:hover {
+    transform: scale(1.1);
+}
+
+.category-line h6 {
+    color: #fff;
+    font-size: 50px;
+    font-weight: 900;
+}
+.item-categ {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+.item-categ h5 { 
+    color: #fff;
+    font-size: 12px;
+    text-transform: uppercase;
+    font-weight: 700;
+    border: 1px solid #fff;
+    border-radius: 20px;
+    padding: 5px 10px;
+}
+.item-categ h5:hover {
+    color: #000;
+    cursor: pointer;
+    border: 1px solid #000;
+}

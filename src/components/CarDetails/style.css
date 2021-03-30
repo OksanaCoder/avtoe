@@ -1,0 +1,51 @@
+.modal-details .modal-content {
+    padding: 0;
+}
+.modal-details .modal-dialog {
+    min-width: 100%;
+}
+.cancel-btn {
+    background-color: #F7BA04 !important;
+    padding: 10px !important;
+}
+.row-modal .col:first-child {
+    font-weight: 700;
+}
+.price-details {
+    color: #F7BA04;
+    font-weight: bold;
+    font-size: 30px;
+    
+}
+.btn.btn-cancel-modal {
+    padding: 5px 40px !important;
+    border-radius: 20px;
+    border: none;
+    box-shadow: 0px 3px 8px 0px rgb(0 0 1 / 20%);
+    color: #fff;
+    font-weight: bold;
+    font-size: 12px;
+    background: #262626;
+}
+.header-details{
+    font-size: 40px;
+    font-weight: 700;
+}
+.weight-thin {
+    font-weight: 400;
+}
+.current-bid {
+    background: #076DFD;
+    color: #fff;
+    font-weight: 700;
+}
+@media (max-width: 500px) {
+    .row-modal .col {
+        font-size: 10px;
+    }
+    .price-details, 
+    .name-details{
+        font-size: 20px;
+        
+    }
+} 

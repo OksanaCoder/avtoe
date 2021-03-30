@@ -1,0 +1,25 @@
+.color-dark {
+    background: #1C1C1C;
+}
+.img-bank {
+    width: 50%;
+    text-align: center;
+}
+.row-calcs {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+}
+.color-light-dark {
+    background: #262626;
+}
+
+@media (max-width: 500px) {
+    .img-bank {
+        margin-bottom: 80px;
+    }
+    .last{
+        margin-bottom: 0;
+    }
+}
