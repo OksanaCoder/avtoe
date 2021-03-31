@@ -14,7 +14,7 @@ const SignUpForm = (props) => {
   const [password, setPassword] = useState("");
   const [phone, setPhone] = useState("");
 
-  const API_URL = process.env.REACT_APP_URL;
+  // const API_URL = process.env.REACT_APP_URL;
 
   const register = (
     name,
@@ -40,13 +40,11 @@ const SignUpForm = (props) => {
     //form.current.validateAll()
     console.log(succesregv)
     if (succesregv) {
-      alert("Реєстрація пройшла успішно!");
-      props.handleClose1()
-      //props.history.push("/");
+      alert("Вітаємо ! Ви стали учасником аукціону !");
       return <Redirect to="/" />;
 
     } else {
-      console.log("please check login");
+      console.log("Сталася помилка :(");
     }
   };
 
