@@ -11,7 +11,7 @@ export const loginAPI = ({ password, email }) => {
         },
         { headers: new Headers({
            "Content-Type": "application/json",
-            'Authorization': `Basic ${token}` 
+            // 'Authorization': `Basic ${token}` 
           }) }
       );
       //   let data;

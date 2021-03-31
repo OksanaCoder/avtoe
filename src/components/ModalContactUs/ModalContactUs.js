@@ -17,11 +17,8 @@ const ModalContactUs = (props) => {
                 </ul>
             </Modal.Body>
             <Modal.Footer>
-            <Button variant="secondary" onClick={props.closeModal} className='btn-modal'>
-                Close
-            </Button>
             <Button variant="primary" onClick={props.closeModal}  className='btn-modal'>
-                Save Changes
+               Скасувати
             </Button>
             </Modal.Footer>
         </Modal>
