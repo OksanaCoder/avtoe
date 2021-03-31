@@ -39,7 +39,7 @@ const Auction = ({ data }) => {
           </Row>
         ))}
 
-      <CarItem data={data} />
+      {/* <CarItem data={data} /> */}
     </>
   );
 };

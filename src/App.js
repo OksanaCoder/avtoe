@@ -35,9 +35,12 @@ import "./components/NavBar/style.css";
 import CarDetails from "./components/CarDetails/CarDetails";
 import Catalog from "./components/Catalog/Catalog";
 import RequestForm from "./components/RequestForm/RequestForm";
-import CarItem from "./components/CarItem/CarItem";
+import Profile from "./components/Profile/Profile";
 
 const App = () => {
+  const [ logged, setLogged ] = useState(true)
+  const [registered, setRegistered] = useState(false);
+
   const data = [
     {
       id: 1,
@@ -76,10 +79,6 @@ const App = () => {
       typeCar: "suv",
     },
   ];
-
-  const [loggedIn, setLoggedIn] = useState(false);
-  const [registered, setRegistered] = useState(false);
-
   const myRef = useRef(null);
   const scrollToCredit = () => {
     myRef.current.scrollIntoView({
@@ -92,6 +91,9 @@ const App = () => {
       behavior: "smooth",
     });
   };
+  const handleOut = () => {
+    setLogged(false)
+  }
 
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
@@ -134,7 +136,7 @@ const App = () => {
                   </BrowserLink>
                 </Nav.Link>
 
-                <Nav.Link className="nav-item button-nav">
+                {/* <Nav.Link className="nav-item button-nav">
                   <BrowserLink
                     to="/"
                     className=" text-white link-nav"
@@ -143,7 +145,7 @@ const App = () => {
                     <img className="img-small" src={credit} />
                     Кредит
                   </BrowserLink>
-                </Nav.Link>
+                </Nav.Link> */}
                 <Nav.Link
                   className="nav-item text-white link-nav button-nav"
                   to="/magazine"
@@ -179,19 +181,37 @@ const App = () => {
                   </BrowserLink>
                 </Nav.Link>
 
+                { !logged ? (
+                  <>
                 <Nav.Link className=" nav-item link-nav button-nav">
                   <BrowserLink to="/login" className=" text-white link-nav">
                     <img className="img-small" src={person} />
                     Log in
                   </BrowserLink>
                 </Nav.Link>
-
-                <Nav.Link className=" nav-item link-nav button-nav">
-                  <BrowserLink to="/register" className=" text-white link-nav">
+                 <Nav.Link className=" nav-item link-nav button-nav">
+                 <BrowserLink to="/register" className=" text-white link-nav">
+                   <img className="img-small" src={person} />
+                   Sign Up
+                 </BrowserLink>
+               </Nav.Link>
+               </>
+              ): (
+                <>
+                <Nav.Link className="nav-item link-nav button-nav">
+                  <BrowserLink to='/profile' className="text-white link-nav">
                     <img className="img-small" src={person} />
-                    Sign Up
+                    Profile
                   </BrowserLink>
                 </Nav.Link>
+                <Nav.Link className=" nav-item link-nav button-nav">
+                  <BrowserLink to="/login" className=" text-white link-nav">
+                    <img className="img-small" src={person} onClick={handleOut}/>
+                    Log out
+                  </BrowserLink>
+                </Nav.Link>
+                </>
+              )}  
               </Nav>
             </Nav>
 
@@ -262,6 +282,11 @@ const App = () => {
           path="/auction"
           exact
           component={() => <Auction data={data} />}
+        />
+         <Route
+          path="/profile"
+          exact
+          component={() => <Profile data={data} />}
         />
         <Footer />
       </Router>

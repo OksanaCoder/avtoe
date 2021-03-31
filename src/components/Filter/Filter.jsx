@@ -1,10 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Form, Button, Col, Row } from 'react-bootstrap'
 import styles from './style.css'
 import Select from 'react-select'
 import CreatableSelect from 'react-select/creatable';
 
-const Filter = () => {
+const Filter = (data) => {
     const options = [ 
         { value: 1990, label: 1990},
         { value: 1991, label: 1991},
@@ -116,7 +116,17 @@ const Filter = () => {
         { value: 20000 + '-' +  50000, label: 20000 + '-' +  50000},
         { value: 50000 + '+', label: 50000 + '+'},
     ]
-
+    const [model, setModel] = useState('')
+    const [years, setYears] = useState([])
+    const [price, setPrice] = useState('')
+    
+    const onSearch = () => {
+        console.log(data, 'in filter')
+        // setModel(e.target.value)
+        // setYears(e.target.value)
+        // setPrice(e.target.value)
+        // console.log(model, years, price, 'data to search')
+    }
     return (
         <>
    
@@ -127,6 +137,8 @@ const Filter = () => {
                   <Form.Label>Brand</Form.Label>
                      <Select options={optionBrand}
                              className='selectStyle optionStyle'
+                       
+                            
                               />
                  </Form.Group>
               
@@ -135,6 +147,7 @@ const Filter = () => {
                   <Form.Label>Year</Form.Label>
                     <CreatableSelect options={options} 
                                    className='selectStyle optionStyle'
+                              
                                    isMulti/>
               </Form.Group>
   
@@ -142,12 +155,13 @@ const Filter = () => {
                 <Form.Label>Price, $</Form.Label>
             <Select options={optionYear}
                              className='selectStyle optionStyle'
+                     
                               />
           
             </Form.Group>
        
             <div className='text-center col-lg-3 col-md-12 col-sm-12'>
-            <Button className='btn-search'>Search</Button>
+            <Button className='btn-search' onClick={onSearch}>Search</Button>
             </div>
        
             </Row>

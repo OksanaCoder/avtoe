@@ -7,12 +7,13 @@ import ReactDOM from 'react-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCoffee } from '@fortawesome/free-solid-svg-icons'
 import { loginAPI } from "../../API";
+import { useHistory } from 'react-router-dom'
 
 const LoginForm = (props) => {
     
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
- // const [loading, setLoading] = useState(false);
+  const history = useHistory()
 
   const API_URL = process.env.REACT_APP_URL;
   const login = (email, password) => {
@@ -42,10 +43,10 @@ const LoginForm = (props) => {
     e.preventDefault();
     const confirmLogin = await login(email,password);
     if (confirmLogin){
-        alert("loginned successfully")
-        return <Redirect to="/about" />;
+        alert("Вітаємо в AVTOE !")
+        return history.push('/auction');
     }else{
-        alert("Login fails")
+        alert("Виникла помилка :(")
     }
   };
 

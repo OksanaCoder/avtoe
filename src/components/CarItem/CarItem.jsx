@@ -20,54 +20,6 @@ import CarDetails from "../CarDetails/CarDetails";
 const CarItem = ({ filteredData = [] }) => {
   console.log(filteredData, "data in car item");
 
-  // const API_URL = process.env.REACT_APP_URL;
-  // const offer = (username, phone, price, comment) => {
-  //   return axios
-  //     .post(API_URL + "/offer", {
-  //       username,
-  //       phone,
-  //       price,
-  //       comment
-  //     })
-  //     .then((response) => {
-  //       if (response.data.accessToken) {
-  //         localStorage.setItem("user", JSON.stringify(response.data));
-  //       }
-
-  //       return response.data;
-  //     });
-  // };
-
-  // const onChangeUsername = (e) => {
-  //   const username = e.target.value;
-  //   setUsername(username);
-  // };
-
-  // const onChangePhone = (e) => {
-  //   const phone = e.target.value;
-  //   setPhone(phone);
-  // };
-
-  // const onChangePrice = (e) => {
-  //   const price = e.target.value;
-  //   setPrice(price);
-  // };
-  // const onChangeComment = (e) => {
-  //   const comment = e.target.value;
-  //   setComment(comment);
-  // };
-
-  // const handleSubmit = async (e) => {
-  //   e.preventDefault();
-  //   const confirmOffer = await offer(username, phone, price, comment);
-  //   if (confirmOffer){
-  //       alert("Заявку відправлено !")
-  //       return <Redirect to="/auction" />;
-  //   }else{
-  //       alert("Помилка :(")
-  //   }
-  // };
-
   return (
     <div>
       <Container

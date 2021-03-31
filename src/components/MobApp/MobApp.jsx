@@ -14,7 +14,7 @@ const MobApp = () => {
            
                 <Col lg={5} md={6} sm={12} className='text-left'>
                     <Container className='pt-5'>
-                    <p className='font-25-700'>Завантажуй Наш Мобільний Додаток</p>
+                        <p className='font-25-700'>Завантажуй Наш Мобільний Додаток</p> 
                         <div className='d-flex align-center'>
                                 <img src={ios}  height='150px'/>
                                 <img src={android} height='75px'/>

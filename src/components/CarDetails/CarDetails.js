@@ -10,12 +10,13 @@ import icon_2 from '../../img/speedometer.png'
 import icon_3 from '../../img/petrol.png'
 import hammer from '../../img/hammer-white.jpeg'
 import ModalContactUs from '../ModalContactUs/ModalContactUs'
+import { Redirect, useHistory } from 'react-router-dom';
 
 const CarDetails = ({item}) => {
    console.log(item, ' for car details')
    const [loggedIn, setLoggedIn]  = useState(false)
    const [open, setOpenModal] = useState(false)
-
+  const history = useHistory()
    const openModal = () => {
        setOpenModal(true)
    }
@@ -26,7 +27,17 @@ const CarDetails = ({item}) => {
    const checkUser = () => {
     
     }
+    const [logged, setLogged] = useState(false)
+    const [bid, setBid] = useState(null)
+    const sendBid = () => {
+        console.log(`your bid is ${bid}`)
+    }
+  const checkLog = () => {
+     alert('Please, log in !')
+     history.push('/login')
 
+    //  return <Redirect to='/login'/>
+  }
     return (
         <>
                 <Container fluid className='pb-5'>
@@ -160,10 +171,17 @@ const CarDetails = ({item}) => {
                                <>
                                 <Row className='mt-4 pb-5 row-modal'>
                                     <Col>
-                                        $ <input type='number'/>
+                                        $ <input type='number' value={bid} onChange={(e) => setBid(e.target.value)}/>
                                     </Col>
                                     <Col>
-                                       <button  className='btn-item auction-btn-bet' onClick={checkUser}>Make a bid</button>
+                                     { logged ? (
+                                        <button  className='btn-item auction-btn-bet' onClick={checkUser} onClick={sendBid}>Make a bid</button>
+                                     ):(
+                                         <>
+                                        <button  className='btn-item auction-btn-bet' onClick={checkLog}>Make a bid</button>
+                                         
+                                         </>
+                                     )}  
                                     </Col>
                                 </Row>
 
@@ -188,11 +206,21 @@ const CarDetails = ({item}) => {
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                    <td className='current-bid'>$3,000</td>
-                    <td className='current-bid'>Mark</td>
+
+                   { bid && logged ? (
+                   <tr>
+                    <td className='current-bid'>${bid}</td>
+                    <td className='current-bid'>Your bid</td>
                     <td className='current-bid'>14:04:11</td>
                     </tr>
+                   ) : (
+                    <tr>
+                    <td className='current-bid'>$1700</td>
+                    <td className='current-bid'>Mike</td>
+                    <td className='current-bid'>14:04:11</td>
+                    </tr>
+                   )}
+
                     <tr>
                     <td>$3,000</td>
                     <td>Mark</td>

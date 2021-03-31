@@ -23,7 +23,7 @@ const Catalog = ({ data, filteredData = [] }) => {
           </div>
         </Row>
 
-        <Filter />
+        <Filter data={data}/>
 
         {filteredData.length === 0 &&
           data
