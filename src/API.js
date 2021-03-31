@@ -2,7 +2,6 @@ import axios from "axios";
 const baseURL = "http://localhost:4000";
 export const loginAPI = ({ password, email }) => {
   return new Promise(async (resolve, reject) => {
-    const token = Buffer.from(`${email}:${password}`, 'utf8').toString('base64')
     try {
       let response = await axios.post(
         `${baseURL}/api/v1/user/signin`,
