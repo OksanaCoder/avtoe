@@ -4,7 +4,7 @@ import moment from "moment";
 import axios from "axios";
 import './style.css'
 import { Redirect } from 'react-router-dom';
-
+import { signUpAPI } from "../../API";
 
 const SignUpForm = (props) => {
    console.log(props)
@@ -17,17 +17,17 @@ const SignUpForm = (props) => {
   const API_URL = process.env.REACT_APP_URL;
 
   const register = (
-    username,
+    name,
     email,
     password,
-    phone
+    phoneNum
   ) => {
-    return axios.post(API_URL + "/users/register", {
-      username,
+    return signUpAPI({name,
       email,
       password,
-      phone,
-    });
+      phoneNum}).catch((err)=>{
+        console.log(err)
+      })
   };
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -38,6 +38,7 @@ const SignUpForm = (props) => {
       phone
     );
     //form.current.validateAll()
+    console.log(succesregv)
     if (succesregv) {
       alert("Реєстрація пройшла успішно!");
       props.handleClose1()

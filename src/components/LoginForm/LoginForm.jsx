@@ -6,7 +6,7 @@ import { Redirect } from 'react-router-dom';
 import ReactDOM from 'react-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCoffee } from '@fortawesome/free-solid-svg-icons'
-
+import { loginAPI } from "../../API";
 
 const LoginForm = (props) => {
     
@@ -16,18 +16,17 @@ const LoginForm = (props) => {
 
   const API_URL = process.env.REACT_APP_URL;
   const login = (email, password) => {
-    return axios
-      .post(API_URL + "/users/login", {
-        email,
-        password,
-      })
+    console.log("idher")
+   return loginAPI({email,password})
       .then((response) => {
         if (response.data.accessToken) {
           localStorage.setItem("user", JSON.stringify(response.data));
         }
   
         return response.data;
-      });
+      }).catch((err)=>{
+        console.log(err)
+      })
   };
   
   const onChangeEmail = (e) => {

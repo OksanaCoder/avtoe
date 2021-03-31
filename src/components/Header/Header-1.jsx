@@ -1,5 +1,5 @@
 import React, { useRef, useState, useEffect, useCallback } from 'react'
-import { Container, Button, Form, Row, Col } from 'react-bootstrap'
+import {Container, Button, Form, Row, Col } from 'react-bootstrap'
 import './style-2.css'
 import search from '../../img/search.png'
 import img_4 from '../../img/i-4.svg'
@@ -10,33 +10,33 @@ import logo_big from '../../img/logo-big.png'
 import logo_small from '../../img/logo-small.png'
 import MobApp from '../../components/MobApp/MobApp'
 import Calculators from '../Calculators/Calculators'
-import Advantages from '../Advantages/Advantages'
+import  Advantages from '../Advantages/Advantages'
 import Select from 'react-select';
 import { useHistory, Link } from "react-router-dom";
 
 
 
-const Header = ({ reference, data }) => {
-  const [isPicked, setPicked] = useState(false)
-  const [searchItem, setSearchItem] = useState('')
-  const [selected, setSelected] = useState('')
-  console.log(data, 'for search bar')
-  let history = useHistory();
-  const customStyles = {
+const Header = ({reference, data}) => {
+   const [ isPicked, setPicked ] = useState(false)
+   const [ searchItem, setSearchItem ] = useState('')
+   const [selected, setSelected] = useState('')
+   console.log(data, 'for search bar')
+   let history = useHistory();
+   const customStyles = {
     option: (provided, state) => ({
       ...provided,
       color: state.isSelected ? 'black' : 'black',
     })
-  }
-  const handleClick = () => {
-    setPicked(!isPicked)
-
-  }
-  const handleChange = (newVal) => {
-    setSelected(newVal)
-    console.log(newVal, 'newVal')
-    history.push(`/carDetails/${newVal.id}`)
-  }
+   }
+   const handleClick = () => {
+     setPicked(!isPicked)
+     
+   }
+   const handleChange = (newVal) => {
+     setSelected(newVal)
+     console.log(newVal , 'newVal')
+     history.push(`/carDetails/${newVal.id}`)
+   }
   //  const options = () => {
   //    data.map(item => {
   //      return {
@@ -46,8 +46,8 @@ const Header = ({ reference, data }) => {
   //    })
   //  }
   const renderList = () => {
-    return data.map(data => ({ label: data.name, value: data.name, id: data.id }))
-  }
+    return data.map(data =>({label:data.name,value:data.name, id:data.id}))
+   }
 
   //  const name  = data.map(i => {
   //    return i.name
