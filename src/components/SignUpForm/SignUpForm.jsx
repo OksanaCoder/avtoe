@@ -36,10 +36,11 @@ const SignUpForm = (props) => {
       email,
       password,
       phone
-    );
+    )
     //form.current.validateAll()
     console.log(succesregv)
     if (succesregv) {
+      
       alert("Вітаємо ! Ви стали учасником аукціону !");
       return history.push('/login');
 
@@ -125,15 +126,6 @@ const SignUpForm = (props) => {
               >
                 Sign up
               </Button>
-              <p className='p-12 mt-3'>Have an account ?</p>
-              <p className='p-12-link'><a>Log in</a></p>
-              {/* <Button
-                variant="primary"
-                className="btn-form grey-back"
-                onClick={props.handleClose1}
-              >
-                Скасувати
-              </Button> */}
             </div>
           </Form>
        </div>

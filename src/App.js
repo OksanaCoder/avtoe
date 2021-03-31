@@ -38,7 +38,7 @@ import RequestForm from "./components/RequestForm/RequestForm";
 import Profile from "./components/Profile/Profile";
 
 const App = () => {
-  const [ logged, setLogged ] = useState(true)
+  const [ logged, setLogged ] = useState(false)
   const [registered, setRegistered] = useState(false);
 
   const data = [

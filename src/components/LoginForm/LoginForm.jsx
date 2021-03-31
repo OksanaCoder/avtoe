@@ -9,19 +9,20 @@ import { faCoffee } from '@fortawesome/free-solid-svg-icons'
 import { loginAPI } from "../../API";
 import { useHistory } from 'react-router-dom'
 
-const LoginForm = (props) => {
+const LoginForm = () => {
     
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const history = useHistory()
-
-  const API_URL = process.env.REACT_APP_URL;
+  
+  // const API_URL = process.env.REACT_APP_URL;
   const login = (email, password) => {
     console.log("idher")
    return loginAPI({email,password})
       .then((response) => {
         if (response.data.accessToken) {
           localStorage.setItem("user", JSON.stringify(response.data));
+          history.push('/auction')
         }
   
         return response.data;
@@ -45,6 +46,7 @@ const LoginForm = (props) => {
     if (confirmLogin){
         alert("Вітаємо в AVTOE !")
         return history.push('/auction');
+        // console.log(localStorage.getItem("user")
     }else{
         alert("Виникла помилка :(")
     }
@@ -92,8 +94,6 @@ const LoginForm = (props) => {
               >
                 Log in
               </Button>
-              <p className='p-12 mt-3'>Вперше на сайті ?</p>
-              <p className='p-12-link'><a>Sign up</a></p>
             </div>
           </Form>
           </div>     
