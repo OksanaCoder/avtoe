@@ -3,12 +3,12 @@ import { Modal, Button, Form } from "react-bootstrap";
 import moment from "moment";
 import axios from "axios";
 import './style.css'
-import { Redirect } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import { signUpAPI } from "../../API";
 
 const SignUpForm = (props) => {
    console.log(props)
-
+  const history = useHistory()
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -41,7 +41,7 @@ const SignUpForm = (props) => {
     console.log(succesregv)
     if (succesregv) {
       alert("Вітаємо ! Ви стали учасником аукціону !");
-      return <Redirect to="/" />;
+      return history.push('/login');
 
     } else {
       console.log("Сталася помилка :(");
@@ -51,6 +51,7 @@ const SignUpForm = (props) => {
   const onChangeUsername = (e) => {
     const username = e.target.value;
     setUsername(username);
+    
   };
   const onChangeEmail = (e) => {
     const email = e.target.value;
@@ -80,6 +81,7 @@ const SignUpForm = (props) => {
                 onChange={onChangeUsername}
                 name="username"
                 className="input-style"
+    
               />
             </Form.Group>
             <Form.Group controlId="formBasicEmail">
@@ -101,6 +103,7 @@ const SignUpForm = (props) => {
                 onChange={onChangePassword}
                 name="password"
                 className="input-style"
+           
               />
             </Form.Group>
             <Form.Group controlId="formBasicPhone">
@@ -113,12 +116,7 @@ const SignUpForm = (props) => {
               />
             </Form.Group>
 
-            <Form.Group controlId="formBasicCheckbox">
-              <Form.Check
-                type="checkbox"
-                label="Я погоджуюся з умовами користування сайтом"
-              />
-            </Form.Group>
+        
             <div className="text-center mt-5 flex-column">
               <Button
                 variant="primary"

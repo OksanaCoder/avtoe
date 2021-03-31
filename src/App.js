@@ -93,6 +93,8 @@ const App = () => {
   };
   const handleOut = () => {
     setLogged(false)
+    localStorage.removeItem("user");
+
   }
 
   const [show, setShow] = useState(false);

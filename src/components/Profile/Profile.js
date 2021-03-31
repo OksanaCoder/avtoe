@@ -12,6 +12,7 @@ const Profile = () => {
             </Row>
           <Row>
               <Col>
+                  <h6>Your email:</h6>
                   <h5 >Your bids: </h5> 
                   {/* I need to show a table with the last bids:
                   ex. car model, time and bid */}
