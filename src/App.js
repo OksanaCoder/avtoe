@@ -271,7 +271,15 @@ const App = () => {
 
         <Route
           path="/login"
-          render={() => <LoginForm logged={logged} setLogged={setLogged} />}
+          render={() => (
+            <LoginForm
+              logged={logged}
+              setLogged={(l) => {
+                console.log('trying to set state login')
+                setLogged(l)
+              }}
+            />
+          )}
         />
         <Route path="/register" component={SignUpForm} />
         <Route
