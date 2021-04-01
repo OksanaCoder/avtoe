@@ -1,154 +1,151 @@
-import "./App.css";
-import React, { useState, useRef } from "react";
-import Header from "./components/Header/Header-1";
-import Categories from "./components/Categories/Categories";
-import Shop from "./components/Catalog/Catalog";
-import About from "./components/About/About";
-import MobApp from "./components/MobApp/MobApp";
-import Footer from "./components/Footer/Footer";
-import NavBar from "./components/NavBar/NavBar";
-import "bootstrap/dist/css/bootstrap.min.css";
-import {
-  BrowserRouter as Router,
-  Route,
-  Link as BrowserLink,
-} from "react-router-dom";
-import { Container, Navbar, Nav } from "react-bootstrap";
-import "./components/NavBar/style.css";
-import person from "./img/person.svg";
-import mail from "./img/mail.png";
-import search from "./img/search.svg";
-import read from "./img/read.svg";
-import email from "./img/email.svg";
-import about from "./img/info.svg";
-import credit from "./img/credit.svg";
-import cart from "./img/cart.svg";
-import hammer from "./img/hammer.svg";
-import home from "./img/home.svg";
-import Calculator from "./components/NavBar/Calculator";
-import SignUpForm from "./components/SignUpForm/SignUpForm";
-import LoginForm from "./components/LoginForm/LoginForm";
-import Cooperation from "./components/Cooperation/Cooperation";
-import Magazine from "./components/Magazine/Magazine";
-import Auction from "./components/Auction/Auction";
-import "./components/NavBar/style.css";
-import CarDetails from "./components/CarDetails/CarDetails";
-import Catalog from "./components/Catalog/Catalog";
-import RequestForm from "./components/RequestForm/RequestForm";
-import Profile from "./components/Profile/Profile";
+import './App.css'
+import React, { useState, useRef } from 'react'
+import Header from './components/Header/Header-1'
+import Categories from './components/Categories/Categories'
+import Shop from './components/Catalog/Catalog'
+import About from './components/About/About'
+import MobApp from './components/MobApp/MobApp'
+import Footer from './components/Footer/Footer'
+import NavBar from './components/NavBar/NavBar'
+import 'bootstrap/dist/css/bootstrap.min.css'
+import { BrowserRouter as Router, Route, Link as BrowserLink } from 'react-router-dom'
+import { Container, Navbar, Nav } from 'react-bootstrap'
+import './components/NavBar/style.css'
+import person from './img/person.svg'
+import mail from './img/mail.png'
+import search from './img/search.svg'
+import read from './img/read.svg'
+import email from './img/email.svg'
+import about from './img/info.svg'
+import credit from './img/credit.svg'
+import cart from './img/cart.svg'
+import hammer from './img/hammer.svg'
+import home from './img/home.svg'
+import Calculator from './components/NavBar/Calculator'
+import SignUpForm from './components/SignUpForm/SignUpForm'
+import LoginForm from './components/LoginForm/LoginForm'
+import Cooperation from './components/Cooperation/Cooperation'
+import Magazine from './components/Magazine/Magazine'
+import Auction from './components/Auction/Auction'
+import './components/NavBar/style.css'
+import CarDetails from './components/CarDetails/CarDetails'
+import Catalog from './components/Catalog/Catalog'
+import RequestForm from './components/RequestForm/RequestForm'
+import Profile from './components/Profile/Profile'
+
+const data = [
+  {
+    id: 1,
+    name: 'Ferrari California',
+    price: '91 500',
+    mileage: 22,
+    city: 'Kyiv',
+    fuel: 'Бензин',
+    type: 'Автомат',
+    startPrice: '40 000',
+    color: 'червоний',
+    year: 2014,
+    drive: 'повний',
+    moreInfo: ' ',
+    mainImage: [],
+    images: [],
+    typeSale: 'auction',
+    time: '14:10:05',
+    typeCar: 'passenger',
+  },
+  {
+    id: 2,
+    name: 'BMW',
+    price: '80 500',
+    mileage: 22,
+    city: 'Kyiv',
+    fuel: 'Бензин',
+    type: 'Автомат',
+    color: 'червоний',
+    year: 2014,
+    drive: 'повний',
+    moreInfo: ' ',
+    mainImage: [],
+    images: [],
+    typeSale: 'buy now',
+    typeCar: 'suv',
+  },
+]
+
+const dataMagazine = [
+  {
+    id: 1,
+    title: 'Title',
+    text: 'main text rfefeferf efredfrve tgset gregr',
+    data: '12/03/2021',
+    images: [],
+  },
+  {
+    id: 1,
+    title: 'Title',
+    text: 'main text rfefeferf efredfrve tgset gregr',
+    data: '12/03/2021',
+    images: [],
+  },
+  {
+    id: 1,
+    title: 'Title',
+    text: 'main text rfefeferf efredfrve tgset gregr',
+    data: '12/03/2021',
+    images: [],
+  },
+  {
+    id: 1,
+    title: 'Title',
+    text: 'main text rfefeferf efredfrve tgset gregr',
+    data: '12/03/2021',
+    images: [],
+  },
+  {
+    id: 1,
+    title: 'Title',
+    text: 'main text rfefeferf efredfrve tgset gregr',
+    data: '12/03/2021',
+    images: [],
+  },
+]
 
 const App = () => {
-  const [ logged, setLogged ] = useState(false)
-  const [registered, setRegistered] = useState(false);
-
-  const data = [
-    {
-      id: 1,
-      name: "Ferrari California",
-      price: "91 500",
-      mileage: 22,
-      city: "Kyiv",
-      fuel: "Бензин",
-      type: "Автомат",
-      startPrice: "40 000",
-      color: "червоний",
-      year: 2014,
-      drive: "повний",
-      moreInfo: " ",
-      mainImage: [],
-      images: [],
-      typeSale: "auction",
-      time: "14:10:05",
-      typeCar: "passenger",
-    },
-    {
-      id: 2,
-      name: "BMW",
-      price: "80 500",
-      mileage: 22,
-      city: "Kyiv",
-      fuel: "Бензин",
-      type: "Автомат",
-      color: "червоний",
-      year: 2014,
-      drive: "повний",
-      moreInfo: " ",
-      mainImage: [],
-      images: [],
-      typeSale: "buy now",
-      typeCar: "suv",
-    },
-  ];
-  const dataMagazine = [
-    {
-        id: 1, 
-        title: 'Title',
-        text: 'main text rfefeferf efredfrve tgset gregr',
-        data: '12/03/2021',
-        images: []
-    },
-    {
-        id: 1, 
-        title: 'Title',
-        text: 'main text rfefeferf efredfrve tgset gregr',
-        data: '12/03/2021',
-        images: []
-    },
-    {
-        id: 1, 
-        title: 'Title',
-        text: 'main text rfefeferf efredfrve tgset gregr',
-        data: '12/03/2021',
-        images: []
-    },
-    {
-        id: 1, 
-        title: 'Title',
-        text: 'main text rfefeferf efredfrve tgset gregr',
-        data: '12/03/2021',
-        images: []
-    },
-    {
-        id: 1, 
-        title: 'Title',
-        text: 'main text rfefeferf efredfrve tgset gregr',
-        data: '12/03/2021',
-        images: []
-    }
-]
-  const myRef = useRef(null);
+  const [logged, setLogged] = useState(false)
+  const [registered, setRegistered] = useState(false)
+  const myRef = useRef(null)
   const scrollToCredit = () => {
     myRef.current.scrollIntoView({
-      behavior: "smooth",
-    });
-  };
+      behavior: 'smooth',
+    })
+  }
   const scrollToBottom = () => {
     window.scrollTo({
       top: document.documentElement.scrollHeight,
-      behavior: "smooth",
-    });
-  };
+      behavior: 'smooth',
+    })
+  }
   const handleOut = () => {
     setLogged(false)
-    localStorage.removeItem("user");
-
+    localStorage.removeItem('user')
   }
 
-  const [show, setShow] = useState(false);
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
+  const [show, setShow] = useState(false)
+  const handleClose = () => setShow(false)
+  const handleShow = () => setShow(true)
 
-  const [show1, setShow1] = useState(false);
-  const handleClose1 = () => setShow1(false);
-  const handleShow1 = () => setShow1(true);
+  const [show1, setShow1] = useState(false)
+  const handleClose1 = () => setShow1(false)
+  const handleShow1 = () => setShow1(true)
 
-  const [show_calc, setShow_calc] = useState(false);
-  const handleShow_calc = () => setShow_calc(true);
-  const handleClose_calc = () => setShow_calc(false);
+  const [show_calc, setShow_calc] = useState(false)
+  const handleShow_calc = () => setShow_calc(true)
+  const handleClose_calc = () => setShow_calc(false)
 
-  const [show_form, setShow_form] = useState(false);
-  const handleShowForm = () => setShow_form(true);
-  const handleCloseForm = () => setShow_form(false);
+  const [show_form, setShow_form] = useState(false)
+  const handleShowForm = () => setShow_form(true)
+  const handleCloseForm = () => setShow_form(false)
+
   return (
     <>
       <Router>
@@ -195,10 +192,7 @@ const App = () => {
                   </BrowserLink>
                 </Nav.Link>
                 <Nav.Link className="nav-item text-white link-nav button-nav">
-                  <BrowserLink
-                    to="/cooperation"
-                    className=" text-white link-nav"
-                  >
+                  <BrowserLink to="/cooperation" className=" text-white link-nav">
                     <img className="img-small" src={search} />
                     Шукаємо
                   </BrowserLink>
@@ -211,46 +205,43 @@ const App = () => {
                 </Nav.Link>
 
                 <Nav.Link className="nav-item link-nav button-nav">
-                  <BrowserLink
-                    className=" text-white link-nav"
-                    onClick={scrollToBottom}
-                  >
+                  <BrowserLink className=" text-white link-nav" onClick={scrollToBottom}>
                     <img className="img-small" src={email} />
                     Контакти
                   </BrowserLink>
                 </Nav.Link>
 
-                { !logged ? (
+                {!logged ? (
                   <>
-                <Nav.Link className=" nav-item link-nav button-nav">
-                  <BrowserLink to="/login" className=" text-white link-nav">
-                    <img className="img-small" src={person} />
-                    Log in
-                  </BrowserLink>
-                </Nav.Link>
-                 <Nav.Link className=" nav-item link-nav button-nav">
-                 <BrowserLink to="/register" className=" text-white link-nav">
-                   <img className="img-small" src={person} />
-                   Sign Up
-                 </BrowserLink>
-               </Nav.Link>
-               </>
-              ): (
-                <>
-                <Nav.Link className="nav-item link-nav button-nav">
-                  <BrowserLink to='/profile' className="text-white link-nav">
-                    <img className="img-small" src={person} />
-                    Profile
-                  </BrowserLink>
-                </Nav.Link>
-                <Nav.Link className=" nav-item link-nav button-nav">
-                  <BrowserLink to="/login" className=" text-white link-nav">
-                    <img className="img-small" src={person} onClick={handleOut}/>
-                    Log out
-                  </BrowserLink>
-                </Nav.Link>
-                </>
-              )}  
+                    <Nav.Link className=" nav-item link-nav button-nav">
+                      <BrowserLink to="/login" className=" text-white link-nav">
+                        <img className="img-small" src={person} />
+                        Log in
+                      </BrowserLink>
+                    </Nav.Link>
+                    <Nav.Link className=" nav-item link-nav button-nav">
+                      <BrowserLink to="/register" className=" text-white link-nav">
+                        <img className="img-small" src={person} />
+                        Sign Up
+                      </BrowserLink>
+                    </Nav.Link>
+                  </>
+                ) : (
+                  <>
+                    <Nav.Link className="nav-item link-nav button-nav">
+                      <BrowserLink to="/profile" className="text-white link-nav">
+                        <img className="img-small" src={person} />
+                        Profile
+                      </BrowserLink>
+                    </Nav.Link>
+                    <Nav.Link className=" nav-item link-nav button-nav">
+                      <BrowserLink to="/login" className=" text-white link-nav">
+                        <img className="img-small" src={person} onClick={handleOut} />
+                        Log out
+                      </BrowserLink>
+                    </Nav.Link>
+                  </>
+                )}
               </Nav>
             </Nav>
 
@@ -278,7 +269,10 @@ const App = () => {
           handleCloseForm={handleCloseForm}
         />
 
-        <Route path="/login" component={LoginForm} />
+        <Route
+          path="/login"
+          render={() => <LoginForm logged={logged} setLogged={setLogged} />}
+        />
         <Route path="/register" component={SignUpForm} />
         <Route
           path="/"
@@ -288,13 +282,17 @@ const App = () => {
         <Route path="/about" exact component={About} />
 
         <Route path="/cooperation" exact component={Cooperation} />
-        <Route path="/magazine" exact component={() => <Magazine dataMagazine={dataMagazine}/>} />
+        <Route
+          path="/magazine"
+          exact
+          component={() => <Magazine dataMagazine={dataMagazine} />}
+        />
         <Route
           exact
           path="/magazine/:id"
           render={({ match }) => (
             <Magazine
-            dataMagazine={dataMagazine.filter(
+              dataMagazine={dataMagazine.filter(
                 (item) => String(item.id) === String(match.params.id)
               )}
             />
@@ -305,43 +303,27 @@ const App = () => {
           path="/carDetails/:id"
           render={({ match }) => (
             <CarDetails
-              item={data.find(
-                (item) => String(item.id) === String(match.params.id)
-              )}
+              item={data.find((item) => String(item.id) === String(match.params.id))}
             />
           )}
         />
-        <Route
-          path="/catalog"
-          exact
-          component={() => <Catalog data={data} />}
-        />
+        <Route path="/catalog" exact component={() => <Catalog data={data} />} />
         <Route
           exact
           path="/catalog/:typeCar"
           render={({ match }) => (
             <Catalog
               data={data}
-              filteredData={data.filter(
-                (item) => item.typeCar === match.params.typeCar
-              )}
+              filteredData={data.filter((item) => item.typeCar === match.params.typeCar)}
             />
           )}
         />
-        <Route
-          path="/auction"
-          exact
-          component={() => <Auction data={data} />}
-        />
-         <Route
-          path="/profile"
-          exact
-          component={() => <Profile data={data} />}
-        />
+        <Route path="/auction" exact component={() => <Auction data={data} />} />
+        <Route path="/profile" exact component={() => <Profile data={data} />} />
         <Footer />
       </Router>
     </>
-  );
-};
+  )
+}
 
-export default App;
+export default App
