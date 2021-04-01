@@ -1,8 +1,10 @@
 import React from 'react'
 import {Card, Button, Row, Col } from 'react-bootstrap'
 import './style.css'
+import { Link } from 'react-router-dom'
 
-const ArticleItem = ({ dataMagazine }) => {
+const ArticleItem = ({dataMagazine}) => {
+    console.log(dataMagazine)
     return (
         <>
         <Row className='m-auto'>
@@ -16,7 +18,7 @@ const ArticleItem = ({ dataMagazine }) => {
                         <Card.Text>
                           {item.text.slice(0, 30)}...
                         </Card.Text>
-                        <Button variant="primary" className='card-button'>Details</Button>
+                       <Link to={`/magazine/${item.id}`} className='card-button'>Details</Link> 
                     </Card.Body>
                   </Card>
                 </Col>

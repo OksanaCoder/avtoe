@@ -79,6 +79,43 @@ const App = () => {
       typeCar: "suv",
     },
   ];
+  const dataMagazine = [
+    {
+        id: 1, 
+        title: 'Title',
+        text: 'main text rfefeferf efredfrve tgset gregr',
+        data: '12/03/2021',
+        images: []
+    },
+    {
+        id: 1, 
+        title: 'Title',
+        text: 'main text rfefeferf efredfrve tgset gregr',
+        data: '12/03/2021',
+        images: []
+    },
+    {
+        id: 1, 
+        title: 'Title',
+        text: 'main text rfefeferf efredfrve tgset gregr',
+        data: '12/03/2021',
+        images: []
+    },
+    {
+        id: 1, 
+        title: 'Title',
+        text: 'main text rfefeferf efredfrve tgset gregr',
+        data: '12/03/2021',
+        images: []
+    },
+    {
+        id: 1, 
+        title: 'Title',
+        text: 'main text rfefeferf efredfrve tgset gregr',
+        data: '12/03/2021',
+        images: []
+    }
+]
   const myRef = useRef(null);
   const scrollToCredit = () => {
     myRef.current.scrollIntoView({
@@ -251,7 +288,18 @@ const App = () => {
         <Route path="/about" exact component={About} />
 
         <Route path="/cooperation" exact component={Cooperation} />
-        <Route path="/magazine" exact component={Magazine} />
+        <Route path="/magazine" exact component={() => <Magazine dataMagazine={dataMagazine}/>} />
+        <Route
+          exact
+          path="/magazine/:id"
+          render={({ match }) => (
+            <Magazine
+            dataMagazine={dataMagazine.filter(
+                (item) => String(item.id) === String(match.params.id)
+              )}
+            />
+          )}
+        />
         <Route
           exact
           path="/carDetails/:id"

@@ -10,7 +10,7 @@ import { loginAPI } from "../../API";
 import { useHistory } from 'react-router-dom'
 
 const LoginForm = () => {
-    
+  const [logged, setLoggedIn] = useState(false)  
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const history = useHistory()
@@ -23,6 +23,8 @@ const LoginForm = () => {
         if (response.data.accessToken) {
           localStorage.setItem("user", JSON.stringify(response.data));
           history.push('/auction')
+          setLoggedIn(true)
+          localStorage.setItem('logged', logged ? user : '')
         }
   
         return response.data;

@@ -14,9 +14,9 @@ import { Redirect, useHistory } from 'react-router-dom';
 
 const CarDetails = ({item}) => {
    console.log(item, ' for car details')
-   const [loggedIn, setLoggedIn]  = useState(false)
+   
    const [open, setOpenModal] = useState(false)
-  const history = useHistory()
+   const history = useHistory()
    const openModal = () => {
        setOpenModal(true)
    }
@@ -24,10 +24,11 @@ const CarDetails = ({item}) => {
        setOpenModal(false)
    }
         
-   const checkUser = () => {
-    
-    }
-    const [logged, setLogged] = useState(false)
+//    const checkUser = () => {
+//        localStorage.getItem('user')
+//        localStorage.getItem('logged')
+//     }
+    // const [logged, setLogged] = useState(false)
     const [bid, setBid] = useState(null)
     const sendBid = () => {
         console.log(`your bid is ${bid}`)
@@ -174,8 +175,11 @@ const CarDetails = ({item}) => {
                                         $ <input type='number' value={bid} onChange={(e) => setBid(e.target.value)}/>
                                     </Col>
                                     <Col>
-                                     { logged ? (
-                                        <button  className='btn-item auction-btn-bet' onClick={checkUser} onClick={sendBid}>Make a bid</button>
+                                     { localStorage.getItem('token') ? (
+                                         <>
+                                        <button  className='btn-item auction-btn-bet' onClick={sendBid}>Make a bid</button>
+
+                                        </>
                                      ):(
                                          <>
                                         <button  className='btn-item auction-btn-bet' onClick={checkLog}>Make a bid</button>
@@ -207,7 +211,7 @@ const CarDetails = ({item}) => {
                 </thead>
                 <tbody>
 
-                   { bid && logged ? (
+                   { bid && localStorage.getItem('token') ? (
                    <tr>
                     <td className='current-bid'>${bid}</td>
                     <td className='current-bid'>Your bid</td>

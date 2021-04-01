@@ -3,48 +3,12 @@ import './style.css'
 import { Row, Col, Container } from 'react-bootstrap'
 import ArticleItem from '../ArticleItem/ArticleItem'
 
-const Magazine = () => {
+
+const Magazine = (dataMagazine) => {
    
     useLayoutEffect(() => {
         window.scrollTo(0, 0)
     });
-    const dataMagazine = [
-        {
-            id: 1, 
-            title: 'Title',
-            text: 'main text rfefeferf efredfrve tgset gregr',
-            data: '12/03/2021',
-            images: []
-        },
-        {
-            id: 1, 
-            title: 'Title',
-            text: 'main text rfefeferf efredfrve tgset gregr',
-            data: '12/03/2021',
-            images: []
-        },
-        {
-            id: 1, 
-            title: 'Title',
-            text: 'main text rfefeferf efredfrve tgset gregr',
-            data: '12/03/2021',
-            images: []
-        },
-        {
-            id: 1, 
-            title: 'Title',
-            text: 'main text rfefeferf efredfrve tgset gregr',
-            data: '12/03/2021',
-            images: []
-        },
-        {
-            id: 1, 
-            title: 'Title',
-            text: 'main text rfefeferf efredfrve tgset gregr',
-            data: '12/03/2021',
-            images: []
-        }
-    ]
 
     return (
         <>
@@ -62,7 +26,7 @@ const Magazine = () => {
                         <h6 className='blue-line'>Новини</h6>                
                     </div>
                     <Row style={{background: '#262626'}} className='p-5 text-white'>
-                        <ArticleItem dataMagazine={dataMagazine}/>
+                     <ArticleItem dataMagazine={dataMagazine}/> 
                     </Row>
                     
            

@@ -11,33 +11,13 @@ export const loginAPI = ({ password, email }) => {
         },
         { headers: new Headers({
            "Content-Type": "application/json",
-            // 'Authorization': `Basic ${token}` 
           }) }
-      );
-      //   let data;
-      //   data = await searchCar({ search: "BMW", type: "SUV" });
-      //   console.log("searchCar");
-      //   console.log(data.data);
-      //   data = await allAdvertisments();
-      //   console.log("allAdvertisments");
 
-      //   console.log(data.data);
-      //   data = await allCars();
-      //   console.log("allCars");
-      //   console.log(data.data);
-      //   data = await allArticles();
-      //   console.log("allArticles");
-      //   console.log(data.data);
-      //   data = await allAuctions();
-      //   console.log("allAuctions");
-      //   console.log(data.data);
-      //   data = await singleArticle("605ea3c527186555e001a5ec");
-      //   console.log("singleArticle");
-      //   console.log(data.data);
-      //   data = await singleAd("605ea56127186555e001a5f4");
-      //   console.log("singleAd");
-      //   console.log(data.data);
+      );
+
       resolve(response);
+      localStorage.setItem('token', response.data.token);
+      localStorage.setItem('user', response.config.data);
     } catch (err) {
       console.log(err);
     }
@@ -58,6 +38,9 @@ export const signUpAPI = ({ password, email, name, phoneNum }) => {
       );
 
       resolve(response);
+      console.log(response);
+      localStorage.setItem('token', response.data.token)
+      localStorage.setItem('user', response.config.data)
     } catch (err) {
       reject(err);
     }
