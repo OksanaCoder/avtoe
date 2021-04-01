@@ -14,7 +14,7 @@ export const loginAPI = ({ password, email }) => {
           }) }
 
       );
-
+     console.log(response)
       resolve(response);
       localStorage.setItem('token', response.data.token);
       localStorage.setItem('user', response.config.data);

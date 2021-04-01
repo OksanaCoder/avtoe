@@ -21,7 +21,9 @@ const LoginForm = ({ logged, setLogged }) => {
     console.log('idher')
     return loginAPI({ email, password })
       .then((response) => {
-        if (response.data.accessToken) {
+        console.log('24', response)
+        if (response.data.token) {
+          console.log(response)
           localStorage.setItem('user', JSON.stringify(response.data))
           history.push('/auction')
           setLogged(true)
