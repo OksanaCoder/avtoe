@@ -6,30 +6,12 @@ import CarItem from '../CarItem/CarItem'
 import Filter from '../Filter/Filter'
 import { Row, Container } from 'react-bootstrap'
 
-const Auction = () => {
+const Auction = (data) => {
     useLayoutEffect(() => {
         window.scrollTo(0, 0)
     });
     
-    const data = [
-        {
-            name : "Ferrari California",
-            price : "91 500",
-            mileage: 22,
-            city: "Kyiv",
-            fuel: "Бензин",
-            type: "Автомат",
-            startPrice: "40 000", 
-            color: "червоний",
-            year: 2014,
-            drive: "повний",
-            moreInfo : " ",
-            mainImage: [],
-            images: [],
-
-        }
-    ]
-
+    console.log(data.data, 'data in auction')
 
     return (
         <>
@@ -46,11 +28,9 @@ const Auction = () => {
              
                    <Filter />
       
-            </Container>
-           
-                    <CarItem  data={data}/> 
-          
-            
+        </Container>
+
+        <CarItem  data={data} />       
           
         </>
     )

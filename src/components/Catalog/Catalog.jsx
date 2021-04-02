@@ -2,11 +2,10 @@
 import React, { Component, useLayoutEffect } from 'react';
 import './style.css'
 import CarItem from '../CarItem/CarItem'
-import Featured from '../Featured/Featured'
 import Filter from '../Filter/Filter'
-import { Row, Container } from 'react-bootstrap'
+import { Row, Container, Col } from 'react-bootstrap'
 
-const Shop = () => {
+const Catalog = (data) => {
 
 
     useLayoutEffect(() => {
@@ -27,11 +26,17 @@ const Shop = () => {
                 </Row>
              
                    <Filter />
-                   <Featured />
+                   <Row style={{background: '#262626'}} className='pb-5'>
+           
+                        <Col lg={12} md={12} sm={12}>           
+                            <CarItem data={data} />
+                        </Col>
 
+                    </Row>
             </Container>
+        
         </div>
     )
 }
 
-export default Shop
+export default Catalog

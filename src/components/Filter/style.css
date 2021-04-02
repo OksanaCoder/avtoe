@@ -4,3 +4,23 @@
 .select-arrow {
     display: none !important;
 }
+.css-yk16xz-control{
+  background: none !important;
+  border: none !important;
+}
+.css-yk16xz-control{
+  background: none !important;
+  border-radius: 20px;
+}
+.css-g1d714-ValueContaine {
+   padding: 5px !important;
+}
+input#react-select-2-input {
+  width: 100% !important;
+}
+
+@media (max-width: 500px) {
+  .optionStyle {
+    width: 200px !important;
+  }
+}

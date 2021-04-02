@@ -9,13 +9,33 @@ const RequestForm = (props) => {
   const [username, setUserName] = useState("");
   const [phone, setPhone] = useState("");
   const [comment, setModel] = useState("")
-  const bodyMessage = `Имя: ${username}\nСообщение: ${comment}\nНомер тел: ${phone}`;
-  const API_URL = `https://api.telegram.org/bot1747833143:AAGmm2CnUrkYCyHIdVzEkgJVg2HfNUCba28/sendMessage?chat\_id=987210358&text=${bodyMessage}%20there&parse\_mode=HTML`;
+  const [errors, setErrors] = useState("")
+  const bodyMessage = `Имя: ${username}
+                     
+                       Сообщение: ${comment}  
+                      
+                       Номер тел: ${phone}`;
+  // return <div className="pre-line">{bodyMessage}</div>
+  
+  const API_URL = `https://api.telegram.org/bot1747833143:AAGmm2CnUrkYCyHIdVzEkgJVg2HfNUCba28/sendMessage?chat\_id=987210358&text=${bodyMessage}&parse\_mode=HTML`;
  
   // const chat_id = '987210358'
 
   console.log(API_URL)
 
+  const validate = (username, phone, comment) => {
+
+  
+    if (username.length === 0 || phone.length === 0, comment.length === 0) {
+      errors.push("Поле повинно бути заповненим !");
+    }
+  
+    if (phone.length < 10) {
+      errors.push("Невірний формат телефону");
+    }
+  
+    return errors;
+  }
 
   const data = (
     username,
@@ -43,7 +63,7 @@ const RequestForm = (props) => {
       return <Redirect to="/" />;
 
     } else {
-      console.log("Заповніть всі поля !");
+      console.log("Сталася помилка !");
     }
   };
 
@@ -81,6 +101,7 @@ const RequestForm = (props) => {
                 onChange={onChangeUsername}
                 name="name"
                 className="input-style"
+                required
               />
             </Form.Group>
 
@@ -92,6 +113,7 @@ const RequestForm = (props) => {
                 onChange={onChangeModel}
                 name="comment"
                 className="input-style"
+                required
               />
             </Form.Group>
 
@@ -102,6 +124,7 @@ const RequestForm = (props) => {
                 onChange={onChangePhone}
                 name="phone"
                 className="input-style"
+                required
               />
             </Form.Group>
             <div className="text-center mt-5 flex-column">

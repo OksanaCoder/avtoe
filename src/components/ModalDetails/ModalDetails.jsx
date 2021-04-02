@@ -8,13 +8,22 @@ import './style.css'
 import icon_1 from '../../img/location.png'
 import icon_2 from '../../img/speedometer.png'
 import icon_3 from '../../img/petrol.png'
-
+import { Redirect } from 'react-router-dom'
+import LoginForm from '../LoginForm/LoginForm'
+// import Auction from '../Auction/Auction'
 const ModalDetails = (props) => {
    console.log(props, ' for modal')
+   const [loggedIn, setLoggedIn]  = useState(false)
+
+   const checkUser = () => {
     
+    }
+
     return (
         <>
-            <Modal show={props.show_details} onHide={props.handleClose_details} className='no-shadow no-border-modal modal-details'>
+        {props.data.map((item, index) =>{
+            return(
+            <Modal key={index} show={props.show_details} onHide={props.handleClose_details} className='no-shadow no-border-modal modal-details'>
                 <Modal.Header closeButton>  
                 <Modal.Title style={{fontWeight: '700'}}>Деталі авто</Modal.Title>
                 </Modal.Header>
@@ -36,45 +45,45 @@ const ModalDetails = (props) => {
                         </Col>
                         <Col>
                      
-                        <h4 style={{fontWeight: 'bold'}} className='name-details'>2016 Ferrari California</h4>
-                                   <small className='price-details'>$ 91 500</small>
+                        <h4 style={{fontWeight: 'bold'}} className='name-details'>{item.name}</h4>
+                                   <small className='price-details'>$ {item.price}</small>
                                 <Row className='align-center'>
-                                    <Col className='center-items'><img src={icon_2} className='icon-small'/>22 тис. км</Col>
-                                    <Col className='center-items'><img src={icon_1} className='icon-small'/>Киев</Col>
+                                    <Col className='center-items'><img src={icon_2} className='icon-small'/>{item.mileage} тис. км</Col>
+                                    <Col className='center-items'><img src={icon_1} className='icon-small'/>{item.city}</Col>
                                 </Row>
                                 <Row className='align-center'>
-                                    <Col className='center-items'><img src={icon_3} className='icon-small'/>Бензин, 6 л.</Col>
-                                    <Col className='center-items'><small className='a-icon'>A</small>Автомат</Col>
+                                    <Col className='center-items'><img src={icon_3} className='icon-small'/>{item.fuel}</Col>
+                                    <Col className='center-items'><small className='a-icon'>A</small>{item.type}</Col>
                                 </Row>
                                     {/* <button  className='btn-item swap-btn mt-3'>Запропонувати торг</button> */}
                                  <Row className='mt-4 row-modal'>
                                      <Col> Рік випуску:
                                      </Col>
-                                     <Col> 2014
+                                     <Col> {item.year}
                                      </Col>
                                 </Row>  
                                 <Row className='mt-1 row-modal'> 
                                      <Col> Привід:
                                      </Col>
-                                     <Col> повний
+                                     <Col> {item.drive}
                                      </Col>
                                 </Row>  
                                 <Row className='mt-1 row-modal'>
                                      <Col> Колір:
                                      </Col>
-                                     <Col> червоний
+                                     <Col> {item.color}
                                      </Col>
                                 </Row>  
                                 <Row className='mt-1 row-modal'>
                                      <Col> Опис:
                                      </Col>
-                                     <Col> 
+                                     <Col> {item.description}
                                      </Col>
                                 </Row>   
                                 <Row className='mt-1 row-modal'>
                                      <Col> Додаткова інформація:
                                      </Col>
-                                     <Col> 
+                                     <Col> {item.extraData}
                                      </Col>
                                 </Row>   
                                 <Row className='mt-1 row-modal'>
@@ -100,12 +109,16 @@ const ModalDetails = (props) => {
                         </Col>
                     </Row>
                 </Modal.Body>
-                <Modal.Footer>
-                <Button onClick={props.handleClose_details} className='btn-form grey-back btn btn-primary pt-1 pl-4 pr-4 pb-1'>
+                <Modal.Footer className='mt-3'>
+                <Button onClick={props.handleClose_details} className='btn-cancel-modal'>
                     Cancel
                 </Button>
+                { item.typeSale == 'auction' &&  <button  className='btn-item auction-btn-bet' onClick={checkUser}>Make a bet</button>}
                 </Modal.Footer>
                 </Modal>
+            )
+        })}
+            
         </>
 
     )

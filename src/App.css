@@ -17,7 +17,11 @@ body {
   color: #000 !important;
   text-decoration: none;
 }
-
+.blue-line {
+  border-top: 3px solid rgba(7, 109, 253);
+  width: 50px;
+  padding-top: 15px;
+}
 .img-mail {
   width: 50px;
   position: fixed !important;

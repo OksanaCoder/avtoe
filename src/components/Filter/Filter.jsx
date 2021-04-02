@@ -1,8 +1,125 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Form, Button, Col, Row } from 'react-bootstrap'
 import styles from './style.css'
+import Select from 'react-select'
+import CreatableSelect from 'react-select/creatable';
 
 const Filter = () => {
+    const [value, setValue] = useState('')
+    const options = [ 
+        { value: 1990, label: 1990},
+        { value: 1991, label: 1991},
+        { value: 1992, label: 1992},
+        { value: 1993, label: 1993},
+        { value: 1994, label: 1994},
+        { value: 1995, label: 1995},
+        { value: 1996, label: 1996},
+        { value: 1997, label: 1997},
+        { value: 1998, label: 1998},
+        { value: 1999, label: 1999},
+        { value: 2000, label: 2000},
+        { value: 2001, label: 2001},
+        { value: 2002, label: 2002},
+        { value: 2003, label: 2003},
+        { value: 2004, label: 2004},
+        { value: 2005, label: 2005},
+        { value: 2006, label: 2006},
+        { value: 2007, label: 2007},
+        { value: 2008, label: 2008},
+        { value: 2009, label: 2009},
+        { value: 2010, label: 2010},
+        { value: 2011, label: 2011},
+        { value: 2012, label: 2012},
+        { value: 2013, label: 2013},
+        { value: 2014, label: 2014},
+        { value: 2015, label: 2015},
+        { value: 2016, label: 2016},
+        { value: 2017, label: 2017},
+        { value: 2018, label: 2018},
+        { value: 2019, label: 2019},
+        { value: 2020, label: 2020},
+        { value: 2021, label: 2021}
+    ]
+    const optionBrand = [
+        { value: 'Acura', label: 'Acura'},
+        { value: 'Alfa Romeo', label: 'Alfa Romeo'},
+        { value: 'Aston Martin', label: 'Aston Martin'},
+        { value: 'Audi', label: 'Audi'},
+        { value: 'Bentley', label: 'Bentley'},
+        { value: 'Bugatti', label: 'Bugatti'},
+        { value: 'Buick', label: 'Buick'},
+        { value: 'Cadillac', label: 'Cadillac'},
+        { value: 'Chery', label: 'Chery'},
+        { value: 'Chevrolet', label: 'Chevrolet'},
+        { value: 'Chrysler', label: 'Chrysler'},
+        { value: 'Citroen', label: 'Citroen'},
+        { value: 'Dacia', label: 'Dacia'},
+        { value: 'Daewoo', label: 'Daewoo'},
+        { value: 'Daihatsu', label: 'Daihatsu'},
+        { value: 'Datsun', label: 'Datsun'},
+        { value: 'BMW', label: 'BMW'},
+        { value: 'Dodge', label: 'Dodge'},
+        { value: 'DS', label: 'DS'},
+        { value: 'Ferrari', label: 'Ferrari'},
+        { value: 'Fiat', label: 'Fiat'},
+        { value: 'Fisker', label: 'Fisker'},
+        { value: 'Ford', label: 'Ford'},
+        { value: 'Geely', label: 'Geely'},
+        { value: 'Genesis', label: 'Genesis'},
+        { value: 'GMC', label: 'GMC'},
+        { value: 'Honda', label: 'Honda'},
+        { value: 'Hummer', label: 'Hummer'},
+        { value: 'Hyundai', label: 'Hyundai'},
+        { value: 'Infiniti', label: 'Infiniti'},
+        { value: 'Isuzu', label: 'Isuzu'},
+        { value: 'Iveco', label: 'Iveco'},
+        { value: 'Jaguar', label: 'Jaguar'},
+        { value: 'Jeep', label: 'Jeep'},
+        { value: 'Kia', label: 'Kia'},
+        { value: 'Lancia', label: 'Lancia'},
+        { value: 'Land Rover', label: 'Land Rover'},
+        { value: 'Lexus', label: 'Lexus'},
+        { value: 'LincoIn', label: 'LincoIn'},
+        { value: 'Maserati', label: 'Maserati'},
+        { value: 'Mazda', label: 'Mazda'},
+        { value: 'Mercedes', label: 'Mercedes'},
+        { value: 'Mercury', label: 'Mercury'},
+        { value: 'MG', label: 'MG'},
+        { value: 'Mini', label: 'Mini'},
+        { value: 'Mitsubisi', label: 'Mitsubisi'},
+        { value: 'Nissan', label: 'Nissan'},
+        { value: 'Opel', label: 'Opel'},
+        { value: 'Pegeot', label: 'Pegeot'},
+        { value: 'Pontiac', label: 'Pontiac'},
+        { value: 'Porsche', label: 'Porsche'},
+        { value: 'Renault', label: 'Renault'},
+        { value: 'Rolls-Royce', label: 'Rolls-Royce'},
+        { value: 'Rover', label: 'Rover'},
+        { value: 'Saab', label: 'Saab'},
+        { value: 'Saturn', label: 'Saturn'},
+        { value: 'Scania', label: 'Scania'},
+        { value: 'Seat', label: 'Seat'},
+        { value: 'Skoda', label: 'Skoda'},
+        { value: 'Smart', label: 'Smart'},
+        { value: 'SsangYong', label: 'SsangYong'},
+        { value: 'Subaru', label: 'Subaru'},
+        { value: 'Suzuki', label: 'Suzuki'},
+        { value: 'Tesla', label: 'Tesla'},
+        { value: 'Toyota', label: 'Toyota'},
+        { value: 'Volkswagen', label: 'Volkswagen'},
+        { value: 'Volvo', label: 'Volvo'},
+
+    ]
+    const optionYear = [
+        { value: 0 + '-' + 3000, label: 0 + '-' +  3000},
+        { value: 3000 + '-' +  9000, label: 3000 + '-' +  9000},
+        { value: 9000 + '-' +  20000, label: 9000 + '-' + 20000},
+        { value: 20000 + '-' +  50000, label: 20000 + '-' +  50000},
+        { value: 50000 + '+', label: 50000 + '+'},
+    ]
+  const searchItem = () =>{
+
+  }
     return (
         <>
    
@@ -11,108 +128,29 @@ const Filter = () => {
           
                   <Form.Group controlId="exampleForm.ControlSelect1" className='col-lg-3 col-md-12 col-sm-12'>
                   <Form.Label>Brand</Form.Label>
-                  <Form.Control as="select" className='selectStyle'>
-                          <option value="BMW">BMW</option>
-                          <option value="ACURA">ACURA</option>
-                          <option value="ASTON MARTIN">ASTON MARTIN</option>
-                          <option value="AUDI">AUDI</option>
-                          <option value="BENTLEY">BENTLEY</option>
-                          <option value="BUICK">BUICK</option>
-                          <option value="CADILLAC">CADILLAC</option>
-                          <option value="CHEVROLET">CHEVROLET</option>
-                          <option value="CHRYSLER">CHRYSLER</option>
-                          <option value="DODGE">DODGE</option>
-                          <option value="FERRARI">FERRARI</option>
-                          <option value="FORD">FORD</option>
-                          <option value="GMC">GMC</option>
-                          <option value="HONDA">HONDA</option>
-                          <option value="HUMMER">HUMMER</option>
-                          <option value="HYUNDAI">HYUNDAI</option>
-                          <option value="INFINITI">INFINITI</option>
-                          <option value="ISUZU">ISUZU</option>
-                          <option value="JAGUAR">JAGUAR</option>
-                          <option value="JEEP">JEEP</option>
-                          <option value="KIA">KIA</option>
-                          <option value="LAMBORGHINI">LAMBORGHINI</option>
-                          <option value="LAND ROVER">LAND ROVER</option>
-                          <option value="LEXUS">LEXUS</option>
-                          <option value="LINCOLN">LINCOLN</option>
-                          <option value="LOTUS">LOTUS</option>
-                          <option value="MASERATI">MASERATI</option>
-                          <option value="MAYBACH">MAYBACH</option>
-                          <option value="MAZDA">MAZDA</option>
-                          <option value="MERCEDES-BENZ">MERCEDES-BENZ</option>
-                          <option value="MERCURY">MERCURY</option>
-                          <option value="MINI">MINI</option>
-                          <option value="MITSUBISHI">MITSUBISHI</option>
-                          <option value="NISSAN">NISSAN</option>
-                          <option value="PONTIAC">PONTIAC</option>
-                          <option value="PORSCHE">PORSCHE</option>
-                          <option value="ROLLS-ROYCE">ROLLS-ROYCE</option>
-                          <option value="SAAB">SAAB</option>
-                          <option value="SATURN">SATURN</option>
-                          <option value="SUBARU">SUBARU</option>
-                          <option value="SUZUKI">SUZUKI</option>
-                          <option value="TOYOTA">TOYOTA</option>
-                          <option value="VOLKSWAGEN">VOLKSWAGEN</option>
-                          <option value="VOLVO">VOLVO</option>
-
-                  </Form.Control>
+                     <Select options={optionBrand}
+                             className='selectStyle optionStyle'
+                              />
                  </Form.Group>
               
    
               <Form.Group controlId="exampleForm.ControlSelect2" className='col-lg-3 col-md-12 col-sm-12'>
                   <Form.Label>Year</Form.Label>
-                  <Form.Control as="select" className='selectStyle'>
-                  <option value="2013">2021</option>
-                  <option value="2012">2020</option>
-                  <option value="2011">2019</option>
-                  <option value="2014">2018</option>
-                  <option value="2013">2017</option>
-                  <option value="2012">2016</option>
-                  <option value="2011">2015</option>
-                  <option value="2014">2014</option>
-                  <option value="2013">2013</option>
-                  <option value="2012">2012</option>
-                  <option value="2011">2011</option>
-                  <option value="2010">2010</option>
-                  <option value="2009">2009</option>
-                  <option value="2008">2008</option>
-                  <option value="2007">2007</option>
-                  <option value="2006">2006</option>
-                  <option value="2005">2005</option>
-                  <option value="2004">2004</option>
-                  <option value="2003">2003</option>
-                  <option value="2002">2002</option>
-                  <option value="2001">2001</option>
-                  <option value="2000">2000</option>
-                  <option value="1999">1999</option>
-                  <option value="1998">1998</option>
-                  <option value="1997">1997</option>
-                  <option value="1996">1996</option>
-                  <option value="1995">1995</option>
-                  <option value="1994">1994</option>
-                  <option value="1993">1993</option>
-                  <option value="1992">1992</option>
-                  <option value="1991">1991</option>
-                  <option value="1990">1990</option>
-                  
-                  </Form.Control>
+                    <CreatableSelect options={options} 
+                                   className='selectStyle optionStyle'
+                                   isMulti/>
               </Form.Group>
   
             <Form.Group controlId="exampleForm.ControlSelect3" className='col-lg-3 col-md-12 col-sm-12'>
                 <Form.Label>Price, $</Form.Label>
-                <Form.Control as="select" className='selectStyle'>
-                  <option>0 - 3000</option>
-                  <option>3 000 - 9 000</option>
-                  <option>9 000 - 20 000</option>
-                  <option>20 000 - 50 000</option>
-                  <option>50 000 +</option>
-                </Form.Control>
+            <Select options={optionYear}
+                             className='selectStyle optionStyle'
+                              />
+          
             </Form.Group>
        
             <div className='text-center col-lg-3 col-md-12 col-sm-12'>
-            <Button className='btn-search'>Search</Button>
+            <Button className='btn-search' onClick={searchItem}>Search</Button>
             </div>
        
             </Row>

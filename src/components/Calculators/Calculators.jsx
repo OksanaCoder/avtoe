@@ -34,7 +34,7 @@ import './style.css'
                         <img src={bank_4} className='img-bank last'/>
                     </Col>
                 </Row>
-                <Row className='row-calcs p-5'>
+                {/* <Row className='row-calcs p-5'>
                     <Col lg={3} md={6} sm={12}>
                         <img src={bank_1} className='img-bank'/>
                     </Col>
@@ -47,7 +47,7 @@ import './style.css'
                     <Col lg={3} md={6} sm={12}>
                         <img src={bank_1} className='img-bank last'/>
                     </Col>
-                </Row>
+                </Row> */}
           </Container>
         </>
 
