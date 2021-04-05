@@ -241,7 +241,7 @@ const App = () => {
                     <Nav.Link className="nav-item link-nav button-nav">
                       <BrowserLink to="/profile" className="text-white link-nav">
                         <img className="img-small" src={person} />
-                        Profile
+                        {localStorage.getItem('fullName')}
                       </BrowserLink>
                     </Nav.Link>
                     <Nav.Link className=" nav-item link-nav button-nav">

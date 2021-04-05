@@ -12,12 +12,11 @@ const Profile = () => {
         <Container fluid className='profile p-5'>
             <Row>
                 <Col>
-                 <h2>Welcome, username!</h2>
+                 <h2>Welcome,  {localStorage.getItem('fullName')}!</h2>
                 </Col>
             </Row>
           <Row>
               <Col>
-                  <h6>Your email:</h6>
                   <h5 >Your bids: </h5> 
                   {/* I need to show a table with the last bids:
                   ex. car model, time and bid */}
