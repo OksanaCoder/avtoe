@@ -25,6 +25,8 @@ const LoginForm = ({ logged, setLogged }) => {
         if (response.data.token) {
           console.log(response)
           localStorage.setItem('user', JSON.stringify(response.data))
+          // localStorage.setItem('fullName', JSON.stringify(response.data))
+          // setUserName()
           history.push('/auction')
           setLogged(true)
           localStorage.setItem('logged', logged ? user : '')

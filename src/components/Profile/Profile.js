@@ -1,8 +1,13 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Container, Col, Row } from 'react-bootstrap'
 import './style.css' 
 
 const Profile = () => {
+    // const [username, setUsername] = useState('')
+    // useEffect(() => {
+    //     console.log('localS name', localStorage.getItem('fullName'))
+    //     setUsername(localStorage.getItem('fullName'))
+    // }, [])
     return (
         <Container fluid className='profile p-5'>
             <Row>
