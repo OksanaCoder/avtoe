@@ -32,6 +32,7 @@ import CarDetails from './components/CarDetails/CarDetails'
 import Catalog from './components/Catalog/Catalog'
 import RequestForm from './components/RequestForm/RequestForm'
 import Profile from './components/Profile/Profile'
+import io from 'socket.io-client'
 
 const data = [
   {
@@ -111,6 +112,12 @@ const dataMagazine = [
 ]
 
 const App = () => {
+  // let socket = io.connect('http://localhost:4000', {
+  //   query: {
+  //     token:
+  //       'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MDU1NWY2OTQ1NDQyNDEwM2NlYmRhODgiLCJpYXQiOjE2MTcyNDUxODB9.s3fOFjdiV3U2DqU3IlPx9ZVtV2PdC9S89_4mMH1Co9k',
+  //   },
+  // })
   const [logged, setLogged] = useState(false)
   const [registered, setRegistered] = useState(false)
   const myRef = useRef(null)

@@ -10,14 +10,42 @@ import icon_3 from '../../img/petrol.png'
 import hammer from '../../img/hammer-white.jpeg'
 import ModalContactUs from '../ModalContactUs/ModalContactUs'
 import { Redirect, useHistory } from 'react-router-dom'
+import io from 'socket.io-client'
 
 const CarDetails = ({ item }) => {
+  let socket = io.connect('http://localhost:4000', {
+    query: {
+      token:
+        'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MDU1NWY2OTQ1NDQyNDEwM2NlYmRhODgiLCJpYXQiOjE2MTcyNDUxODB9.s3fOFjdiV3U2DqU3IlPx9ZVtV2PdC9S89_4mMH1Co9k',
+    },
+  })
+  useEffect(() => {
+    socket.on('winner', function (data) {
+      console.log(data)
+    })
+    socket.on('buyNowAuction', function (data) {
+      console.log(data)
+    })
+    socket.on('sold', function (data) {
+      console.log(data)
+    })
+
+    socket.on('errorHandler', function (data) {
+      console.log(data)
+    })
+    socket.on('bidInAuction', function (data) {
+      console.log(data)
+    })
+  })
   const isLoggedIn = useRef(localStorage.getItem('token'))
   console.log(item, ' for car details')
 
   const [open, setOpenModal] = useState(false)
   const history = useHistory()
   const openModal = () => {
+    socket.emit('buyNowAuction', {
+      auctionId: '606823e6c780943d60b7a09c',
+    })
     setOpenModal(true)
   }
   const closeModal = () => {
@@ -31,6 +59,10 @@ const CarDetails = ({ item }) => {
   // const [logged, setLogged] = useState(false)
   const [bid, setBid] = useState(null)
   const sendBid = () => {
+    socket.emit('bidInAuction', {
+      auctionId: '60656f7c18e1b936bc78f21f',
+      bidPrice: bid,
+    })
     console.log(`your bid is ${bid}`)
   }
   const checkLog = () => {
