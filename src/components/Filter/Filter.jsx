@@ -130,6 +130,7 @@ const Filter = () => {
                   <Form.Label>Brand</Form.Label>
                      <Select options={optionBrand}
                              className='selectStyle optionStyle'
+                             
                               />
                  </Form.Group>
               

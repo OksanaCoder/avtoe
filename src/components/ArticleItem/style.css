@@ -1,0 +1,9 @@
+.card-article {
+    background: none;
+    margin-bottom: 20px;
+}
+.card-button {
+    padding: 5px 10px !important;
+    border-radius: 20px;
+    font-size: 12px;
+}

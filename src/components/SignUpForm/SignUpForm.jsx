@@ -3,31 +3,31 @@ import { Modal, Button, Form } from "react-bootstrap";
 import moment from "moment";
 import axios from "axios";
 import './style.css'
-import { Redirect } from 'react-router-dom';
-
+import { useHistory } from 'react-router-dom';
+import { signUpAPI } from "../../API";
 
 const SignUpForm = (props) => {
    console.log(props)
-
+  const history = useHistory()
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [phone, setPhone] = useState("");
 
-  const API_URL = process.env.REACT_APP_URL;
+  // const API_URL = process.env.REACT_APP_URL;
 
   const register = (
-    username,
+    name,
     email,
     password,
-    phone
+    phoneNum
   ) => {
-    return axios.post(API_URL + "/users/register", {
-      username,
+    return signUpAPI({name,
       email,
       password,
-      phone,
-    });
+      phoneNum}).catch((err)=>{
+        console.log(err)
+      })
   };
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -36,22 +36,23 @@ const SignUpForm = (props) => {
       email,
       password,
       phone
-    );
+    )
     //form.current.validateAll()
+    console.log(succesregv)
     if (succesregv) {
-      alert("Реєстрація пройшла успішно!");
-      props.handleClose1()
-      //props.history.push("/");
-      return <Redirect to="/" />;
+      
+      alert("Вітаємо ! Ви стали учасником аукціону !");
+      return history.push('/login');
 
     } else {
-      console.log("please check login");
+      console.log("Сталася помилка :(");
     }
   };
 
   const onChangeUsername = (e) => {
     const username = e.target.value;
     setUsername(username);
+    
   };
   const onChangeEmail = (e) => {
     const email = e.target.value;
@@ -81,6 +82,7 @@ const SignUpForm = (props) => {
                 onChange={onChangeUsername}
                 name="username"
                 className="input-style"
+    
               />
             </Form.Group>
             <Form.Group controlId="formBasicEmail">
@@ -102,6 +104,7 @@ const SignUpForm = (props) => {
                 onChange={onChangePassword}
                 name="password"
                 className="input-style"
+           
               />
             </Form.Group>
             <Form.Group controlId="formBasicPhone">
@@ -114,12 +117,7 @@ const SignUpForm = (props) => {
               />
             </Form.Group>
 
-            <Form.Group controlId="formBasicCheckbox">
-              <Form.Check
-                type="checkbox"
-                label="Я погоджуюся з умовами користування сайтом"
-              />
-            </Form.Group>
+        
             <div className="text-center mt-5 flex-column">
               <Button
                 variant="primary"
@@ -128,15 +126,6 @@ const SignUpForm = (props) => {
               >
                 Sign up
               </Button>
-              <p className='p-12 mt-3'>Have an account ?</p>
-              <p className='p-12-link'><a>Log in</a></p>
-              {/* <Button
-                variant="primary"
-                className="btn-form grey-back"
-                onClick={props.handleClose1}
-              >
-                Скасувати
-              </Button> */}
             </div>
           </Form>
        </div>

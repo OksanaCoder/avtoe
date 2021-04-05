@@ -1,9 +1,10 @@
 import React, { useLayoutEffect } from 'react'
 import './style.css'
 import { Row, Col, Container } from 'react-bootstrap'
-// import { data } from './news.json'
+import ArticleItem from '../ArticleItem/ArticleItem'
 
-const Magazine = () => {
+
+const Magazine = (dataMagazine) => {
    
     useLayoutEffect(() => {
         window.scrollTo(0, 0)
@@ -25,7 +26,7 @@ const Magazine = () => {
                         <h6 className='blue-line'>Новини</h6>                
                     </div>
                     <Row style={{background: '#262626'}} className='p-5 text-white'>
-                        {/* <News /> */}
+                     <ArticleItem dataMagazine={dataMagazine}/> 
                     </Row>
                     
            
