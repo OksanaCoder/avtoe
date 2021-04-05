@@ -33,6 +33,7 @@ import Catalog from './components/Catalog/Catalog'
 import RequestForm from './components/RequestForm/RequestForm'
 import Profile from './components/Profile/Profile'
 import io from 'socket.io-client'
+import { useHistory } from 'react-router-dom'
 
 const data = [
   {
@@ -118,6 +119,7 @@ const App = () => {
   //       'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MDU1NWY2OTQ1NDQyNDEwM2NlYmRhODgiLCJpYXQiOjE2MTcyNDUxODB9.s3fOFjdiV3U2DqU3IlPx9ZVtV2PdC9S89_4mMH1Co9k',
   //   },
   // })
+  // const history = useHistory()
   const [logged, setLogged] = useState(false)
   const [registered, setRegistered] = useState(false)
   const myRef = useRef(null)
@@ -135,6 +137,7 @@ const App = () => {
   const handleOut = () => {
     setLogged(false)
     localStorage.removeItem('user')
+    // history.push('/login')
   }
 
   const [show, setShow] = useState(false)

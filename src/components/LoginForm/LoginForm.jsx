@@ -27,7 +27,7 @@ const LoginForm = ({ logged, setLogged }) => {
           localStorage.setItem('user', JSON.stringify(response.data))
           // localStorage.setItem('fullName', JSON.stringify(response.data))
           // setUserName()
-          history.push('/auction')
+          // history.push('/auction')
           setLogged(true)
           localStorage.setItem('logged', logged ? user : '')
         }
@@ -54,7 +54,6 @@ const LoginForm = ({ logged, setLogged }) => {
     if (confirmLogin) {
       alert('Вітаємо в AVTOE !')
       return history.push('/auction')
-      // console.log(localStorage.getItem("user")
     } else {
       alert('Виникла помилка :(')
     }
