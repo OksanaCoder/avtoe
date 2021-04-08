@@ -1,5 +1,5 @@
 import axios from "axios";
-const baseURL = "http://localhost:4000";
+const baseURL = "https://avtoe-avtoe-back-1.herokuapp.com";
 export const loginAPI = ({ password, email }) => {
   return new Promise(async (resolve, reject) => {
     try {
@@ -18,6 +18,7 @@ export const loginAPI = ({ password, email }) => {
       resolve(response);
       localStorage.setItem('token', response.data.token);
       localStorage.setItem('user', response.config.data);
+      localStorage.setItem('fullName', response.data.fullName)
     } catch (err) {
       console.log(err);
     }
