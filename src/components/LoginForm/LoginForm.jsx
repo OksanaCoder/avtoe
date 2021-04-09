@@ -54,6 +54,7 @@ const LoginForm = ({ logged, setLogged }) => {
     if (confirmLogin) {
       alert('Вітаємо в AVTOE !')
       return history.push('/auction')
+      // console.log(localStorage.getItem("user")
     } else {
       alert('Виникла помилка :(')
     }

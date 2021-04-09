@@ -24,32 +24,53 @@ const Catalog = ({ data, filteredData = [] }) => {
         </Row>
 
         <Filter data={data}/>
-
+        <Container style={{ background: "#262626" }} className="pb-5" fluid>
+          <Row className="p-5">
+            <div className="heading-style">
+              <h6 className="blue-line">Останні</h6>
+              <h3>Оновлення</h3>
+            </div>
+          </Row>
         {filteredData.length === 0 &&
           data
             .filter((item) => item.typeSale === "buy now")
             .map((item) => (
-              <Row
-                key={item.id}
-                style={{ background: "#262626" }}
-                className="pb-5"
-              >
+        
                 <Col lg={12} md={12} sm={12}>
                   <CarItem filteredData={[item]} />
                 </Col>
-              </Row>
+         
             ))}
-
+     </Container>
+    {/* <Row style={{ background: "#262626" }} className="pb-5">
+      <Row className="p-5">
+        <div className="heading-style">
+          <h6 className="blue-line">Останні</h6>
+          <h3>Оновлення</h3>
+        </div>
+      </Row> */}
         {filteredData.length > 0 && (
-          <Row style={{ background: "#262626" }} className="pb-5">
+      
             <Col lg={12} md={12} sm={12}>
               <CarItem filteredData={filteredData} />
             </Col>
-          </Row>
+    
         )}
+  
+      {/* </Row>     */}
       </Container>
     </div>
   );
 };
-
+{/* <Container
+className="text-white pb-5"
+fluid
+style={{ background: "#262626" }}
+>
+<Row className="p-5">
+  <div className="heading-style">
+    <h6 className="blue-line">Останні</h6>
+    <h3>Оновлення</h3>
+  </div>
+</Row> */}
 export default Catalog;
