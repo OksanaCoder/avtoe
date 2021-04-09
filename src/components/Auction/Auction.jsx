@@ -28,17 +28,25 @@ const Auction = ({ data }) => {
         </Row>
         <Filter />
       </Container>
-
+      <Container style={{ background: "#262626" }} className="pb-5" fluid>
+          <Row className="p-5">
+            <div className="heading-style">
+              <h6 className="blue-line">Останні</h6>
+              <h3>Оновлення</h3>
+            </div>
+          </Row>
+      <Row style={{ background: "#262626" }} className="pb-5">
       {data
         .filter((item) => item.typeSale === "auction")
         .map((item) => (
-          <Row key={item.id} style={{ background: "#262626" }} className="pb-5">
-            <Col lg={12} md={12} sm={12}>
+         
+            <Col lg={12} md={12} sm={12} key={item.id} >
               <CarItem filteredData={[item]} />
             </Col>
-          </Row>
+       
         ))}
-
+   </Row>
+   </Container>
       {/* <CarItem data={data} /> */}
     </>
   );

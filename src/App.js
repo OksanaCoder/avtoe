@@ -1,5 +1,5 @@
 import './App.css'
-import React, { useState, useRef } from 'react'
+import React, { useState, useRef, useEffect } from 'react'
 import Header from './components/Header/Header-1'
 import Categories from './components/Categories/Categories'
 import Shop from './components/Catalog/Catalog'
@@ -33,7 +33,7 @@ import Catalog from './components/Catalog/Catalog'
 import RequestForm from './components/RequestForm/RequestForm'
 import Profile from './components/Profile/Profile'
 import io from 'socket.io-client'
-import { useHistory } from 'react-router-dom'
+import { allAuctions, allCars } from './API'
 
 const data = [
   {
@@ -119,9 +119,43 @@ const App = () => {
   //       'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MDU1NWY2OTQ1NDQyNDEwM2NlYmRhODgiLCJpYXQiOjE2MTcyNDUxODB9.s3fOFjdiV3U2DqU3IlPx9ZVtV2PdC9S89_4mMH1Co9k',
   //   },
   // })
-  // const history = useHistory()
+  const [data, setData] = useState([]);
+  const [dataAuction, setDataAuction] = useState([])
+  useEffect(() => {
+    loadCars()
+    loadAuctions()
+  }, [])
+
+  const loadCars = () => {
+    return allCars()
+    .then((response) => {
+      if (response.data) {
+        console.log(response.data)
+        setData(response.data)
+      }
+
+      return response.data
+    })
+    .catch((err) => {
+      console.log(err)
+    })
+  }
+
+   const loadAuctions = () => {
+    return allAuctions()
+    .then((res) => {
+      if (res.data) {
+        console.log(res.data, 'auction data')
+        setDataAuction(res.data)
+      }
+
+      return res.data
+    })
+    .catch((err) => {
+      console.log(err)
+    })
+  };
   const [logged, setLogged] = useState(false)
-  const [registered, setRegistered] = useState(false)
   const myRef = useRef(null)
   const scrollToCredit = () => {
     myRef.current.scrollIntoView({
@@ -136,7 +170,7 @@ const App = () => {
   }
   const handleOut = () => {
     setLogged(false)
-    localStorage.removeItem('user')
+    localStorage.clear()
     // history.push('/login')
   }
 
