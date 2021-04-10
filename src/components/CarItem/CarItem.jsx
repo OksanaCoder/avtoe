@@ -30,7 +30,7 @@ const CarItem = ({ filteredData = [] }) => {
               <>
                 <Col lg={3} md={6} sm={12}>
                   <Card className="card-style mb-3">
-                   { item.images.length == 0 ?  (<Card.Img src={item.images[0]} className="img-feature"></Card.Img> ) :
+                   { item.images.length > 0 ?  (<Card.Img src='https://avtoe-avtoe-back-1.herokuapp.com/images/607060526cdf5900151c7ab0.jpg' className="img-feature"></Card.Img> ) :
                       (<Card.Img src={imageCar} className="img-feature"></Card.Img>)
                    } 
                     <Card.Body className="card-text">
@@ -65,7 +65,7 @@ const CarItem = ({ filteredData = [] }) => {
                               className="center-items"
                             >
                               <img src={icon_2} className="white-icon" />
-                              {item.transmission} тыс. км
+                              {item.odometer} тыс. км
                             </Col>
                             <Col
                               lg={6}

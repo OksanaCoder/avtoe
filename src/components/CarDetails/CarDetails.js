@@ -116,7 +116,8 @@ const CarDetails = ({ item }) => {
           <Col>
             {item.typeSale === 'auction' ? (
               <h4 style={{ fontWeight: 'bold' }} className="pl-3 mb-4">
-                Current bid: $ 12,306.00
+                Current bid: $ 12,306.00 
+                {/* last bid */}
               </h4>
             ) : (
               <h4 style={{ fontWeight: 'bold' }} className="pl-3 mb-4">
@@ -127,11 +128,12 @@ const CarDetails = ({ item }) => {
             <Row className="align-center mt-3">
               <Col className="center-items">
                 <img src={icon_2} className="icon-small" />
-                {item.mileage} тис. км
+                {item.odometer} тис. км
               </Col>
               <Col className="center-items">
                 <img src={icon_1} className="icon-small" />
                 {item.city}
+                Київ
               </Col>
             </Row>
             <Row className="align-center mb-3">
@@ -141,7 +143,7 @@ const CarDetails = ({ item }) => {
               </Col>
               <Col className="center-items">
                 <small className="a-icon">A</small>
-                {item.type}
+                {item.drive}
               </Col>
             </Row>
 
@@ -163,7 +165,7 @@ const CarDetails = ({ item }) => {
             </Row>
             <Row className="mt-1 row-modal">
               <Col> Додаткова інформація:</Col>
-              <Col> {item.extraData}</Col>
+              <Col> {item.extraInfo}</Col>
             </Row>
             <Row className="mt-1 row-modal">
               <Col> Контакти:</Col>
@@ -181,7 +183,7 @@ const CarDetails = ({ item }) => {
             </Row>
             <Row className="align-center mt-4">
               <Col>
-                <small className="price-details">$ {item.price}</small>
+                <small className="price-details">$ {item.startingPrice}</small>
               </Col>
               <Col>
                 <button className="btn-item buy-now" onClick={openModal}>

@@ -7,18 +7,18 @@ const ArticleItem = ({dataMagazine}) => {
     console.log(dataMagazine)
     return (
         <>
-        <Row className='m-auto'>
+        <Row>
             {dataMagazine.map(item => {
                 return(
-                 <Col lg={3} md={6} sm={12}>
+                 <Col lg={4} md={6} sm={12}>
                     <Card  className='card-article'>
-                     <Card.Img variant="top" src="holder.js/100px180" />
+                     <Card.Img variant="top" src='https://avtoe-avtoe-back-1.herokuapp.com/images/6070b1426cdf5900151c7abc.jpg' />
                      <Card.Body>
-                        <Card.Title >{item.title}</Card.Title>
-                        <Card.Text>
-                          {item.text.slice(0, 30)}...
+                        <Card.Title className='title-news'>{item.heading}</Card.Title>
+                        <Card.Text className='text-news'>
+                          {item.content.slice(0, 50)}...
                         </Card.Text>
-                       <Link to={`/magazine/${item.id}`} className='card-button'>Details</Link> 
+                       <Link to={`/magazine/${item.id}`} className='card-button'>Читати далі</Link> 
                     </Card.Body>
                   </Card>
                 </Col>

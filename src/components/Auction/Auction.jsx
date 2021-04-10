@@ -28,7 +28,8 @@ const Auction = ({ data }) => {
         </Row>
         <Filter />
       </Container>
-      <Container style={{ background: "#262626" }} className="pb-5" fluid>
+    { data.length > 0 ? (
+<Container style={{ background: "#262626" }} className="pb-5" fluid>
           <Row className="p-5">
             <div className="heading-style">
               <h6 className="blue-line">Останні</h6>
@@ -47,6 +48,16 @@ const Auction = ({ data }) => {
         ))}
    </Row>
    </Container>
+    ) : ( 
+      <Container style={{ background: "#262626" }} className="pb-5" fluid>
+          <Row className="p-5">
+            <div className="heading-style">
+              <h6>Авто відсутні</h6>
+            </div>
+          </Row>
+   </Container>
+    )}
+      
       {/* <CarItem data={data} /> */}
     </>
   );

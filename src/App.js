@@ -33,84 +33,47 @@ import Catalog from './components/Catalog/Catalog'
 import RequestForm from './components/RequestForm/RequestForm'
 import Profile from './components/Profile/Profile'
 import io from 'socket.io-client'
-import { allAuctions, allCars } from './API'
+import { allAuctions, allCars, allArticles } from './API'
 
-const data = [
-  {
-    id: 1,
-    name: 'Ferrari California',
-    price: '91 500',
-    mileage: 22,
-    city: 'Kyiv',
-    fuel: 'Бензин',
-    type: 'Автомат',
-    startPrice: '40 000',
-    color: 'червоний',
-    year: 2014,
-    drive: 'повний',
-    moreInfo: ' ',
-    mainImage: [],
-    images: [],
-    typeSale: 'auction',
-    time: '14:10:05',
-    typeCar: 'passenger',
-  },
-  {
-    id: 2,
-    name: 'BMW',
-    price: '80 500',
-    mileage: 22,
-    city: 'Kyiv',
-    fuel: 'Бензин',
-    type: 'Автомат',
-    color: 'червоний',
-    year: 2014,
-    drive: 'повний',
-    moreInfo: ' ',
-    mainImage: [],
-    images: [],
-    typeSale: 'buy now',
-    typeCar: 'suv',
-  },
-]
+// const data = [
+//   {
+//     id: 1,
+//     name: 'Ferrari California',
+//     price: '91 500',
+//     mileage: 22,
+//     city: 'Kyiv',
+//     fuel: 'Бензин',
+//     type: 'Автомат',
+//     startPrice: '40 000',
+//     color: 'червоний',
+//     year: 2014,
+//     drive: 'повний',
+//     moreInfo: ' ',
+//     mainImage: [],
+//     images: [],
+//     typeSale: 'auction',
+//     time: '14:10:05',
+//     typeCar: 'passenger',
+//   },
+//   {
+//     id: 2,
+//     name: 'BMW',
+//     price: '80 500',
+//     mileage: 22,
+//     city: 'Kyiv',
+//     fuel: 'Бензин',
+//     type: 'Автомат',
+//     color: 'червоний',
+//     year: 2014,
+//     drive: 'повний',
+//     moreInfo: ' ',
+//     mainImage: [],
+//     images: [],
+//     typeSale: 'buy now',
+//     typeCar: 'suv',
+//   },
+// ]
 
-const dataMagazine = [
-  {
-    id: 1,
-    title: 'Title',
-    text: 'main text rfefeferf efredfrve tgset gregr',
-    data: '12/03/2021',
-    images: [],
-  },
-  {
-    id: 1,
-    title: 'Title',
-    text: 'main text rfefeferf efredfrve tgset gregr',
-    data: '12/03/2021',
-    images: [],
-  },
-  {
-    id: 1,
-    title: 'Title',
-    text: 'main text rfefeferf efredfrve tgset gregr',
-    data: '12/03/2021',
-    images: [],
-  },
-  {
-    id: 1,
-    title: 'Title',
-    text: 'main text rfefeferf efredfrve tgset gregr',
-    data: '12/03/2021',
-    images: [],
-  },
-  {
-    id: 1,
-    title: 'Title',
-    text: 'main text rfefeferf efredfrve tgset gregr',
-    data: '12/03/2021',
-    images: [],
-  },
-]
 
 const App = () => {
   // let socket = io.connect('http://localhost:4000', {
@@ -121,11 +84,27 @@ const App = () => {
   // })
   const [data, setData] = useState([]);
   const [dataAuction, setDataAuction] = useState([])
+  const [dataMagazine, setDataMagazine] = useState([])
   useEffect(() => {
     loadCars()
     loadAuctions()
+    loadNews()
   }, [])
+  const loadNews = () => {
+    return allArticles()
+     .then((response) => {
+      if (response.data) {
+        console.log(response.data, 'articles')
+        setDataMagazine(response.data)
+      }
 
+      return response.data
+    })
+    .catch((err) => {
+      console.log(err)
+    })
+  }
+  
   const loadCars = () => {
     return allCars()
     .then((response) => {

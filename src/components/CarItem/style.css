@@ -23,6 +23,10 @@
     background-color: #076DFD;
     padding: 5px 40px;
 }
+.auction-btn:hover {
+    color: #fff !important;
+    text-decoration: none;
+}
 .auction-btn-bet {
     color: #ffffff;
     padding: 5px 40px;
