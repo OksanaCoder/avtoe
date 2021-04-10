@@ -26,7 +26,15 @@ const Magazine = ({dataMagazine}) => {
                         <h6 className='blue-line'>Новини</h6>                
                     </div>
                     <Row style={{background: '#262626'}} className='p-5 text-white'>
-                     <ArticleItem dataMagazine={dataMagazine}/> 
+                   
+                      {dataMagazine
+                        .map((item) => (
+                        
+                            <Col lg={12} md={12} sm={12} key={item.id} >
+                            <ArticleItem dataMagazine={[item]}/> 
+                            </Col>
+                    
+                        ))}
                     </Row>
                     
            

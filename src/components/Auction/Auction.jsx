@@ -2,11 +2,11 @@ import React, { useLayoutEffect } from "react";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./style.css";
-import CarItem from "../CarItem/CarItem";
+import CarItemAuction from "../CarItemAuction/CarItemAuction";
 import Filter from "../Filter/Filter";
 import { Row, Container, Col } from "react-bootstrap";
 
-const Auction = ({ data }) => {
+const Auction = ({ dataAuction }) => {
   useLayoutEffect(() => {
     window.scrollTo(0, 0);
   });
@@ -28,7 +28,7 @@ const Auction = ({ data }) => {
         </Row>
         <Filter />
       </Container>
-    { data.length > 0 ? (
+    { dataAuction.length > 0 ? (
 <Container style={{ background: "#262626" }} className="pb-5" fluid>
           <Row className="p-5">
             <div className="heading-style">
@@ -37,12 +37,11 @@ const Auction = ({ data }) => {
             </div>
           </Row>
       <Row style={{ background: "#262626" }} className="pb-5">
-      {data
-        .filter((item) => item.typeSale === "auction")
+      {dataAuction
         .map((item) => (
          
             <Col lg={12} md={12} sm={12} key={item.id} >
-              <CarItem filteredData={[item]} />
+              <CarItemAuction dataAuction={[item]} />
             </Col>
        
         ))}

@@ -17,15 +17,15 @@ import {
 import { Route, Link } from "react-router-dom";
 import CarDetails from "../CarDetails/CarDetails";
 
-const CarItem = ({ filteredData = [] }) => {
-  console.log(filteredData, "data in car item");
+const CarItemAuction = ({ dataAuction = [] }) => {
+  console.log(dataAuction, "data in car item");
 
   return (
     <div>
      
 
     
-          {filteredData.map((item) => {
+          {dataAuction.map((item) => {
             return (
               <>
                 <Col lg={3} md={6} sm={12}>
@@ -110,7 +110,7 @@ const CarItem = ({ filteredData = [] }) => {
                         {/* <button  className='btn-item auction-btn mr-2' onClick={showDetails}>Details</button> */}
                         <Link
                           className="btn-item auction-btn mr-2"
-                          to={`/carDetails/${item.id}`}
+                          to={`/carDetailsAuction/${item.id}`}
                         >
                           Details
                         </Link>
@@ -144,4 +144,4 @@ const CarItem = ({ filteredData = [] }) => {
   );
 };
 
-export default CarItem;
+export default CarItemAuction;

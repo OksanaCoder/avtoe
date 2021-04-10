@@ -24,6 +24,9 @@ const Catalog = ({ data, filteredData = [] }) => {
         </Row>
 
         <Filter data={data}/>
+      { data.length > 0 ? (
+
+       
         <Container style={{ background: "#262626" }} className="pb-5" fluid>
           <Row className="p-5">
             <div className="heading-style">
@@ -31,33 +34,24 @@ const Catalog = ({ data, filteredData = [] }) => {
               <h3>Оновлення</h3>
             </div>
           </Row>
-        {filteredData.length === 0 &&
-          data
-            .filter((item) => item.typeSale === "buy now")
-            .map((item) => (
+        { data.map((item) => (
         
                 <Col lg={12} md={12} sm={12}>
                   <CarItem filteredData={[item]} />
                 </Col>
          
             ))}
-     </Container>
-    {/* <Row style={{ background: "#262626" }} className="pb-5">
-      <Row className="p-5">
-        <div className="heading-style">
-          <h6 className="blue-line">Останні</h6>
-          <h3>Оновлення</h3>
-        </div>
-      </Row> */}
-        {filteredData.length > 0 && (
-      
-            <Col lg={12} md={12} sm={12}>
-              <CarItem filteredData={filteredData} />
-            </Col>
+     </Container>) :( 
+      <Container style={{ background: "#262626" }} className="pb-5" fluid>
+          <Row className="p-5">
+            <div className="heading-style">
+              <h6>Авто відсутні</h6>
+            </div>
+          </Row>
+   </Container>
+    )
+}
     
-        )}
-  
-      {/* </Row>     */}
       </Container>
     </div>
   );

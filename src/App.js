@@ -34,47 +34,8 @@ import RequestForm from './components/RequestForm/RequestForm'
 import Profile from './components/Profile/Profile'
 import io from 'socket.io-client'
 import { allAuctions, allCars, allArticles } from './API'
-
-// const data = [
-//   {
-//     id: 1,
-//     name: 'Ferrari California',
-//     price: '91 500',
-//     mileage: 22,
-//     city: 'Kyiv',
-//     fuel: 'Бензин',
-//     type: 'Автомат',
-//     startPrice: '40 000',
-//     color: 'червоний',
-//     year: 2014,
-//     drive: 'повний',
-//     moreInfo: ' ',
-//     mainImage: [],
-//     images: [],
-//     typeSale: 'auction',
-//     time: '14:10:05',
-//     typeCar: 'passenger',
-//   },
-//   {
-//     id: 2,
-//     name: 'BMW',
-//     price: '80 500',
-//     mileage: 22,
-//     city: 'Kyiv',
-//     fuel: 'Бензин',
-//     type: 'Автомат',
-//     color: 'червоний',
-//     year: 2014,
-//     drive: 'повний',
-//     moreInfo: ' ',
-//     mainImage: [],
-//     images: [],
-//     typeSale: 'buy now',
-//     typeCar: 'suv',
-//   },
-// ]
-
-
+import ArticleDetails from './components/ArticleDetails/ArticleDetails'
+import CarDetailsAuction from './components/CarDetailsAuction/CarDetailsAuction'
 const App = () => {
   // let socket = io.connect('http://localhost:4000', {
   //   query: {
@@ -85,10 +46,12 @@ const App = () => {
   const [data, setData] = useState([]);
   const [dataAuction, setDataAuction] = useState([])
   const [dataMagazine, setDataMagazine] = useState([])
+
   useEffect(() => {
     loadCars()
     loadAuctions()
     loadNews()
+  
   }, [])
   const loadNews = () => {
     return allArticles()
@@ -124,10 +87,9 @@ const App = () => {
     return allAuctions()
     .then((res) => {
       if (res.data) {
-        console.log(res.data, 'auction data')
         setDataAuction(res.data)
       }
-
+     console.log(res.data, 'auction data')
       return res.data
     })
     .catch((err) => {
@@ -320,12 +282,10 @@ const App = () => {
         />
         <Route
           exact
-          path="/magazine/:id"
+          path="/article/:id"
           render={({ match }) => (
-            <Magazine
-              dataMagazine={dataMagazine.filter(
-                (item) => String(item.id) === String(match.params.id)
-              )}
+            <ArticleDetails
+              item={dataMagazine.find((item) => String(item.id) === String(match.params.id))}
             />
           )}
         />
@@ -338,6 +298,15 @@ const App = () => {
             />
           )}
         />
+          <Route
+          exact
+          path="/carDetailsAuction/:id"
+          render={({ match }) => (
+            <CarDetailsAuction
+              item={dataAuction.find((item) => String(item.id) === String(match.params.id))}
+            />
+          )}
+        />
         <Route path="/catalog" exact component={() => <Catalog data={data} />} />
         <Route
           exact
@@ -345,11 +314,21 @@ const App = () => {
           render={({ match }) => (
             <Catalog
               data={data}
-              filteredData={data.filter((item) => item.typeCar === match.params.typeCar)}
+              filteredData={data.filter((item) => item.type === match.params.type)}
             />
           )}
         />
-        <Route path="/auction" exact component={() => <Auction data={data} />} />
+        <Route
+          exact
+          path="/auction/:typeCar"
+          render={({ match }) => (
+            <Catalog
+              dataAuction={dataAuction}
+              filteredData={data.filter((item) => item.type === match.params.type)}
+            />
+          )}
+        />
+        <Route path="/auction" exact component={() => <Auction dataAuction={dataAuction}  />} />
         <Route path="/profile" exact component={() => <Profile data={data} />} />
         <Footer />
       </Router>
