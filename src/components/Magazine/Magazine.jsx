@@ -4,7 +4,7 @@ import { Row, Col, Container } from 'react-bootstrap'
 import ArticleItem from '../ArticleItem/ArticleItem'
 
 
-const Magazine = (dataMagazine) => {
+const Magazine = ({dataMagazine}) => {
    
     useLayoutEffect(() => {
         window.scrollTo(0, 0)

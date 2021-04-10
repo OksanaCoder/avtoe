@@ -22,36 +22,28 @@ const CarItem = ({ filteredData = [] }) => {
 
   return (
     <div>
-      <Container
-        className="text-white pb-5"
-        fluid
-        style={{ background: "#262626" }}
-      >
-        <Row className="p-5">
-          <div className="heading-style">
-            <h6 className="blue-line">Останні</h6>
-            <h3>Оновлення</h3>
-          </div>
-        </Row>
+     
 
-        <Row className=" align-center">
+    
           {filteredData.map((item) => {
             return (
               <>
                 <Col lg={3} md={6} sm={12}>
                   <Card className="card-style mb-3">
-                    <Card.Img src={imageCar} className="img-feature"></Card.Img>
+                   { item.images.length == 0 ?  (<Card.Img src={item.images[0]} className="img-feature"></Card.Img> ) :
+                      (<Card.Img src={imageCar} className="img-feature"></Card.Img>)
+                   } 
                     <Card.Body className="card-text">
                       <h5 className="bold">{item.name}</h5>
-                      <h5 className="color-yellow">$ {item.price}</h5>
-                      {item.time ? (
+                      <h5 className="color-yellow">$ {item.startingPrice}</h5>
+                      {item.startingDate ? (
                         <h6 style={{ display: "flex", alignItems: "center" }}>
                           <img
                             src={countdown}
                             className="mt-1 mr-2"
                             fill="#fff"
                           />
-                          12:12:09
+                          {item.startingDate}
                         </h6>
                       ) : null}
 
@@ -73,7 +65,7 @@ const CarItem = ({ filteredData = [] }) => {
                               className="center-items"
                             >
                               <img src={icon_2} className="white-icon" />
-                              {item.mileage} тыс. км
+                              {item.transmission} тыс. км
                             </Col>
                             <Col
                               lg={6}
@@ -83,7 +75,8 @@ const CarItem = ({ filteredData = [] }) => {
                               className="center-items"
                             >
                               <img src={icon_1} className="icon-small" />
-                              {item.city}
+                              {/* {item.city} */}
+                              Киев
                             </Col>
                           </Row>
                           <Row className="align-center">
@@ -105,7 +98,7 @@ const CarItem = ({ filteredData = [] }) => {
                               className="center-items"
                             >
                               <small className="a-icon-1">A</small>
-                              {item.type}
+                              {item.drive}
                             </Col>
                           </Row>
                         </>
@@ -145,8 +138,8 @@ const CarItem = ({ filteredData = [] }) => {
               </>
             );
           })}
-        </Row>
-      </Container>
+   
+
     </div>
   );
 };
