@@ -28,14 +28,16 @@ const CarItem = ({ filteredData = [] }) => {
           {filteredData.map((item) => {
             return (
               <>
-                <Col lg={3} md={6} sm={12}>
+            
                   <Card className="card-style mb-3">
                    { item.images.length == 0 ?  (<Card.Img src={imageCar} className="img-feature"></Card.Img> ) :
                       (<Card.Img src={item.image_1} className="img-feature"></Card.Img> )
                    } 
                     <Card.Body className="card-text">
                       <h5 className="bold">{item.name}</h5>
-                      <h5 className="color-yellow">$ {item.startingPrice}</h5>
+             
+                     <h5 className="color-yellow">$ {item.startingPrice}</h5>
+                
                       {item.startingDate ? (
                         <h6 style={{ display: "flex", alignItems: "center" }}>
                           <img
@@ -127,7 +129,7 @@ const CarItem = ({ filteredData = [] }) => {
                       {/* <ModalDetails data={data} show_details={show_details} handleShow_details={handleShow_details} handleClose_details={handleClose_details} /> */}
                     </Card.Body>
                   </Card>
-                </Col>
+              
 
                 {/* <Route
                                     exact path={`/carDetails/:id`}

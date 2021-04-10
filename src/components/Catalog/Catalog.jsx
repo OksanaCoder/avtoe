@@ -34,13 +34,15 @@ const Catalog = ({ data, filteredData = [] }) => {
               <h3>Оновлення</h3>
             </div>
           </Row>
+          <Row>
         { data.map((item) => (
         
-                <Col lg={12} md={12} sm={12}>
+                <Col lg={4} md={6} sm={12}>
                   <CarItem filteredData={[item]} />
                 </Col>
          
             ))}
+          </Row>
      </Container>) :( 
       <Container style={{ background: "#262626" }} className="pb-5" fluid>
           <Row className="p-5">

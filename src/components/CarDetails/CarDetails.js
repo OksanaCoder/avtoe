@@ -77,53 +77,31 @@ const CarDetails = ({ item }) => {
         <div className="p-5">
           <h5 className="blue-line"></h5>
           <h5 className="header-details">Деталі авто</h5>
-          {item.typeSale === 'auction' && <h6 className="mt-3">{item.name}</h6>}
+          <h6 className="mt-3">{item.name}</h6>
         </div>
         <Row>
           <Col>
             <Carousel>
-              <div>
-                <img src={imageCar} />
+          
+               <div>
+                <img src={item.image_1} />
               </div>
-              <div>
-                <img src={imageCar} />
+               <div>
+                <img src={item.image_2} />
               </div>
-              <div>
-                <img src={imageCar} />
+               <div>
+                <img src={item.image_3} />
               </div>
+
             </Carousel>
-            {item.typeSale === 'auction' && (
-              <>
-                <Row className="mt-1 row-modal">
-                  <Col> ID аукцiону:</Col>
-                  <Col>#{item.id}</Col>
-                </Row>
-                <Row className="mt-1 row-modal mb-4">
-                  <Col> До кiнця торгiв залишилось:</Col>
-                  <Col>{item.time}</Col>
-                </Row>
-                <Row className="mt-1 row-modal mb-4">
-                  <Col> Кiлькiсть ставок:</Col>
-                  <Col>{/* {item.bids.length} */}0</Col>
-                </Row>
-                <Row className="mt-4 pb-5 row-modal">
-                  <Col>Початкова ставка:</Col>
-                  <Col>{item.startPrice}</Col>
-                </Row>
-              </>
-            )}
+           
           </Col>
           <Col>
-            {item.typeSale === 'auction' ? (
-              <h4 style={{ fontWeight: 'bold' }} className="pl-3 mb-4">
-                Current bid: $ 12,306.00 
-                {/* last bid */}
-              </h4>
-            ) : (
+           
               <h4 style={{ fontWeight: 'bold' }} className="pl-3 mb-4">
                 {item.name}
               </h4>
-            )}
+           
 
             <Row className="align-center mt-3">
               <Col className="center-items">
@@ -193,86 +171,11 @@ const CarDetails = ({ item }) => {
             </Row>
 
             <ModalContactUs open={open} onHide={closeModal} closeModal={closeModal} />
-            {item.typeSale == 'auction' && (
-              <>
-                <Row className="mt-4 pb-5 row-modal">
-                  <Col>
-                    ${' '}
-                    <input
-                      type="number"
-                      value={bid}
-                      onChange={(e) => setBid(e.target.value)}
-                    />
-                  </Col>
-                  <Col>
-                    {isLoggedIn.current ? (
-                      <>
-                        <button className="btn-item auction-btn-bet" onClick={sendBid}>
-                          Make a bid
-                        </button>
-                      </>
-                    ) : (
-                      <>
-                        <button className="btn-item auction-btn-bet" onClick={checkLog}>
-                          Make a bid
-                        </button>
-                      </>
-                    )}
-                  </Col>
-                </Row>
-              </>
-            )}
+    
+             
+            
           </Col>
         </Row>
-        {item.typeSale === 'auction' && (
-          <>
-            <h5 className="p-5">Posted bids</h5>
-            <Row>
-              <Col>
-                <Table striped bordered hover>
-                  <thead>
-                    <tr>
-                      <th>Bid amount</th>
-                      <th>Username</th>
-                      <th>Date</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {bid && isLoggedIn.current ? (
-                      <tr>
-                        <td className="current-bid">${bid}</td>
-                        <td className="current-bid">Your bid</td>
-                        <td className="current-bid">14:04:11</td>
-                      </tr>
-                    ) : (
-                      <tr>
-                        <td className="current-bid">$1700</td>
-                        <td className="current-bid">Mike</td>
-                        <td className="current-bid">14:04:11</td>
-                      </tr>
-                    )}
-
-                    <tr>
-                      <td>$3,000</td>
-                      <td>Mark</td>
-                      <td>14:04:11</td>
-                    </tr>
-                    <tr>
-                      <td>$3,000</td>
-                      <td>Mark</td>
-                      <td>14:04:11</td>
-                    </tr>
-                    <tr>
-                      <td>$3,000</td>
-                      <td>Mark</td>
-                      <td>14:04:11</td>
-                    </tr>
-                  </tbody>
-                </Table>
-              </Col>
-            </Row>
-          </>
-        )}
       </Container>
     </>
   )
