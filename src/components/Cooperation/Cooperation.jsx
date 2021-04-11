@@ -6,8 +6,8 @@ import toyota from '../../img/toyota.jpg'
 import './style.css'
 
 
-const Cooperation = () => {
-
+const Cooperation = ({dataFindCar}) => {
+    console.log(dataFindCar, 'items find cars')
     useLayoutEffect(() => {
         window.scrollTo(0, 0)
     });
@@ -40,37 +40,21 @@ const Cooperation = () => {
                     </div>
                    
                     </Row>
+                    
                     <Row className='p-5' style={{paddingBottom: '100px'}}>
+                    {dataFindCar.map(item => {
                         <Col lg={3} md={6} sm={12}>
                                 <Card className='card-style mb-3'>
                                    <Card.Img src={camry} className='img-feature'>
                                    </Card.Img>
                                    <Card.Body className='text-dark card-text' style={{lineHeight: '0.2'}}>
-                                    <h5 className='bold'>Toyota Camry-40</h5>
-                                    <small>В хорошому стані !</small>                       
+                                    <h5 className='bold'>{item.name}</h5>
+                                    <small>{item.description}</small>                       
                                    </Card.Body>
                                  </Card>    
-                        </Col> 
-                        <Col lg={3} md={6} sm={12}>
-                                <Card className='card-style mb-3'>
-                                   <Card.Img src={wol} className='img-feature'>
-                                   </Card.Img>
-                                   <Card.Body className='text-dark card-text' style={{lineHeight: '0.2'}}>
-                                    <h5 className='bold'>Toyota Camry-40</h5>
-                                    <small>Груз - пас</small>                       
-                                   </Card.Body>
-                                 </Card>    
-                        </Col> 
-                        <Col lg={3} md={6} sm={12}>
-                                <Card className='card-style mb-3'>
-                                   <Card.Img src={toyota} className='img-feature'>
-                                   </Card.Img>
-                                   <Card.Body className='text-dark card-text' style={{lineHeight: '0.2'}}>
-                                    <h5 className='bold'>Toyota Corola 2012-2015 гг,</h5>
-                                    <small>Автомат</small>                       
-                                   </Card.Body>
-                                 </Card>    
-                        </Col> 
+                        </Col>     
+                    })}
+                                        
                     </Row>
    
         </>

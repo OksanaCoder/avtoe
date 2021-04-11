@@ -33,9 +33,10 @@ import Catalog from './components/Catalog/Catalog'
 import RequestForm from './components/RequestForm/RequestForm'
 import Profile from './components/Profile/Profile'
 import io from 'socket.io-client'
-import { allAuctions, allCars, allArticles } from './API'
+import { allAuctions, allCars, allArticles, allAdvertisments } from './API'
 import ArticleDetails from './components/ArticleDetails/ArticleDetails'
 import CarDetailsAuction from './components/CarDetailsAuction/CarDetailsAuction'
+
 const App = () => {
   // let socket = io.connect('http://localhost:4000', {
   //   query: {
@@ -43,59 +44,74 @@ const App = () => {
   //       'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MDU1NWY2OTQ1NDQyNDEwM2NlYmRhODgiLCJpYXQiOjE2MTcyNDUxODB9.s3fOFjdiV3U2DqU3IlPx9ZVtV2PdC9S89_4mMH1Co9k',
   //   },
   // })
-  const [data, setData] = useState([]);
+  const [data, setData] = useState([])
   const [dataAuction, setDataAuction] = useState([])
   const [dataMagazine, setDataMagazine] = useState([])
+  const [dataFindCar, setDataFindCar] = useState([])
 
   useEffect(() => {
     loadCars()
     loadAuctions()
     loadNews()
-  
+    loadDataFindCar()
   }, [])
+  const loadDataFindCar = () => {
+    return allAdvertisments()
+      .then((response) => {
+        if (response.data) {
+          console.log(response.data, 'find car data')
+          setDataFindCar(response.data)
+        }
+
+        return response.data
+      })
+      .catch((err) => {
+        console.log(err)
+      })
+  }
   const loadNews = () => {
     return allArticles()
-     .then((response) => {
-      if (response.data) {
-        console.log(response.data, 'articles')
-        setDataMagazine(response.data)
-      }
+      .then((response) => {
+        if (response.data) {
+          console.log(response.data, 'articles')
+          setDataMagazine(response.data)
+        }
 
-      return response.data
-    })
-    .catch((err) => {
-      console.log(err)
-    })
+        return response.data
+      })
+      .catch((err) => {
+        console.log(err)
+      })
   }
-  
+
   const loadCars = () => {
     return allCars()
-    .then((response) => {
-      if (response.data) {
-        console.log(response.data)
-        setData(response.data)
-      }
+      .then((response) => {
+        if (response.data) {
+          console.log(response.data)
+          setData(response.data)
+        }
 
-      return response.data
-    })
-    .catch((err) => {
-      console.log(err)
-    })
+        return response.data
+      })
+      .catch((err) => {
+        console.log(err)
+      })
   }
 
-   const loadAuctions = () => {
+  const loadAuctions = () => {
     return allAuctions()
-    .then((res) => {
-      if (res.data) {
-        setDataAuction(res.data)
-      }
-     console.log(res.data, 'auction data')
-      return res.data
-    })
-    .catch((err) => {
-      console.log(err)
-    })
-  };
+      .then((res) => {
+        if (res.data) {
+          setDataAuction(res.data)
+        }
+        console.log(res.data, 'auction data')
+        return res.data
+      })
+      .catch((err) => {
+        console.log(err)
+      })
+  }
   const [logged, setLogged] = useState(false)
   const myRef = useRef(null)
   const scrollToCredit = () => {
@@ -141,19 +157,19 @@ const App = () => {
                 <Nav.Link className="nav-item button-nav">
                   <BrowserLink to="/" className="text-white link-nav">
                     <img className="img-small" src={home} />
-                    Main
+                    Головна
                   </BrowserLink>
                 </Nav.Link>
                 <Nav.Link className="nav-item button-nav">
                   <BrowserLink to="/catalog" className="text-white link-nav">
                     <img className="img-small" src={cart} />
-                    Catalog
+                    Каталог
                   </BrowserLink>
                 </Nav.Link>
                 <Nav.Link className="nav-item button-nav">
                   <BrowserLink to="/auction" className="text-white link-nav">
                     <img src={hammer} width="20px" className="mb-1 img-small" />
-                    Auction
+                    Аукціон
                   </BrowserLink>
                 </Nav.Link>
 
@@ -173,7 +189,7 @@ const App = () => {
                 >
                   <BrowserLink to="/magazine" className=" text-white link-nav">
                     <img className="img-small" src={read} />
-                    Magazine
+                    Журнал
                   </BrowserLink>
                 </Nav.Link>
                 <Nav.Link className="nav-item text-white link-nav button-nav">
@@ -201,13 +217,13 @@ const App = () => {
                     <Nav.Link className=" nav-item link-nav button-nav">
                       <BrowserLink to="/login" className=" text-white link-nav">
                         <img className="img-small" src={person} />
-                        Log in
+                        Увійти
                       </BrowserLink>
                     </Nav.Link>
                     <Nav.Link className=" nav-item link-nav button-nav">
                       <BrowserLink to="/register" className=" text-white link-nav">
                         <img className="img-small" src={person} />
-                        Sign Up
+                        Реєстрація
                       </BrowserLink>
                     </Nav.Link>
                   </>
@@ -222,7 +238,7 @@ const App = () => {
                     <Nav.Link className=" nav-item link-nav button-nav">
                       <BrowserLink to="/login" className=" text-white link-nav">
                         <img className="img-small" src={person} onClick={handleOut} />
-                        Log out
+                        Вийти
                       </BrowserLink>
                     </Nav.Link>
                   </>
@@ -274,7 +290,11 @@ const App = () => {
         />
         <Route path="/about" exact component={About} />
 
-        <Route path="/cooperation" exact component={Cooperation} />
+        <Route
+          path="/cooperation"
+          exact
+          render={() => <Cooperation dataFindCar={dataFindCar} />}
+        />
         <Route
           path="/magazine"
           exact
@@ -284,8 +304,11 @@ const App = () => {
           exact
           path="/article/:id"
           render={({ match }) => (
+            // <p>hello</p>
             <ArticleDetails
-              item={dataMagazine.find((item) => String(item.id) === String(match.params.id))}
+              item={dataMagazine.find(
+                (item) => String(item.id) === String(match.params.id)
+              )}
             />
           )}
         />
@@ -298,37 +321,42 @@ const App = () => {
             />
           )}
         />
-          <Route
+        <Route
           exact
           path="/carDetailsAuction/:id"
           render={({ match }) => (
             <CarDetailsAuction
-              item={dataAuction.find((item) => String(item.id) === String(match.params.id))}
+              item={dataAuction.find(
+                (item) => String(item.id) === String(match.params.id)
+              )}
             />
           )}
         />
         <Route path="/catalog" exact component={() => <Catalog data={data} />} />
         <Route
           exact
-          path="/catalog/:typeCar"
+          path="/catalog/:type"
           render={({ match }) => (
             <Catalog
-              data={data}
               filteredData={data.filter((item) => item.type === match.params.type)}
             />
           )}
         />
         <Route
           exact
-          path="/auction/:typeCar"
+          path="/auction/:type"
           render={({ match }) => (
-            <Catalog
+            <Auction
               dataAuction={dataAuction}
               filteredData={data.filter((item) => item.type === match.params.type)}
             />
           )}
         />
-        <Route path="/auction" exact component={() => <Auction dataAuction={dataAuction}  />} />
+        <Route
+          path="/auction"
+          exact
+          component={() => <Auction dataAuction={dataAuction} />}
+        />
         <Route path="/profile" exact component={() => <Profile data={data} />} />
         <Footer />
       </Router>

@@ -1,21 +1,18 @@
-import React, { useLayoutEffect } from "react";
-import "./style.css";
-import CarItem from "../CarItem/CarItem";
-import Filter from "../Filter/Filter";
-import { Row, Container, Col } from "react-bootstrap";
+import React, { useLayoutEffect } from 'react'
+import './style.css'
+import CarItem from '../CarItem/CarItem'
+import Filter from '../Filter/Filter'
+import { Row, Container, Col } from 'react-bootstrap'
 
-const Catalog = ({ data, filteredData = [] }) => {
+const Catalog = ({ data = [], filteredData = [] }) => {
   useLayoutEffect(() => {
-    window.scrollTo(0, 0);
-  });
+    window.scrollTo(0, 0)
+  })
 
   return (
     <div>
-      <Container fluid style={{ padding: "0" }}>
-        <Row
-          className="flex-style padding-filter m-0"
-          style={{ background: "#23292D" }}
-        >
+      <Container fluid style={{ padding: '0' }}>
+        <Row className="flex-style padding-filter m-0" style={{ background: '#23292D' }}>
           <div className="heading-style col text-center">
             <div className="blue-line m-auto"></div>
             <h6 className="mt-3">Обери</h6>
@@ -23,42 +20,38 @@ const Catalog = ({ data, filteredData = [] }) => {
           </div>
         </Row>
 
-        <Filter data={data}/>
-      { data.length > 0 ? (
-
-       
-        <Container style={{ background: "#262626" }} className="pb-5" fluid>
-          <Row className="p-5">
-            <div className="heading-style">
-              <h6 className="blue-line">Останні</h6>
-              <h3>Оновлення</h3>
-            </div>
-          </Row>
-          <Row>
-        { data.map((item) => (
-        
+        <Filter data={data} />
+        {data.length > 0 ? (
+          <Container style={{ background: '#262626' }} className="pb-5" fluid>
+            <Row className="p-5">
+              <div className="heading-style">
+                <h6 className="blue-line">Останні</h6>
+                <h3>Оновлення</h3>
+              </div>
+            </Row>
+            <Row>
+              {data.map((item) => (
                 <Col lg={4} md={6} sm={12}>
                   <CarItem filteredData={[item]} />
                 </Col>
-         
-            ))}
-          </Row>
-     </Container>) :( 
-      <Container style={{ background: "#262626" }} className="pb-5" fluid>
-          <Row className="p-5">
-            <div className="heading-style">
-              <h6>Авто відсутні</h6>
-            </div>
-          </Row>
-   </Container>
-    )
-}
-    
+              ))}
+            </Row>
+          </Container>
+        ) : (
+          <Container style={{ background: '#262626' }} className="pb-5" fluid>
+            <Row className="p-5">
+              <div className="heading-style">
+                <h6>Авто відсутні</h6>
+              </div>
+            </Row>
+          </Container>
+        )}
       </Container>
     </div>
-  );
-};
-{/* <Container
+  )
+}
+{
+  /* <Container
 className="text-white pb-5"
 fluid
 style={{ background: "#262626" }}
@@ -68,5 +61,6 @@ style={{ background: "#262626" }}
     <h6 className="blue-line">Останні</h6>
     <h3>Оновлення</h3>
   </div>
-</Row> */}
-export default Catalog;
+</Row> */
+}
+export default Catalog
