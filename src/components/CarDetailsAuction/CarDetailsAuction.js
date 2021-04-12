@@ -77,7 +77,7 @@ const CarDetailsAuction = ({ item }) => {
         <div className="p-5">
           <h5 className="blue-line"></h5>
           <h5 className="header-details">Деталі авто</h5>
-          {item.typeSale === 'auction' && <h6 className="mt-3">{item.name}</h6>}
+         <h6 className="mt-3">{item.name}</h6>
         </div>
         <Row>
           <Col>
@@ -92,8 +92,7 @@ const CarDetailsAuction = ({ item }) => {
                 <img src={imageCar} />
               </div>
             </Carousel>
-            {item.typeSale === 'auction' && (
-              <>
+           
                 <Row className="mt-1 row-modal">
                   <Col> ID аукцiону:</Col>
                   <Col>#{item.id}</Col>
@@ -110,20 +109,15 @@ const CarDetailsAuction = ({ item }) => {
                   <Col>Початкова ставка:</Col>
                   <Col>{item.startPrice}</Col>
                 </Row>
-              </>
-            )}
+            
           </Col>
           <Col>
-            {item.typeSale === 'auction' ? (
+        
               <h4 style={{ fontWeight: 'bold' }} className="pl-3 mb-4">
-                Current bid: $ 12,306.00 
+                Поточка ставка: $ 12,306.00 
                 {/* last bid */}
               </h4>
-            ) : (
-              <h4 style={{ fontWeight: 'bold' }} className="pl-3 mb-4">
-                {item.name}
-              </h4>
-            )}
+         
 
             <Row className="align-center mt-3">
               <Col className="center-items">
@@ -193,8 +187,7 @@ const CarDetailsAuction = ({ item }) => {
             </Row>
 
             <ModalContactUs open={open} onHide={closeModal} closeModal={closeModal} />
-            {item.typeSale == 'auction' && (
-              <>
+          
                 <Row className="mt-4 pb-5 row-modal">
                   <Col>
                     ${' '}
@@ -220,12 +213,11 @@ const CarDetailsAuction = ({ item }) => {
                     )}
                   </Col>
                 </Row>
-              </>
-            )}
+           
+            
           </Col>
         </Row>
-        {item.typeSale === 'auction' && (
-          <>
+       
             <h5 className="p-5">Posted bids</h5>
             <Row>
               <Col>
@@ -271,8 +263,6 @@ const CarDetailsAuction = ({ item }) => {
                 </Table>
               </Col>
             </Row>
-          </>
-        )}
       </Container>
     </>
   )
