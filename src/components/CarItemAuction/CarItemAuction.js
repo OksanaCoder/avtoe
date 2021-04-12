@@ -5,6 +5,7 @@ import icon_1 from "../../img/location.png";
 import icon_2 from "../../img/speedometer.png";
 import icon_3 from "../../img/petrol.png";
 import countdown from "../../img/time.svg";
+import Moment from 'react-moment';
 import {
   Col,
   Row,
@@ -18,7 +19,7 @@ import { Route, Link } from "react-router-dom";
 import CarDetails from "../CarDetails/CarDetails";
 
 const CarItemAuction = ({ dataAuction = [] }) => {
-  console.log(dataAuction, "data in car item");
+  console.log(dataAuction, "AUCTION ITEM");
 
   return (
     <div>
@@ -43,7 +44,8 @@ const CarItemAuction = ({ dataAuction = [] }) => {
                             className="mt-1 mr-2"
                             fill="#fff"
                           />
-                          {item.startingDate}
+                          <Moment format='DD/MM/YYYY HH:mm' style={{fontSize: '12px'}} >{item.startingDate}</Moment>
+                        
                         </h6>
                       ) : null}
 

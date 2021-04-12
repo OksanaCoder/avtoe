@@ -13,6 +13,7 @@ import { Redirect, useHistory } from 'react-router-dom'
 import io from 'socket.io-client'
 
 const CarDetailsAuction = ({ item }) => {
+  console.log(item, 'AUCTION ITEM')
   let socket = io.connect('http://localhost:4000', {
     query: {
       token:
@@ -103,7 +104,7 @@ const CarDetailsAuction = ({ item }) => {
                 </Row>
                 <Row className="mt-1 row-modal mb-4">
                   <Col> Кiлькiсть ставок:</Col>
-                  <Col>{/* {item.bids.length} */}0</Col>
+                  <Col>{item.bids.length}</Col>
                 </Row>
                 <Row className="mt-4 pb-5 row-modal">
                   <Col>Початкова ставка:</Col>
@@ -177,7 +178,7 @@ const CarDetailsAuction = ({ item }) => {
             </Row>
             <Row className="align-center mt-4">
               <Col>
-                <small className="price-details">$ {item.startingPrice}</small>
+                <small className="price-details">$ {item.buyNowPrice}</small>
               </Col>
               <Col>
                 <button className="btn-item buy-now" onClick={openModal}>
@@ -218,15 +219,16 @@ const CarDetailsAuction = ({ item }) => {
           </Col>
         </Row>
        
-            <h5 className="p-5">Posted bids</h5>
+            <h5 className="p-5">Усі ставки</h5>
+          
             <Row>
               <Col>
                 <Table striped bordered hover>
                   <thead>
                     <tr>
-                      <th>Bid amount</th>
-                      <th>Username</th>
-                      <th>Date</th>
+                      <th>Ставка, $</th>
+                      <th>Учасник</th>
+                      <th>Час</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -260,7 +262,11 @@ const CarDetailsAuction = ({ item }) => {
                       <td>14:04:11</td>
                     </tr>
                   </tbody>
+                  
                 </Table>
+                <div  style={{display: 'flex', alignItems: 'center'}} className='ml-2'>
+                   <div style={{width: '10px', height: '10px', background: '#056DFD'}} className='mr-2'></div><small>максимальна ставка</small>
+               </div>
               </Col>
             </Row>
       </Container>

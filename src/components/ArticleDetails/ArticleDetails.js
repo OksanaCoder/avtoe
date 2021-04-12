@@ -4,7 +4,6 @@ import { Container, Row, Col } from 'react-bootstrap'
 const ArticleDetails = ({ item }) => {
   console.log(item, 'article details')
   return (
-    <>
       <Container flud className="back-black">
         <Row>
           <h2>Деталі</h2>
@@ -20,7 +19,6 @@ const ArticleDetails = ({ item }) => {
           </Col>
         </Row>
       </Container>
-    </>
   )
 }
 
