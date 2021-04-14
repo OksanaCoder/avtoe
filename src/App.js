@@ -36,6 +36,7 @@ import io from 'socket.io-client'
 import { allAuctions, allCars, allArticles, allAdvertisments } from './API'
 import ArticleDetails from './components/ArticleDetails/ArticleDetails'
 import CarDetailsAuction from './components/CarDetailsAuction/CarDetailsAuction'
+import classNames from 'classnames'
 
 const App = () => {
   // let socket = io.connect('http://localhost:4000', {
@@ -146,10 +147,17 @@ const App = () => {
   const [show_form, setShow_form] = useState(false)
   const handleShowForm = () => setShow_form(true)
   const handleCloseForm = () => setShow_form(false)
-
+  const [showed, setShowed] = useState(false)
+  // const hideNav = (e) => { 
+  //     setShowed(!showed)
+  // } 
   return (
     <>
       <Router>
+      <div style={{background: '#062BB2'}} className={classNames({"noShow" : showed}, {"d-flex justify-content-between align-center pl-3 pr-3 pt-2 m-0 text-white" : !showed})}>
+         <h6 style={{fontSize: '12px'}}>Завантажуй додаток ! Там зручніше</h6>
+         <h6 style={{fontWeight :'700', fontSize: '12px'}} onClick={() => setShowed(!showed)}>x</h6>
+      </div>
         <Navbar expand="lg" className="bottomNav">
           <Container fluid className="display-flex justify-content-around">
             <Nav className="mob-nav">
@@ -195,7 +203,7 @@ const App = () => {
                 <Nav.Link className="nav-item text-white link-nav button-nav">
                   <BrowserLink to="/cooperation" className=" text-white link-nav">
                     <img className="img-small" src={search} />
-                    Шукаємо
+                    Купимо
                   </BrowserLink>
                 </Nav.Link>
                 <Nav.Link className="nav-item text-white link-nav button-nav">

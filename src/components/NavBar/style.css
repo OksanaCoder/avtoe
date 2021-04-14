@@ -153,9 +153,9 @@ body {
 }
 .button-nav{
     padding: 5px 10px !important;
-    border: 1px solid #1489ff ;
-    border-radius: 10px ;
-    box-shadow: 0 0 2px 1px #0062cc;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px 1px #03070c;
+    background: #1d4dff;
 }
 .img-small {
     width: 20px;

@@ -1,5 +1,5 @@
 import React, { useRef, useState, useEffect, useCallback } from 'react'
-import { Container, Button, Form, Row, Col } from 'react-bootstrap'
+import { Container, Button, Form, Row, Col, Nav } from 'react-bootstrap'
 import './style-2.css'
 import search from '../../img/search.png'
 import img_4 from '../../img/i-4.svg'

@@ -94,3 +94,9 @@ body {
     transform: rotate(360deg);
   }
 }
+.noShow {
+  display: none;
+}
+/* .topNav {
+  display: flex;
+} */
