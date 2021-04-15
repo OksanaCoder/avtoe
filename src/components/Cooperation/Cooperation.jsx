@@ -37,7 +37,7 @@ const Cooperation = ({ dataFindCar = [] }) => {
         </div>
       </Row>
         {dataFindCar.length > 0 ? (
-            <Row className="p-5" style={{ paddingBottom: '100px' }}>
+            <Row className="p-5" >
                 
                     <CarSearch dataFindCar={dataFindCar}/>
                 

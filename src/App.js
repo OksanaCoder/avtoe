@@ -8,11 +8,12 @@ import MobApp from './components/MobApp/MobApp'
 import Footer from './components/Footer/Footer'
 import NavBar from './components/NavBar/NavBar'
 import 'bootstrap/dist/css/bootstrap.min.css'
-import { BrowserRouter as Router, Route, Link as BrowserLink } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Link as BrowserLink, useHistory} from 'react-router-dom'
 import { Container, Navbar, Nav } from 'react-bootstrap'
 import './components/NavBar/style.css'
 import person from './img/person.svg'
 import mail from './img/mail.png'
+import phone from './img/phone.png'
 import search from './img/search.svg'
 import read from './img/read.svg'
 import email from './img/email.svg'
@@ -149,7 +150,7 @@ const App = () => {
   const handleShowForm = () => setShow_form(true)
   const handleCloseForm = () => setShow_form(false)
   const [showed, setShowed] = useState(false)
-  
+
   return (
     <>
       <Router>
@@ -179,27 +180,21 @@ const App = () => {
                     Аукціон
                   </BrowserLink>
                 </Nav.Link>
-                <Nav.Link
-                  className="nav-item text-white link-nav button-nav"
-                  to="/magazine"
-                >
-                  <BrowserLink to="/magazine" className=" text-white link-nav">
-                    <img className="img-small" src={read} />
-                    Журнал
-                  </BrowserLink>
-                </Nav.Link>
+     
+                <a className="nav-item text-white link-nav button-nav text-white" href="https://oksishukh.wixsite.com/my-site-3"><img className="img-small" src={read} />Журнал</a>
+
                 <Nav.Link className="nav-item text-white link-nav button-nav">
                   <BrowserLink to="/cooperation" className=" text-white link-nav">
                     <img className="img-small" src={search} />
                     Купимо
                   </BrowserLink>
                 </Nav.Link>
-                <Nav.Link className="nav-item text-white link-nav button-nav">
+                {/* <Nav.Link className="nav-item text-white link-nav button-nav">
                   <BrowserLink to="/about" className=" text-white link-nav">
                     <img className="img-small" src={about} />
                     Про нас
                   </BrowserLink>
-                </Nav.Link>
+                </Nav.Link> */}
 {/* 
                 <Nav.Link className="nav-item link-nav button-nav">
                   <BrowserLink className=" text-white link-nav" onClick={scrollToBottom}>
@@ -254,7 +249,7 @@ const App = () => {
         </Navbar>
         {/* <img  src={call} onClick={scrollToBottom} /> */}
         <img className="img-mail" src={mail} onClick={handleShowForm} />
-        <img  className="img-phone"  src={mail}  onClick={scrollToBottom} />
+        <img  className="img-phone"  src={phone}  onClick={scrollToBottom} />
 
         <RequestForm
           show_form={show_form}

@@ -11,9 +11,11 @@ const CarSearch = ({dataFindCar}) => {
         <>
         <Col lg={6} md={6} sm={12}>
             <h5 className="bold">{i.name}</h5>  
+            <hr/>
        </Col>
        <Col lg={6} md={6} sm={12}>
             <p>{i.description}</p>    
+            <hr/>
        </Col>
         </>
        )

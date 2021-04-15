@@ -39,7 +39,7 @@ body {
   animation-timing-function: linear;
 }
 .img-phone {
-  width: 50px;
+  width: 45px;
   position: fixed !important;
   right: 20px;
   bottom: 76px;
