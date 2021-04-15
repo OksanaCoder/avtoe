@@ -1,4 +1,4 @@
-import React, { useLayoutEffect } from 'react'
+import React, { useLayoutEffect, useState } from 'react'
 import './style.css'
 import CarItem from '../CarItem/CarItem'
 import Filter from '../Filter/Filter'
@@ -8,6 +8,15 @@ const Catalog = ({ data = [], filteredData = [] }) => {
   useLayoutEffect(() => {
     window.scrollTo(0, 0)
   })
+
+  const [data2, setData2] = useState([])
+
+  const onSearch = (valueBrand, valueYear, valuePrice) => {
+    setData2(
+      data.filter((item) => item.model === valueBrand && valueYear.includes(item.year))
+    )
+    // console.log(valueBrand, valueYear, valuePrice)
+  }
 
   return (
     <div>
@@ -20,7 +29,7 @@ const Catalog = ({ data = [], filteredData = [] }) => {
           </div>
         </Row>
 
-        <Filter data={data} />
+        <Filter onSearch={onSearch} />
         {data.length > 0 ? (
           <Container style={{ background: '#262626' }} className="pb-5" fluid>
             <Row className="p-5">
@@ -30,7 +39,7 @@ const Catalog = ({ data = [], filteredData = [] }) => {
               </div>
             </Row>
             <Row>
-              {data.map((item) => (
+              {data2.map((item) => (
                 <Col lg={4} md={6} sm={12}>
                   <CarItem filteredData={[item]} />
                 </Col>
