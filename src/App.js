@@ -18,6 +18,7 @@ import read from './img/read.svg'
 import email from './img/email.svg'
 import about from './img/info.svg'
 import credit from './img/credit.svg'
+// import call from './img/call.png'
 import cart from './img/cart.svg'
 import hammer from './img/hammer.svg'
 import home from './img/home.svg'
@@ -148,9 +149,7 @@ const App = () => {
   const handleShowForm = () => setShow_form(true)
   const handleCloseForm = () => setShow_form(false)
   const [showed, setShowed] = useState(false)
-  // const hideNav = (e) => { 
-  //     setShowed(!showed)
-  // } 
+  
   return (
     <>
       <Router>
@@ -180,17 +179,6 @@ const App = () => {
                     Аукціон
                   </BrowserLink>
                 </Nav.Link>
-
-                {/* <Nav.Link className="nav-item button-nav">
-                  <BrowserLink
-                    to="/"
-                    className=" text-white link-nav"
-                    onClick={scrollToCredit}
-                  >
-                    <img className="img-small" src={credit} />
-                    Кредит
-                  </BrowserLink>
-                </Nav.Link> */}
                 <Nav.Link
                   className="nav-item text-white link-nav button-nav"
                   to="/magazine"
@@ -212,13 +200,13 @@ const App = () => {
                     Про нас
                   </BrowserLink>
                 </Nav.Link>
-
+{/* 
                 <Nav.Link className="nav-item link-nav button-nav">
                   <BrowserLink className=" text-white link-nav" onClick={scrollToBottom}>
                     <img className="img-small" src={email} />
                     Контакти
                   </BrowserLink>
-                </Nav.Link>
+                </Nav.Link> */}
 
                 {!logged ? (
                   <>
@@ -254,24 +242,20 @@ const App = () => {
               </Nav>
             </Nav>
 
-            {/* </Navbar.Collapse>  */}
-
+          
+{/* 
             <Calculator
               show_calc={show_calc}
               handleShow_calc={handleShow_calc}
               handleClose_calc={handleClose_calc}
-            />
+            /> */}
 
-            {/* sign up modal */}
-
-            {/* <SignUpForm show1={show1} handleShow1={handleShow1} handleClose1={handleClose1} /> */}
-
-            {/* login form modal */}
-            {/* <LoginForm show={show} handleShow={handleShow} handleClose={handleClose} />        */}
-          </Container>
+           </Container>
         </Navbar>
-
+        {/* <img  src={call} onClick={scrollToBottom} /> */}
         <img className="img-mail" src={mail} onClick={handleShowForm} />
+        <img  className="img-phone"  src={mail}  onClick={scrollToBottom} />
+
         <RequestForm
           show_form={show_form}
           handleShowForm={handleShowForm}
@@ -323,11 +307,12 @@ const App = () => {
         <Route
           exact
           path="/carDetails/:id"
-          render={({ match }) => (
-            <CarDetails
+          render={({ match }) => {
+            console.log(match, data)
+            return <CarDetails
               item={data.find((item) => String(item.id) === String(match.params.id))}
             />
-          )}
+          }}
         />
         <Route
           exact

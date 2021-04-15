@@ -12,7 +12,7 @@ import ModalContactUs from '../ModalContactUs/ModalContactUs'
 import { Redirect, useHistory } from 'react-router-dom'
 import io from 'socket.io-client'
 
-const CarDetails = ({ item }) => {
+const CarDetails = ({ item = {}}) => {
   let socket = io.connect('http://localhost:4000', {
     query: {
       token:

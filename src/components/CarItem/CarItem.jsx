@@ -30,7 +30,7 @@ const CarItem = ({ filteredData = [] }) => {
               <>
             
                   <Card className="card-style mb-3">
-                   { item.images.length == 0 ?  (<Card.Img src={imageCar} className="img-feature"></Card.Img> ) :
+                   { !item.images ?  (<Card.Img src={imageCar} className="img-feature"></Card.Img> ) :
                       (<Card.Img src={item.image_1} className="img-feature"></Card.Img> )
                    } 
                     <Card.Body className="card-text">

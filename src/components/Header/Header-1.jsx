@@ -57,9 +57,6 @@ const Header = ({ reference, data }) => {
   return (
     <>
       <Container className="background" fluid style={{ fontWeight: '700' }}>
-        {/* <BackgroundSlider className='background'
-          images={[image1, image2, image3]}
-          duration={3} transition={2} />  */}
 
         <Row className="p-4 nav-logo-lang">
           <Col lg={6} md={6} sm={12} className="text-left">
@@ -110,7 +107,6 @@ const Header = ({ reference, data }) => {
                 </small>
               </h4>
 
-              {/* <input type='text' placeholder='BMW X5' className='search-line' onChange={(e) => setSearchItem(e.target.value)} value={searchItem}/> */}
 
               <Select
                 className="search-line"
@@ -121,10 +117,7 @@ const Header = ({ reference, data }) => {
                 value={selected}
               />
             </div>
-            {/* <img src={search}  width='20px'
-              onClick={() => {
-                setSelected(data.find(item => item.name === selected))
-              }}/> */}
+            
           </Col>
         </Row>
 

@@ -42,7 +42,7 @@ const Cooperation = ({ dataFindCar = [] }) => {
                     <CarSearch dataFindCar={dataFindCar}/>
                 
             </Row>
-        ): ( <h2>Поки що запитів немає</h2>)}
+        ): ( <h6 className='p-5'>Поки що запитів немає</h6>)}
                 
     
     </>
