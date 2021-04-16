@@ -34,7 +34,7 @@ import Catalog from './components/Catalog/Catalog'
 import RequestForm from './components/RequestForm/RequestForm'
 import Profile from './components/Profile/Profile'
 import io from 'socket.io-client'
-import { allAuctions, allCars, allArticles, allAdvertisments } from './API'
+import { allAuctions, allCars, allAdvertisments } from './API'
 import ArticleDetails from './components/ArticleDetails/ArticleDetails'
 import CarDetailsAuction from './components/CarDetailsAuction/CarDetailsAuction'
 import classNames from 'classnames'
@@ -53,7 +53,6 @@ const App = () => {
   useEffect(() => {
     loadCars()
     loadAuctions()
-    loadNews()
     loadDataFindCar()
   }, [])
   const loadDataFindCar = () => {
