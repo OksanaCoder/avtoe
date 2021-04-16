@@ -24,7 +24,7 @@ import './style.css'
                 </div>
                 </Row> 
           <Container className='color-dark' fluid>
-                <Row className='row-calcs p-5'>
+                <Row className='row-calcs pt-5 pb-4 pl-5 pr-5'>
                     <Col lg={3} md={6} sm={12}>
                         <img src={bank_1} className='img-bank'/>
                     </Col>
@@ -32,13 +32,12 @@ import './style.css'
                         <img src={bank_2} className='img-bank'/>
                     </Col>
                     <Col lg={3} md={6} sm={12}>
-                        <img src={bank_3} className='img-bank'/>
+                        <img src={bank_3} className='img-bank middle-img'/>
                     </Col>
                     <Col lg={3} md={6} sm={12}>
-                        <img src={bank_4} className='img-bank last'/>
+                        <img src={bank_4} className='img-bank middle-img'/>
                     </Col>
-                </Row>
-                <Row className='row-calcs'>
+                
                     <Col lg={6} md={6} sm={12}>
                         <img src={automoney} className='img-bank'/>
                     </Col>

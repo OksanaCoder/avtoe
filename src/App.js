@@ -163,9 +163,9 @@ const App = () => {
                     Аукціон
                   </BrowserLink>
                 </Nav.Link>
-                <Nav.Link className="nav-item button-nav">
-                <a className=" text-white link-nav  text-white" href="https://oksishukh.wixsite.com/my-site-3"><img className="img-small" src={read} />Журнал</a>
-</Nav.Link>
+
+                 <a className="text-white link-nav nav-item button-nav mag-link" href="https://oksishukh.wixsite.com/my-site-3"><img className="img-small" src={read} />Журнал</a>
+      
                 <Nav.Link className="nav-item text-white link-nav button-nav">
                   <BrowserLink to="/cooperation" className=" text-white link-nav">
                     <img className="img-small" src={search} />

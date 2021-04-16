@@ -183,9 +183,8 @@ body {
    a.nav-item.nav-link {
     margin-bottom: 10px;
    }
-   /* .nav-style-mob {
-       text-align: center;
-       margin: 0 auto;
-   } */
+   .mag-link {
+       margin-bottom: 10px;
+   }
 }
 

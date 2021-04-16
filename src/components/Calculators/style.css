@@ -15,11 +15,20 @@
 .color-light-dark {
     background: #262626;
 }
-
-@media (max-width: 500px) {
-    .img-bank {
-        margin-bottom: 80px;
+@media (max-width: 768px) {
+    .middle-img {
+        margin-top: 20px;
     }
+}
+@media (max-width: 500px) {
+    .middle-img {
+        margin-top: 20px;
+    }
+   
+    .img-bank:last-child {
+        width: 100px;
+    }
+   
     .last{
         margin-bottom: 0;
     }
