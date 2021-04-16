@@ -116,3 +116,11 @@ body {
 /* .topNav {
   display: flex;
 } */
+@media (max-width: 500px) {
+  .img-mail {
+    bottom: 200px;
+  }
+  .img-phone {
+    bottom: 140px;
+  }
+}

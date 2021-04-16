@@ -161,7 +161,7 @@ const App = () => {
         <Navbar expand="lg" className="bottomNav">
           <Container fluid className="display-flex justify-content-around">
             <Nav className="mob-nav">
-              <Nav className="nav-style nav-no-col nav-style-mob">
+              <Nav className="nav-style nav-no-col nav-style-mob" >
                 <Nav.Link className="nav-item button-nav">
                   <BrowserLink to="/" className="text-white link-nav">
                     <img className="img-small" src={home} />
@@ -282,11 +282,7 @@ const App = () => {
           exact
           render={() => <Cooperation dataFindCar={dataFindCar} />}
         />
-        <Route
-          path="/magazine"
-          exact
-          component={() => <Magazine dataMagazine={dataMagazine} />}
-        />
+    
         <Route
           exact
           path="/article/:id"
