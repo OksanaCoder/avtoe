@@ -1,5 +1,5 @@
 import axios from "axios";
-const baseURL = "https://avtoe-avtoe-back-1.herokuapp.com";
+const baseURL = "https://avtoe-main-server.herokuapp.com";
 export const loginAPI = ({ password, email }) => {
   return new Promise(async (resolve, reject) => {
     try {

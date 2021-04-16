@@ -36,7 +36,7 @@ body {
 .bottomNav {
     position: fixed !important;
     bottom: 0 !important;
-    background: #036DFD !important;
+    background: #062BB2 !important;
     z-index: 999;
     width: 100%;
 }

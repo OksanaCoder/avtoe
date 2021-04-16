@@ -1,4 +1,4 @@
-import React, { useLayoutEffect, useState } from 'react'
+import React, { useLayoutEffect, useState, useEffect } from 'react'
 import './style.css'
 import CarItem from '../CarItem/CarItem'
 import Filter from '../Filter/Filter'
@@ -12,11 +12,15 @@ const Catalog = ({ data = [], filteredData = [] }) => {
   const [data2, setData2] = useState([])
 
   const onSearch = (valueBrand, valueYear, valuePrice) => {
+    
     setData2(
-      data.filter((item) => item.model === valueBrand && valueYear.includes(item.year))
+      data.filter((item) => item.model.toLowerCase() === valueBrand.value.toLowerCase())
     )
-    // console.log(valueBrand, valueYear, valuePrice)
+   console.log(data[0].model, data[0].year, valueYear.map(i => i.value))
   }
+  useEffect(() => {
+   setData2(data)
+  }, [data])
 
   return (
     <div>

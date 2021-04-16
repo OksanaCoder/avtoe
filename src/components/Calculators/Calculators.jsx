@@ -5,6 +5,10 @@ import bank_2 from '../../img/bank-2.png'
 import  bank_3  from '../../img/bank-3.png'
 import bank_4 from '../../img/tac.png'
 import bank_5 from '../../img/hap.png'
+// import bank from '../../img/bank.svg'
+
+import hapai from '../../img/hapai.png'
+import automoney from '../../img/automoney.png'
 import './style.css'
 
  const Calculators = ({reference}) => {
@@ -34,20 +38,20 @@ import './style.css'
                         <img src={bank_4} className='img-bank last'/>
                     </Col>
                 </Row>
-                {/* <Row className='row-calcs p-5'>
-                    <Col lg={3} md={6} sm={12}>
-                        <img src={bank_1} className='img-bank'/>
+                <Row className='row-calcs'>
+                    <Col lg={6} md={6} sm={12}>
+                        <img src={automoney} className='img-bank'/>
                     </Col>
-                    <Col lg={3} md={6} sm={12}>
-                        <img src={bank_2} className='img-bank'/>
+                    <Col lg={6} md={6} sm={12}>
+                        <img src={hapai} className='img-bank'/>
                     </Col>
-                    <Col lg={3} md={6} sm={12}>
+                    {/* <Col lg={3} md={6} sm={12}>
                         <img src={bank_3} className='img-bank'/>
                     </Col>
                     <Col lg={3} md={6} sm={12}>
                         <img src={bank_1} className='img-bank last'/>
-                    </Col>
-                </Row> */}
+                    </Col> */}
+                </Row>
           </Container>
         </>
 
