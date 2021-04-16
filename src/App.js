@@ -27,7 +27,6 @@ import Calculator from './components/NavBar/Calculator'
 import SignUpForm from './components/SignUpForm/SignUpForm'
 import LoginForm from './components/LoginForm/LoginForm'
 import Cooperation from './components/Cooperation/Cooperation'
-import Magazine from './components/Magazine/Magazine'
 import Auction from './components/Auction/Auction'
 import './components/NavBar/style.css'
 import CarDetails from './components/CarDetails/CarDetails'
@@ -49,7 +48,6 @@ const App = () => {
   // })
   const [data, setData] = useState([])
   const [dataAuction, setDataAuction] = useState([])
-  const [dataMagazine, setDataMagazine] = useState([])
   const [dataFindCar, setDataFindCar] = useState([])
 
   useEffect(() => {
@@ -72,21 +70,7 @@ const App = () => {
         console.log(err)
       })
   }
-  const loadNews = () => {
-    return allArticles()
-      .then((response) => {
-        if (response.data) {
-          console.log(response.data, 'articles')
-          setDataMagazine(response.data)
-        }
-
-        return response.data
-      })
-      .catch((err) => {
-        console.log(err)
-      })
-  }
-
+  
   const loadCars = () => {
     return allCars()
       .then((response) => {
@@ -180,9 +164,9 @@ const App = () => {
                     Аукціон
                   </BrowserLink>
                 </Nav.Link>
-     
-                <a className="nav-item text-white link-nav button-nav text-white" href="https://oksishukh.wixsite.com/my-site-3"><img className="img-small" src={read} />Журнал</a>
-
+                <Nav.Link className="nav-item button-nav">
+                <a className=" text-white link-nav  text-white" href="https://oksishukh.wixsite.com/my-site-3"><img className="img-small" src={read} />Журнал</a>
+</Nav.Link>
                 <Nav.Link className="nav-item text-white link-nav button-nav">
                   <BrowserLink to="/cooperation" className=" text-white link-nav">
                     <img className="img-small" src={search} />
@@ -283,18 +267,6 @@ const App = () => {
           render={() => <Cooperation dataFindCar={dataFindCar} />}
         />
     
-        <Route
-          exact
-          path="/article/:id"
-          render={({ match }) => (
-            // <p>hello</p>
-            <ArticleDetails
-              item={dataMagazine.find(
-                (item) => String(item.id) === String(match.params.id)
-              )}
-            />
-          )}
-        />
         <Route
           exact
           path="/carDetails/:id"
