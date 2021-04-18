@@ -13,13 +13,13 @@ const Catalog = ({ data = [], filteredData = [] }) => {
 
   const onSearch = (valueBrand, valueYear, valuePrice) => {
     setData2(
-      data.filter((item) => item.model.toLowerCase() === valueBrand.value.toLowerCase())
-    )
-    console.log(
-      data[0].model,
-      data[0].year,
-      valueYear.map((i) => i.value),
-      valuePrice
+      data.filter(
+        (item) =>
+          item.model.toLowerCase() === valueBrand.value.toLowerCase() &&
+          valueYear.map((i) => i.value).includes(item.year) &&
+          valuePrice.startingPrice <= Number(item.startingPrice) &&
+          Number(item.startingPrice) <= valuePrice.endPrice
+      )
     )
   }
 
