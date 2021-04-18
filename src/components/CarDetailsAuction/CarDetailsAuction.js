@@ -118,7 +118,7 @@ const CarDetailsAuction = ({ item }) => {
           <Col>
         
               <h4 style={{ fontWeight: 'bold' }} className="pl-3 mb-4">
-                Поточна ставка: $ 12,306.00 
+                Початкова ставка: $ {item.startingPrice}
                 {/* last bid */}
               </h4>
          
