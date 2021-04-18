@@ -18,7 +18,8 @@ const Catalog = ({ data = [], filteredData = [] }) => {
     console.log(
       data[0].model,
       data[0].year,
-      valueYear.map((i) => i.value)
+      valueYear.map((i) => i.value),
+      valuePrice
     )
   }
 
