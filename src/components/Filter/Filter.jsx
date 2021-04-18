@@ -59,6 +59,8 @@ const Filter = ({ onSearch }) => {
               className="selectStyle optionStyle"
               value={valuePrice}
               onChange={setValuePrice}
+              getOptionLabel={(option) => `${option.start}-${option.end}`}
+              getOptionValue={(option) => option.id}
             />
           </Form.Group>
 

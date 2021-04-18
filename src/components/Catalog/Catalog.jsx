@@ -12,14 +12,18 @@ const Catalog = ({ data = [], filteredData = [] }) => {
   const [data2, setData2] = useState([])
 
   const onSearch = (valueBrand, valueYear, valuePrice) => {
-    
     setData2(
       data.filter((item) => item.model.toLowerCase() === valueBrand.value.toLowerCase())
     )
-   console.log(data[0].model, data[0].year, valueYear.map(i => i.value))
+    console.log(
+      data[0].model,
+      data[0].year,
+      valueYear.map((i) => i.value)
+    )
   }
+
   useEffect(() => {
-   setData2(data)
+    setData2(data)
   }, [data])
 
   return (
@@ -34,7 +38,7 @@ const Catalog = ({ data = [], filteredData = [] }) => {
         </Row>
 
         <Filter onSearch={onSearch} />
-      
+
         {data.length > 0 ? (
           <Container style={{ background: '#262626' }} className="pb-5" fluid>
             <Row className="p-5">
@@ -44,7 +48,6 @@ const Catalog = ({ data = [], filteredData = [] }) => {
               </div>
             </Row>
             <Row>
-            
               {data2.map((item) => (
                 <Col lg={4} md={6} sm={12}>
                   <CarItem filteredData={[item]} />
