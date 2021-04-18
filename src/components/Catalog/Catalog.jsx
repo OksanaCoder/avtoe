@@ -17,7 +17,7 @@ const Catalog = ({ data = [], filteredData = [] }) => {
         (item) =>
           item.model.toLowerCase() === valueBrand.value.toLowerCase() &&
           valueYear.map((i) => i.value).includes(item.year) &&
-          valuePrice.startingPrice <= Number(item.startingPrice) &&
+          valuePrice.startPrice <= Number(item.startingPrice) &&
           Number(item.startingPrice) <= valuePrice.endPrice
       )
     )
