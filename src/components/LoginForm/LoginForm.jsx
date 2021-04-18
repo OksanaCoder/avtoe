@@ -63,7 +63,7 @@ const LoginForm = ({ logged, setLogged }) => {
   return (
     <>
       <div className="login-form">
-        <h3>Log in</h3>
+        <h3 className='mb-4'>Вхід</h3>
 
         <Form onSubmit={handleSubmit}>
           <Form.Group controlId="formBasicEmail">
@@ -80,16 +80,13 @@ const LoginForm = ({ logged, setLogged }) => {
           <Form.Group controlId="formBasicPassword">
             <Form.Control
               type="password"
-              placeholder="Password"
+              placeholder="Пароль"
               onChange={onChangePassword}
               value={password}
               className="input-style mb-4"
             />
           </Form.Group>
-          <Form.Group controlId="formBasicCheckbox" className="flex-form">
-            <Form.Check type="checkbox" label="Remember" />
-            <small>Forgot password ?</small>
-          </Form.Group>
+         
           <div className="flex-form mt-5 flex-column">
             <Button
               variant="primary"
@@ -97,7 +94,7 @@ const LoginForm = ({ logged, setLogged }) => {
               className="btn-form yellow-back"
               onClick={handleSubmit}
             >
-              Log in
+              Увійти
             </Button>
           </div>
         </Form>

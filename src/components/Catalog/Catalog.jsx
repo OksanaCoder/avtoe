@@ -34,6 +34,7 @@ const Catalog = ({ data = [], filteredData = [] }) => {
         </Row>
 
         <Filter onSearch={onSearch} />
+      
         {data.length > 0 ? (
           <Container style={{ background: '#262626' }} className="pb-5" fluid>
             <Row className="p-5">
@@ -43,6 +44,7 @@ const Catalog = ({ data = [], filteredData = [] }) => {
               </div>
             </Row>
             <Row>
+            
               {data2.map((item) => (
                 <Col lg={4} md={6} sm={12}>
                   <CarItem filteredData={[item]} />

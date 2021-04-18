@@ -40,7 +40,7 @@ const Auction = ({ dataAuction }) => {
       {dataAuction
         .map((item) => (
          
-            <Col lg={12} md={12} sm={12} key={item.id} >
+            <Col lg={4} md={6} sm={12} key={item.id} >
               <CarItemAuction dataAuction={[item]} />
             </Col>
        

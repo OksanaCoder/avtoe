@@ -84,13 +84,13 @@ const CarDetails = ({ item = {}}) => {
             <Carousel>
           
                <div>
-                <img src={item.image_1} />
+                <img src={item.image1} />
               </div>
                <div>
-                <img src={item.image_2} />
+                <img src={item.image2} />
               </div>
                <div>
-                <img src={item.image_3} />
+                <img src={item.image3} />
               </div>
 
             </Carousel>

@@ -30,8 +30,8 @@ const CarItem = ({ filteredData = [] }) => {
               <>
             
                   <Card className="card-style mb-3">
-                   { !item.images ?  (<Card.Img src={imageCar} className="img-feature"></Card.Img> ) :
-                      (<Card.Img src={item.image_1} className="img-feature"></Card.Img> )
+                   { item.images.length == 0 ?  (<Card.Img src={imageCar} className="img-feature"></Card.Img> ) :
+                      (<Card.Img src={item.image1} className="img-feature"></Card.Img> )
                    } 
                     <Card.Body className="card-text">
                       <h5 className="bold">{item.name}</h5>
@@ -114,7 +114,7 @@ const CarItem = ({ filteredData = [] }) => {
                           className="btn-item auction-btn mr-2"
                           to={`/carDetails/${item.id}`}
                         >
-                          Details
+                          Більше
                         </Link>
 
                         {/* <Col> <button className='btn-item buy-now'>Детальніше</button></Col> */}

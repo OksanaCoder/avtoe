@@ -84,13 +84,16 @@ const CarDetailsAuction = ({ item }) => {
           <Col>
             <Carousel>
               <div>
-                <img src={imageCar} />
+                <img src={item.images[0]} />
               </div>
               <div>
-                <img src={imageCar} />
+              <img src={item.images[1]} />
               </div>
               <div>
-                <img src={imageCar} />
+                <img src={item.images[2]} />
+              </div>
+              <div>
+                <img src={item.images[3]} />
               </div>
             </Carousel>
            

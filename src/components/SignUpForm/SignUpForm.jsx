@@ -72,12 +72,12 @@ const SignUpForm = (props) => {
   return (
     <>
       <div className='login-form'>
-        <h3>Sign Up</h3>
+        <h3 className='mb-4'>Реєстрація</h3>
           <Form onSubmit={handleSubmit}>
             <Form.Group controlId="formBasicName">
               <Form.Control
                 type="text"
-                placeholder="Name"
+                placeholder="Ім'я"
                 value={username}
                 onChange={onChangeUsername}
                 name="username"
@@ -99,7 +99,7 @@ const SignUpForm = (props) => {
             <Form.Group controlId="formBasicPassword">
               <Form.Control
                 type="password"
-                placeholder="Password"
+                placeholder="Пароль"
                 value={password}
                 onChange={onChangePassword}
                 name="password"
@@ -109,7 +109,7 @@ const SignUpForm = (props) => {
             </Form.Group>
             <Form.Group controlId="formBasicPhone">
               <Form.Control
-                placeholder="Phone number"
+                placeholder="Номер телефону"
                 value={phone}
                 onChange={onChangePhone}
                 name="phone"
@@ -124,7 +124,7 @@ const SignUpForm = (props) => {
                 type="submit"
                 className="btn-form yellow-back"
               >
-                Sign up
+                Зареєструватись
               </Button>
             </div>
           </Form>

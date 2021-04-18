@@ -29,10 +29,10 @@ const CarItemAuction = ({ dataAuction = [] }) => {
           {dataAuction.map((item) => {
             return (
               <>
-                <Col lg={3} md={6} sm={12}>
+              
                   <Card className="card-style mb-3">
-                   { item.images.length == 0 ?  (<Card.Img src={imageCar} className="img-feature"></Card.Img> ) :
-                      (<Card.Img src={item.image_1} className="img-feature"></Card.Img> )
+                   { item.images[0] == undefined ?  (<Card.Img src={imageCar} className="img-feature"></Card.Img> ) :
+                      (<Card.Img src={item.images[0]} className="img-feature"></Card.Img> )
                    } 
                     <Card.Body className="card-text">
                       <h5 className="bold">{item.name}</h5>
@@ -114,29 +114,15 @@ const CarItemAuction = ({ dataAuction = [] }) => {
                           className="btn-item auction-btn mr-2"
                           to={`/carDetailsAuction/${item.id}`}
                         >
-                          Details
+                          Деталі
                         </Link>
+                        </div>
 
-                        {/* <Col> <button className='btn-item buy-now'>Детальніше</button></Col> */}
-                        {/* <button  className='btn-item swap-btn mt-3' onClick={handleShow_4}>Запропонувати торг</button> */}
-
-                        {/* <button  className='btn-item swap-btn mt-3' onClick={handleShow_4}>Suggest a price</button> */}
-
-                        {/* <button  className='btn-item auction-btn mt-3'>Зробити ставку</button> */}
-                      </div>
-
-                      {/* details modal */}
-                      {/* <ModalDetails data={data} show_details={show_details} handleShow_details={handleShow_details} handleClose_details={handleClose_details} /> */}
-                    </Card.Body>
+                       </Card.Body>
                   </Card>
-                </Col>
+         
 
-                {/* <Route
-                                    exact path={`/carDetails/:id`}
-                                    render={({match}) => (
-                                    <CarDetails item={data.find(item => item.id === +match.params.id)}/>
-                                    )}
-                                    /> */}
+              
               </>
             );
           })}

@@ -89,7 +89,7 @@ const RequestForm = (props) => {
         className="login-form"
       >
         <Modal.Header closeButton>
-          <Modal.Title>Leave request</Modal.Title>
+          <Modal.Title>Залиште заявку</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <Form onSubmit={handleSubmit}>
@@ -108,7 +108,7 @@ const RequestForm = (props) => {
             <Form.Group controlId="formBasicName">
               <Form.Control
                 type="text"
-                placeholder="Your message"
+                placeholder="Повідомлення"
                 value={comment}
                 onChange={onChangeModel}
                 name="comment"
@@ -119,7 +119,7 @@ const RequestForm = (props) => {
 
             <Form.Group controlId="formBasicPhone">
               <Form.Control
-                placeholder="Phone number"
+                placeholder="Номер телефону"
                 value={phone}
                 onChange={onChangePhone}
                 name="phone"
@@ -134,7 +134,7 @@ const RequestForm = (props) => {
                 type="submit"
                 className="btn-form yellow-back"
               >
-                Send
+                Відправити
               </Button>
            
               {/* <Button
