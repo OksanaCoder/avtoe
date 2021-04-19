@@ -206,7 +206,7 @@ const App = () => {
 
       <Route
         path="/login"
-        render={() => (
+        component={() => (
           <LoginForm
             logged={logged}
             setLogged={(l) => {
@@ -225,13 +225,13 @@ const App = () => {
       <Route
         path="/cooperation"
         exact
-        render={() => <Cooperation dataFindCar={dataFindCar} />}
+        component={() => <Cooperation dataFindCar={dataFindCar} />}
       />
 
       <Route
         exact
         path="/carDetails/:id"
-        render={({ match }) => {
+        component={({ match }) => {
           return (
             <CarDetails
               item={data.find((item: any) => String(item.id) === String(match.params.id))}
@@ -243,7 +243,7 @@ const App = () => {
       <Route
         exact
         path="/carDetailsAuction/:id"
-        render={({ match }) => (
+        component={({ match }) => (
           <CarDetailsAuction
             item={dataAuction.find(
               (item: any) => String(item.id) === String(match.params.id)
@@ -263,7 +263,7 @@ const App = () => {
       <Route
         exact
         path="/auction/:type"
-        render={({ match }) => (
+        component={({ match }) => (
           <Auction
             dataAuction={dataAuction}
             // filteredData={data.filter((item: any) => item.type === match.params.type)}

@@ -56,7 +56,7 @@ const Catalog = ({ data = [] }) => {
             <Row>
               {filteredData.map((item) => (
                 <Col lg={4} md={6} sm={12}>
-                  <CarItem filteredData={[item]} />
+                  <CarItem data={data} filteredData={[item]} />
                 </Col>
               ))}
             </Row>
