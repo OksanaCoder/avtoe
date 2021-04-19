@@ -1,4 +1,4 @@
-import React, { useLayoutEffect, useState } from 'react'
+import React, { useEffect, useLayoutEffect, useState } from 'react'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
 import './style.css'
@@ -6,16 +6,16 @@ import CarItemAuction from '../CarItemAuction/CarItemAuction'
 import Filter from '../Filter/Filter'
 import { Row, Container, Col } from 'react-bootstrap'
 
-const Auction = ({ dataAuction = [], data = [] }) => {
+const Auction = ({ dataAuction = [] }) => {
   useLayoutEffect(() => {
     window.scrollTo(0, 0)
   })
 
-  const [data2, setData2] = useState([])
+  const [filteredData, setFilteredData] = useState([])
 
   const onSearch = (valueBrand, valueYear, valuePrice) => {
-    setData2(
-      data.filter(
+    setFilteredData(
+      dataAuction.filter(
         (item) =>
           item.model.toLowerCase() === valueBrand.value.toLowerCase() &&
           valueYear.map((i) => Number(i.value)).includes(Number(item.year)) &&
@@ -24,6 +24,10 @@ const Auction = ({ dataAuction = [], data = [] }) => {
       )
     )
   }
+
+  useEffect(() => {
+    setFilteredData(dataAuction)
+  }, [dataAuction])
 
   return (
     <>
@@ -37,7 +41,7 @@ const Auction = ({ dataAuction = [], data = [] }) => {
         </Row>
         <Filter onSearch={onSearch} />
       </Container>
-      {dataAuction.length > 0 ? (
+      {filteredData.length > 0 ? (
         <Container style={{ background: '#262626' }} className="pb-5" fluid>
           <Row className="p-5">
             <div className="heading-style">
@@ -46,7 +50,7 @@ const Auction = ({ dataAuction = [], data = [] }) => {
             </div>
           </Row>
           <Row style={{ background: '#262626' }} className="pb-5">
-            {dataAuction.map((item) => (
+            {filteredData.map((item) => (
               <Col lg={4} md={6} sm={12} key={item.id}>
                 <CarItemAuction dataAuction={[item]} />
               </Col>
