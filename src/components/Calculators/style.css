@@ -1,35 +1,34 @@
 .color-dark {
-    background: #1C1C1C;
+  background: #1c1c1c;
 }
 .img-bank {
-    width: 50%;
-    text-align: center;
-   
+  width: 50%;
+  text-align: center;
 }
 .row-calcs {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    text-align: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
 }
 .color-light-dark {
-    background: #262626;
+  background: #262626;
 }
 @media (max-width: 768px) {
-    .middle-img {
-        margin-top: 20px;
-    }
+  .middle-img {
+    margin-top: 20px;
+  }
 }
 @media (max-width: 500px) {
-    .middle-img {
-        margin-top: 20px;
-    }
-   
-    .img-bank:last-child {
-        width: 100px;
-    }
-   
-    .last{
-        margin-bottom: 0;
-    }
+  .middle-img {
+    margin-top: 20px;
+  }
+
+  .img-bank:last-child {
+    width: 100px;
+  }
+
+  .last {
+    margin-bottom: 0;
+  }
 }
