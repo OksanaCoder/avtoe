@@ -1,22 +1,22 @@
 .back-blue {
-    background-color: #EFF3FC;
+  background-color: #eff3fc;
 }
 .yellow-h {
-    color: #F7BA04;
-    font-size: 30px;
+  color: #f7ba04;
+  font-size: 30px;
 }
 .h-bold {
-    font-size: 40px;
-    font-weight: 700;
+  font-size: 40px;
+  font-weight: 700;
 }
 a {
-    color: black !important;
+  color: black !important;
 }
 a:focus {
-    color:  #F7BA04 !important;
+  color: #f7ba04 !important;
 }
 a.nav-item.nav-link:focus {
-    color: #000 !important;
+  color: #000 !important;
 }
 /* a.nav-item.nav-link {
     border-bottom: 1px solid #DFE2E6 !important;
@@ -31,8 +31,17 @@ a.nav-item.nav-link:focus {
   color: #000 !important;
   border-bottom: 2px solid #000 !important;
 } */
+
+.p-5.about-pad.container-fluid {
+  padding: 50px !important;
+}
+
 @media (max-width: 500px) {
-    .p-5.about-pad.container-fluid {
-        padding: 50px 0 0 0  !important;
-    }
+  /* a#uncontrolled-tab-example-tab-profile.nav-item.nav-link {
+    border: none !important;
+    width: 100%;
+  } */
+  .p-5.about-pad.container-fluid {
+    padding: 50px 0 0 0 !important;
+  }
 }

@@ -158,7 +158,13 @@ const App = () => {
                   Купимо
                 </BrowserLink>
               </Nav.Link>
-
+              <Nav.Link className="nav-item link-nav button-nav">
+                <BrowserLink to="/profile" className="text-white link-nav">
+                  <img className="img-small" src={person} />
+                  Мій кабінет
+                </BrowserLink>
+              </Nav.Link>
+              {/* 
               {!logged ? (
                 <>
                   <Nav.Link className=" nav-item link-nav button-nav">
@@ -189,7 +195,7 @@ const App = () => {
                     </BrowserLink>
                   </Nav.Link>
                 </>
-              )}
+              )} */}
             </Nav>
           </Nav>
         </Container>

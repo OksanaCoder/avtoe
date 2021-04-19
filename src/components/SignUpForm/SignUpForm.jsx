@@ -1,136 +1,119 @@
-import React, {  useState } from "react";
-import { Modal, Button, Form } from "react-bootstrap";
-import moment from "moment";
-import axios from "axios";
+import React, { useState } from 'react'
+import { Modal, Button, Form } from 'react-bootstrap'
+import moment from 'moment'
+import axios from 'axios'
 import './style.css'
-import { useHistory } from 'react-router-dom';
-import { signUpAPI } from "../../API";
+import { useHistory } from 'react-router-dom'
+import { signUpAPI } from '../../API'
 
 const SignUpForm = (props) => {
-   console.log(props)
+  console.log(props)
   const history = useHistory()
-  const [username, setUsername] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [phone, setPhone] = useState("");
+  const [username, setUsername] = useState('')
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+  const [phone, setPhone] = useState('')
 
   // const API_URL = process.env.REACT_APP_URL;
 
-  const register = (
-    name,
-    email,
-    password,
-    phoneNum
-  ) => {
-    return signUpAPI({name,
-      email,
-      password,
-      phoneNum}).catch((err)=>{
-        console.log(err)
-      })
-  };
+  const register = (name, email, password, phoneNum) => {
+    return signUpAPI({ name, email, password, phoneNum }).catch((err) => {
+      console.log(err)
+    })
+  }
   const handleSubmit = async (e) => {
-    e.preventDefault();
-    const succesregv = await register(
-      username,
-      email,
-      password,
-      phone
-    )
+    e.preventDefault()
+    const succesregv = await register(username, email, password, phone)
     //form.current.validateAll()
     console.log(succesregv)
     if (succesregv) {
-      
-      alert("Вітаємо ! Ви стали учасником аукціону !");
-      return history.push('/login');
-
+      alert('Вітаємо ! Ви стали учасником аукціону !')
+      return history.push('/login')
     } else {
-      console.log("Сталася помилка :(");
+      console.log('Сталася помилка :(')
     }
-  };
+  }
 
   const onChangeUsername = (e) => {
-    const username = e.target.value;
-    setUsername(username);
-    
-  };
+    const username = e.target.value
+    setUsername(username)
+  }
   const onChangeEmail = (e) => {
-    const email = e.target.value;
-    setEmail(email);
-  };
+    const email = e.target.value
+    setEmail(email)
+  }
 
   const onChangePassword = (e) => {
-    const password = e.target.value;
-    setPassword(password);
-  };
+    const password = e.target.value
+    setPassword(password)
+  }
 
   const onChangePhone = (e) => {
-    const phone = e.target.value;
-    setPhone(phone);
-  };
+    const phone = e.target.value
+    setPhone(phone)
+  }
 
   return (
     <>
-      <div className='login-form'>
-        <h3 className='mb-4'>Реєстрація</h3>
-          <Form onSubmit={handleSubmit}>
-            <Form.Group controlId="formBasicName">
-              <Form.Control
-                type="text"
-                placeholder="Ім'я"
-                value={username}
-                onChange={onChangeUsername}
-                name="username"
-                className="input-style"
-    
-              />
-            </Form.Group>
-            <Form.Group controlId="formBasicEmail">
-              <Form.Control
-                type="email"
-                placeholder="Email"
-                value={email}
-                onChange={onChangeEmail}
-                name="email"
-                className="input-style"
-              />
-            </Form.Group>
+      <div className="login-form">
+        <h3 className="mb-4">Реєстрація</h3>
+        <Form onSubmit={handleSubmit}>
+          <Form.Group controlId="formBasicName">
+            <Form.Control
+              type="text"
+              placeholder="Ім'я"
+              value={username}
+              onChange={onChangeUsername}
+              name="username"
+              className="input-style"
+            />
+          </Form.Group>
+          <Form.Group controlId="formBasicEmail">
+            <Form.Control
+              type="email"
+              placeholder="Email"
+              value={email}
+              onChange={onChangeEmail}
+              name="email"
+              className="input-style"
+            />
+          </Form.Group>
 
-            <Form.Group controlId="formBasicPassword">
-              <Form.Control
-                type="password"
-                placeholder="Пароль"
-                value={password}
-                onChange={onChangePassword}
-                name="password"
-                className="input-style"
-           
-              />
-            </Form.Group>
-            <Form.Group controlId="formBasicPhone">
-              <Form.Control
-                placeholder="Номер телефону"
-                value={phone}
-                onChange={onChangePhone}
-                name="phone"
-                className="input-style"
-              />
-            </Form.Group>
+          <Form.Group controlId="formBasicPassword">
+            <Form.Control
+              type="password"
+              placeholder="Пароль"
+              value={password}
+              onChange={onChangePassword}
+              name="password"
+              className="input-style"
+            />
+          </Form.Group>
+          <Form.Group controlId="formBasicPhone">
+            <Form.Control
+              placeholder="Номер телефону"
+              value={phone}
+              onChange={onChangePhone}
+              name="phone"
+              className="input-style"
+            />
+          </Form.Group>
 
-        
-            <div className="text-center mt-5 flex-column">
-              <Button
-                variant="primary"
-                type="submit"
-                className="btn-form yellow-back"
-              >
-                Зареєструватись
-              </Button>
-            </div>
-          </Form>
-       </div>
+          <div className="text-center mt-5 flex-column">
+            <Button variant="primary" type="submit" className="btn-form yellow-back">
+              Зареєструватись
+            </Button>
+          </div>
+          <div className="text-center mt-5 d-flex flex-column">
+            Уже зареєстровані ?
+            <a className="hover-link mt-3" onClick={() => history.push('/login')}>
+              Увійти
+            </a>
+          </div>
+        </Form>
+      </div>
     </>
-  );
-};
+  )
+}
 
-export default SignUpForm;
+export default SignUpForm

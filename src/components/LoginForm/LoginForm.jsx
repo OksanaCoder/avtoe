@@ -63,7 +63,7 @@ const LoginForm = ({ logged, setLogged }) => {
   return (
     <>
       <div className="login-form">
-        <h3 className='mb-4'>Вхід</h3>
+        <h3 className="mb-4">Вхід</h3>
 
         <Form onSubmit={handleSubmit}>
           <Form.Group controlId="formBasicEmail">
@@ -86,7 +86,7 @@ const LoginForm = ({ logged, setLogged }) => {
               className="input-style mb-4"
             />
           </Form.Group>
-         
+
           <div className="flex-form mt-5 flex-column">
             <Button
               variant="primary"
