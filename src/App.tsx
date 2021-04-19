@@ -8,7 +8,12 @@ import MobApp from './components/MobApp/MobApp'
 import Footer from './components/Footer/Footer'
 import NavBar from './components/NavBar/NavBar'
 import 'bootstrap/dist/css/bootstrap.min.css'
-import { BrowserRouter as Router, Route, Link as BrowserLink, useHistory} from 'react-router-dom'
+import {
+  BrowserRouter as Router,
+  Route,
+  Link as BrowserLink,
+  useHistory,
+} from 'react-router-dom'
 import { Container, Navbar, Nav } from 'react-bootstrap'
 import './components/NavBar/style.css'
 import person from './img/person.svg'
@@ -38,6 +43,7 @@ import { allAuctions, allCars, allAdvertisments } from './API'
 import ArticleDetails from './components/ArticleDetails/ArticleDetails'
 import CarDetailsAuction from './components/CarDetailsAuction/CarDetailsAuction'
 import classNames from 'classnames'
+import { CarType } from './types/appTypes'
 
 const App = () => {
   // let socket = io.connect('http://localhost:4000', {
@@ -46,7 +52,7 @@ const App = () => {
   //       'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MDU1NWY2OTQ1NDQyNDEwM2NlYmRhODgiLCJpYXQiOjE2MTcyNDUxODB9.s3fOFjdiV3U2DqU3IlPx9ZVtV2PdC9S89_4mMH1Co9k',
   //   },
   // })
-  const [data, setData] = useState([])
+  const [data, setData] = useState<CarType[]>([])
   const [dataAuction, setDataAuction] = useState([])
   const [dataFindCar, setDataFindCar] = useState([])
 
@@ -69,16 +75,13 @@ const App = () => {
         console.log(err)
       })
   }
-  
+
   const loadCars = () => {
     return allCars()
       .then((response) => {
         if (response.data) {
-          console.log(response.data)
           setData(response.data)
         }
-
-        return response.data
       })
       .catch((err) => {
         console.log(err)
@@ -99,7 +102,8 @@ const App = () => {
       })
   }
   const [logged, setLogged] = useState(false)
-  const myRef = useRef(null)
+  const myRef = useRef<any>(null)
+
   const scrollToCredit = () => {
     myRef.current.scrollIntoView({
       behavior: 'smooth',
@@ -137,14 +141,27 @@ const App = () => {
   return (
     <>
       <Router>
-      <div style={{background: '#062BB2'}} className={classNames({"noShow" : showed}, {"d-flex justify-content-between align-center pl-3 pr-3 pt-2 m-0 text-white" : !showed})}>
-         <h6 style={{fontSize: '12px'}}>Завантажуй додаток ! Там зручніше</h6>
-         <h6 style={{fontWeight :'700', fontSize: '12px'}} onClick={() => setShowed(!showed)}>x</h6>
-      </div>
+        <div
+          style={{ background: '#062BB2' }}
+          className={classNames(
+            { noShow: showed },
+            {
+              'd-flex justify-content-between align-center pl-3 pr-3 pt-2 m-0 text-white': !showed,
+            }
+          )}
+        >
+          <h6 style={{ fontSize: '12px' }}>Завантажуй додаток ! Там зручніше</h6>
+          <h6
+            style={{ fontWeight: 700, fontSize: '12px' }}
+            onClick={() => setShowed(!showed)}
+          >
+            x
+          </h6>
+        </div>
         <Navbar expand="lg" className="bottomNav">
           <Container fluid className="display-flex justify-content-around">
             <Nav className="mob-nav">
-              <Nav className="nav-style nav-no-col nav-style-mob" >
+              <Nav className="nav-style nav-no-col nav-style-mob">
                 <Nav.Link className="nav-item button-nav">
                   <BrowserLink to="/" className="text-white link-nav">
                     <img className="img-small" src={home} />
@@ -164,8 +181,14 @@ const App = () => {
                   </BrowserLink>
                 </Nav.Link>
 
-                 <a className="text-white link-nav nav-item button-nav mag-link" href="https://oksishukh.wixsite.com/my-site-3"><img className="img-small" src={read} />Журнал</a>
-      
+                <a
+                  className="text-white link-nav nav-item button-nav mag-link"
+                  href="https://oksishukh.wixsite.com/my-site-3"
+                >
+                  <img className="img-small" src={read} />
+                  Журнал
+                </a>
+
                 <Nav.Link className="nav-item text-white link-nav button-nav">
                   <BrowserLink to="/cooperation" className=" text-white link-nav">
                     <img className="img-small" src={search} />
@@ -178,7 +201,7 @@ const App = () => {
                     Про нас
                   </BrowserLink>
                 </Nav.Link> */}
-{/* 
+                {/* 
                 <Nav.Link className="nav-item link-nav button-nav">
                   <BrowserLink className=" text-white link-nav" onClick={scrollToBottom}>
                     <img className="img-small" src={email} />
@@ -220,19 +243,17 @@ const App = () => {
               </Nav>
             </Nav>
 
-          
-{/* 
+            {/* 
             <Calculator
               show_calc={show_calc}
               handleShow_calc={handleShow_calc}
               handleClose_calc={handleClose_calc}
             /> */}
-
-           </Container>
+          </Container>
         </Navbar>
         {/* <img  src={call} onClick={scrollToBottom} /> */}
         <img className="img-mail" src={mail} onClick={handleShowForm} />
-        <img  className="img-phone"  src={phone}  onClick={scrollToBottom} />
+        <img className="img-phone" src={phone} onClick={scrollToBottom} />
 
         <RequestForm
           show_form={show_form}
@@ -265,15 +286,19 @@ const App = () => {
           exact
           render={() => <Cooperation dataFindCar={dataFindCar} />}
         />
-    
+
         <Route
           exact
           path="/carDetails/:id"
           render={({ match }) => {
             console.log(match, data)
-            return <CarDetails
-              item={data.find((item) => String(item.id) === String(match.params.id))}
-            />
+            return (
+              <CarDetails
+                item={data.find(
+                  (item: any) => String(item.id) === String(match.params.id)
+                )}
+              />
+            )
           }}
         />
         <Route
@@ -282,7 +307,7 @@ const App = () => {
           render={({ match }) => (
             <CarDetailsAuction
               item={dataAuction.find(
-                (item) => String(item.id) === String(match.params.id)
+                (item: any) => String(item.id) === String(match.params.id)
               )}
             />
           )}
@@ -293,7 +318,9 @@ const App = () => {
           path="/catalog/:type"
           render={({ match }) => (
             <Catalog
-              filteredData={data.filter((item) => item.type === match.params.type)}
+              filteredData={data.filter(
+                (item) => item.type.toLowerCase() === match.params.type.toLowerCase()
+              )}
             />
           )}
         />
@@ -303,7 +330,7 @@ const App = () => {
           render={({ match }) => (
             <Auction
               dataAuction={dataAuction}
-              filteredData={data.filter((item) => item.type === match.params.type)}
+              // filteredData={data.filter((item: any) => item.type === match.params.type)}
             />
           )}
         />
@@ -312,7 +339,7 @@ const App = () => {
           exact
           component={() => <Auction dataAuction={dataAuction} />}
         />
-        <Route path="/profile" exact component={() => <Profile data={data} />} />
+        <Route path="/profile" exact component={() => <Profile />} />
         <Footer />
       </Router>
     </>
