@@ -164,6 +164,24 @@ const App = () => {
                   Мій кабінет
                 </BrowserLink>
               </Nav.Link>
+              {/* {!logged ? (
+            
+              ) : (
+                <>
+                  <Nav.Link className="nav-item link-nav button-nav">
+                    <BrowserLink to="/profile" className="text-white link-nav">
+                      <img className="img-small" src={person} />
+                      {localStorage.getItem('fullName')}
+                    </BrowserLink>
+                  </Nav.Link>
+                  <Nav.Link className=" nav-item link-nav button-nav">
+                    <BrowserLink to="/login" className=" text-white link-nav">
+                      <img className="img-small" src={person} onClick={handleOut} />
+                      Вийти
+                    </BrowserLink>
+                  </Nav.Link>
+                </>
+              )} */}
               {/* 
               {!logged ? (
                 <>
@@ -281,6 +299,7 @@ const App = () => {
         exact
         component={() => <Auction dataAuction={dataAuction} />}
       />
+
       <Route path="/profile" exact component={() => <Profile />} />
       <Footer />
     </Router>
