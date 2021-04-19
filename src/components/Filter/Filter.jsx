@@ -25,7 +25,7 @@ const Filter = ({ onSearch }) => {
             controlId="exampleForm.ControlSelect1"
             className="col-lg-3 col-md-12 col-sm-12"
           >
-            <Form.Label>Brand</Form.Label>
+            <Form.Label>Модель</Form.Label>
             <Select
               options={optionBrand}
               className="selectStyle optionStyle"
@@ -38,7 +38,7 @@ const Filter = ({ onSearch }) => {
             controlId="exampleForm.ControlSelect2"
             className="col-lg-3 col-md-12 col-sm-12"
           >
-            <Form.Label>Year</Form.Label>
+            <Form.Label>Рік</Form.Label>
             <CreatableSelect
               options={optionsYear}
               className="selectStyle optionStyle"
@@ -53,7 +53,7 @@ const Filter = ({ onSearch }) => {
             controlId="exampleForm.ControlSelect3"
             className="col-lg-3 col-md-12 col-sm-12"
           >
-            <Form.Label>Price, $</Form.Label>
+            <Form.Label>Ціна, $</Form.Label>
             <Select
               options={optionPrice}
               className="selectStyle optionStyle"

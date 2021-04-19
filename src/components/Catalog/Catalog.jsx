@@ -16,12 +16,13 @@ const Catalog = ({ data = [], filteredData = [] }) => {
       data.filter(
         (item) =>
           item.model.toLowerCase() === valueBrand.value.toLowerCase() &&
-          valueYear.map((i) => i.value).includes(item.year) &&
+          valueYear.map((i) => Number(i.value)).includes(Number(item.year)) &&
           valuePrice.startPrice <= Number(item.startingPrice) &&
           Number(item.startingPrice) <= valuePrice.endPrice
       )
     )
   }
+ 
 
   useEffect(() => {
     setData2(data)
