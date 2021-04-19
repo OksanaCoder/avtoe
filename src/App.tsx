@@ -158,12 +158,12 @@ const App = () => {
                   Купимо
                 </BrowserLink>
               </Nav.Link>
-              <Nav.Link className="nav-item link-nav button-nav">
+              {/* <Nav.Link className="nav-item link-nav button-nav">
                 <BrowserLink to="/profile" className="text-white link-nav">
                   <img className="img-small" src={person} />
                   Мій кабінет
                 </BrowserLink>
-              </Nav.Link>
+              </Nav.Link> */}
               {/* {!logged ? (
             
               ) : (
