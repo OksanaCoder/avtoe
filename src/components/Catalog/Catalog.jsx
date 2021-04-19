@@ -3,16 +3,19 @@ import './style.css'
 import CarItem from '../CarItem/CarItem'
 import Filter from '../Filter/Filter'
 import { Row, Container, Col } from 'react-bootstrap'
+import { useParams } from 'react-router-dom'
 
-const Catalog = ({ data = [], filteredData = [] }) => {
+const Catalog = ({ data = [] }) => {
+  const { type } = useParams()
+
   useLayoutEffect(() => {
     window.scrollTo(0, 0)
   })
 
-  const [data2, setData2] = useState([])
+  const [filteredData, setFilteredData] = useState([])
 
   const onSearch = (valueBrand, valueYear, valuePrice) => {
-    setData2(
+    setFilteredData(
       data.filter(
         (item) =>
           item.model.toLowerCase() === valueBrand.value.toLowerCase() &&
@@ -22,11 +25,12 @@ const Catalog = ({ data = [], filteredData = [] }) => {
       )
     )
   }
- 
 
   useEffect(() => {
-    setData2(data)
-  }, [data])
+    if (type) {
+      setFilteredData(data.filter((item) => item.type === type))
+    }
+  }, [type])
 
   return (
     <div>
@@ -50,7 +54,7 @@ const Catalog = ({ data = [], filteredData = [] }) => {
               </div>
             </Row>
             <Row>
-              {data2.map((item) => (
+              {filteredData.map((item) => (
                 <Col lg={4} md={6} sm={12}>
                   <CarItem filteredData={[item]} />
                 </Col>

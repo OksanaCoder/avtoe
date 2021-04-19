@@ -2,6 +2,6 @@
   "recommendations": [
     "esbenp.prettier-vscode",
     "EditorConfig.EditorConfig",
-    "vscode-icons-team.vscode-icons"
+    "dbaeumer.vscode-eslint"
   ]
 }

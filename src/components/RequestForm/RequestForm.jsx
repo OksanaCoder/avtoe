@@ -1,93 +1,74 @@
-import React, {  useState } from "react";
-import { Modal, Button, Form } from "react-bootstrap";
-import axios from "axios";
+import React, { useState } from 'react'
+import { Modal, Button, Form } from 'react-bootstrap'
+import axios from 'axios'
 import './style.css'
-import { Redirect } from 'react-router-dom';
-
+import { Redirect } from 'react-router-dom'
 
 const RequestForm = (props) => {
-  const [username, setUserName] = useState("");
-  const [phone, setPhone] = useState("");
-  const [comment, setModel] = useState("")
-  const [errors, setErrors] = useState("")
+  const [username, setUserName] = useState('')
+  const [phone, setPhone] = useState('')
+  const [comment, setModel] = useState('')
+  const [errors, setErrors] = useState('')
   const bodyMessage = `Имя: ${username}
                      
                        Сообщение: ${comment}  
                       
-                       Номер тел: ${phone}`;
+                       Номер тел: ${phone}`
   // return <div className="pre-line">{bodyMessage}</div>
-  
-  const API_URL = `https://api.telegram.org/bot1747833143:AAGmm2CnUrkYCyHIdVzEkgJVg2HfNUCba28/sendMessage?chat\_id=987210358&text=${bodyMessage}&parse\_mode=HTML`;
- 
+
+  const API_URL = `https://api.telegram.org/bot1747833143:AAGmm2CnUrkYCyHIdVzEkgJVg2HfNUCba28/sendMessage?chat\_id=987210358&text=${bodyMessage}&parse\_mode=HTML`
+
   // const chat_id = '987210358'
 
-  console.log(API_URL)
-
   const validate = (username, phone, comment) => {
+    if ((username.length === 0 || phone.length === 0, comment.length === 0)) {
+      errors.push('Поле повинно бути заповненим !')
+    }
 
-  
-    if (username.length === 0 || phone.length === 0, comment.length === 0) {
-      errors.push("Поле повинно бути заповненим !");
-    }
-  
     if (phone.length < 10) {
-      errors.push("Невірний формат телефону");
+      errors.push('Невірний формат телефону')
     }
-  
-    return errors;
+
+    return errors
   }
 
-  const data = (
-    username,
-    phone,
-    comment
-  ) => {
+  const data = (username, phone, comment) => {
     return axios.post(API_URL, {
       username,
       phone,
-      comment
-    });
-  };
+      comment,
+    })
+  }
   const handleSubmit = async (e) => {
-    e.preventDefault();
-    const succesregv = await data(
-      username,
-      phone,
-      comment
-    );
+    e.preventDefault()
+    const succesregv = await data(username, phone, comment)
     //form.current.validateAll()
     if (succesregv) {
-      alert("Заявка відправлена !");
+      alert('Заявка відправлена !')
       // props.handleClose1()
       //props.history.push("/");
-      return <Redirect to="/" />;
-
+      return <Redirect to="/" />
     } else {
-      console.log("Сталася помилка !");
+      console.log('Сталася помилка !')
     }
-  };
+  }
 
   const onChangeUsername = (e) => {
-    const username = e.target.value;
-    setUserName(username);
-  };
+    const username = e.target.value
+    setUserName(username)
+  }
   const onChangePhone = (e) => {
-    const phone = e.target.value;
-    setPhone
-    (phone);
-  };
+    const phone = e.target.value
+    setPhone(phone)
+  }
   const onChangeModel = (e) => {
-    const comment = e.target.value;
-    setModel(comment);
-  };
+    const comment = e.target.value
+    setModel(comment)
+  }
 
   return (
     <>
-      <Modal
-        show={props.show_form}
-        onHide={props.handleCloseForm}
-        className="login-form"
-      >
+      <Modal show={props.show_form} onHide={props.handleCloseForm} className="login-form">
         <Modal.Header closeButton>
           <Modal.Title>Залиште заявку</Modal.Title>
         </Modal.Header>
@@ -136,7 +117,7 @@ const RequestForm = (props) => {
               >
                 Відправити
               </Button>
-           
+
               {/* <Button
                 variant="primary"
                 className="btn-form grey-back"
@@ -149,7 +130,7 @@ const RequestForm = (props) => {
         </Modal.Body>
       </Modal>
     </>
-  );
+  )
 }
 
 export default RequestForm

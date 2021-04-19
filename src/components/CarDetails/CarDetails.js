@@ -12,7 +12,7 @@ import ModalContactUs from '../ModalContactUs/ModalContactUs'
 import { Redirect, useHistory } from 'react-router-dom'
 import io from 'socket.io-client'
 
-const CarDetails = ({ item = {}}) => {
+const CarDetails = ({ item = {} }) => {
   let socket = io.connect('http://localhost:4000', {
     query: {
       token:
@@ -82,26 +82,21 @@ const CarDetails = ({ item = {}}) => {
         <Row>
           <Col>
             <Carousel>
-          
-               <div>
+              <div>
                 <img src={item.image1} />
               </div>
-               <div>
+              <div>
                 <img src={item.image2} />
               </div>
-               <div>
+              <div>
                 <img src={item.image3} />
               </div>
-
             </Carousel>
-           
           </Col>
           <Col>
-           
-              <h4 style={{ fontWeight: 'bold' }} className="pl-3 mb-4">
-                {item.name}
-              </h4>
-           
+            <h4 style={{ fontWeight: 'bold' }} className="pl-3 mb-4">
+              {item.name}
+            </h4>
 
             <Row className="align-center mt-3">
               <Col className="center-items">
@@ -171,9 +166,6 @@ const CarDetails = ({ item = {}}) => {
             </Row>
 
             <ModalContactUs open={open} onHide={closeModal} closeModal={closeModal} />
-    
-             
-            
           </Col>
         </Row>
       </Container>

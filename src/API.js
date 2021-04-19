@@ -15,7 +15,6 @@ export const loginAPI = ({ password, email }) => {
           }),
         }
       )
-      console.log(response)
       resolve(response)
       localStorage.setItem('token', response.data.token)
       localStorage.setItem('user', response.config.data)
@@ -40,7 +39,6 @@ export const signUpAPI = ({ password, email, name, phoneNum }) => {
       )
 
       resolve(response)
-      console.log(response)
       localStorage.setItem('token', response.data.token)
       localStorage.setItem('user', response.config.data)
     } catch (err) {
