@@ -4,15 +4,20 @@ import CarItem from '../CarItem/CarItem'
 import Filter from '../Filter/Filter'
 import { Row, Container, Col } from 'react-bootstrap'
 import { useParams } from 'react-router-dom'
+import { CarType } from '../../types/appTypes'
 
-const Catalog = ({ data = [] }) => {
-  const { type } = useParams()
+type Props = {
+  data: CarType[]
+}
+
+const Catalog = ({ data = [] }: Props) => {
+  const { type } = useParams<{ type: string }>()
 
   useLayoutEffect(() => {
     window.scrollTo(0, 0)
   })
 
-  const [filteredData, setFilteredData] = useState([])
+  const [filteredData, setFilteredData] = useState<CarType[]>([])
 
   const onSearch = (valueBrand, valueYear, valuePrice) => {
     setFilteredData(

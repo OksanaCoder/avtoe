@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
-import { Form, Button, Col, Row } from 'react-bootstrap'
-import styles from './style.css'
+import { Form, Button, Row } from 'react-bootstrap'
+import './style.css'
 import Select from 'react-select'
 import CreatableSelect from 'react-select/creatable'
 import { optionPrice, optionBrand, optionsYear } from './FilterHelper'

@@ -14,7 +14,7 @@ import io from 'socket.io-client'
 
 const CarDetailsAuction = ({ item }) => {
   console.log(item, 'AUCTION ITEM')
-  let socket = io.connect('http://localhost:4000', {
+  let socket = io('http://localhost:4000', {
     query: {
       token:
         'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MDU1NWY2OTQ1NDQyNDEwM2NlYmRhODgiLCJpYXQiOjE2MTcyNDUxODB9.s3fOFjdiV3U2DqU3IlPx9ZVtV2PdC9S89_4mMH1Co9k',
@@ -58,7 +58,7 @@ const CarDetailsAuction = ({ item }) => {
   //        localStorage.getItem('logged')
   //     }
   // const [logged, setLogged] = useState(false)
-  const [bid, setBid] = useState(null)
+  const [bid, setBid] = useState<string>()
   const sendBid = () => {
     socket.emit('bidInAuction', {
       auctionId: '60656f7c18e1b936bc78f21f',
@@ -78,7 +78,7 @@ const CarDetailsAuction = ({ item }) => {
         <div className="p-5">
           <h5 className="blue-line"></h5>
           <h5 className="header-details">Деталі авто</h5>
-         <h6 className="mt-3">{item.name}</h6>
+          <h6 className="mt-3">{item.name}</h6>
         </div>
         <Row>
           <Col>
@@ -87,7 +87,7 @@ const CarDetailsAuction = ({ item }) => {
                 <img src={item.images[0]} />
               </div>
               <div>
-              <img src={item.images[1]} />
+                <img src={item.images[1]} />
               </div>
               <div>
                 <img src={item.images[2]} />
@@ -96,32 +96,29 @@ const CarDetailsAuction = ({ item }) => {
                 <img src={item.images[3]} />
               </div>
             </Carousel>
-           
-                <Row className="mt-1 row-modal">
-                  <Col> ID аукцiону:</Col>
-                  <Col>#{item.id}</Col>
-                </Row>
-                <Row className="mt-1 row-modal mb-4">
-                  <Col> До кiнця торгiв залишилось:</Col>
-                  <Col>{item.time}</Col>
-                </Row>
-                <Row className="mt-1 row-modal mb-4">
-                  <Col> Кiлькiсть ставок:</Col>
-                  <Col>{item.bids.length}</Col>
-                </Row>
-                <Row className="mt-4 pb-5 row-modal">
-                  <Col>Початкова ставка:</Col>
-                  <Col>{item.startPrice}</Col>
-                </Row>
-            
+
+            <Row className="mt-1 row-modal">
+              <Col> ID аукцiону:</Col>
+              <Col>#{item.id}</Col>
+            </Row>
+            <Row className="mt-1 row-modal mb-4">
+              <Col> До кiнця торгiв залишилось:</Col>
+              <Col>{item.time}</Col>
+            </Row>
+            <Row className="mt-1 row-modal mb-4">
+              <Col> Кiлькiсть ставок:</Col>
+              <Col>{item.bids.length}</Col>
+            </Row>
+            <Row className="mt-4 pb-5 row-modal">
+              <Col>Початкова ставка:</Col>
+              <Col>{item.startPrice}</Col>
+            </Row>
           </Col>
           <Col>
-        
-              <h4 style={{ fontWeight: 'bold' }} className="pl-3 mb-4">
-                Початкова ставка: $ {item.startingPrice}
-                {/* last bid */}
-              </h4>
-         
+            <h4 style={{ fontWeight: 'bold' }} className="pl-3 mb-4">
+              Початкова ставка: $ {item.startingPrice}
+              {/* last bid */}
+            </h4>
 
             <Row className="align-center mt-3">
               <Col className="center-items">
@@ -191,87 +188,88 @@ const CarDetailsAuction = ({ item }) => {
             </Row>
 
             <ModalContactUs open={open} onHide={closeModal} closeModal={closeModal} />
-          
-                <Row className="mt-4 pb-5 row-modal">
-                  <Col>
-                    ${' '}
-                    <input
-                      type="number"
-                      value={bid}
-                      onChange={(e) => setBid(e.target.value)}
-                    />
-                  </Col>
-                  <Col>
-                    {isLoggedIn.current ? (
-                      <>
-                        <button className="btn-item auction-btn-bet" onClick={sendBid}>
-                          Make a bid
-                        </button>
-                      </>
-                    ) : (
-                      <>
-                        <button className="btn-item auction-btn-bet" onClick={checkLog}>
-                          Make a bid
-                        </button>
-                      </>
-                    )}
-                  </Col>
-                </Row>
-           
-            
-          </Col>
-        </Row>
-       
-            <h5 className="p-5">Усі ставки</h5>
-          
-            <Row>
-              <Col>
-                <Table striped bordered hover>
-                  <thead>
-                    <tr>
-                      <th>Ставка, $</th>
-                      <th>Учасник</th>
-                      <th>Час</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {bid && isLoggedIn.current ? (
-                      <tr>
-                        <td className="current-bid">${bid}</td>
-                        <td className="current-bid">Your bid</td>
-                        <td className="current-bid">14:04:11</td>
-                      </tr>
-                    ) : (
-                      <tr>
-                        <td className="current-bid">$1700</td>
-                        <td className="current-bid">Mike</td>
-                        <td className="current-bid">14:04:11</td>
-                      </tr>
-                    )}
 
-                    <tr>
-                      <td>$3,000</td>
-                      <td>Mark</td>
-                      <td>14:04:11</td>
-                    </tr>
-                    <tr>
-                      <td>$3,000</td>
-                      <td>Mark</td>
-                      <td>14:04:11</td>
-                    </tr>
-                    <tr>
-                      <td>$3,000</td>
-                      <td>Mark</td>
-                      <td>14:04:11</td>
-                    </tr>
-                  </tbody>
-                  
-                </Table>
-                <div  style={{display: 'flex', alignItems: 'center'}} className='ml-2'>
-                   <div style={{width: '10px', height: '10px', background: '#056DFD'}} className='mr-2'></div><small>максимальна ставка</small>
-               </div>
+            <Row className="mt-4 pb-5 row-modal">
+              <Col>
+                ${' '}
+                <input
+                  type="number"
+                  value={bid}
+                  onChange={(e) => setBid(e.target.value)}
+                />
+              </Col>
+              <Col>
+                {isLoggedIn.current ? (
+                  <>
+                    <button className="btn-item auction-btn-bet" onClick={sendBid}>
+                      Make a bid
+                    </button>
+                  </>
+                ) : (
+                  <>
+                    <button className="btn-item auction-btn-bet" onClick={checkLog}>
+                      Make a bid
+                    </button>
+                  </>
+                )}
               </Col>
             </Row>
+          </Col>
+        </Row>
+
+        <h5 className="p-5">Усі ставки</h5>
+
+        <Row>
+          <Col>
+            <Table striped bordered hover>
+              <thead>
+                <tr>
+                  <th>Ставка, $</th>
+                  <th>Учасник</th>
+                  <th>Час</th>
+                </tr>
+              </thead>
+              <tbody>
+                {bid && isLoggedIn.current ? (
+                  <tr>
+                    <td className="current-bid">${bid}</td>
+                    <td className="current-bid">Your bid</td>
+                    <td className="current-bid">14:04:11</td>
+                  </tr>
+                ) : (
+                  <tr>
+                    <td className="current-bid">$1700</td>
+                    <td className="current-bid">Mike</td>
+                    <td className="current-bid">14:04:11</td>
+                  </tr>
+                )}
+
+                <tr>
+                  <td>$3,000</td>
+                  <td>Mark</td>
+                  <td>14:04:11</td>
+                </tr>
+                <tr>
+                  <td>$3,000</td>
+                  <td>Mark</td>
+                  <td>14:04:11</td>
+                </tr>
+                <tr>
+                  <td>$3,000</td>
+                  <td>Mark</td>
+                  <td>14:04:11</td>
+                </tr>
+              </tbody>
+            </Table>
+            <div style={{ display: 'flex', alignItems: 'center' }} className="ml-2">
+              <div
+                style={{ width: '10px', height: '10px', background: '#056DFD' }}
+                className="mr-2"
+              ></div>
+              <small>максимальна ставка</small>
+            </div>
+          </Col>
+        </Row>
       </Container>
     </>
   )

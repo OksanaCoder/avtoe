@@ -11,9 +11,14 @@ import hammer from '../../img/hammer-white.jpeg'
 import ModalContactUs from '../ModalContactUs/ModalContactUs'
 import { Redirect, useHistory } from 'react-router-dom'
 import io from 'socket.io-client'
+import { CarType } from '../../types/appTypes'
 
-const CarDetails = ({ item = {} }) => {
-  let socket = io.connect('http://localhost:4000', {
+type Props = {
+  item?: CarType
+}
+
+const CarDetails = ({ item = {} as CarType }: Props) => {
+  let socket = io('http://localhost:4000', {
     query: {
       token:
         'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MDU1NWY2OTQ1NDQyNDEwM2NlYmRhODgiLCJpYXQiOjE2MTcyNDUxODB9.s3fOFjdiV3U2DqU3IlPx9ZVtV2PdC9S89_4mMH1Co9k',

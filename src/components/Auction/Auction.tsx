@@ -5,13 +5,18 @@ import './style.css'
 import CarItemAuction from '../CarItemAuction/CarItemAuction'
 import Filter from '../Filter/Filter'
 import { Row, Container, Col } from 'react-bootstrap'
+import { CarType } from '../../types/appTypes'
 
-const Auction = ({ dataAuction = [] }) => {
+type Props = {
+  dataAuction: CarType[]
+}
+
+const Auction = ({ dataAuction = [] }: Props) => {
   useLayoutEffect(() => {
     window.scrollTo(0, 0)
   })
 
-  const [filteredData, setFilteredData] = useState([])
+  const [filteredData, setFilteredData] = useState<CarType[]>([])
 
   const onSearch = (valueBrand, valueYear, valuePrice) => {
     setFilteredData(

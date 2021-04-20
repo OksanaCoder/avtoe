@@ -8,7 +8,7 @@ const RequestForm = (props) => {
   const [username, setUserName] = useState('')
   const [phone, setPhone] = useState('')
   const [comment, setModel] = useState('')
-  const [errors, setErrors] = useState('')
+  const [errors, setErrors] = useState<string[]>([])
   const bodyMessage = `Имя: ${username}
                      
                        Сообщение: ${comment}  

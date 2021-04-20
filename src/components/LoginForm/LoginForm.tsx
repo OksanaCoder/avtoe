@@ -29,7 +29,7 @@ const LoginForm = ({ logged, setLogged }) => {
           // setUserName()
           // history.push('/auction')
           setLogged(true)
-          localStorage.setItem('logged', logged ? user : '')
+          localStorage.setItem('logged', logged ? JSON.stringify(user) : '')
         }
 
         return response.data

@@ -1,15 +1,21 @@
-import React, { useState } from 'react'
+import React from 'react'
 import './style.css'
 import imageCar from '../../img/ferrari.jpg'
 import icon_1 from '../../img/location.png'
 import icon_2 from '../../img/speedometer.png'
 import icon_3 from '../../img/petrol.png'
 import countdown from '../../img/time.svg'
-import { Col, Row, Container, Modal, Button, Form, Card } from 'react-bootstrap'
+import { Col, Row, Card } from 'react-bootstrap'
 import { Route, Link } from 'react-router-dom'
 import CarDetails from '../CarDetails/CarDetails'
+import { CarType } from '../../types/appTypes'
 
-const CarItem = ({ filteredData = [] }) => {
+type Props = {
+  data: CarType[]
+  filteredData: CarType[]
+}
+
+const CarItem = ({ filteredData = [] }: Props) => {
   console.log(filteredData, 'data in car item')
 
   return (
@@ -30,7 +36,11 @@ const CarItem = ({ filteredData = [] }) => {
 
                 {item.startingDate ? (
                   <h6 style={{ display: 'flex', alignItems: 'center' }}>
-                    <img src={countdown} className="mt-1 mr-2" fill="#fff" />
+                    <img
+                      src={countdown}
+                      className="mt-1 mr-2"
+                      // fill="#fff"
+                    />
                     {item.startingDate}
                   </h6>
                 ) : null}

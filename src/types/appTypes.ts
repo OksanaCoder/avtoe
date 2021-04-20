@@ -6,6 +6,7 @@ export type CarType = {
   name: string
   make: string
   model: string
+  startPrice: number
   startingPrice: number
   year: string
   fuel: string
@@ -21,4 +22,6 @@ export type CarType = {
   image1: string
   image2: string
   image3: string
+  startingDate: string
+  city: string
 }
