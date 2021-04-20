@@ -1,9 +1,8 @@
-import React, { useLayoutEffect, useState, useEffect } from 'react'
+import React, { useEffect, useLayoutEffect, useState } from 'react'
 import './style.css'
 import CarItem from '../CarItem/CarItem'
 import Filter from '../Filter/Filter'
 import { Row, Container, Col } from 'react-bootstrap'
-import { useParams } from 'react-router-dom'
 import { CarType } from '../../types/appTypes'
 
 type Props = {
@@ -11,13 +10,15 @@ type Props = {
 }
 
 const Catalog = ({ data = [] }: Props) => {
-  const { type } = useParams<{ type: string }>()
-
   useLayoutEffect(() => {
     window.scrollTo(0, 0)
   })
 
   const [filteredData, setFilteredData] = useState<CarType[]>([])
+
+  useEffect(() => {
+    setFilteredData(data)
+  }, [data])
 
   const onSearch = (valueBrand, valueYear, valuePrice) => {
     setFilteredData(
@@ -30,12 +31,6 @@ const Catalog = ({ data = [] }: Props) => {
       )
     )
   }
-
-  useEffect(() => {
-    if (type) {
-      setFilteredData(data.filter((item) => item.type === type))
-    }
-  }, [type])
 
   return (
     <div>

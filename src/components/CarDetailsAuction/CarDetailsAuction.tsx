@@ -9,17 +9,32 @@ import icon_2 from '../../img/speedometer.png'
 import icon_3 from '../../img/petrol.png'
 import hammer from '../../img/hammer-white.jpeg'
 import ModalContactUs from '../ModalContactUs/ModalContactUs'
-import { Redirect, useHistory } from 'react-router-dom'
+import { useHistory, useParams } from 'react-router-dom'
 import io from 'socket.io-client'
+import { CarType } from '../../types/appTypes'
 
-const CarDetailsAuction = ({ item }) => {
-  console.log(item, 'AUCTION ITEM')
+type Props = {
+  dataAuction: CarType[]
+}
+
+const CarDetailsAuction = ({ dataAuction = [] }: Props) => {
   let socket = io('http://localhost:4000', {
     query: {
       token:
         'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MDU1NWY2OTQ1NDQyNDEwM2NlYmRhODgiLCJpYXQiOjE2MTcyNDUxODB9.s3fOFjdiV3U2DqU3IlPx9ZVtV2PdC9S89_4mMH1Co9k',
     },
   })
+
+  const [item, setItem] = useState<CarType>({} as CarType)
+  const { id } = useParams<{ id: string }>()
+
+  useEffect(() => {
+    const found = dataAuction.find((item) => item.id === id)
+    if (found) {
+      setItem(found)
+    }
+  }, [id])
+
   useEffect(() => {
     socket.on('winner', function (data) {
       console.log(data)
@@ -58,6 +73,7 @@ const CarDetailsAuction = ({ item }) => {
   //        localStorage.getItem('logged')
   //     }
   // const [logged, setLogged] = useState(false)
+
   const [bid, setBid] = useState<string>()
   const sendBid = () => {
     socket.emit('bidInAuction', {
@@ -72,6 +88,7 @@ const CarDetailsAuction = ({ item }) => {
 
     //  return <Redirect to='/login'/>
   }
+
   return (
     <>
       <Container fluid className="pb-5">

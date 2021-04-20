@@ -9,15 +9,25 @@ import icon_2 from '../../img/speedometer.png'
 import icon_3 from '../../img/petrol.png'
 import hammer from '../../img/hammer-white.jpeg'
 import ModalContactUs from '../ModalContactUs/ModalContactUs'
-import { Redirect, useHistory } from 'react-router-dom'
+import { useHistory, useParams } from 'react-router-dom'
 import io from 'socket.io-client'
 import { CarType } from '../../types/appTypes'
 
 type Props = {
-  item?: CarType
+  data: CarType[]
 }
 
-const CarDetails = ({ item = {} as CarType }: Props) => {
+const CarDetails = ({ data = [] }: Props) => {
+  const [item, setItem] = useState<CarType>({} as CarType)
+  const { id } = useParams<{ id: string }>()
+
+  useEffect(() => {
+    const found = data.find((item) => item.id === id)
+    if (found) {
+      setItem(found)
+    }
+  }, [id])
+
   let socket = io('http://localhost:4000', {
     query: {
       token:

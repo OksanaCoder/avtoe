@@ -28,6 +28,7 @@ import { allAuctions, allCars, allAdvertisments } from './API'
 import CarDetailsAuction from './components/CarDetailsAuction/CarDetailsAuction'
 import classNames from 'classnames'
 import { CarType } from './types/appTypes'
+import CatalogByType from './components/Catalog/CatalogByType'
 
 const App = () => {
   // let socket = io.connect('http://localhost:4000', {
@@ -38,7 +39,7 @@ const App = () => {
   // })
 
   const [data, setData] = useState<CarType[]>([])
-  const [dataAuction, setDataAuction] = useState([])
+  const [dataAuction, setDataAuction] = useState<CarType[]>([])
   const [dataFindCar, setDataFindCar] = useState([])
   const [logged, setLogged] = useState(false)
   const myRef = useRef<any>(null)
@@ -219,8 +220,8 @@ const App = () => {
         </Container>
       </Navbar>
 
-      <img className="img-mail" src={mail} onClick={handleShowForm} />
-      <img className="img-phone" src={phone} onClick={scrollToBottom} />
+      <img className="img-mail" src={mail} onClick={handleShowForm} alt="mail" />
+      <img className="img-phone" src={phone} onClick={scrollToBottom} alt="phone" />
 
       <RequestForm
         show_form={show_form}
@@ -228,79 +229,57 @@ const App = () => {
         handleCloseForm={handleCloseForm}
       />
 
-      <Route
-        path="/login"
-        component={() => (
-          <LoginForm
-            logged={logged}
-            setLogged={(l) => {
-              setLogged(l)
-            }}
-          />
-        )}
-      />
+      <Route path="/login">
+        <LoginForm
+          logged={logged}
+          setLogged={(l) => {
+            setLogged(l)
+          }}
+        />
+      </Route>
 
-      <Route path="/register" component={SignUpForm} />
+      <Route path="/register">
+        <SignUpForm />
+      </Route>
 
-      <Route path="/" exact component={() => <Header reference={myRef} data={data} />} />
+      <Route path="/" exact>
+        <Header reference={myRef} data={data} />
+      </Route>
 
-      <Route path="/about" exact component={About} />
+      <Route path="/about" exact>
+        <About />
+      </Route>
 
-      <Route
-        path="/cooperation"
-        exact
-        component={() => <Cooperation dataFindCar={dataFindCar} />}
-      />
+      <Route path="/cooperation" exact>
+        <Cooperation dataFindCar={dataFindCar} />
+      </Route>
 
-      <Route
-        exact
-        path="/carDetails/:id"
-        component={({ match }) => {
-          return (
-            <CarDetails
-              item={data.find((item: any) => String(item.id) === String(match.params.id))}
-            />
-          )
-        }}
-      />
+      <Route exact path="/carDetails/:id">
+        <CarDetails data={data} />
+      </Route>
 
-      <Route
-        exact
-        path="/carDetailsAuction/:id"
-        component={({ match }) => (
-          <CarDetailsAuction
-            item={dataAuction.find(
-              (item: any) => String(item.id) === String(match.params.id)
-            )}
-          />
-        )}
-      />
+      <Route exact path="/carDetailsAuction/:id">
+        <CarDetailsAuction dataAuction={dataAuction} />
+      </Route>
 
       <Route path="/catalog" exact>
         <Catalog data={data} />
       </Route>
 
       <Route exact path="/catalog/:type">
-        <Catalog data={data} />
+        <CatalogByType data={data} />
       </Route>
 
-      <Route
-        exact
-        path="/auction/:type"
-        component={({ match }) => (
-          <Auction
-            dataAuction={dataAuction}
-            // filteredData={data.filter((item: any) => item.type === match.params.type)}
-          />
-        )}
-      />
-      <Route
-        path="/auction"
-        exact
-        component={() => <Auction dataAuction={dataAuction} />}
-      />
+      <Route exact path="/auction/:type">
+        <Auction dataAuction={dataAuction} />
+      </Route>
+      <Route path="/auction" exact>
+        <Auction dataAuction={dataAuction} />
+      </Route>
 
-      <Route path="/profile" exact component={() => <Profile />} />
+      <Route path="/profile" exact>
+        <Profile />
+      </Route>
       <Footer />
     </Router>
   )

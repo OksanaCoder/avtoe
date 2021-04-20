@@ -8,6 +8,7 @@ export type CarType = {
   model: string
   startPrice: number
   startingPrice: number
+  buyNowPrice: number
   year: string
   fuel: string
   odometer: number
@@ -24,4 +25,6 @@ export type CarType = {
   image3: string
   startingDate: string
   city: string
+  bids: Array<string | number>
+  time: string | number
 }
