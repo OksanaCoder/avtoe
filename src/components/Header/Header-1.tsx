@@ -143,23 +143,23 @@ const Header = ({ reference, data }) => {
 
         <Row className="text-center mt-5">
           <Col>
-            <Link to={`/catalog/PASSENGER`}>
-              <img src={img_4} className="white-fill mr-2" width="70px" />
+            <Link to={`/catalog/PASSENGER`} className="img-wrapper">
+              <img src={img_4} className="white-fill mr-2 ml-2" width="70px" />
             </Link>
 
-            <Link to={`/catalog/BIKE`}>
+            <Link to={`/catalog/BIKE`} className="img-wrapper">
               {' '}
               <img src={img_1} width="70px" className="white-fill mr-2" />
             </Link>
 
-            <Link to={`/catalog/SUV`}>
+            <Link to={`/catalog/SUV`} className="img-wrapper">
               {' '}
               <img src={img_2} width="70px" className="white-fill" />
             </Link>
 
-            <Link to={`/catalog/BUS`}>
+            <Link to={`/catalog/BUS`} className="img-wrapper">
               {' '}
-              <img src={img_3} width="70px" className="white-fill ml-2" />
+              <img src={img_3} width="70px" className="white-fill ml-1" />
             </Link>
           </Col>
         </Row>

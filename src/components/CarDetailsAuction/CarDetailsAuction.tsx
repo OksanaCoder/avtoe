@@ -100,7 +100,14 @@ const CarDetailsAuction = ({ dataAuction = [] }: Props) => {
         <Row>
           <Col>
             <Carousel>
-              <div>
+              {item.images.map((i) => {
+                return (
+                  <div>
+                    <img src={item.images[i]} />
+                  </div>
+                )
+              })}
+              {/* <div>
                 <img src={item.images[0]} />
               </div>
               <div>
@@ -111,7 +118,7 @@ const CarDetailsAuction = ({ dataAuction = [] }: Props) => {
               </div>
               <div>
                 <img src={item.images[3]} />
-              </div>
+              </div> */}
             </Carousel>
 
             <Row className="mt-1 row-modal">
@@ -134,7 +141,6 @@ const CarDetailsAuction = ({ dataAuction = [] }: Props) => {
           <Col>
             <h4 style={{ fontWeight: 'bold' }} className="pl-3 mb-4">
               Початкова ставка: $ {item.startingPrice}
-              {/* last bid */}
             </h4>
 
             <Row className="align-center mt-3">

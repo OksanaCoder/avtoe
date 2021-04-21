@@ -20,12 +20,19 @@
   }
 }
 @media (max-width: 500px) {
-  .middle-img {
-    margin-top: 20px;
+  .img-bank {
+    margin-top: 50px;
   }
+  .first {
+    margin-bottom: 60px !important;
+  }
+  /* .middle-img {
+    margin-top: 50px;
+  } */
 
   .img-bank:last-child {
     width: 100px;
+    margin-bottom: 40px;
   }
 
   .last {

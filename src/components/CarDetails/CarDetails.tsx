@@ -88,7 +88,7 @@ const CarDetails = ({ data = [] }: Props) => {
   }
   return (
     <>
-      <Container fluid className="pb-5">
+      <Container fluid className="pb-5 mb-5">
         <div className="p-5">
           <h5 className="blue-line"></h5>
           <h5 className="header-details">Деталі авто</h5>
@@ -97,15 +97,34 @@ const CarDetails = ({ data = [] }: Props) => {
         <Row>
           <Col>
             <Carousel>
-              <div>
-                <img src={item.image1} />
-              </div>
-              <div>
-                <img src={item.image2} />
-              </div>
-              <div>
-                <img src={item.image3} />
-              </div>
+              {item.image1 ? (
+                <div>
+                  <img src={item.image1} />
+                </div>
+              ) : (
+                <div>
+                  <img src={imageCar} />
+                </div>
+              )}
+
+              {item.image2 ? (
+                <div>
+                  <img src={item.image2} />
+                </div>
+              ) : (
+                <div>
+                  <img src={imageCar} />
+                </div>
+              )}
+              {item.image3 ? (
+                <div>
+                  <img src={item.image3} />
+                </div>
+              ) : (
+                <div>
+                  <img src={imageCar} />
+                </div>
+              )}
             </Carousel>
           </Col>
           <Col>
