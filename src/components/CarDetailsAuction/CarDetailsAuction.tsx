@@ -25,7 +25,7 @@ const CarDetailsAuction = ({ dataAuction = [] }: Props) => {
     },
   })
 
-  const [item, setItem] = useState<CarType>({} as CarType)
+  const [item, setItem] = useState<CarType>()
   const { id } = useParams<{ id: string }>()
 
   useEffect(() => {
@@ -54,7 +54,6 @@ const CarDetailsAuction = ({ dataAuction = [] }: Props) => {
     })
   })
   const isLoggedIn = useRef(localStorage.getItem('token'))
-  console.log(item, ' for car details')
 
   const [open, setOpenModal] = useState(false)
   const history = useHistory()
@@ -85,8 +84,6 @@ const CarDetailsAuction = ({ dataAuction = [] }: Props) => {
   const checkLog = () => {
     alert('Please, log in !')
     history.push('/login')
-
-    //  return <Redirect to='/login'/>
   }
 
   return (
@@ -95,12 +92,12 @@ const CarDetailsAuction = ({ dataAuction = [] }: Props) => {
         <div className="p-5">
           <h5 className="blue-line"></h5>
           <h5 className="header-details">Деталі авто</h5>
-          <h6 className="mt-3">{item.name}</h6>
+          <h6 className="mt-3">{item?.name}</h6>
         </div>
         <Row>
           <Col>
             <Carousel>
-              {item.images.map((i) => {
+              {item?.images.map((i) => {
                 return (
                   <div>
                     <img src={item.images[i]} />
@@ -123,67 +120,67 @@ const CarDetailsAuction = ({ dataAuction = [] }: Props) => {
 
             <Row className="mt-1 row-modal">
               <Col> ID аукцiону:</Col>
-              <Col>#{item.id}</Col>
+              <Col>#{item?.id}</Col>
             </Row>
             <Row className="mt-1 row-modal mb-4">
               <Col> До кiнця торгiв залишилось:</Col>
-              <Col>{item.time}</Col>
+              <Col>{item?.time}</Col>
             </Row>
             <Row className="mt-1 row-modal mb-4">
               <Col> Кiлькiсть ставок:</Col>
-              <Col>{item.bids.length}</Col>
+              <Col>{item?.bids.length}</Col>
             </Row>
             <Row className="mt-4 pb-5 row-modal">
               <Col>Початкова ставка:</Col>
-              <Col>{item.startPrice}</Col>
+              <Col>{item?.startPrice}</Col>
             </Row>
           </Col>
           <Col>
             <h4 style={{ fontWeight: 'bold' }} className="pl-3 mb-4">
-              Початкова ставка: $ {item.startingPrice}
+              Початкова ставка: $ {item?.startingPrice}
             </h4>
 
             <Row className="align-center mt-3">
               <Col className="center-items">
                 <img src={icon_2} className="icon-small" />
-                {item.odometer} тис. км
+                {item?.odometer} тис. км
               </Col>
               <Col className="center-items">
                 <img src={icon_1} className="icon-small" />
-                {item.city}
+                {item?.city}
                 Київ
               </Col>
             </Row>
             <Row className="align-center mb-3">
               <Col className="center-items">
                 <img src={icon_3} className="icon-small" />
-                {item.fuel}
+                {item?.fuel}
               </Col>
               <Col className="center-items">
                 <small className="a-icon">A</small>
-                {item.drive}
+                {item?.drive}
               </Col>
             </Row>
 
             <Row className="mt-4 row-modal">
               <Col> Рік випуску:</Col>
-              <Col> {item.year}</Col>
+              <Col> {item?.year}</Col>
             </Row>
             <Row className="mt-1 row-modal">
               <Col> Привід:</Col>
-              <Col> {item.drive}</Col>
+              <Col> {item?.drive}</Col>
             </Row>
             <Row className="mt-1 row-modal">
               <Col> Колір:</Col>
-              <Col> {item.color}</Col>
+              <Col> {item?.color}</Col>
             </Row>
             <Row className="mt-1 row-modal">
               <Col>Опис:</Col>
-              <Col>{item.description}</Col>
+              <Col>{item?.description}</Col>
             </Row>
             <Row className="mt-1 row-modal">
               <Col> Додаткова інформація:</Col>
-              <Col> {item.extraInfo}</Col>
+              <Col> {item?.extraInfo}</Col>
             </Row>
             <Row className="mt-1 row-modal">
               <Col> Контакти:</Col>
@@ -201,7 +198,7 @@ const CarDetailsAuction = ({ dataAuction = [] }: Props) => {
             </Row>
             <Row className="align-center mt-4">
               <Col>
-                <small className="price-details">$ {item.buyNowPrice}</small>
+                <small className="price-details">$ {item?.buyNowPrice}</small>
               </Col>
               <Col>
                 <button className="btn-item buy-now" onClick={openModal}>
