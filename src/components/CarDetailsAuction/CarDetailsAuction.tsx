@@ -33,7 +33,7 @@ const CarDetailsAuction = ({ dataAuction = [] }: Props) => {
     if (found) {
       setItem(found)
     }
-  }, [id])
+  }, [id, dataAuction])
 
   useEffect(() => {
     socket.on('winner', function (data) {
