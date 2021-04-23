@@ -84,7 +84,10 @@ const CarItemAuction = ({ dataAuction = [] }: Props) => {
                   >
                     Деталі
                   </Link>
-                  <button className="btn-item" style={{ padding: '5px 50px' }}>
+                  <button
+                    className="btn-item"
+                    style={{ padding: '5px 50px', background: '#fff' }}
+                  >
                     <img src={hammer} alt="bid" width="20" />
                   </button>
                 </div>

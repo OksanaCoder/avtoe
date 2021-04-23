@@ -72,37 +72,17 @@ const CarItem = ({ filteredData = [] }: Props) => {
                     </Row>
                   </>
                 )}
-                {/* </Col>
-                                </Row>  */}
-                <div className="display-flex mt-3">
-                  {/* <button  className='btn-item auction-btn mr-' onClick={handleShow_details}>Детальніше</button> */}
-                  {/* <button  className='btn-item auction-btn mr-2' onClick={showDetails}>Details</button> */}
+
+                <div className="display-flex mt-4">
                   <Link
                     className="btn-item auction-btn mr-2"
                     to={`/carDetails/${item.id}`}
                   >
                     Більше
                   </Link>
-
-                  {/* <Col> <button className='btn-item buy-now'>Детальніше</button></Col> */}
-                  {/* <button  className='btn-item swap-btn mt-3' onClick={handleShow_4}>Запропонувати торг</button> */}
-
-                  {/* <button  className='btn-item swap-btn mt-3' onClick={handleShow_4}>Suggest a price</button> */}
-
-                  {/* <button  className='btn-item auction-btn mt-3'>Зробити ставку</button> */}
                 </div>
-
-                {/* details modal */}
-                {/* <ModalDetails data={data} show_details={show_details} handleShow_details={handleShow_details} handleClose_details={handleClose_details} /> */}
               </Card.Body>
             </Card>
-
-            {/* <Route
-                                    exact path={`/carDetails/:id`}
-                                    render={({match}) => (
-                                    <CarDetails item={data.find(item => item.id === +match.params.id)}/>
-                                    )}
-                                    /> */}
           </>
         )
       })}
