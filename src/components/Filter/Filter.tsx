@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Form, Button, Row } from 'react-bootstrap'
 import './style.css'
+import search from '../../img/search.svg'
 import Select from 'react-select'
 import CreatableSelect from 'react-select/creatable'
 import { optionPrice, optionBrand, optionsYear } from './FilterHelper'
@@ -70,7 +71,7 @@ const Filter = ({ onSearch }) => {
 
           <div className="text-center col-lg-3 col-md-12 col-sm-12">
             <Button className="btn-search" onClick={handleSearch}>
-              Search
+              <img src={search} alt="search" width="20" />
             </Button>
           </div>
         </Row>

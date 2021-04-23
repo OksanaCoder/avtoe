@@ -10,7 +10,7 @@ import './components/NavBar/style.css'
 import person from './img/person.svg'
 import mail from './img/mail.png'
 import phone from './img/phone.png'
-import search from './img/search.svg'
+import search_black from './img/search-black.svg'
 import read from './img/read.svg'
 import cart from './img/cart.svg'
 import hammer from './img/hammer.svg'
@@ -155,7 +155,7 @@ const App = () => {
 
               <Nav.Link className="nav-item text-white link-nav button-nav">
                 <BrowserLink to="/cooperation" className=" text-white link-nav">
-                  <img className="img-small" src={search} />
+                  <img className="img-small" src={search_black} />
                   Купимо
                 </BrowserLink>
               </Nav.Link>

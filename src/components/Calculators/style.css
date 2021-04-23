@@ -5,6 +5,10 @@
   width: 50%;
   text-align: center;
 }
+.img-bank-small {
+  width: 30%;
+  text-align: center;
+}
 .row-calcs {
   display: flex;
   justify-content: space-between;

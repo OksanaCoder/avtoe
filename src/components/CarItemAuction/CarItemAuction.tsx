@@ -5,6 +5,7 @@ import icon_1 from '../../img/location.png'
 import icon_2 from '../../img/speedometer.png'
 import icon_3 from '../../img/petrol.png'
 import icon_4 from '../../img/icon_4.png'
+import hammer from '../../img/hammer.svg'
 import countdown from '../../img/time.svg'
 import Moment from 'react-moment'
 import { Col, Row, Card } from 'react-bootstrap'
@@ -76,13 +77,16 @@ const CarItemAuction = ({ dataAuction = [] }: Props) => {
                   </Row>
                 </div>
 
-                <div className="display-flex mt-3">
+                <div className="display-flex justify-content-between mt-3 align-center">
                   <Link
                     className="btn-item auction-btn mr-2"
                     to={`/carDetailsAuction/${item.id}`}
                   >
                     Деталі
                   </Link>
+                  <button className="btn-item" style={{ padding: '5px 50px' }}>
+                    <img src={hammer} alt="bid" width="20" />
+                  </button>
                 </div>
               </Card.Body>
             </Card>

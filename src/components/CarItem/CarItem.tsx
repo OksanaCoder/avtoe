@@ -37,11 +37,7 @@ const CarItem = ({ filteredData = [] }: Props) => {
 
                 {item.startingDate ? (
                   <h6 style={{ display: 'flex', alignItems: 'center' }}>
-                    <img
-                      src={countdown}
-                      className="mt-1 mr-2"
-                      // fill="#fff"
-                    />
+                    <img src={countdown} className="mt-1 mr-2" />
                     {item.startingDate}
                   </h6>
                 ) : null}
@@ -55,22 +51,22 @@ const CarItem = ({ filteredData = [] }: Props) => {
                   <>
                     <Row className="align-center">
                       <Col lg={6} md={6} sm={6} xs={6} className="center-items">
-                        <img src={icon_2} className="white-icon" />
+                        <img src={icon_2} className="white-icon invert-white" />
                         {item.odometer} тыс. км
                       </Col>
                       <Col lg={6} md={6} sm={6} xs={6} className="center-items">
-                        <img src={icon_1} className="icon-small" />
+                        <img src={icon_1} className="icon-small invert-white" />
                         {/* {item.city} */}
                         Киев
                       </Col>
                     </Row>
                     <Row className="align-center">
                       <Col lg={6} md={6} sm={6} xs={6} className="center-items">
-                        <img src={icon_3} className="icon-small" />
+                        <img src={icon_3} className="icon-small invert-white" />
                         {item.fuel}
                       </Col>
                       <Col lg={6} md={6} sm={6} xs={6} className="center-items">
-                        <img src={icon_4} className="icon-small" />
+                        <img src={icon_4} className="icon-small invert-white" />
                         {item.drive}
                       </Col>
                     </Row>
