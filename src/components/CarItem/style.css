@@ -1,127 +1,127 @@
 .btn-item {
-    border-radius: 20px;
-    border: none;
-    -webkit-box-shadow: 0px 3px 8px 0px rgba(0, 0, 0, 0.2);
-    -moz-box-shadow: 0px 3px 8px 0px rgba(0, 0, 0, 0.2);
-    box-shadow: 0px 3px 8px 0px rgba(0, 0, 1, 0.2);
-    color: #fff;
-    font-weight: bold;
-    font-size: 12px;
+  border-radius: 20px;
+  border: none;
+  -webkit-box-shadow: 0px 3px 8px 0px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0px 3px 8px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 3px 8px 0px rgba(0, 0, 1, 0.2);
+  color: #fff;
+  font-weight: bold;
+  font-size: 12px;
 }
 
-.buy-now  {
-    background-color: #fff;
-    color: #000;
-    padding: 5px 45px;
+.buy-now {
+  background-color: #fff;
+  color: #000;
+  padding: 5px 45px;
 }
 .swap-btn {
-    background-color: #62A6A4;
-    padding: 5px 20px;
-    color: #fff;
+  background-color: #62a6a4;
+  padding: 5px 20px;
+  color: #fff;
 }
 .auction-btn {
-    background-color: #076DFD;
-    padding: 5px 40px;
+  background-color: #076dfd;
+  padding: 5px 40px;
+  color: #fff !important;
 }
 .auction-btn:hover {
-    color: #fff !important;
-    text-decoration: none;
+  color: #000 !important;
+  text-decoration: none;
 }
 .auction-btn-bet {
-    color: #ffffff;
-    padding: 5px 40px;
-    background: #000;
+  color: #ffffff;
+  padding: 5px 40px;
+  background: #000;
 }
 .price-input {
-    border: 1px solid #8E8E8E;
-    background: #EDEDED;
-    border-radius: 5px;
-    /* padding: 2px 10px; */
-    text-align: center;
-    margin-top: 10px;
+  border: 1px solid #8e8e8e;
+  background: #ededed;
+  border-radius: 5px;
+  /* padding: 2px 10px; */
+  text-align: center;
+  margin-top: 10px;
 }
 .a-icon {
-    border: 2px solid #000;
-    border-radius: 50%;
-    padding: 2px 7px;
-    margin-right: 10px;
-    color: #000;
-    font-weight: bold;
-    font-size: 10px;
+  border: 2px solid #000;
+  border-radius: 50%;
+  padding: 2px 7px;
+  margin-right: 10px;
+  color: #000;
+  font-weight: bold;
+  font-size: 10px;
 }
-.icon-small{ 
-    width: 22px;
-    margin-right: 10px;
+.icon-small {
+  width: 22px;
+  margin-right: 10px;
 }
 .center-items {
-    display : flex;
-    align-items: center;
-    
+  display: flex;
+  align-items: center;
 }
 .float-pos {
-    display: flex;
-    justify-content: flex-start;
+  display: flex;
+  justify-content: flex-start;
 }
 .price-p {
-    width: 40%;
-    border: 1px solid #B6B6B6;
-    border-radius:  4px !important;
+  width: 40%;
+  border: 1px solid #b6b6b6;
+  border-radius: 4px !important;
 }
 .tel {
-    color: #E24800;
+  color: #e24800;
 }
 .flex-pos {
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 }
 
 .flex-end {
-    display: flex;
-    justify-content: flex-end;
+  display: flex;
+  justify-content: flex-end;
 }
 .btn-bid {
-    border-radius: 20px !important;
-    font-weight: 700 !important;
-    font-size: 15px !important;
+  border-radius: 20px !important;
+  font-weight: 700 !important;
+  font-size: 15px !important;
 }
-button.btn-bid.btn.btn-primary{
-    padding: 5px 35px !important;
+button.btn-bid.btn.btn-primary {
+  padding: 5px 35px !important;
 }
 .border-style {
-    border-radius: 10px !important;
+  border-radius: 10px !important;
 }
 .align-center {
-    align-items: center;
+  align-items: center;
 }
 .start-price {
-   font-size: 13px;
+  font-size: 13px;
 }
 .start-price {
-    font-weight: bold;
+  font-weight: bold;
 }
 .btns-flex {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 }
 .car-item-style {
-    border: none;
-    border-radius: 10px;
-    padding: 20px;
-    box-shadow: 0 0px 40px 5px #2f2c2b;
+  border: none;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 0px 40px 5px #2f2c2b;
 }
 .row {
-    margin-right: 0 !important;
-    margin-left: 0 !important;
+  margin-right: 0 !important;
+  margin-left: 0 !important;
 }
-@media ( max-width: 500px) {
-    div.col-lg-3.col-md-6.col-sm-12 {
-        padding: 0 !important;
-    }
-    div.car-item-style.align-center.row {
-        padding: 0 !important;
-    }
-    /* .card-style {
+@media (max-width: 500px) {
+  div.col-lg-3.col-md-6.col-sm-12 {
+    padding: 0 !important;
+  }
+  div.car-item-style.align-center.row {
+    padding: 0 !important;
+  }
+  /* .card-style {
         padding: 0 !important;
     } */
 }

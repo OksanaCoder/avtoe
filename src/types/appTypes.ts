@@ -27,4 +27,5 @@ export type CarType = {
   city: string
   bids: Array<string | number>
   time: string | number
+  status: boolean
 }

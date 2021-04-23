@@ -1,0 +1,32 @@
+.active-auction {
+  content: '';
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: green;
+}
+
+.inactive-auction {
+  content: '';
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: red;
+}
+
+.flex-col-row {
+  display: flex;
+  flex-direction: column;
+}
+.img-feature {
+  position: relative;
+}
+.bottom-img {
+  width: 50%;
+  height: 30px;
+  background-color: #f7ba04;
+  position: absolute;
+  padding: 0 0 0 10px;
+  top: 200px;
+  box-shadow: 3px 3px 6px 1px #000;
+}
