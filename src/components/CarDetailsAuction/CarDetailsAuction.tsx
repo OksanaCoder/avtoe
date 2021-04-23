@@ -7,7 +7,8 @@ import './style.css'
 import icon_1 from '../../img/location.png'
 import icon_2 from '../../img/speedometer.png'
 import icon_3 from '../../img/petrol.png'
-import hammer from '../../img/hammer-white.jpeg'
+import icon_4 from '../../img/icon_4.png'
+import Moment from 'react-moment'
 import ModalContactUs from '../ModalContactUs/ModalContactUs'
 import { useHistory, useParams } from 'react-router-dom'
 import io from 'socket.io-client'
@@ -66,13 +67,6 @@ const CarDetailsAuction = ({ dataAuction = [] }: Props) => {
   const closeModal = () => {
     setOpenModal(false)
   }
-
-  //    const checkUser = () => {
-  //        localStorage.getItem('user')
-  //        localStorage.getItem('logged')
-  //     }
-  // const [logged, setLogged] = useState(false)
-
   const [bid, setBid] = useState<string>()
   const sendBid = () => {
     socket.emit('bidInAuction', {
@@ -81,9 +75,13 @@ const CarDetailsAuction = ({ dataAuction = [] }: Props) => {
     })
     console.log(`your bid is ${bid}`)
   }
+  // const checkLog = () => {
+  //   alert('Please, log in !')
+  //   history.push('/login')
+  // }
   const checkLog = () => {
-    alert('Please, log in !')
-    history.push('/login')
+    alert('Завантажуй додаток !')
+    //поставить ссилку на apps store
   }
 
   return (
@@ -97,48 +95,46 @@ const CarDetailsAuction = ({ dataAuction = [] }: Props) => {
         <Row>
           <Col>
             <Carousel>
-              {item?.images.map((i) => {
-                return (
-                  <div>
-                    <img src={item.images[i]} />
-                  </div>
-                )
-              })}
-              {/* <div>
-                <img src={item.images[0]} />
+              <div>
+                <img src={item?.images[0]} />
               </div>
               <div>
-                <img src={item.images[1]} />
+                <img src={item?.images[1]} />
               </div>
               <div>
-                <img src={item.images[2]} />
+                <img src={item?.images[2]} />
               </div>
               <div>
-                <img src={item.images[3]} />
-              </div> */}
+                <img src={item?.images[3]} />
+              </div>
             </Carousel>
 
             <Row className="mt-1 row-modal">
               <Col> ID аукцiону:</Col>
               <Col>#{item?.id}</Col>
             </Row>
-            <Row className="mt-1 row-modal mb-4">
-              <Col> До кiнця торгiв залишилось:</Col>
-              <Col>{item?.time}</Col>
-            </Row>
-            <Row className="mt-1 row-modal mb-4">
-              <Col> Кiлькiсть ставок:</Col>
-              <Col>{item?.bids.length}</Col>
-            </Row>
-            <Row className="mt-4 pb-5 row-modal">
-              <Col>Початкова ставка:</Col>
-              <Col>{item?.startPrice}</Col>
+            <Row className="mt-1 row-modal">
+              <Col> Дата старту:</Col>
+              <Col>
+                <Moment format="DD/MM/YYYY HH:mm" style={{ fontWeight: 700 }}>
+                  {item?.startingDate}
+                </Moment>
+              </Col>
             </Row>
           </Col>
           <Col>
-            <h4 style={{ fontWeight: 'bold' }} className="pl-3 mb-4">
-              Початкова ставка: $ {item?.startingPrice}
+            <h4 style={{ fontWeight: 'bold' }} className="pl-3">
+              Початкова ставка:{' '}
+              <small className="price-details-small border-dark">
+                $ {item?.startingPrice}
+              </small>
             </h4>
+            <h5 style={{ fontWeight: 'bold' }} className="pl-3 mb-4">
+              Ціна викупу:{' '}
+              <small className="price-details-small border-dark">
+                $ {item?.buyNowPrice}
+              </small>
+            </h5>
 
             <Row className="align-center mt-3">
               <Col className="center-items">
@@ -157,7 +153,7 @@ const CarDetailsAuction = ({ dataAuction = [] }: Props) => {
                 {item?.fuel}
               </Col>
               <Col className="center-items">
-                <small className="a-icon">A</small>
+                <img src={icon_4} className="icon-small" />
                 {item?.drive}
               </Col>
             </Row>
@@ -196,98 +192,20 @@ const CarDetailsAuction = ({ dataAuction = [] }: Props) => {
               <Col> Де ми знаходимось ?</Col>
               <Col>Київ, проспект Степана Бандери, 13</Col>
             </Row>
-            <Row className="align-center mt-4">
-              <Col>
-                <small className="price-details">$ {item?.buyNowPrice}</small>
-              </Col>
+            <Row className="align-center mt-4 mb-5">
               <Col>
                 <button className="btn-item buy-now" onClick={openModal}>
-                  Buy now
+                  Викупити
+                </button>
+              </Col>
+              <Col>
+                <button className="btn-item auction-btn-bet" onClick={checkLog}>
+                  Поставити ставку
                 </button>
               </Col>
             </Row>
 
             <ModalContactUs open={open} onHide={closeModal} closeModal={closeModal} />
-
-            <Row className="mt-4 pb-5 row-modal">
-              <Col>
-                ${' '}
-                <input
-                  type="number"
-                  value={bid}
-                  onChange={(e) => setBid(e.target.value)}
-                />
-              </Col>
-              <Col>
-                {isLoggedIn.current ? (
-                  <>
-                    <button className="btn-item auction-btn-bet" onClick={sendBid}>
-                      Make a bid
-                    </button>
-                  </>
-                ) : (
-                  <>
-                    <button className="btn-item auction-btn-bet" onClick={checkLog}>
-                      Make a bid
-                    </button>
-                  </>
-                )}
-              </Col>
-            </Row>
-          </Col>
-        </Row>
-
-        <h5 className="p-5">Усі ставки</h5>
-
-        <Row>
-          <Col>
-            <Table striped bordered hover>
-              <thead>
-                <tr>
-                  <th>Ставка, $</th>
-                  <th>Учасник</th>
-                  <th>Час</th>
-                </tr>
-              </thead>
-              <tbody>
-                {bid && isLoggedIn.current ? (
-                  <tr>
-                    <td className="current-bid">${bid}</td>
-                    <td className="current-bid">Your bid</td>
-                    <td className="current-bid">14:04:11</td>
-                  </tr>
-                ) : (
-                  <tr>
-                    <td className="current-bid">$1700</td>
-                    <td className="current-bid">Mike</td>
-                    <td className="current-bid">14:04:11</td>
-                  </tr>
-                )}
-
-                <tr>
-                  <td>$3,000</td>
-                  <td>Mark</td>
-                  <td>14:04:11</td>
-                </tr>
-                <tr>
-                  <td>$3,000</td>
-                  <td>Mark</td>
-                  <td>14:04:11</td>
-                </tr>
-                <tr>
-                  <td>$3,000</td>
-                  <td>Mark</td>
-                  <td>14:04:11</td>
-                </tr>
-              </tbody>
-            </Table>
-            <div style={{ display: 'flex', alignItems: 'center' }} className="ml-2">
-              <div
-                style={{ width: '10px', height: '10px', background: '#056DFD' }}
-                className="mr-2"
-              ></div>
-              <small>максимальна ставка</small>
-            </div>
           </Col>
         </Row>
       </Container>

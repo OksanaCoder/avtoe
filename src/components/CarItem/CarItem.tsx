@@ -4,6 +4,7 @@ import imageCar from '../../img/ferrari.jpg'
 import icon_1 from '../../img/location.png'
 import icon_2 from '../../img/speedometer.png'
 import icon_3 from '../../img/petrol.png'
+import icon_4 from '../../img/icon_4.png'
 import countdown from '../../img/time.svg'
 import { Col, Row, Card } from 'react-bootstrap'
 import { Route, Link } from 'react-router-dom'
@@ -69,7 +70,7 @@ const CarItem = ({ filteredData = [] }: Props) => {
                         {item.fuel}
                       </Col>
                       <Col lg={6} md={6} sm={6} xs={6} className="center-items">
-                        <small className="a-icon-1">A</small>
+                        <img src={icon_4} className="icon-small" />
                         {item.drive}
                       </Col>
                     </Row>

@@ -1,0 +1,8 @@
+.price-details-small {
+  color: #0e32ff;
+  font-weight: bold;
+  /* font-size: 30px; */
+}
+.border-dark {
+  border-bottom: 1px solid #0e32ff !important;
+}

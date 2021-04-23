@@ -7,7 +7,7 @@ import './style.css'
 import icon_1 from '../../img/location.png'
 import icon_2 from '../../img/speedometer.png'
 import icon_3 from '../../img/petrol.png'
-import hammer from '../../img/hammer-white.jpeg'
+import icon_4 from '../../img/icon_4.png'
 import ModalContactUs from '../ModalContactUs/ModalContactUs'
 import { useHistory, useParams } from 'react-router-dom'
 import io from 'socket.io-client'
@@ -134,22 +134,23 @@ const CarDetails = ({ data = [] }: Props) => {
 
             <Row className="align-center mt-3">
               <Col className="center-items">
-                <img src={icon_2} className="icon-small" />
+                <img src={icon_2} className="icon-small" alt="odometer" />
                 {item.odometer} тис. км
               </Col>
               <Col className="center-items">
-                <img src={icon_1} className="icon-small" />
+                <img src={icon_1} className="icon-small" alt="city" />
                 {item.city}
                 Київ
               </Col>
             </Row>
             <Row className="align-center mb-3">
               <Col className="center-items">
-                <img src={icon_3} className="icon-small" />
+                <img src={icon_3} className="icon-small" alt="fuel" />
                 {item.fuel}
               </Col>
+
               <Col className="center-items">
-                <small className="a-icon">A</small>
+                <img src={icon_4} className="icon-small" alt="type drive" />
                 {item.drive}
               </Col>
             </Row>
@@ -194,7 +195,7 @@ const CarDetails = ({ data = [] }: Props) => {
               </Col>
               <Col>
                 <button className="btn-item buy-now" onClick={openModal}>
-                  Buy now
+                  Викупити
                 </button>
               </Col>
             </Row>
