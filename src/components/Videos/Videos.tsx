@@ -6,11 +6,11 @@ const Videos = () => {
     <>
       <Container fluid className="p-5">
         <div className="heading-style col-lg-12 col-md-12 col-sm-12  mb-5 mt-5 text-center">
-          <h6>Ми</h6>
+          <h6 className="text-dark">Ми</h6>
           <h3>У СМІ</h3>
         </div>
         <Row className="mt-5">
-          <Col lg={4} md={6} sm={12} className="mb-5">
+          <Col lg={4} md={6} sm={12} xs={12} className="mb-5">
             <iframe
               title="1"
               width="100%"
@@ -21,7 +21,7 @@ const Videos = () => {
               allowFullScreen
             ></iframe>
           </Col>
-          <Col lg={4} md={6} sm={12}>
+          <Col lg={4} md={6} sm={12} xs={12}>
             <iframe
               title="2"
               width="100%"
@@ -32,7 +32,7 @@ const Videos = () => {
               allowFullScreen
             ></iframe>
           </Col>
-          <Col lg={4} md={6} sm={12}>
+          <Col lg={4} md={6} sm={12} xs={12}>
             <iframe
               title="3"
               width="100%"
@@ -43,7 +43,7 @@ const Videos = () => {
               allowFullScreen
             ></iframe>
           </Col>
-          <Col lg={4} md={6} sm={12}>
+          <Col lg={4} md={6} sm={12} xs={12}>
             <iframe
               title="4"
               width="100%"
@@ -54,7 +54,7 @@ const Videos = () => {
               allowFullScreen
             ></iframe>
           </Col>
-          <Col lg={4} md={6} sm={12}>
+          <Col lg={4} md={6} sm={12} xs={12}>
             <iframe
               title="5"
               width="100%"

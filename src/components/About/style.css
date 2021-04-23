@@ -22,9 +22,23 @@ a.nav-item.nav-link:focus {
 .p-5.about-pad.container-fluid {
   padding: 50px !important;
 }
+.nav-tabs .nav-link.active {
+  border-width: 2px !important;
+}
+.nav-tabs .nav-link {
+  border: 1px solid #f7ba04 !important;
+  border-radius: 20px !important;
+}
+.nav-tabs {
+  border: none !important;
+  margin-top: 40px;
+}
 
 @media (max-width: 500px) {
   .p-5.about-pad.container-fluid {
     padding: 50px 0 0 0 !important;
+  }
+  .text-media {
+    font-size: 25px !important;
   }
 }
