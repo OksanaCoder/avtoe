@@ -26,13 +26,18 @@
 @media (max-width: 500px) {
   .img-bank {
     margin-top: 50px;
+    width: 80% !important;
   }
+
   .first {
     margin-bottom: 60px !important;
   }
-  /* .middle-img {
-    margin-top: 50px;
-  } */
+  .last-img {
+    width: 80% !important;
+  }
+  .last-img-bank {
+    width: 300px !important;
+  }
 
   .img-bank:last-child {
     width: 100px;

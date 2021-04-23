@@ -18,29 +18,12 @@ a:focus {
 a.nav-item.nav-link:focus {
   color: #000 !important;
 }
-/* a.nav-item.nav-link {
-    border-bottom: 1px solid #DFE2E6 !important;
-    box-shadow: none !important;
-    border-left: none !important;
-    border-top: none !important;
-    border-right: none !important;
-    border-radius: 0 !important;
-}
-a.nav-item.nav-link:focus {
-  border-radius: 0 !important;
-  color: #000 !important;
-  border-bottom: 2px solid #000 !important;
-} */
 
 .p-5.about-pad.container-fluid {
   padding: 50px !important;
 }
 
 @media (max-width: 500px) {
-  /* a#uncontrolled-tab-example-tab-profile.nav-item.nav-link {
-    border: none !important;
-    width: 100%;
-  } */
   .p-5.about-pad.container-fluid {
     padding: 50px 0 0 0 !important;
   }

@@ -45,19 +45,13 @@ const Calculators = ({ reference }) => {
             <a href="https://automoney.ua/calc-builder/">
               <img
                 src="https://cdn.shortpixel.ai/client/q_lossy,ret_img/https://automoney.ua/wp-content/uploads/2020/06/logo.png"
-                className="img-bank-small"
+                className="img-bank-small  last-img"
               />
             </a>
           </Col>
           <Col lg={6} md={6} sm={12} xs={12}>
-            <img src={hapai} className="img-bank" />
+            <img src={hapai} className="img-bank last-img-bank" />
           </Col>
-          {/* <Col lg={3} md={6} sm={12}>
-                        <img src={bank_3} className='img-bank'/>
-                    </Col>
-                    <Col lg={3} md={6} sm={12}>
-                        <img src={bank_1} className='img-bank last'/>
-                    </Col> */}
         </Row>
       </Container>
     </>
