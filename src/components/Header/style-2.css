@@ -28,11 +28,9 @@ body {
   color: #fff !important;
 }
 .white-fill {
-  filter: brightness(0) invert(1);
-  border: 2px solid #036dfd;
-  padding: 10px;
   border-radius: 50%;
   transition: transform 0.5s;
+  box-shadow: -1px 0px 2px 1px #fff;
 }
 .white-fill:hover {
   transform: scale(1.1);
