@@ -22,22 +22,22 @@ const Calculators = ({ reference }) => {
         <Row className="row-calcs pt-5 pb-4 pl-5 pr-5">
           <Col lg={3} md={6} sm={12} xs={12}>
             <a href="https://privatbank.ua/kredity/kredit-na-avto?utm_source=GSearch&utm_medium=cpc&utm_campaign=UM_Car_Credit_GSearch_conv_Brand&utm_content=UM_Car_Credit_GSearch_conv_Brand_search_Brand_keywords&gclid=Cj0KCQjw4ImEBhDFARIsAGOTMj8s_rafqNPJIOj-JfTPl2JCJ72fRoJ6qkBtRJcm7X4bc9yLE5rePOUaAhWcEALw_wcB">
-              <img src={bank_1} className="img-bank first" />
+              <img src={bank_1} className="img-bank first" alt="bank" />
             </a>
           </Col>
           <Col lg={3} md={6} sm={12} xs={12}>
             <a href="https://ru.otpbank.com.ua/privateclients/crediting/autoshpartners/">
-              <img src={bank_2} className="img-bank first" />
+              <img src={bank_2} className="img-bank first" alt="bank" />
             </a>
           </Col>
           <Col lg={3} md={6} sm={12} xs={12}>
             <a href="https://alfabank.ru/get-money/autocredit/">
-              <img src={bank_3} className="img-bank middle-img" />
+              <img src={bank_3} className="img-bank middle-img" alt="bank" />
             </a>
           </Col>
           <Col lg={3} md={6} sm={12} xs={12}>
             <a href="https://tascombank.ua/you/credits/na_prydbannia_avto">
-              <img src={bank_4} className="img-bank middle-img" />
+              <img src={bank_4} className="img-bank middle-img" alt="bank" />
             </a>
           </Col>
 
@@ -46,11 +46,14 @@ const Calculators = ({ reference }) => {
               <img
                 src="https://cdn.shortpixel.ai/client/q_lossy,ret_img/https://automoney.ua/wp-content/uploads/2020/06/logo.png"
                 className="img-bank-small  last-img"
+                alt="bank"
               />
             </a>
           </Col>
           <Col lg={6} md={6} sm={12} xs={12}>
-            <img src={hapai} className="img-bank last-img-bank" />
+            <a href="https://hapai.kiev.ua/ru?utm_source=google&utm_medium=cpc&utm_campaign=search_brand_111&gclid=Cj0KCQjwyZmEBhCpARIsALIzmnL2oSFW6py-tWs-bEoEhP1Zf757X3ZNWzbxUEuwVTVqP1UZAxTrQvYaAn9qEALw_wcB">
+              <img src={hapai} className="img-bank last-img-bank" alt="bank" />
+            </a>
           </Col>
         </Row>
       </Container>
