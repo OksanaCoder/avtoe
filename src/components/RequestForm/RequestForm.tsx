@@ -48,6 +48,9 @@ const RequestForm = (props) => {
 
   const onSubmit = (data: TFormData) => {
     savePost(data)
+    alert('Заявка відправлена !')
+    history.push('/')
+    props.handleCloseForm(true)
   }
 
   return (
@@ -71,7 +74,7 @@ const RequestForm = (props) => {
                   className="input-style"
                 />
                 {errors.username && (
-                  <small style={{ color: 'red' }}>Username is required.</small>
+                  <small style={{ color: 'red' }}>Поле повинно бути заповненим.</small>
                 )}
               </Form.Group>
             )}
@@ -91,7 +94,7 @@ const RequestForm = (props) => {
                   className="input-style"
                 />
                 {errors.comment && (
-                  <small style={{ color: 'red' }}>Comment is required.</small>
+                  <small style={{ color: 'red' }}>Поле повинно бути заповненим.</small>
                 )}
               </Form.Group>
             )}
@@ -100,21 +103,29 @@ const RequestForm = (props) => {
           <Controller
             name="phone"
             control={control}
-            rules={{ required: true }}
+            rules={{
+              required: true,
+              validate: (value) => {
+                return value.length >= 13 && value.length < 18
+              },
+            }}
             render={({ value, onChange }) => (
               <PhoneInput
-                placeholder="095 *** ** **"
+                placeholder="095 * * *"
                 value={value}
                 defaultCountry="UA"
                 onChange={onChange}
-                className="ABC"
-                inputClassName="XYZ"
+
                 //  "input-style form-control"
               />
             )}
           />
-          {errors.phone && <small style={{ color: 'red' }}>Phone is required.</small>}
-
+          {errors.phone && errors.phone.type === 'required' && (
+            <small style={{ color: 'red' }}>Поле повинно бути заповненим.</small>
+          )}
+          {errors.phone && errors.phone.type === 'validate' && (
+            <small style={{ color: 'red' }}>Невірний формат.</small>
+          )}
           <div className="text-center mt-5 flex-column">
             <Button variant="primary" type="submit" className="btn-form yellow-back">
               Відправити
