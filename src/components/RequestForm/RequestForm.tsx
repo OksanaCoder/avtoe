@@ -2,13 +2,18 @@ import React, { useState } from 'react'
 import { Modal, Button, Form } from 'react-bootstrap'
 import axios from 'axios'
 import './style.css'
-import { Redirect } from 'react-router-dom'
+import { useHistory } from 'react-router-dom'
+import 'react-phone-number-input/style.css'
+import PhoneInput from 'react-phone-number-input'
 
 const RequestForm = (props) => {
+  const history = useHistory()
   const [username, setUserName] = useState('')
   const [phone, setPhone] = useState('')
   const [comment, setModel] = useState('')
-  const [errors, setErrors] = useState<string[]>([])
+  const [errorEmpty, setErrorEmpty] = useState('')
+  const [errorPhone, setPhoneErr] = useState('')
+  const [validated, setValidated] = useState(false)
   const bodyMessage = `Имя: ${username}
                      
                        Сообщение: ${comment}  
@@ -21,16 +26,17 @@ const RequestForm = (props) => {
   // const chat_id = '987210358'
 
   const validate = (username, phone, comment) => {
+    const regex = /^\+[0-9]{3}\s\((\d+)\)-\d{3}-\d{2}-\d{2}/g
     if ((username.length === 0 || phone.length === 0, comment.length === 0)) {
-      errors.push('Поле повинно бути заповненим !')
+      setErrorEmpty('Поле повинно бути заповненим !')
+    } else if (!regex.test(phone)) {
+      setPhoneErr('Невірний формат телефону !')
+    } else {
+      setValidated(true)
     }
-
-    if (phone.length < 10) {
-      errors.push('Невірний формат телефону')
-    }
-
-    return errors
   }
+
+  //phone validation: phone, 'uk-UA': /^(\+?38|8)?0\d{9}$/,
 
   const data = (username, phone, comment) => {
     return axios.post(API_URL, {
@@ -39,15 +45,16 @@ const RequestForm = (props) => {
       comment,
     })
   }
+  // const succesregv = await data(username, phone, comment)
+
   const handleSubmit = async (e) => {
     e.preventDefault()
-    const succesregv = await data(username, phone, comment)
-    //form.current.validateAll()
-    if (succesregv) {
+    validate(username, phone, comment)
+
+    if (validated) {
+      data(username, phone, comment)
       alert('Заявка відправлена !')
-      // props.handleClose1()
-      //props.history.push("/");
-      return <Redirect to="/" />
+      return history.push('/')
     } else {
       console.log('Сталася помилка !')
     }
@@ -84,6 +91,7 @@ const RequestForm = (props) => {
                 className="input-style"
                 required
               />
+              <small style={{ color: 'red' }}>{errorEmpty}</small>
             </Form.Group>
 
             <Form.Group controlId="formBasicName">
@@ -96,17 +104,29 @@ const RequestForm = (props) => {
                 className="input-style"
                 required
               />
+              <small style={{ color: 'red' }}>{errorEmpty}</small>
             </Form.Group>
 
             <Form.Group controlId="formBasicPhone">
-              <Form.Control
-                placeholder="Номер телефону"
+              <PhoneInput
+                country="UA"
+                placeholder="095 *** ** **"
+                value={phone}
+                onChange={onChangePhone}
+                name="phone"
+                className="input-style"
+              />
+              {/* <Form.Control
+                placeholder="095 *** ** **"
                 value={phone}
                 onChange={onChangePhone}
                 name="phone"
                 className="input-style"
                 required
-              />
+              /> */}
+              <small style={{ color: 'red' }}>{errorEmpty}</small>
+              <small style={{ color: 'red' }}>{errorPhone}</small>
+              {/* <small style={{ color: 'red' }}>{errorNumber}</small> */}
             </Form.Group>
             <div className="text-center mt-5 flex-column">
               <Button
@@ -117,14 +137,6 @@ const RequestForm = (props) => {
               >
                 Відправити
               </Button>
-
-              {/* <Button
-                variant="primary"
-                className="btn-form grey-back"
-                onClick={props.handleClose1}
-              >
-                Скасувати
-              </Button> */}
             </div>
           </Form>
         </Modal.Body>
