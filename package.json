@@ -31,7 +31,7 @@
     "react-background-slider": "^2.0.0",
     "react-bootstrap": "^1.4.3",
     "react-dom": "^16.14.0",
-    "react-hook-form": "^6.15.4",
+    "react-hook-form": "^6.15.7",
     "react-moment": "^1.1.1",
     "react-multi-carousel": "^2.6.1",
     "react-phone-number-input": "^3.1.20",
@@ -77,5 +77,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@types/react-phone-number-input": "^3.0.6"
   }
 }

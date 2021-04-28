@@ -3,17 +3,20 @@ import { Modal, Button, Form } from 'react-bootstrap'
 import axios from 'axios'
 import './style.css'
 import { useHistory } from 'react-router-dom'
-import 'react-phone-number-input/style.css'
-import PhoneInput from 'react-phone-number-input'
 
 const RequestForm = (props) => {
   const history = useHistory()
+
   const [username, setUserName] = useState('')
   const [phone, setPhone] = useState('')
   const [comment, setModel] = useState('')
-  const [errorEmpty, setErrorEmpty] = useState('')
-  const [errorPhone, setPhoneErr] = useState('')
-  const [validated, setValidated] = useState(false)
+
+  const [errors, setErrors] = useState({
+    username: '',
+    phone: '',
+    comment: '',
+  })
+
   const bodyMessage = `Имя: ${username}
                      
                        Сообщение: ${comment}  
@@ -24,17 +27,6 @@ const RequestForm = (props) => {
   const API_URL = `https://api.telegram.org/bot1747833143:AAGmm2CnUrkYCyHIdVzEkgJVg2HfNUCba28/sendMessage?chat\_id=987210358&text=${bodyMessage}&parse\_mode=HTML`
 
   // const chat_id = '987210358'
-
-  const validate = (username, phone, comment) => {
-    const regex = /^\+[0-9]{3}\s\((\d+)\)-\d{3}-\d{2}-\d{2}/g
-    if ((username.length === 0 || phone.length === 0, comment.length === 0)) {
-      setErrorEmpty('Поле повинно бути заповненим !')
-    } else if (!regex.test(phone)) {
-      setPhoneErr('Невірний формат телефону !')
-    } else {
-      setValidated(true)
-    }
-  }
 
   //phone validation: phone, 'uk-UA': /^(\+?38|8)?0\d{9}$/,
 
@@ -47,17 +39,73 @@ const RequestForm = (props) => {
   }
   // const succesregv = await data(username, phone, comment)
 
+  const validate = () => {
+    if (!username) {
+      setErrors((prev) => ({ ...prev, username: 'Required' }))
+    } else {
+      setErrors((prev) => ({ ...prev, username: '' }))
+    }
+    const regex1 = new RegExp(/^\+[0-9]{3}\s\((\d+)\)-\d{3}-\d{2}-\d{2}/g)
+    const regex2 = new RegExp(/[0-9]{10,10}/)
+
+    /*
+
+    Simple validation:
+    
+    1. Length 10-20
+
+    2. Optional (Remove all special chars, then count the length 10-13)
+      - Warn the users (remove special chars)
+      - Code will trim the special chars
+    3. Use some 
+    4. You let +44, 
+
+    RegEx (Dont use)
+
+    098 111 11 11
+    +38-098-111-11-11
+    +38-098-111-11-11
+    +380981111111
+    38 098 111 11 11
+
+    098, 096, 095
+    098, 063, 093, 091, 095, 050, 067, 068, 087 (List of All valid)
+
+    1. Difficult to mainitain valid numbers
+    2. And even validated "+38 987,111 11 12", validation means nothing
+    3. Why do you want to validation?
+     a. Keep DB clean
+     b. We need to call users (number should works)
+
+     --- 
+     Answer: There is ONLY one to make sure that a number works by sending "SMS / OTP / Code"
+
+    */
+    if (!phone) {
+      setErrors((prev) => ({ ...prev, phone: 'Required' }))
+    } else if (!regex2.test(phone)) {
+      setErrors((prev) => ({ ...prev, phone: 'Invalid' }))
+    } else {
+      setErrors((prev) => ({ ...prev, phone: '' }))
+    }
+    if (!comment) {
+      setErrors((prev) => ({ ...prev, comment: 'Required' }))
+    } else {
+      setErrors((prev) => ({ ...prev, comment: '' }))
+    }
+  }
+
   const handleSubmit = async (e) => {
     e.preventDefault()
-    validate(username, phone, comment)
+    validate()
 
-    if (validated) {
-      data(username, phone, comment)
-      alert('Заявка відправлена !')
-      return history.push('/')
-    } else {
-      console.log('Сталася помилка !')
-    }
+    // if (validated) {
+    //   data(username, phone, comment)
+    //   alert('Заявка відправлена !')
+    //   return history.push('/')
+    // } else {
+    //   console.log('Сталася помилка !')
+    // }
   }
 
   const onChangeUsername = (e) => {
@@ -91,7 +139,7 @@ const RequestForm = (props) => {
                 className="input-style"
                 required
               />
-              <small style={{ color: 'red' }}>{errorEmpty}</small>
+              <small style={{ color: 'red' }}>{errors.username}</small>
             </Form.Group>
 
             <Form.Group controlId="formBasicName">
@@ -104,29 +152,19 @@ const RequestForm = (props) => {
                 className="input-style"
                 required
               />
-              <small style={{ color: 'red' }}>{errorEmpty}</small>
+              <small style={{ color: 'red' }}>{errors.comment}</small>
             </Form.Group>
 
             <Form.Group controlId="formBasicPhone">
-              <PhoneInput
-                country="UA"
-                placeholder="095 *** ** **"
-                value={phone}
-                onChange={onChangePhone}
-                name="phone"
-                className="input-style"
-              />
-              {/* <Form.Control
+              <Form.Control
                 placeholder="095 *** ** **"
                 value={phone}
                 onChange={onChangePhone}
                 name="phone"
                 className="input-style"
                 required
-              /> */}
-              <small style={{ color: 'red' }}>{errorEmpty}</small>
-              <small style={{ color: 'red' }}>{errorPhone}</small>
-              {/* <small style={{ color: 'red' }}>{errorNumber}</small> */}
+              />
+              <small style={{ color: 'red' }}>{errors.phone}</small>
             </Form.Group>
             <div className="text-center mt-5 flex-column">
               <Button
