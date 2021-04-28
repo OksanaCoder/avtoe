@@ -105,30 +105,13 @@ const RequestForm = (props) => {
                 value={value}
                 defaultCountry="UA"
                 onChange={onChange}
+                className="ABC"
+                inputClassName="XYZ"
+                //  "input-style form-control"
               />
             )}
           />
           {errors.phone && <small style={{ color: 'red' }}>Phone is required.</small>}
-
-          {/* <Controller
-            name="phone"
-            control={control}
-            rules={{ required: true }}
-            render={({ value, onChange }) => (
-              <Form.Group controlId="phone">
-                <Form.Control
-                  type="text"
-                  placeholder="095 *** ** **"
-                  value={value}
-                  onChange={onChange}
-                  className="input-style"
-                />
-                {errors.phone && (
-                  <small style={{ color: 'red' }}>Phone is required.</small>
-                )}
-              </Form.Group>
-            )}
-          /> */}
 
           <div className="text-center mt-5 flex-column">
             <Button variant="primary" type="submit" className="btn-form yellow-back">
