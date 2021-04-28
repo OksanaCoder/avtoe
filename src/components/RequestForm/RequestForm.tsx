@@ -56,7 +56,7 @@ const RequestForm = (props) => {
         <Modal.Title>Залиште заявку</Modal.Title>
       </Modal.Header>
       <Modal.Body>
-        <form onSubmit={handleSubmit(onSubmit)}>
+        <Form onSubmit={handleSubmit(onSubmit)}>
           <Controller
             name="username"
             control={control}
@@ -120,7 +120,7 @@ const RequestForm = (props) => {
               Відправити
             </Button>
           </div>
-        </form>
+        </Form>
       </Modal.Body>
     </Modal>
   )
