@@ -70,12 +70,12 @@ const RequestForm = (props) => {
                   onChange={onChange}
                   className="input-style"
                 />
+                {errors.username && (
+                  <small style={{ color: 'red' }}>Username is required.</small>
+                )}
               </Form.Group>
             )}
           />
-          {errors.username && (
-            <small style={{ color: 'red' }}>Username is required.</small>
-          )}
 
           <Controller
             name="comment"
@@ -90,10 +90,12 @@ const RequestForm = (props) => {
                   onChange={onChange}
                   className="input-style"
                 />
+                {errors.comment && (
+                  <small style={{ color: 'red' }}>Comment is required.</small>
+                )}
               </Form.Group>
             )}
           />
-          {errors.comment && <small style={{ color: 'red' }}>Comment is required.</small>}
 
           <Controller
             name="phone"
