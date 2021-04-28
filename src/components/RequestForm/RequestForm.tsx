@@ -4,6 +4,7 @@ import axios from 'axios'
 import { useHistory } from 'react-router-dom'
 import './style.css'
 import { useForm, Controller } from 'react-hook-form'
+import PhoneInput from 'react-phone-number-input'
 
 type TFormData = {
   username: string
@@ -69,12 +70,12 @@ const RequestForm = (props) => {
                   onChange={onChange}
                   className="input-style"
                 />
-                {errors.username && (
-                  <small style={{ color: 'red' }}>Username is required.</small>
-                )}
               </Form.Group>
             )}
           />
+          {errors.username && (
+            <small style={{ color: 'red' }}>Username is required.</small>
+          )}
 
           <Controller
             name="comment"
@@ -89,14 +90,27 @@ const RequestForm = (props) => {
                   onChange={onChange}
                   className="input-style"
                 />
-                {errors.comment && (
-                  <small style={{ color: 'red' }}>Comment is required.</small>
-                )}
               </Form.Group>
             )}
           />
+          {errors.comment && <small style={{ color: 'red' }}>Comment is required.</small>}
 
           <Controller
+            name="phone"
+            control={control}
+            rules={{ required: true }}
+            render={({ value, onChange }) => (
+              <PhoneInput
+                placeholder="095 *** ** **"
+                value={value}
+                defaultCountry="UA"
+                onChange={onChange}
+              />
+            )}
+          />
+          {errors.phone && <small style={{ color: 'red' }}>Phone is required.</small>}
+
+          {/* <Controller
             name="phone"
             control={control}
             rules={{ required: true }}
@@ -114,7 +128,7 @@ const RequestForm = (props) => {
                 )}
               </Form.Group>
             )}
-          />
+          /> */}
 
           <div className="text-center mt-5 flex-column">
             <Button variant="primary" type="submit" className="btn-form yellow-back">
