@@ -2,4 +2,5 @@
 
 ## Todo:
 
-7. add x to year in filter
+1. use react hook form (complete with step2)
+2. use phone library

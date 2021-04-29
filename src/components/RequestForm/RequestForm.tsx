@@ -1,135 +1,139 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { Modal, Button, Form } from 'react-bootstrap'
 import axios from 'axios'
+import { useHistory } from 'react-router-dom'
 import './style.css'
-import { Redirect } from 'react-router-dom'
+import { useForm, Controller } from 'react-hook-form'
+import PhoneInput from 'react-phone-number-input'
+
+type TFormData = {
+  username: string
+  comment: string
+  phone: string
+}
 
 const RequestForm = (props) => {
-  const [username, setUserName] = useState('')
-  const [phone, setPhone] = useState('')
-  const [comment, setModel] = useState('')
-  const [errors, setErrors] = useState<string[]>([])
-  const bodyMessage = `Имя: ${username}
-                     
-                       Сообщение: ${comment}  
-                      
-                       Номер тел: ${phone}`
+  const history = useHistory()
+
   // return <div className="pre-line">{bodyMessage}</div>
-
-  const API_URL = `https://api.telegram.org/bot1747833143:AAGmm2CnUrkYCyHIdVzEkgJVg2HfNUCba28/sendMessage?chat\_id=987210358&text=${bodyMessage}&parse\_mode=HTML`
-
   // const chat_id = '987210358'
 
-  const validate = (username, phone, comment) => {
-    if ((username.length === 0 || phone.length === 0, comment.length === 0)) {
-      errors.push('Поле повинно бути заповненим !')
-    }
+  const {
+    handleSubmit,
+    formState: { errors },
+    control,
+  } = useForm<TFormData>({
+    mode: 'onChange',
+    defaultValues: {
+      username: '',
+      comment: '',
+      phone: '',
+    },
+  })
 
-    if (phone.length < 10) {
-      errors.push('Невірний формат телефону')
-    }
-
-    return errors
-  }
-
-  const data = (username, phone, comment) => {
+  const savePost = (data: TFormData) => {
+    const { username, comment, phone } = data
+    const bodyMessage = `Имя: ${username}
+    
+    Сообщение: ${comment}  
+    
+    Номер тел: ${phone}`
+    const API_URL = `https://api.telegram.org/bot1747833143:AAGmm2CnUrkYCyHIdVzEkgJVg2HfNUCba28/sendMessage?chat\_id=987210358&text=${bodyMessage}&parse\_mode=HTML`
     return axios.post(API_URL, {
       username,
       phone,
       comment,
     })
   }
-  const handleSubmit = async (e) => {
-    e.preventDefault()
-    const succesregv = await data(username, phone, comment)
-    //form.current.validateAll()
-    if (succesregv) {
-      alert('Заявка відправлена !')
-      // props.handleClose1()
-      //props.history.push("/");
-      return <Redirect to="/" />
-    } else {
-      console.log('Сталася помилка !')
-    }
-  }
 
-  const onChangeUsername = (e) => {
-    const username = e.target.value
-    setUserName(username)
-  }
-  const onChangePhone = (e) => {
-    const phone = e.target.value
-    setPhone(phone)
-  }
-  const onChangeModel = (e) => {
-    const comment = e.target.value
-    setModel(comment)
+  const onSubmit = (data: TFormData) => {
+    savePost(data)
+    alert('Заявка відправлена !')
+    history.push('/')
+    props.handleCloseForm(true)
   }
 
   return (
-    <>
-      <Modal show={props.show_form} onHide={props.handleCloseForm} className="login-form">
-        <Modal.Header closeButton>
-          <Modal.Title>Залиште заявку</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-          <Form onSubmit={handleSubmit}>
-            <Form.Group controlId="formBasicFirstName">
-              <Form.Control
-                type="text"
-                placeholder="Ім'я"
-                value={username}
-                onChange={onChangeUsername}
-                name="name"
-                className="input-style"
-                required
-              />
-            </Form.Group>
+    <Modal show={props.show_form} onHide={props.handleCloseForm} className="login-form">
+      <Modal.Header closeButton>
+        <Modal.Title>Залиште заявку</Modal.Title>
+      </Modal.Header>
+      <Modal.Body>
+        <Form onSubmit={handleSubmit(onSubmit)}>
+          <Controller
+            name="username"
+            control={control}
+            rules={{ required: true }}
+            render={({ value, onChange }) => (
+              <Form.Group controlId="username">
+                <Form.Control
+                  type="text"
+                  placeholder="Ім'я"
+                  value={value}
+                  onChange={onChange}
+                  className="input-style"
+                />
+                {errors.username && (
+                  <small style={{ color: 'red' }}>Поле повинно бути заповненим.</small>
+                )}
+              </Form.Group>
+            )}
+          />
 
-            <Form.Group controlId="formBasicName">
-              <Form.Control
-                type="text"
-                placeholder="Повідомлення"
-                value={comment}
-                onChange={onChangeModel}
-                name="comment"
-                className="input-style"
-                required
-              />
-            </Form.Group>
+          <Controller
+            name="comment"
+            control={control}
+            rules={{ required: true }}
+            render={({ value, onChange }) => (
+              <Form.Group controlId="comment">
+                <Form.Control
+                  type="text"
+                  placeholder="Повідомлення"
+                  value={value}
+                  onChange={onChange}
+                  className="input-style"
+                />
+                {errors.comment && (
+                  <small style={{ color: 'red' }}>Поле повинно бути заповненим.</small>
+                )}
+              </Form.Group>
+            )}
+          />
 
-            <Form.Group controlId="formBasicPhone">
-              <Form.Control
-                placeholder="Номер телефону"
-                value={phone}
-                onChange={onChangePhone}
-                name="phone"
-                className="input-style"
-                required
-              />
-            </Form.Group>
-            <div className="text-center mt-5 flex-column">
-              <Button
-                onClick={handleSubmit}
-                variant="primary"
-                type="submit"
-                className="btn-form yellow-back"
-              >
-                Відправити
-              </Button>
+          <Controller
+            name="phone"
+            control={control}
+            rules={{
+              required: true,
+              validate: (value) => {
+                return value.length >= 13 && value.length < 18
+              },
+            }}
+            render={({ value, onChange }) => (
+              <PhoneInput
+                placeholder="095 * * *"
+                value={value}
+                defaultCountry="UA"
+                onChange={onChange}
 
-              {/* <Button
-                variant="primary"
-                className="btn-form grey-back"
-                onClick={props.handleClose1}
-              >
-                Скасувати
-              </Button> */}
-            </div>
-          </Form>
-        </Modal.Body>
-      </Modal>
-    </>
+                //  "input-style form-control"
+              />
+            )}
+          />
+          {errors.phone && errors.phone.type === 'required' && (
+            <small style={{ color: 'red' }}>Поле повинно бути заповненим.</small>
+          )}
+          {errors.phone && errors.phone.type === 'validate' && (
+            <small style={{ color: 'red' }}>Невірний формат.</small>
+          )}
+          <div className="text-center mt-5 flex-column">
+            <Button variant="primary" type="submit" className="btn-form yellow-back">
+              Відправити
+            </Button>
+          </div>
+        </Form>
+      </Modal.Body>
+    </Modal>
   )
 }
 

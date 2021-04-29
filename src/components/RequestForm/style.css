@@ -1,7 +1,12 @@
 .p-12 {
-    font-size: 12px;
+  font-size: 12px;
 }
 .p-12-link {
-    text-decoration: underline;
-    font-size: 12px;
+  text-decoration: underline;
+  font-size: 12px;
+}
+.PhoneInputInput {
+  border-radius: 20px;
+  padding: 5px 20px;
+  border: 1px solid #ced4da;
 }
