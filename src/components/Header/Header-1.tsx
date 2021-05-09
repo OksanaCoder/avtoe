@@ -107,9 +107,7 @@ const Header = ({ reference, data }) => {
           <Row className="align-center">
             <Col>
               <div className="flex-center white">
-                <h6 style={{ fontSize: '1rem', fontWeight: 'bold' }}>
-                  {t('Досить Мріяти про Авто')}
-                </h6>
+                <h6 style={{ fontSize: '1rem', fontWeight: 'bold' }}>{t('head')}</h6>
 
                 <h4
                   style={{
