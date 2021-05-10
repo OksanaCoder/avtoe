@@ -70,6 +70,13 @@ const translationUa = {
   contactWithUs: "Зв'яжiться з нами",
   detailsByPhone: 'Всі деталі за номерами:',
   cancel: 'Скасувати',
+  activeStatus: 'активний',
+  passiveStatus: 'неактивний',
+  startBid: 'Початкова ставка',
+  buyOutPrice: 'Ціна викупу',
+  id: 'ID аукціону',
+  dataStart: 'Дата старту',
+  setBid: 'Поставити ставку',
 }
 const translationRu = {
   head: 'Хватит Мечтать об Автомобиле',
@@ -139,6 +146,13 @@ const translationRu = {
   contactWithUs: 'Свяжитесь с нами',
   detailsByPhone: 'Все подробности по номерам:',
   cancel: 'Отмена',
+  activeStatus: 'активный',
+  passiveStatus: 'неактивный',
+  startBid: 'Начальная ставка',
+  buyOutPrice: 'Цена викупа',
+  id: 'ID аукциона',
+  dataStart: 'Дата старта',
+  setBid: 'Поставить ставку',
 }
 
 i18n

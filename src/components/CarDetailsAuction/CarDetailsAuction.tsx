@@ -13,12 +13,14 @@ import ModalContactUs from '../ModalContactUs/ModalContactUs'
 import { useHistory, useParams } from 'react-router-dom'
 import io from 'socket.io-client'
 import { CarType } from '../../types/appTypes'
+import { useTranslation } from 'react-i18next'
 
 type Props = {
   dataAuction: CarType[]
 }
 
 const CarDetailsAuction = ({ dataAuction = [] }: Props) => {
+  const { t, i18n } = useTranslation()
   let socket = io('http://localhost:4000', {
     query: {
       token:
@@ -75,13 +77,9 @@ const CarDetailsAuction = ({ dataAuction = [] }: Props) => {
     })
     console.log(`your bid is ${bid}`)
   }
-  // const checkLog = () => {
-  //   alert('Please, log in !')
-  //   history.push('/login')
-  // }
+
   const checkLog = () => {
     alert('Завантажуй додаток !')
-    //поставить ссилку на apps store
   }
 
   return (
@@ -89,7 +87,7 @@ const CarDetailsAuction = ({ dataAuction = [] }: Props) => {
       <Container fluid className="pb-5">
         <div className="p-5">
           <h5 className="blue-line"></h5>
-          <h5 className="header-details">Деталі авто</h5>
+          <h5 className="header-details">{t('details')}</h5>
           <h6 className="mt-3">{item?.name}</h6>
         </div>
         <Row>
@@ -110,11 +108,11 @@ const CarDetailsAuction = ({ dataAuction = [] }: Props) => {
             </Carousel>
 
             <Row className="mt-1 row-modal">
-              <Col> ID аукцiону:</Col>
+              <Col> {t('id')}:</Col>
               <Col>#{item?.id}</Col>
             </Row>
             <Row className="mt-1 row-modal">
-              <Col> Дата старту:</Col>
+              <Col>{t('dataStart')}:</Col>
               <Col>
                 <Moment format="DD/MM/YYYY HH:mm" style={{ fontWeight: 700 }}>
                   {item?.startingDate}
@@ -124,13 +122,13 @@ const CarDetailsAuction = ({ dataAuction = [] }: Props) => {
           </Col>
           <Col>
             <h4 style={{ fontWeight: 'bold' }} className="pl-3">
-              Початкова ставка:{' '}
+              {t('startBid')}:{' '}
               <small className="price-details-small border-dark">
                 $ {item?.startingPrice}
               </small>
             </h4>
             <h5 style={{ fontWeight: 'bold' }} className="pl-3 mb-4">
-              Ціна викупу:{' '}
+              {t('buyOutPrice')}:{' '}
               <small className="price-details-small border-dark">
                 $ {item?.buyNowPrice}
               </small>
@@ -159,27 +157,27 @@ const CarDetailsAuction = ({ dataAuction = [] }: Props) => {
             </Row>
 
             <Row className="mt-4 row-modal">
-              <Col> Рік випуску:</Col>
+              <Col> {t('year')}:</Col>
               <Col> {item?.year}</Col>
             </Row>
             <Row className="mt-1 row-modal">
-              <Col> Привід:</Col>
+              <Col> {t('privod')}:</Col>
               <Col> {item?.drive}</Col>
             </Row>
             <Row className="mt-1 row-modal">
-              <Col> Колір:</Col>
+              <Col> {t('color')}:</Col>
               <Col> {item?.color}</Col>
             </Row>
             <Row className="mt-1 row-modal">
-              <Col>Опис:</Col>
+              <Col>{t('description')}:</Col>
               <Col>{item?.description}</Col>
             </Row>
             <Row className="mt-1 row-modal">
-              <Col> Додаткова інформація:</Col>
+              <Col> {t('extraInfo')}:</Col>
               <Col> {item?.extraInfo}</Col>
             </Row>
             <Row className="mt-1 row-modal">
-              <Col> Контакти:</Col>
+              <Col> {t('contacts')}:</Col>
               <Col>
                 <ul className="list-unstyled">
                   <li>+38 050 249 09 09</li>
@@ -189,18 +187,18 @@ const CarDetailsAuction = ({ dataAuction = [] }: Props) => {
               </Col>
             </Row>
             <Row className="mt-1 row-modal">
-              <Col> Де ми знаходимось ?</Col>
-              <Col>Київ, проспект Степана Бандери, 13</Col>
+              <Col> {t('whereLocation')}</Col>
+              <Col>{t('address')}</Col>
             </Row>
             <Row className="align-center mt-4 mb-5">
               <Col>
                 <button className="btn-item buy-now" onClick={openModal}>
-                  Викупити
+                  {t('buyOut')}
                 </button>
               </Col>
               <Col>
                 <button className="btn-item auction-btn-bet" onClick={checkLog}>
-                  Поставити ставку
+                  {t('setBid')}
                 </button>
               </Col>
             </Row>

@@ -1,10 +1,7 @@
 import React from 'react'
 import './style.css'
 import imageCar from '../../img/ferrari.jpg'
-import icon_1 from '../../img/location.png'
-import icon_2 from '../../img/speedometer.png'
-import icon_3 from '../../img/petrol.png'
-import icon_4 from '../../img/icon_4.png'
+import { useTranslation } from 'react-i18next'
 import hammer from '../../img/hammer.svg'
 import countdown from '../../img/time.svg'
 import Moment from 'react-moment'
@@ -17,6 +14,7 @@ type Props = {
 }
 
 const CarItemAuction = ({ dataAuction = [] }: Props) => {
+  const { t, i18n } = useTranslation()
   console.log(dataAuction, 'AUCTION ITEM')
 
   return (
@@ -50,18 +48,18 @@ const CarItemAuction = ({ dataAuction = [] }: Props) => {
 
                 {item.status ? (
                   <div className="active-auction d-flex align-center mb-3">
-                    <small className="ml-3">активний</small>
+                    <small className="ml-3">{t('activeStatus')}</small>
                   </div>
                 ) : (
                   <div className="inactive-auction d-flex align-center mb-3">
-                    <small className="ml-3">неактивний</small>
+                    <small className="ml-3">{t('passiveStatus')}</small>
                   </div>
                 )}
 
                 <div className="d-flex justify-content-between">
                   <Row className="flex-col-row">
                     <Col>
-                      <small>Початкова ставка:</small>
+                      <small>{t('startBid')}:</small>
                     </Col>
                     <Col>
                       <h6 className="color-yellow">$ {item.startingPrice}</h6>
@@ -69,7 +67,7 @@ const CarItemAuction = ({ dataAuction = [] }: Props) => {
                   </Row>
                   <Row className="flex-col-row">
                     <Col>
-                      <small>Ціна викупу:</small>
+                      <small>{t('buyOutPrice')}:</small>
                     </Col>
                     <Col>
                       <h6 className="color-yellow">$ {item.buyNowPrice}</h6>
@@ -82,7 +80,7 @@ const CarItemAuction = ({ dataAuction = [] }: Props) => {
                     className="btn-item auction-btn mr-2"
                     to={`/carDetailsAuction/${item.id}`}
                   >
-                    Деталі
+                    {t('more')}
                   </Link>
                   <button
                     className="btn-item"
