@@ -5,13 +5,15 @@ import Filter from '../Filter/Filter'
 import { Row, Container, Col } from 'react-bootstrap'
 import { CarType } from '../../types/appTypes'
 import { useTranslation } from 'react-i18next'
+import { OptionBrand, OptionPrice, OptionYear } from '../Filter/FilterHelper'
 
 type Props = {
   data: CarType[]
 }
 
 const Catalog = ({ data = [] }: Props) => {
-  const { t, i18n } = useTranslation()
+  const { t } = useTranslation()
+
   useLayoutEffect(() => {
     window.scrollTo(0, 0)
   })
@@ -22,14 +24,24 @@ const Catalog = ({ data = [] }: Props) => {
     setFilteredData(data)
   }, [data])
 
-  const onSearch = (valueBrand, valueYear, valuePrice) => {
+  const onSearch = (
+    valueBrand: OptionBrand | null,
+    valuesYear: OptionYear[] | null,
+    valuePrice: OptionPrice | null
+  ) => {
+    console.log(JSON.stringify(data))
+    console.log(valueBrand, valuesYear, valuePrice)
     setFilteredData(
       data.filter(
         (item) =>
-          item.model.toLowerCase() === valueBrand.value.toLowerCase() &&
-          valueYear.map((i) => Number(i.value)).includes(Number(item.year)) &&
-          valuePrice.startPrice <= Number(item.startingPrice) &&
-          Number(item.startingPrice) <= valuePrice.endPrice
+          (valueBrand === null ||
+            item.model.toLowerCase() === valueBrand.value.toLowerCase()) &&
+          (valuesYear === null ||
+            valuesYear.map((i) => Number(i.value)).includes(Number(item.year))) &&
+          (valuePrice === null ||
+            (valuePrice.startPrice <= Number(item.startingPrice) &&
+              (valuePrice.endPrice === null ||
+                Number(item.startingPrice) <= valuePrice.endPrice)))
       )
     )
   }

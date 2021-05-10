@@ -4,20 +4,39 @@ import './style.css'
 import search from '../../img/search.svg'
 import Select from 'react-select'
 import CreatableSelect from 'react-select/creatable'
-import { optionPrice, optionBrand, optionsYear } from './FilterHelper'
+import {
+  optionsPrice,
+  optionsBrand,
+  optionsYear,
+  OptionBrand,
+  OptionPrice,
+  OptionYear,
+} from './FilterHelper'
 import { useTranslation } from 'react-i18next'
 
-const Filter = ({ onSearch }) => {
-  const { t, i18n } = useTranslation()
-  const [valueBrand, setValueBrand] = useState('')
-  const [valueYear, setValueYear] = useState([])
-  const [valuePrice, setValuePrice] = useState('')
+type Props = {
+  onSearch: (
+    valueBrand: OptionBrand | null,
+    valuesYear: OptionYear[] | null,
+    valuePrice: OptionPrice | null
+  ) => void
+}
+
+const Filter = ({ onSearch }: Props) => {
+  const { t } = useTranslation()
+  const [valueBrand, setValueBrand] = useState<OptionBrand | null>(null)
+  const [valuesYear, setValuesYear] = useState<OptionYear[] | null>(null)
+  const [valuePrice, setValuePrice] = useState<OptionPrice | null>(null)
 
   const handleSearch = () => {
-    onSearch(valueBrand, valueYear, valuePrice)
+    onSearch(valueBrand, valuesYear, valuePrice)
   }
+
   const handleRevert = () => {
-    console.log('drop filter')
+    setValueBrand(null)
+    setValuesYear(null)
+    setValuePrice(null)
+    onSearch(null, null, null)
   }
 
   return (
@@ -33,7 +52,7 @@ const Filter = ({ onSearch }) => {
           >
             <Form.Label>Модель</Form.Label>
             <Select
-              options={optionBrand}
+              options={optionsBrand}
               className="selectStyle optionStyle"
               value={valueBrand}
               onChange={setValueBrand}
@@ -50,8 +69,8 @@ const Filter = ({ onSearch }) => {
               className="selectStyle optionStyle"
               isMulti
               closeMenuOnSelect={false}
-              value={valueYear}
-              onChange={setValueYear}
+              value={valuesYear}
+              onChange={setValuesYear}
             />
           </Form.Group>
 
@@ -61,7 +80,7 @@ const Filter = ({ onSearch }) => {
           >
             <Form.Label>{t('price')}, $</Form.Label>
             <Select
-              options={optionPrice}
+              options={optionsPrice}
               className="selectStyle optionStyle"
               value={valuePrice}
               onChange={setValuePrice}

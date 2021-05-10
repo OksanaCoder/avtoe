@@ -1,6 +1,7 @@
 import i18n from 'i18next'
 import LanguageDetector from 'i18next-browser-languagedetector'
 import { initReactI18next } from 'react-i18next'
+
 const translationUa = {
   head: 'Досить Мріяти про Авто',
   subhead: 'для тебе завжди є пропозиції',

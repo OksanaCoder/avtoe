@@ -1,4 +1,9 @@
-export const optionsYear = [
+export type OptionYear = {
+  value: number
+  label: number
+}
+
+export const optionsYear: OptionYear[] = [
   { value: 1990, label: 1990 },
   { value: 1991, label: 1991 },
   { value: 1992, label: 1992 },
@@ -32,7 +37,13 @@ export const optionsYear = [
   { value: 2020, label: 2020 },
   { value: 2021, label: 2021 },
 ]
-export const optionBrand = [
+
+export type OptionBrand = {
+  value: string
+  label: string
+}
+
+export const optionsBrand: OptionBrand[] = [
   { value: 'Acura', label: 'Acura' },
   { value: 'Alfa Romeo', label: 'Alfa Romeo' },
   { value: 'Aston Martin', label: 'Aston Martin' },
@@ -101,15 +112,14 @@ export const optionBrand = [
   { value: 'Volkswagen', label: 'Volkswagen' },
   { value: 'Volvo', label: 'Volvo' },
 ]
-export const optionPriceOld = [
-  { value: 0 + '-' + 3000, label: 0 + '-' + 3000 },
-  { value: 3000 + '-' + 9000, label: 3000 + '-' + 9000 },
-  { value: 9000 + '-' + 20000, label: 9000 + '-' + 20000 },
-  { value: 20000 + '-' + 50000, label: 20000 + '-' + 50000 },
-  { value: 50000 + '+', label: 50000 + '+' },
-]
 
-export const optionPrice = [
+export type OptionPrice = {
+  id: number
+  startPrice: number
+  endPrice: number | null
+}
+
+export const optionsPrice: OptionPrice[] = [
   {
     id: 1,
     startPrice: 0,
