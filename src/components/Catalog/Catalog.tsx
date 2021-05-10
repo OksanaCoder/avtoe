@@ -57,7 +57,7 @@ const Catalog = ({ data = [] }: Props) => {
 
         <Filter onSearch={onSearch} />
 
-        {data.length > 0 ? (
+        {filteredData.length > 0 ? (
           <Container style={{ background: '#262626' }} className="pb-5" fluid>
             <Row className="p-5">
               <div className="heading-style">
