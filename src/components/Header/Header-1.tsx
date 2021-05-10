@@ -21,9 +21,11 @@ const Header = ({ reference, data }) => {
   const changeLanguage = (lng) => {
     i18n.changeLanguage(lng)
   }
-  const [isPicked, setPicked] = useState(false)
+
   const [selected, setSelected] = useState('')
-  let history = useHistory()
+
+  const history = useHistory()
+
   const customStyles = {
     option: (provided, state) => ({
       ...provided,
@@ -31,11 +33,9 @@ const Header = ({ reference, data }) => {
     }),
   }
   const handleClick = () => {
-    setPicked(!isPicked)
     changeLanguage('ru')
   }
   const handleClick1 = () => {
-    setPicked(!isPicked)
     changeLanguage('ua')
   }
 
@@ -80,13 +80,13 @@ const Header = ({ reference, data }) => {
             <Col lg={6} md={6} sm={12} className="text-right flex-right">
               <button
                 onClick={handleClick1}
-                className={!isPicked ? 'active-link' : 'not-active'}
+                className={i18n.language === 'ua' ? 'active-link' : 'not-active'}
               >
                 <h6>UA</h6>
               </button>
               <button
                 onClick={handleClick}
-                className={isPicked ? 'active-link' : 'not-active'}
+                className={i18n.language === 'ru' ? 'active-link' : 'not-active'}
               >
                 <h6 className="ml-3">RU</h6>
               </button>
