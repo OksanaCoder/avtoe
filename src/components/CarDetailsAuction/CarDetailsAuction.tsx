@@ -1,6 +1,6 @@
-import React, { useState, useEffect, useRef } from 'react'
-import { Col, Row, Container, Table } from 'react-bootstrap'
-import imageCar from '../../img/ferrari.jpg'
+import React, { useState, useEffect } from 'react'
+import { Col, Row, Container } from 'react-bootstrap'
+// import imageCar from '../../img/ferrari.jpg'
 import 'react-responsive-carousel/lib/styles/carousel.min.css' // requires a loader
 import { Carousel } from 'react-responsive-carousel'
 import './style.css'
@@ -10,7 +10,7 @@ import icon_3 from '../../img/petrol.png'
 import icon_4 from '../../img/icon_4.png'
 import Moment from 'react-moment'
 import ModalContactUs from '../ModalContactUs/ModalContactUs'
-import { useHistory, useParams } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 import io from 'socket.io-client'
 import { CarType } from '../../types/appTypes'
 import { useTranslation } from 'react-i18next'
@@ -20,7 +20,7 @@ type Props = {
 }
 
 const CarDetailsAuction = ({ dataAuction = [] }: Props) => {
-  const { t, i18n } = useTranslation()
+  const { t } = useTranslation()
   let socket = io('http://localhost:4000', {
     query: {
       token:
@@ -56,10 +56,12 @@ const CarDetailsAuction = ({ dataAuction = [] }: Props) => {
       console.log(data)
     })
   })
-  const isLoggedIn = useRef(localStorage.getItem('token'))
+
+  // const isLoggedIn = useRef(localStorage.getItem('token'))
 
   const [open, setOpenModal] = useState(false)
-  const history = useHistory()
+  // const history = useHistory()
+
   const openModal = () => {
     socket.emit('buyNowAuction', {
       auctionId: '606823e6c780943d60b7a09c',
@@ -69,7 +71,9 @@ const CarDetailsAuction = ({ dataAuction = [] }: Props) => {
   const closeModal = () => {
     setOpenModal(false)
   }
-  const [bid, setBid] = useState<string>()
+  const [bid] = useState<string>()
+
+  // eslint-disable-next-line
   const sendBid = () => {
     socket.emit('bidInAuction', {
       auctionId: '60656f7c18e1b936bc78f21f',
@@ -86,6 +90,7 @@ const CarDetailsAuction = ({ dataAuction = [] }: Props) => {
     <>
       <Container fluid className="pb-5">
         <div className="p-5">
+          {/* eslint-disable-next-line */}
           <h5 className="blue-line"></h5>
           <h5 className="header-details">{t('details')}</h5>
           <h6 className="mt-3">{item?.name}</h6>
@@ -94,16 +99,16 @@ const CarDetailsAuction = ({ dataAuction = [] }: Props) => {
           <Col>
             <Carousel>
               <div>
-                <img src={item?.images[0]} />
+                <img alt="11" src={item?.images[0]} />
               </div>
               <div>
-                <img src={item?.images[1]} />
+                <img alt="11" src={item?.images[1]} />
               </div>
               <div>
-                <img src={item?.images[2]} />
+                <img alt="11" src={item?.images[2]} />
               </div>
               <div>
-                <img src={item?.images[3]} />
+                <img alt="11" src={item?.images[3]} />
               </div>
             </Carousel>
 
@@ -136,22 +141,22 @@ const CarDetailsAuction = ({ dataAuction = [] }: Props) => {
 
             <Row className="align-center mt-3">
               <Col className="center-items">
-                <img src={icon_2} className="icon-small" />
+                <img alt="11" src={icon_2} className="icon-small" />
                 {item?.odometer} тис. км
               </Col>
               <Col className="center-items">
-                <img src={icon_1} className="icon-small" />
+                <img alt="11" src={icon_1} className="icon-small" />
                 {item?.city}
                 Київ
               </Col>
             </Row>
             <Row className="align-center mb-3">
               <Col className="center-items">
-                <img src={icon_3} className="icon-small" />
+                <img alt="11" src={icon_3} className="icon-small" />
                 {item?.fuel}
               </Col>
               <Col className="center-items">
-                <img src={icon_4} className="icon-small" />
+                <img alt="11" src={icon_4} className="icon-small" />
                 {item?.drive}
               </Col>
             </Row>

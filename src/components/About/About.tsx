@@ -7,7 +7,7 @@ import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api'
 import { useTranslation } from 'react-i18next'
 
 const About = () => {
-  const { t, i18n } = useTranslation()
+  const { t } = useTranslation()
 
   const containerStyle = {
     width: '100%',
@@ -20,15 +20,15 @@ const About = () => {
     lng: 30.488861167016232,
   }
 
-  const locations = [
-    {
-      name: 'avtoe',
-      location: {
-        lat: 50.48970142061635,
-        lng: 30.488861167016232,
-      },
-    },
-  ]
+  // const locations = [
+  //   {
+  //     name: 'avtoe',
+  //     location: {
+  //       lat: 50.48970142061635,
+  //       lng: 30.488861167016232,
+  //     },
+  //   },
+  // ]
 
   return (
     <div>
@@ -44,7 +44,7 @@ const About = () => {
             </Row>
             <Row className="p-4 align-items-center mt-3">
               <Col className="text-center" lg={6} md={12} sm={12}>
-                <img src={org} width="70%" className="mb-2" />
+                <img alt="11" src={org} width="70%" className="mb-2" />
               </Col>
               <Col style={{ lineHeight: '2', fontSize: '20px' }} lg={6} md={12} sm={12}>
                 {t('orgMore')}
@@ -62,6 +62,7 @@ const About = () => {
             <Row className="p-4 align-items-center mt-3">
               <Col lg={6} md={12} sm={12} className="text-center">
                 <img
+                  alt="11"
                   className="mb-5"
                   width="90%"
                   src="https://thumb.tildacdn.com/tild3335-6566-4562-a264-306631386566/-/format/webp/a393fc5a-7ebe-4238-b.jpg"

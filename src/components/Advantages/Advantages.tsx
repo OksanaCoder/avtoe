@@ -1,6 +1,6 @@
 import React from 'react'
 import './style.css'
-import { Container, Row, Col, Card } from 'react-bootstrap'
+import { Container, Row, Col } from 'react-bootstrap'
 import icon from '../../img/money.png'
 import icon_1 from '../../img/credit-card.png'
 import icon_2 from '../../img/quality.png'
@@ -11,7 +11,7 @@ import car_adv from '../../img/car-adv.png'
 import { useTranslation } from 'react-i18next'
 
 const Advantages = () => {
-  const { t, i18n } = useTranslation()
+  const { t } = useTranslation()
 
   return (
     <div style={{ background: '#262626' }} className="p-5">
@@ -25,6 +25,7 @@ const Advantages = () => {
         <Row style={{ display: 'flex', alignItems: 'center' }}>
           <Col lg={6} md={6} sm={12}>
             <img
+              alt="11"
               src={car_adv}
               style={{ width: '90%', marginTop: '50px', marginBottom: '60px' }}
             />
@@ -32,7 +33,7 @@ const Advantages = () => {
           <Col lg={6} md={6} sm={12} className="pb-5">
             <Row className="row-column text-left">
               <Col className="mb-5 text-white flex-between">
-                <img src={icon} className="icon-adv" />
+                <img alt="11" src={icon} className="icon-adv" />
 
                 <div>
                   <h5 className="bold">{t('reason1')}</h5>
@@ -40,7 +41,7 @@ const Advantages = () => {
                 </div>
               </Col>
               <Col className="mb-5 text-white flex-between">
-                <img src={icon_1} className="icon-adv" />
+                <img alt="11" src={icon_1} className="icon-adv" />
 
                 <div>
                   <h5 className="bold">{t('reason2')}</h5>
@@ -50,7 +51,7 @@ const Advantages = () => {
             </Row>
             <Row className="row-column text-left">
               <Col className="mb-5 text-white flex-between">
-                <img src={icon_2} className="icon-adv" />
+                <img alt="11" src={icon_2} className="icon-adv" />
 
                 <div>
                   <h5 className="bold">{t('reason3')}</h5>
@@ -58,7 +59,7 @@ const Advantages = () => {
                 </div>
               </Col>
               <Col className="mb-5 text-white flex-between">
-                <img src={icon_3} className="icon-adv" />
+                <img alt="11" src={icon_3} className="icon-adv" />
 
                 <div>
                   <h5 className="bold">{t('reason4')}</h5>
@@ -68,7 +69,7 @@ const Advantages = () => {
             </Row>
             <Row className="row-column text-left">
               <Col className="mb-5 text-white flex-between">
-                <img src={icon_4} className="icon-adv" />
+                <img alt="11" src={icon_4} className="icon-adv" />
 
                 <div>
                   <h5 className="bold">{t('reason5')}</h5>
@@ -76,7 +77,7 @@ const Advantages = () => {
                 </div>
               </Col>
               <Col className="mb-5 text-white flex-between">
-                <img src={icon_5} className="icon-adv" />
+                <img alt="11" src={icon_5} className="icon-adv" />
 
                 <div>
                   <h5 className="bold">{t('reason6')}</h5>

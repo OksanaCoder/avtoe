@@ -1,11 +1,9 @@
 import React, { useState } from 'react'
-import { Modal, Button, Form } from 'react-bootstrap'
-import axios from 'axios'
+import { Button, Form } from 'react-bootstrap'
 import './style.css'
-import { Redirect } from 'react-router-dom'
-import ReactDOM from 'react-dom'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCoffee } from '@fortawesome/free-solid-svg-icons'
+// import { Redirect } from 'react-router-dom'
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+// import { faCoffee } from '@fortawesome/free-solid-svg-icons'
 import { loginAPI } from '../../API'
 import { useHistory } from 'react-router-dom'
 
@@ -18,12 +16,9 @@ const LoginForm = ({ logged, setLogged }) => {
 
   // const API_URL = process.env.REACT_APP_URL;
   const login = (email, password) => {
-    console.log('idher')
     return loginAPI({ email, password })
       .then((response) => {
-        console.log('24', response)
         if (response.data.token) {
-          console.log(response)
           localStorage.setItem('user', JSON.stringify(response.data))
           // localStorage.setItem('fullName', JSON.stringify(response.data))
           // setUserName()

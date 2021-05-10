@@ -1,5 +1,5 @@
-import React, { useState, useEffect, useRef } from 'react'
-import { Col, Row, Container, Table } from 'react-bootstrap'
+import React, { useState, useEffect } from 'react'
+import { Col, Row, Container } from 'react-bootstrap'
 import imageCar from '../../img/ferrari.jpg'
 import 'react-responsive-carousel/lib/styles/carousel.min.css' // requires a loader
 import { Carousel } from 'react-responsive-carousel'
@@ -19,7 +19,7 @@ type Props = {
 }
 
 const CarDetails = ({ data = [] }: Props) => {
-  const { t, i18n } = useTranslation()
+  const { t } = useTranslation()
   const [item, setItem] = useState<CarType>({} as CarType)
   const { id } = useParams<{ id: string }>()
 
@@ -28,7 +28,7 @@ const CarDetails = ({ data = [] }: Props) => {
     if (found) {
       setItem(found)
     }
-  }, [id])
+  }, [id]) // eslint-disable-line react-hooks/exhaustive-deps
 
   let socket = io('http://localhost:4000', {
     query: {
@@ -36,6 +36,7 @@ const CarDetails = ({ data = [] }: Props) => {
         'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MDU1NWY2OTQ1NDQyNDEwM2NlYmRhODgiLCJpYXQiOjE2MTcyNDUxODB9.s3fOFjdiV3U2DqU3IlPx9ZVtV2PdC9S89_4mMH1Co9k',
     },
   })
+
   useEffect(() => {
     socket.on('winner', function (data) {
       console.log(data)
@@ -54,8 +55,8 @@ const CarDetails = ({ data = [] }: Props) => {
       console.log(data)
     })
   })
-  const isLoggedIn = useRef(localStorage.getItem('token'))
-  console.log(item, ' for car details')
+  // const isLoggedIn = useRef(localStorage.getItem('token'))
+  // console.log(item, ' for car details')
 
   const [open, setOpenModal] = useState(false)
   const history = useHistory()
@@ -69,7 +70,9 @@ const CarDetails = ({ data = [] }: Props) => {
     setOpenModal(false)
   }
 
-  const [bid, setBid] = useState(null)
+  const [bid] = useState(null)
+
+  // eslint-disable-next-line
   const sendBid = () => {
     socket.emit('bidInAuction', {
       auctionId: '60656f7c18e1b936bc78f21f',
@@ -77,16 +80,19 @@ const CarDetails = ({ data = [] }: Props) => {
     })
     console.log(`your bid is ${bid}`)
   }
+
+  // eslint-disable-next-line
   const checkLog = () => {
     alert('Please, log in !')
     history.push('/login')
-
     //  return <Redirect to='/login'/>
   }
+
   return (
     <>
       <Container fluid className="pb-5 mb-5">
         <div className="p-5">
+          {/* eslint-disable-next-line */}
           <h5 className="blue-line"></h5>
           <h5 className="header-details">{t('details')}</h5>
           <h6 className="mt-3">{item.name}</h6>
@@ -96,30 +102,30 @@ const CarDetails = ({ data = [] }: Props) => {
             <Carousel>
               {item.image1 ? (
                 <div>
-                  <img src={item.image1} />
+                  <img alt="11" src={item.image1} />
                 </div>
               ) : (
                 <div>
-                  <img src={imageCar} />
+                  <img alt="11" src={imageCar} />
                 </div>
               )}
 
               {item.image2 ? (
                 <div>
-                  <img src={item.image2} />
+                  <img alt="11" src={item.image2} />
                 </div>
               ) : (
                 <div>
-                  <img src={imageCar} />
+                  <img alt="11" src={imageCar} />
                 </div>
               )}
               {item.image3 ? (
                 <div>
-                  <img src={item.image3} />
+                  <img alt="11" src={item.image3} />
                 </div>
               ) : (
                 <div>
-                  <img src={imageCar} />
+                  <img alt="11" src={imageCar} />
                 </div>
               )}
             </Carousel>

@@ -9,13 +9,13 @@ import './style.css'
 import { useTranslation } from 'react-i18next'
 
 const Footer = () => {
-  const { t, i18n } = useTranslation()
+  const { t } = useTranslation()
   return (
     <div id="footer" style={{ background: '#010916', padding: '100px 50px 20px 50px' }}>
       <Container fluid>
         <Row>
           <Col lg={4} md={4} sm={12} className="footer-item font-footer">
-            <img src={call} style={{ color: '#fff' }} className="icon-fill" />
+            <img alt="11" src={call} style={{ color: '#fff' }} className="icon-fill" />
             <div className="ml-3 text-white">
               <h6>{t('contacts')}:</h6>
               <ul className="list-unstyled">
@@ -30,14 +30,14 @@ const Footer = () => {
             </div>
           </Col>
           <Col lg={4} md={4} sm={12} className="text-white footer-item font-footer">
-            <img src={mail} className="icon-fill" />
+            <img alt="11" src={mail} className="icon-fill" />
             <div className="ml-3">
               <h6>Email:</h6>
               <small className="font-footer">avtoe@i.ua</small>
             </div>
           </Col>
           <Col lg={4} md={4} sm={12} className="text-white footer-item font-footer">
-            <img src={home} className="icon-fill" />
+            <img alt="11" src={home} className="icon-fill" />
             <div className="ml-3">
               <h6>{t('adressHead')}:</h6>
               <small className="font-footer">{t('address')}</small>
@@ -53,12 +53,17 @@ const Footer = () => {
             <ul className="list-unstyled flex-footer align-center">
               <li>
                 <a href="https://www.facebook.com/avtoeukraine/">
-                  <img src={facebook} width="30px" className="ml-4 mr-4 icon-fill" />
+                  <img
+                    alt="11"
+                    src={facebook}
+                    width="30px"
+                    className="ml-4 mr-4 icon-fill"
+                  />
                 </a>
               </li>
               <li>
                 <a href="https://www.instagram.com/avtoe.ua/">
-                  <img src={instagram} className="icon-fill" width="30px" />
+                  <img alt="11" src={instagram} className="icon-fill" width="30px" />
                 </a>
               </li>
             </ul>

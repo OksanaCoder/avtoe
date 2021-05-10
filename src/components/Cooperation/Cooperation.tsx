@@ -5,8 +5,8 @@ import CarSearch from '../CarSearch/CarSearch'
 import { useTranslation } from 'react-i18next'
 
 const Cooperation = ({ dataFindCar = [] }) => {
-  const { t, i18n } = useTranslation()
-  console.log(dataFindCar, 'items find cars')
+  const { t } = useTranslation()
+
   useLayoutEffect(() => {
     window.scrollTo(0, 0)
   })

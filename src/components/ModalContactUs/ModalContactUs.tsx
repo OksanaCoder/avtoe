@@ -4,8 +4,7 @@ import './style.css'
 import { useTranslation } from 'react-i18next'
 
 const ModalContactUs = (props) => {
-  const { t, i18n } = useTranslation()
-  console.log(props)
+  const { t } = useTranslation()
   return (
     <Modal show={props.open} onHide={props.closeModal}>
       <Modal.Header closeButton>

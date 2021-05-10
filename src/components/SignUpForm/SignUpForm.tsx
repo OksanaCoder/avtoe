@@ -1,13 +1,10 @@
 import React, { useState } from 'react'
-import { Modal, Button, Form } from 'react-bootstrap'
-import moment from 'moment'
-import axios from 'axios'
+import { Button, Form } from 'react-bootstrap'
 import './style.css'
 import { useHistory } from 'react-router-dom'
 import { signUpAPI } from '../../API'
 
 const SignUpForm = (props) => {
-  console.log(props)
   const history = useHistory()
   const [username, setUsername] = useState('')
   const [email, setEmail] = useState('')
@@ -21,6 +18,7 @@ const SignUpForm = (props) => {
       console.log(err)
     })
   }
+
   const handleSubmit = async (e) => {
     e.preventDefault()
     const succesregv = await register(username, email, password, phone)
@@ -106,7 +104,14 @@ const SignUpForm = (props) => {
           </div>
           <div className="text-center mt-5 d-flex flex-column">
             Уже зареєстровані ?
-            <a className="hover-link mt-3" onClick={() => history.push('/login')}>
+            <a
+              href="/"
+              className="hover-link mt-3"
+              onClick={(e) => {
+                e.preventDefault()
+                history.push('/login')
+              }}
+            >
               Увійти
             </a>
           </div>

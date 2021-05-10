@@ -29,8 +29,6 @@ const Catalog = ({ data = [] }: Props) => {
     valuesYear: OptionYear[] | null,
     valuePrice: OptionPrice | null
   ) => {
-    console.log(JSON.stringify(data))
-    console.log(valueBrand, valuesYear, valuePrice)
     setFilteredData(
       data.filter(
         (item) =>
@@ -69,7 +67,7 @@ const Catalog = ({ data = [] }: Props) => {
             </Row>
             <Row>
               {filteredData.map((item) => (
-                <Col lg={4} md={6} sm={12}>
+                <Col key={item.id} lg={4} md={6} sm={12}>
                   <CarItem data={data} filteredData={[item]} />
                 </Col>
               ))}

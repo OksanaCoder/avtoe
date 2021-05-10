@@ -1,7 +1,7 @@
 import React from 'react'
-import { Container, Col, Row } from 'react-bootstrap'
+import { Container } from 'react-bootstrap'
 import './style.css'
-import LoginForm from '../LoginForm/LoginForm'
+// import LoginForm from '../LoginForm/LoginForm'
 import SignUpForm from '../SignUpForm/SignUpForm'
 
 const Profile = () => {

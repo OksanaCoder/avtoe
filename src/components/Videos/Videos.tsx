@@ -3,7 +3,7 @@ import { Container, Row, Col } from 'react-bootstrap'
 import { useTranslation } from 'react-i18next'
 
 const Videos = () => {
-  const { t, i18n } = useTranslation()
+  const { t } = useTranslation()
   return (
     <>
       <Container fluid className="p-5">

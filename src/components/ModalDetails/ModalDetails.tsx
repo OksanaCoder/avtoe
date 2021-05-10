@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react'
-import { Col, Row, Container, Card, Modal, Button } from 'react-bootstrap'
+import React from 'react'
+import { Col, Row, Modal, Button } from 'react-bootstrap'
 import imageCar from '../../img/ferrari.jpg'
 import 'react-responsive-carousel/lib/styles/carousel.min.css' // requires a loader
 import { Carousel } from 'react-responsive-carousel'
@@ -7,13 +7,8 @@ import './style.css'
 import icon_1 from '../../img/location.png'
 import icon_2 from '../../img/speedometer.png'
 import icon_3 from '../../img/petrol.png'
-import { Redirect } from 'react-router-dom'
-import LoginForm from '../LoginForm/LoginForm'
-// import Auction from '../Auction/Auction'
-const ModalDetails = (props) => {
-  console.log(props, ' for modal')
-  const [loggedIn, setLoggedIn] = useState(false)
 
+const ModalDetails = (props) => {
   const checkUser = () => {}
 
   return (
@@ -34,13 +29,13 @@ const ModalDetails = (props) => {
                 <Col>
                   <Carousel>
                     <div>
-                      <img src={imageCar} />
+                      <img alt="11" src={imageCar} />
                     </div>
                     <div>
-                      <img src={imageCar} />
+                      <img alt="11" src={imageCar} />
                     </div>
                     <div>
-                      <img src={imageCar} />
+                      <img alt="11" src={imageCar} />
                     </div>
                   </Carousel>
                 </Col>
@@ -51,17 +46,17 @@ const ModalDetails = (props) => {
                   <small className="price-details">$ {item.price}</small>
                   <Row className="align-center">
                     <Col className="center-items">
-                      <img src={icon_2} className="icon-small" />
+                      <img alt="11" src={icon_2} className="icon-small" />
                       {item.mileage} тис. км
                     </Col>
                     <Col className="center-items">
-                      <img src={icon_1} className="icon-small" />
+                      <img alt="11" src={icon_1} className="icon-small" />
                       {item.city}
                     </Col>
                   </Row>
                   <Row className="align-center">
                     <Col className="center-items">
-                      <img src={icon_3} className="icon-small" />
+                      <img alt="11" src={icon_3} className="icon-small" />
                       {item.fuel}
                     </Col>
                     <Col className="center-items">

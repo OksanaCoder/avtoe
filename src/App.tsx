@@ -8,7 +8,6 @@ import 'react-phone-number-input/style.css'
 import { BrowserRouter as Router, Route, Link as BrowserLink } from 'react-router-dom'
 import { Container, Navbar, Nav } from 'react-bootstrap'
 import './components/NavBar/style.css'
-import person from './img/person.svg'
 import mail from './img/mail.png'
 import phone from './img/phone.png'
 import search_black from './img/search-black.svg'
@@ -33,7 +32,7 @@ import CatalogByType from './components/Catalog/CatalogByType'
 import { useTranslation } from 'react-i18next'
 
 const App = () => {
-  const { t, i18n } = useTranslation()
+  const { t } = useTranslation()
   const [data, setData] = useState<CarType[]>([])
   const [dataAuction, setDataAuction] = useState<CarType[]>([])
   const [dataFindCar, setDataFindCar] = useState([])
@@ -93,11 +92,11 @@ const App = () => {
     })
   }
 
-  const handleOut = () => {
-    setLogged(false)
-    localStorage.clear()
-    // history.push('/login')
-  }
+  // const handleOut = () => {
+  //   setLogged(false)
+  //   localStorage.clear()
+  // history.push('/login')
+  // }
 
   return (
     <Router>
@@ -124,19 +123,19 @@ const App = () => {
             <Nav className="nav-style nav-no-col nav-style-mob">
               <Nav.Link className="nav-item button-nav">
                 <BrowserLink to="/" className="text-white link-nav">
-                  <img className="img-small" src={home} />
+                  <img alt="11" className="img-small" src={home} />
                   {t('main')}
                 </BrowserLink>
               </Nav.Link>
               <Nav.Link className="nav-item button-nav">
                 <BrowserLink to="/catalog" className="text-white link-nav">
-                  <img className="img-small" src={cart} />
+                  <img alt="11" className="img-small" src={cart} />
                   Каталог
                 </BrowserLink>
               </Nav.Link>
               <Nav.Link className="nav-item button-nav">
                 <BrowserLink to="/auction" className="text-white link-nav">
-                  <img src={hammer} width="20px" className="mb-1 img-small" />
+                  <img alt="11" src={hammer} width="20px" className="mb-1 img-small" />
                   {t('auction')}
                 </BrowserLink>
               </Nav.Link>
@@ -145,13 +144,13 @@ const App = () => {
                 className="text-white link-nav nav-item button-nav mag-link"
                 href="https://oksishukh.wixsite.com/my-site-3"
               >
-                <img className="img-small" src={read} />
+                <img alt="11" className="img-small" src={read} />
                 Журнал
               </a>
 
               <Nav.Link className="nav-item text-white link-nav button-nav">
                 <BrowserLink to="/cooperation" className=" text-white link-nav">
-                  <img className="img-small" src={search_black} />
+                  <img alt="11" className="img-small" src={search_black} />
                   {t('willBuy')}
                 </BrowserLink>
               </Nav.Link>

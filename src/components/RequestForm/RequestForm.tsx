@@ -14,7 +14,7 @@ type TFormData = {
 }
 
 const RequestForm = (props) => {
-  const { t, i18n } = useTranslation()
+  const { t } = useTranslation()
   const history = useHistory()
 
   const {
@@ -37,7 +37,7 @@ const RequestForm = (props) => {
     Сообщение: ${comment}  
     
     Номер тел: ${phone}`
-    const API_URL = `https://api.telegram.org/bot1747833143:AAGmm2CnUrkYCyHIdVzEkgJVg2HfNUCba28/sendMessage?chat\_id=987210358&text=${bodyMessage}&parse\_mode=HTML`
+    const API_URL = `https://api.telegram.org/bot1747833143:AAGmm2CnUrkYCyHIdVzEkgJVg2HfNUCba28/sendMessage?chat_id=987210358&text=${bodyMessage}&parse_mode=HTML`
     return axios.post(API_URL, {
       username,
       phone,
@@ -114,8 +114,7 @@ const RequestForm = (props) => {
                 value={value}
                 defaultCountry="UA"
                 onChange={onChange}
-
-                //  "input-style form-control"
+                // "input-style form-control"
               />
             )}
           />

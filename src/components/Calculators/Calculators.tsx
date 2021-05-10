@@ -1,12 +1,12 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { Container, Row, Col } from 'react-bootstrap'
 import bank_1 from '../../img/bank-1.png'
 import bank_2 from '../../img/bank-2.png'
 import bank_3 from '../../img/bank-3.png'
 import bank_4 from '../../img/tac.png'
-import bank_5 from '../../img/hap.png'
+// import bank_5 from '../../img/hap.png'
 import hapai from '../../img/hapai.png'
-import automoney from '../../img/automoney.png'
+// import automoney from '../../img/automoney.png'
 import './style.css'
 
 const Calculators = ({ reference }) => {
