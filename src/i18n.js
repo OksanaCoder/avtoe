@@ -1,7 +1,7 @@
 import i18n from 'i18next'
 import LanguageDetector from 'i18next-browser-languagedetector'
 import { initReactI18next } from 'react-i18next'
-const translationRu = {
+const translationUa = {
   head: 'Досить Мріяти про Авто',
   subhead: 'для тебе завжди є пропозиції',
   search: 'Пошук...',
@@ -71,7 +71,7 @@ const translationRu = {
   detailsByPhone: 'Всі деталі за номерами:',
   cancel: 'Скасувати',
 }
-const translationUa = {
+const translationRu = {
   head: 'Хватит Мечтать об Автомобиле',
   subhead: 'для тебя всегда есть предложения',
   search: 'Поиск...',

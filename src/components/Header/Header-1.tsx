@@ -22,7 +22,6 @@ const Header = ({ reference, data }) => {
     i18n.changeLanguage(lng)
   }
   const [isPicked, setPicked] = useState(false)
-  const [searchItem, setSearchItem] = useState('')
   const [selected, setSelected] = useState('')
   let history = useHistory()
   const customStyles = {
@@ -33,7 +32,13 @@ const Header = ({ reference, data }) => {
   }
   const handleClick = () => {
     setPicked(!isPicked)
+    changeLanguage('ru')
   }
+  const handleClick1 = () => {
+    setPicked(!isPicked)
+    changeLanguage('ua')
+  }
+
   const handleChange = (newVal) => {
     setSelected(newVal)
     history.push(`/carDetails/${newVal.id}`)
@@ -58,25 +63,10 @@ const Header = ({ reference, data }) => {
       },
     },
   ]
-  //  const options = () => {
-  //    data.map(item => {
-  //      return {
-  //        value: item.name,
-  //        label: item.name
-  //       }
-  //    })
-  //  }
+
   const renderList = () => {
     return data.map((data) => ({ label: data.name, value: data.name, id: data.id }))
   }
-
-  //  const name  = data.map(i => {
-  //    return i.name
-  //  })
-
-  // const dataList = [
-  //   { label: name, label: name}
-  // ]
 
   return (
     <>
@@ -88,18 +78,16 @@ const Header = ({ reference, data }) => {
             </Col>
             <Col lg={6} md={6} sm={12} className="text-right flex-right">
               <button
-                onClick={handleClick}
+                onClick={handleClick1}
                 className={!isPicked ? 'active-link' : 'not-active'}
               >
-                <h6 onClick={() => changeLanguage('ua')}>UA</h6>
+                <h6>UA</h6>
               </button>
               <button
                 onClick={handleClick}
                 className={isPicked ? 'active-link' : 'not-active'}
               >
-                <h6 className="ml-3" onClick={() => changeLanguage('ru')}>
-                  RU
-                </h6>
+                <h6 className="ml-3">RU</h6>
               </button>
             </Col>
           </Row>
