@@ -16,11 +16,14 @@ const Filter = ({ onSearch }) => {
   const handleSearch = () => {
     onSearch(valueBrand, valueYear, valuePrice)
   }
+  const handleRevert = () => {
+    console.log('drop filter')
+  }
 
   return (
     <>
       <Form
-        className="white p-5"
+        className="white padding-filter"
         style={{ background: '#23292D', paddingBottom: '100px' }}
       >
         <Row className="form-style">
@@ -71,9 +74,14 @@ const Filter = ({ onSearch }) => {
             />
           </Form.Group>
 
-          <div className="text-center col-lg-3 col-md-12 col-sm-12">
+          <div className="text-center col-lg-1 col-md-12 col-sm-12">
             <Button className="btn-search" onClick={handleSearch}>
               <img src={search} alt="search" width="20" />
+            </Button>
+          </div>
+          <div className="text-center col-lg-1 col-md-12 col-sm-12">
+            <Button className="btn-search" onClick={handleRevert}>
+              {t('revert')}
             </Button>
           </div>
         </Row>

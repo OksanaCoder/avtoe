@@ -40,7 +40,7 @@ const Footer = () => {
             <img src={home} className="icon-fill" />
             <div className="ml-3">
               <h6>{t('adressHead')}:</h6>
-              <small className="font-footer">{t('adress')}</small>
+              <small className="font-footer">{t('address')}</small>
             </div>
           </Col>
         </Row>
@@ -49,7 +49,7 @@ const Footer = () => {
         </Row>
         <Row className="line mt-5">
           <Col className="text-white flex-footer mt-4 mb-4 align-center">
-            <small className="font-footer">{t('social')}: </small>
+            <small className="font-footer">{t('social')} </small>
             <ul className="list-unstyled flex-footer align-center">
               <li>
                 <a href="https://www.facebook.com/avtoeukraine/">

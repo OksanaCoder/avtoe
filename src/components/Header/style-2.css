@@ -70,7 +70,7 @@ body {
 }
 button.btn-search.btn.btn-primary {
   font-weight: 700;
-  padding: 7px 70px !important;
+  padding: 7px 10px !important;
 }
 select {
   background-color: transparent;

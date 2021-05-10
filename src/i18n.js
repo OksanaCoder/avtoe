@@ -77,6 +77,7 @@ const translationUa = {
   id: 'ID аукціону',
   dataStart: 'Дата старту',
   setBid: 'Поставити ставку',
+  revert: 'Скинути',
 }
 const translationRu = {
   head: 'Хватит Мечтать об Автомобиле',
@@ -153,6 +154,7 @@ const translationRu = {
   id: 'ID аукциона',
   dataStart: 'Дата старта',
   setBid: 'Поставить ставку',
+  revert: 'Сбросить',
 }
 
 i18n
