@@ -4,12 +4,14 @@ import CarItem from '../CarItem/CarItem'
 import Filter from '../Filter/Filter'
 import { Row, Container, Col } from 'react-bootstrap'
 import { CarType } from '../../types/appTypes'
+import { useTranslation } from 'react-i18next'
 
 type Props = {
   data: CarType[]
 }
 
 const Catalog = ({ data = [] }: Props) => {
+  const { t, i18n } = useTranslation()
   useLayoutEffect(() => {
     window.scrollTo(0, 0)
   })
@@ -38,8 +40,8 @@ const Catalog = ({ data = [] }: Props) => {
         <Row className="flex-style padding-filter m-0" style={{ background: '#23292D' }}>
           <div className="heading-style col text-center">
             <div className="blue-line m-auto"></div>
-            <h6 className="mt-3">Обери</h6>
-            <h3 className="blue-color">Авто Своєї Мрії</h3>
+            <h6 className="mt-3">{t('choose')}</h6>
+            <h3 className="blue-color">{t('car')}</h3>
           </div>
         </Row>
 
@@ -49,8 +51,8 @@ const Catalog = ({ data = [] }: Props) => {
           <Container style={{ background: '#262626' }} className="pb-5" fluid>
             <Row className="p-5">
               <div className="heading-style">
-                <h6 className="blue-line">Останні</h6>
-                <h3>Оновлення</h3>
+                <h6 className="blue-line">{t('last')}</h6>
+                <h3>{t('updates')}</h3>
               </div>
             </Row>
             <Row>
@@ -65,7 +67,7 @@ const Catalog = ({ data = [] }: Props) => {
           <Container style={{ background: '#262626' }} className="pb-5" fluid>
             <Row className="p-5">
               <div className="heading-style">
-                <h6>Авто відсутні</h6>
+                <h6>{t('noCars')}</h6>
               </div>
             </Row>
           </Container>

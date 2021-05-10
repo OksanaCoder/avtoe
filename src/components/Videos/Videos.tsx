@@ -1,13 +1,15 @@
 import React from 'react'
 import { Container, Row, Col } from 'react-bootstrap'
+import { useTranslation } from 'react-i18next'
 
 const Videos = () => {
+  const { t, i18n } = useTranslation()
   return (
     <>
       <Container fluid className="p-5">
         <div className="heading-style col-lg-12 col-md-12 col-sm-12  mb-5 mt-5 text-center">
-          <h6 className="text-dark">Ми</h6>
-          <h3>У СМІ</h3>
+          <h6 className="text-dark">{t('we')}</h6>
+          <h3>{t('smi')}</h3>
         </div>
         <Row className="mt-5">
           <Col lg={4} md={6} sm={12} xs={12} className="mb-5">

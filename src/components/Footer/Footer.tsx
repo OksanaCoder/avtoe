@@ -6,8 +6,10 @@ import home from '../../img/home.svg'
 import facebook from '../../img/facebook.svg'
 import instagram from '../../img/instagram.svg'
 import './style.css'
+import { useTranslation } from 'react-i18next'
 
 const Footer = () => {
+  const { t, i18n } = useTranslation()
   return (
     <div id="footer" style={{ background: '#010916', padding: '100px 50px 20px 50px' }}>
       <Container fluid>
@@ -15,7 +17,7 @@ const Footer = () => {
           <Col lg={4} md={4} sm={12} className="footer-item font-footer">
             <img src={call} style={{ color: '#fff' }} className="icon-fill" />
             <div className="ml-3 text-white">
-              <h6>Контакти:</h6>
+              <h6>{t('contacts')}:</h6>
               <ul className="list-unstyled">
                 <li>+38 050 249 09 09</li>
                 <li>+38 066 249 09 09</li>
@@ -37,8 +39,8 @@ const Footer = () => {
           <Col lg={4} md={4} sm={12} className="text-white footer-item font-footer">
             <img src={home} className="icon-fill" />
             <div className="ml-3">
-              <h6>Адреса:</h6>
-              <small className="font-footer">г. Киев, проспект Степана Бандеры, 13</small>
+              <h6>{t('adressHead')}:</h6>
+              <small className="font-footer">{t('adress')}</small>
             </div>
           </Col>
         </Row>
@@ -47,7 +49,7 @@ const Footer = () => {
         </Row>
         <Row className="line mt-5">
           <Col className="text-white flex-footer mt-4 mb-4 align-center">
-            <small className="font-footer">Ми в соціальних мережах: </small>
+            <small className="font-footer">{t('social')}: </small>
             <ul className="list-unstyled flex-footer align-center">
               <li>
                 <a href="https://www.facebook.com/avtoeukraine/">

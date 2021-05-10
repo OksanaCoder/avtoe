@@ -5,8 +5,10 @@ import search from '../../img/search.svg'
 import Select from 'react-select'
 import CreatableSelect from 'react-select/creatable'
 import { optionPrice, optionBrand, optionsYear } from './FilterHelper'
+import { useTranslation } from 'react-i18next'
 
 const Filter = ({ onSearch }) => {
+  const { t, i18n } = useTranslation()
   const [valueBrand, setValueBrand] = useState('')
   const [valueYear, setValueYear] = useState([])
   const [valuePrice, setValuePrice] = useState('')
@@ -39,7 +41,7 @@ const Filter = ({ onSearch }) => {
             controlId="exampleForm.ControlSelect2"
             className="col-lg-3 col-md-12 col-sm-12"
           >
-            <Form.Label>Рік</Form.Label>
+            <Form.Label>{t('year')}</Form.Label>
             <CreatableSelect
               options={optionsYear}
               className="selectStyle optionStyle"
@@ -54,7 +56,7 @@ const Filter = ({ onSearch }) => {
             controlId="exampleForm.ControlSelect3"
             className="col-lg-3 col-md-12 col-sm-12"
           >
-            <Form.Label>Ціна, $</Form.Label>
+            <Form.Label>{t('price')}, $</Form.Label>
             <Select
               options={optionPrice}
               className="selectStyle optionStyle"

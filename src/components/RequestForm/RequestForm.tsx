@@ -5,6 +5,7 @@ import { useHistory } from 'react-router-dom'
 import './style.css'
 import { useForm, Controller } from 'react-hook-form'
 import PhoneInput from 'react-phone-number-input'
+import { useTranslation } from 'react-i18next'
 
 type TFormData = {
   username: string
@@ -13,10 +14,8 @@ type TFormData = {
 }
 
 const RequestForm = (props) => {
+  const { t, i18n } = useTranslation()
   const history = useHistory()
-
-  // return <div className="pre-line">{bodyMessage}</div>
-  // const chat_id = '987210358'
 
   const {
     handleSubmit,
@@ -56,7 +55,7 @@ const RequestForm = (props) => {
   return (
     <Modal show={props.show_form} onHide={props.handleCloseForm} className="login-form">
       <Modal.Header closeButton>
-        <Modal.Title>Залиште заявку</Modal.Title>
+        <Modal.Title>{t('request')}</Modal.Title>
       </Modal.Header>
       <Modal.Body>
         <Form onSubmit={handleSubmit(onSubmit)}>
@@ -68,13 +67,13 @@ const RequestForm = (props) => {
               <Form.Group controlId="username">
                 <Form.Control
                   type="text"
-                  placeholder="Ім'я"
+                  placeholder={t('name')}
                   value={value}
                   onChange={onChange}
                   className="input-style"
                 />
                 {errors.username && (
-                  <small style={{ color: 'red' }}>Поле повинно бути заповненим.</small>
+                  <small style={{ color: 'red' }}>{t('errorForm')}</small>
                 )}
               </Form.Group>
             )}
@@ -88,13 +87,13 @@ const RequestForm = (props) => {
               <Form.Group controlId="comment">
                 <Form.Control
                   type="text"
-                  placeholder="Повідомлення"
+                  placeholder={t('message')}
                   value={value}
                   onChange={onChange}
                   className="input-style"
                 />
                 {errors.comment && (
-                  <small style={{ color: 'red' }}>Поле повинно бути заповненим.</small>
+                  <small style={{ color: 'red' }}>{t('errorForm')}</small>
                 )}
               </Form.Group>
             )}
@@ -121,14 +120,14 @@ const RequestForm = (props) => {
             )}
           />
           {errors.phone && errors.phone.type === 'required' && (
-            <small style={{ color: 'red' }}>Поле повинно бути заповненим.</small>
+            <small style={{ color: 'red' }}>{t('errorForm')}</small>
           )}
           {errors.phone && errors.phone.type === 'validate' && (
-            <small style={{ color: 'red' }}>Невірний формат.</small>
+            <small style={{ color: 'red' }}>{t('format')}</small>
           )}
           <div className="text-center mt-5 flex-column">
             <Button variant="primary" type="submit" className="btn-form yellow-back">
-              Відправити
+              {t('send')}
             </Button>
           </div>
         </Form>

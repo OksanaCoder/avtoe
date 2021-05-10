@@ -12,12 +12,14 @@ import ModalContactUs from '../ModalContactUs/ModalContactUs'
 import { useHistory, useParams } from 'react-router-dom'
 import io from 'socket.io-client'
 import { CarType } from '../../types/appTypes'
+import { useTranslation } from 'react-i18next'
 
 type Props = {
   data: CarType[]
 }
 
 const CarDetails = ({ data = [] }: Props) => {
+  const { t, i18n } = useTranslation()
   const [item, setItem] = useState<CarType>({} as CarType)
   const { id } = useParams<{ id: string }>()
 
@@ -67,11 +69,6 @@ const CarDetails = ({ data = [] }: Props) => {
     setOpenModal(false)
   }
 
-  //    const checkUser = () => {
-  //        localStorage.getItem('user')
-  //        localStorage.getItem('logged')
-  //     }
-  // const [logged, setLogged] = useState(false)
   const [bid, setBid] = useState(null)
   const sendBid = () => {
     socket.emit('bidInAuction', {
@@ -91,7 +88,7 @@ const CarDetails = ({ data = [] }: Props) => {
       <Container fluid className="pb-5 mb-5">
         <div className="p-5">
           <h5 className="blue-line"></h5>
-          <h5 className="header-details">Деталі авто</h5>
+          <h5 className="header-details">{t('details')}</h5>
           <h6 className="mt-3">{item.name}</h6>
         </div>
         <Row>
@@ -156,27 +153,27 @@ const CarDetails = ({ data = [] }: Props) => {
             </Row>
 
             <Row className="mt-4 row-modal">
-              <Col> Рік випуску:</Col>
+              <Col> {t('yearProd')}:</Col>
               <Col> {item.year}</Col>
             </Row>
             <Row className="mt-1 row-modal">
-              <Col> Привід:</Col>
+              <Col> {t('privod')}:</Col>
               <Col> {item.drive}</Col>
             </Row>
             <Row className="mt-1 row-modal">
-              <Col> Колір:</Col>
+              <Col> {t('color')}:</Col>
               <Col> {item.color}</Col>
             </Row>
             <Row className="mt-1 row-modal">
-              <Col>Опис:</Col>
+              <Col>{t('description')}:</Col>
               <Col>{item.description}</Col>
             </Row>
             <Row className="mt-1 row-modal">
-              <Col> Додаткова інформація:</Col>
+              <Col> {t('extraInfo')}:</Col>
               <Col> {item.extraInfo}</Col>
             </Row>
             <Row className="mt-1 row-modal">
-              <Col> Контакти:</Col>
+              <Col> {t('contacts')}:</Col>
               <Col>
                 <ul className="list-unstyled">
                   <li>+38 050 249 09 09</li>
@@ -186,8 +183,8 @@ const CarDetails = ({ data = [] }: Props) => {
               </Col>
             </Row>
             <Row className="mt-1 row-modal">
-              <Col> Де ми знаходимось ?</Col>
-              <Col>Київ, проспект Степана Бандери, 13</Col>
+              <Col> {t('whereLocation')}</Col>
+              <Col>{t('address')}</Col>
             </Row>
             <Row className="align-center mt-4">
               <Col>
@@ -195,7 +192,7 @@ const CarDetails = ({ data = [] }: Props) => {
               </Col>
               <Col>
                 <button className="btn-item buy-now" onClick={openModal}>
-                  Викупити
+                  {t('buyOut')}
                 </button>
               </Col>
             </Row>

@@ -1,13 +1,14 @@
 import React from 'react'
-import Header from '../Header/Header-1'
 import Videos from '../Videos/Videos'
 import org from '../../img/un.jpg'
-import { Container, Row, Col, Tabs, Tab } from 'react-bootstrap'
+import { Row, Col, Tabs, Tab } from 'react-bootstrap'
 import './style.css'
 import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api'
-import Slide from 'react-reveal/Slide'
+import { useTranslation } from 'react-i18next'
 
 const About = () => {
+  const { t, i18n } = useTranslation()
+
   const containerStyle = {
     width: '100%',
     height: '400px',
@@ -33,12 +34,12 @@ const About = () => {
     <div>
       <div className="about-pad">
         <Tabs defaultActiveKey="profile" id="uncontrolled-tab-example">
-          <Tab eventKey="home" title="Організація" className="tab-about">
+          <Tab eventKey="home" title={t('org')} className="tab-about">
             <Row>
               <div className="heading-style col-lg-12 col-md-12 col-sm-12  mb-5 mt-5">
                 <div className="blue-line mr-auto"></div>
-                <h6 className="text-dark mt-3 ">Громадська Організація</h6>
-                <h3 className="text-media">Всеукраїнська асоціація автобізнесменів</h3>
+                <h6 className="text-dark mt-3 ">{t('orgHead')}</h6>
+                <h3 className="text-media">{t('orgName')}</h3>
               </div>
             </Row>
             <Row className="p-4 align-items-center mt-3">
@@ -46,23 +47,16 @@ const About = () => {
                 <img src={org} width="70%" className="mb-2" />
               </Col>
               <Col style={{ lineHeight: '2', fontSize: '20px' }} lg={6} md={12} sm={12}>
-                Наші ключові цілі - порядок, законність і надійність ведення автобізнесу в
-                Україні. Ми відстоюємо порушені права покупців і продавців, забезпечуємо
-                прозорі продажу автомобілів, піклуємося про розширення необхідної для
-                автомобілістів інфраструктури. Кожен може стати членом нашої організації і
-                допомагати нам робити автомобільний ринок України по-справжньому
-                європейським!
+                {t('orgMore')}
               </Col>
             </Row>
           </Tab>
-          <Tab eventKey="profile" title="Засновник">
+          <Tab eventKey="profile" title={t('owner')}>
             <Row>
               <div className="heading-style col-lg-12 col-md-12 col-sm-12  mb-5 mt-5">
                 <div className="blue-line mr-auto"></div>
-                <h6 className="text-dark mt-3">
-                  Президент Всеукраїнської асоціації автобізнесменів
-                </h6>
-                <h3 className="text-media">Володимир Кузьменко</h3>
+                <h6 className="text-dark mt-3">{t('ownerHead')}</h6>
+                <h3 className="text-media">{t('ownerName')}</h3>
               </div>
             </Row>
             <Row className="p-4 align-items-center mt-3">
@@ -74,20 +68,11 @@ const About = () => {
                 />
               </Col>
               <Col lg={6} md={12} sm={12} style={{ lineHeight: '2', fontSize: '20px' }}>
-                "Автобізнес - це ціла галузь економіки України, яка справно платить
-                податки і рухає багато інших галузей вітчизняної промисловості. Але в той
-                же час ця галузь системно стикається з низкою серйозних проблем. На жаль,
-                починаючи з 90-х років минулого століття, український вторинний
-                автомобільний ринок переживає не кращі часи. Автомобільний бізнес - це
-                лакмусовий папірець для кримінального світу. На жаль, є багато шахраїв,
-                системно намагаються провернути різні непорядні афери, ущемляючи права
-                автомобілістів. Людей, які намагаються чесно купити або продати машину.
-                Саме тому ми з вами об'єднуємося і впевнено рухаємося до принципово новим
-                стандартам роботи цього ринку ".
+                "{t('about')}".
               </Col>
             </Row>
           </Tab>
-          <Tab eventKey="map" title="Місцеположення">
+          <Tab eventKey="map" title={t('location')}>
             <Col>
               <h6 className="pl-3 pt-3 mt-3">г. Киев, проспект Степана Бандеры, 13</h6>
               <LoadScript googleMapsApiKey="AIzaSyABS95c2rEoEhNOc-7nFFD9kf3MokK582w">

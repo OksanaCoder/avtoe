@@ -107,9 +107,7 @@ const Header = ({ reference, data }) => {
           <Row className="align-center">
             <Col>
               <div className="flex-center white">
-                <h6 style={{ fontSize: '1rem', fontWeight: 'bold' }}>
-                  {t('Досить Мріяти про Авто')}
-                </h6>
+                <h6 style={{ fontSize: '1rem', fontWeight: 'bold' }}>{t('head')}</h6>
 
                 <h4
                   style={{
@@ -129,13 +127,13 @@ const Header = ({ reference, data }) => {
                     className="ml-3 mr-4"
                   />
                   <small style={{ fontSize: '2rem', fontWeight: 'bold', color: '#fff' }}>
-                    для тебе завжди є пропозиції
+                    {t('subhead')}
                   </small>
                 </h4>
 
                 <Select
                   className="search-line"
-                  placeholder="Пошук..."
+                  placeholder={t('search')}
                   options={renderList()}
                   styles={customStyles}
                   onChange={handleChange}

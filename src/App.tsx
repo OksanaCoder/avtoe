@@ -30,15 +30,10 @@ import CarDetailsAuction from './components/CarDetailsAuction/CarDetailsAuction'
 import classNames from 'classnames'
 import { CarType } from './types/appTypes'
 import CatalogByType from './components/Catalog/CatalogByType'
+import { useTranslation } from 'react-i18next'
 
 const App = () => {
-  // let socket = io.connect('http://localhost:4000', {
-  //   query: {
-  //     token:
-  //       'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MDU1NWY2OTQ1NDQyNDEwM2NlYmRhODgiLCJpYXQiOjE2MTcyNDUxODB9.s3fOFjdiV3U2DqU3IlPx9ZVtV2PdC9S89_4mMH1Co9k',
-  //   },
-  // })
-
+  const { t, i18n } = useTranslation()
   const [data, setData] = useState<CarType[]>([])
   const [dataAuction, setDataAuction] = useState<CarType[]>([])
   const [dataFindCar, setDataFindCar] = useState([])
@@ -115,7 +110,7 @@ const App = () => {
           }
         )}
       >
-        <h6 style={{ fontSize: '12px' }}>Завантажуй додаток ! Там зручніше</h6>
+        <h6 style={{ fontSize: '12px' }}>{t('mob')}</h6>
         <h6
           style={{ fontWeight: 700, fontSize: '12px' }}
           onClick={() => setShowed(!showed)}
@@ -130,7 +125,7 @@ const App = () => {
               <Nav.Link className="nav-item button-nav">
                 <BrowserLink to="/" className="text-white link-nav">
                   <img className="img-small" src={home} />
-                  Головна
+                  {t('main')}
                 </BrowserLink>
               </Nav.Link>
               <Nav.Link className="nav-item button-nav">
@@ -142,7 +137,7 @@ const App = () => {
               <Nav.Link className="nav-item button-nav">
                 <BrowserLink to="/auction" className="text-white link-nav">
                   <img src={hammer} width="20px" className="mb-1 img-small" />
-                  Аукціон
+                  {t('auction')}
                 </BrowserLink>
               </Nav.Link>
 
@@ -157,65 +152,9 @@ const App = () => {
               <Nav.Link className="nav-item text-white link-nav button-nav">
                 <BrowserLink to="/cooperation" className=" text-white link-nav">
                   <img className="img-small" src={search_black} />
-                  Купимо
+                  {t('willBuy')}
                 </BrowserLink>
               </Nav.Link>
-              {/* <Nav.Link className="nav-item link-nav button-nav">
-                <BrowserLink to="/profile" className="text-white link-nav">
-                  <img className="img-small" src={person} />
-                  Мій кабінет
-                </BrowserLink>
-              </Nav.Link> */}
-              {/* {!logged ? (
-            
-              ) : (
-                <>
-                  <Nav.Link className="nav-item link-nav button-nav">
-                    <BrowserLink to="/profile" className="text-white link-nav">
-                      <img className="img-small" src={person} />
-                      {localStorage.getItem('fullName')}
-                    </BrowserLink>
-                  </Nav.Link>
-                  <Nav.Link className=" nav-item link-nav button-nav">
-                    <BrowserLink to="/login" className=" text-white link-nav">
-                      <img className="img-small" src={person} onClick={handleOut} />
-                      Вийти
-                    </BrowserLink>
-                  </Nav.Link>
-                </>
-              )} */}
-              {/* 
-              {!logged ? (
-                <>
-                  <Nav.Link className=" nav-item link-nav button-nav">
-                    <BrowserLink to="/login" className=" text-white link-nav">
-                      <img className="img-small" src={person} />
-                      Увійти
-                    </BrowserLink>
-                  </Nav.Link>
-                  <Nav.Link className=" nav-item link-nav button-nav">
-                    <BrowserLink to="/register" className=" text-white link-nav">
-                      <img className="img-small" src={person} />
-                      Реєстрація
-                    </BrowserLink>
-                  </Nav.Link>
-                </>
-              ) : (
-                <>
-                  <Nav.Link className="nav-item link-nav button-nav">
-                    <BrowserLink to="/profile" className="text-white link-nav">
-                      <img className="img-small" src={person} />
-                      {localStorage.getItem('fullName')}
-                    </BrowserLink>
-                  </Nav.Link>
-                  <Nav.Link className=" nav-item link-nav button-nav">
-                    <BrowserLink to="/login" className=" text-white link-nav">
-                      <img className="img-small" src={person} onClick={handleOut} />
-                      Вийти
-                    </BrowserLink>
-                  </Nav.Link>
-                </>
-              )} */}
             </Nav>
           </Nav>
         </Container>
