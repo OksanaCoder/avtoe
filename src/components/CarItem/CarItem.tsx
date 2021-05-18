@@ -21,8 +21,12 @@ const CarItem = ({ filteredData = [] }: Props) => {
     <div>
       {filteredData.map((item) => {
         return (
-          <Link style={{ textDecoration: 'none' }} to={`/carDetails/${item.id}`}>
-            <Card key={item.id} className="card-style mb-3">
+          <Link
+            key={item.id}
+            style={{ textDecoration: 'none' }}
+            to={`/carDetails/${item.id}`}
+          >
+            <Card className="card-style mb-3">
               {item.images.length === 0 ? (
                 <Card.Img src={imageCar} className="img-feature"></Card.Img>
               ) : (

@@ -30,11 +30,12 @@ import classNames from 'classnames'
 import { CarType } from './types/appTypes'
 import CatalogByType from './components/Catalog/CatalogByType'
 import { useTranslation } from 'react-i18next'
+import ScrollToTop from './components/common/ScrollToTop'
 
 const App = () => {
-  useLayoutEffect(() => {
-    window.scrollTo(0, 0)
-  })
+  // useLayoutEffect(() => {
+  //   window.scrollTo(0, 0)
+  // })
 
   const scrollToTop = () => window.scrollTo(0, 0)
 
@@ -106,6 +107,7 @@ const App = () => {
 
   return (
     <Router>
+      <ScrollToTop />
       <div
         style={{ background: '#062BB2' }}
         className={classNames(

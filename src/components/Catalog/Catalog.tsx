@@ -14,9 +14,9 @@ type Props = {
 const Catalog = ({ data = [] }: Props) => {
   const { t } = useTranslation()
 
-  useLayoutEffect(() => {
-    window.scrollTo(0, 0)
-  })
+  // useLayoutEffect(() => {
+  //   window.scrollTo(0, 0)
+  // })
 
   const [filteredData, setFilteredData] = useState<CarType[]>([])
 

@@ -7,9 +7,9 @@ import { useTranslation } from 'react-i18next'
 const Cooperation = ({ dataFindCar = [] }) => {
   const { t } = useTranslation()
 
-  useLayoutEffect(() => {
-    window.scrollTo(0, 0)
-  })
+  // useLayoutEffect(() => {
+  //   window.scrollTo(0, 0)
+  // })
 
   return (
     <>
