@@ -25,13 +25,14 @@ import CarDetails from './components/CarDetails/CarDetails'
 import Catalog from './components/Catalog/Catalog'
 import RequestForm from './components/RequestForm/RequestForm'
 import Profile from './components/Profile/Profile'
-import { allAuctions, allCars, allAdvertisments } from './API'
+import { allAuctions, allCars, allAdvertisments, allArticles } from './API'
 import CarDetailsAuction from './components/CarDetailsAuction/CarDetailsAuction'
 import classNames from 'classnames'
 import { CarType } from './types/appTypes'
 import CatalogByType from './components/Catalog/CatalogByType'
 import { useTranslation } from 'react-i18next'
 import ScrollToTop from './components/common/ScrollToTop'
+import ArticleDetails from './components/Magazine/ArticleDetails'
 
 const App = () => {
   const scrollToTop = () => window.scrollTo(0, 0)
@@ -40,6 +41,7 @@ const App = () => {
   const [data, setData] = useState<CarType[]>([])
   const [dataAuction, setDataAuction] = useState<CarType[]>([])
   const [dataFindCar, setDataFindCar] = useState([])
+  const [dataArticles, setDataArticles] = useState([])
   const [logged, setLogged] = useState(false)
   const myRef = useRef<any>(null)
   const [show_form, setShow_form] = useState(false)
@@ -51,8 +53,20 @@ const App = () => {
     loadCars()
     loadAuctions()
     loadDataFindCar()
+    loadMagazine()
   }, [])
 
+  const loadMagazine = () => {
+    allArticles()
+      .then((response) => {
+        if (response.data) {
+          setDataArticles(response.data)
+        }
+      })
+      .catch((err) => {
+        console.log(err)
+      })
+  }
   const loadDataFindCar = () => {
     allAdvertisments()
       .then((response) => {
@@ -210,6 +224,9 @@ const App = () => {
       </Route>
       <Route path="/magazine" exact>
         <Magazine />
+      </Route>
+      <Route exact path="/articleDetails/:id">
+        <ArticleDetails dataArticles={dataArticles} />
       </Route>
 
       <Route path="/cooperation" exact>

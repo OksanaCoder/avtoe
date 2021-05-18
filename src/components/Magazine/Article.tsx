@@ -1,23 +1,48 @@
 import React from 'react'
 import { Container, Row, Col } from 'react-bootstrap'
 import { ArticleType } from '../../types/appTypes'
+import { Link } from 'react-router-dom'
+import './style.css'
+import { useTranslation } from 'react-i18next'
 
 type Props = {
   dataArticles: ArticleType[]
 }
 
 const Article = ({ dataArticles = [] }: Props) => {
+  console.log('articles', dataArticles)
+  const { t } = useTranslation()
   return (
     <>
-      <Row>
+      <Row className="p-2 row-grey">
         {dataArticles.map((item) => {
           return (
-            <Col lg={12} md={12} sm={12} xs={12}>
-              {/* Add a Key, Rule: map should have key */}
-              <Row>
-                <Col lg={4} md={4} sm={12} xs={12}></Col>
-                <Col lg={8} md={8} sm={12} xs={12}>
-                  {item.heading}
+            <Col
+              lg={3}
+              md={6}
+              sm={12}
+              xs={12}
+              key={item.id}
+              className="article-item mb-2"
+            >
+              <Row className="row-article">
+                <Col lg={12} md={12} sm={12} xs={12}></Col>
+                {item.images.length > 0
+                  ? item.images.map((i) => {
+                      return <img src={i} className="img-article mb-4" />
+                    })
+                  : null}
+                <Col lg={12} md={12} sm={12} xs={12}>
+                  <h6>{item.heading.slice(0, 40)}...</h6>
+                  <small>{item.content.slice(0, 50)}...</small>
+                  <div className="display-flex mt-4">
+                    <Link
+                      className="btn-item auction-btn mr-2"
+                      to={`/articleDetails/${item.id}`}
+                    >
+                      {t('more')}
+                    </Link>
+                  </div>
                 </Col>
               </Row>
             </Col>

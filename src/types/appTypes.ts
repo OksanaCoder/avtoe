@@ -31,6 +31,7 @@ export type CarType = {
 }
 
 export type ArticleType = {
+  id: number
   author: String
   content: String
   date: String

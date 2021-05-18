@@ -1,0 +1,25 @@
+.article-item {
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  padding: 20px;
+  margin-bottom: 20px;
+}
+.img-article {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+.row-article {
+  display: flex;
+  justify-content: space-between;
+  /* align-items: center; */
+  flex-direction: column;
+}
+.row-grey {
+  background-color: #262626;
+  color: #fff;
+}
+@media (max-width: 500px) {
+  .mobile-font {
+    font-size: 25px !important;
+  }
+}
