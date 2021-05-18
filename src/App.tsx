@@ -1,5 +1,5 @@
 import './App.css'
-import React, { useState, useRef, useEffect } from 'react'
+import React, { useState, useRef, useEffect, useLayoutEffect } from 'react'
 import Header from './components/Header/Header-1'
 import About from './components/About/About'
 import Footer from './components/Footer/Footer'
@@ -32,6 +32,9 @@ import CatalogByType from './components/Catalog/CatalogByType'
 import { useTranslation } from 'react-i18next'
 
 const App = () => {
+  useLayoutEffect(() => {
+    window.scrollTo(0, 0)
+  })
   const { t } = useTranslation()
   const [data, setData] = useState<CarType[]>([])
   const [dataAuction, setDataAuction] = useState<CarType[]>([])

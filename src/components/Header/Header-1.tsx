@@ -1,4 +1,4 @@
-import React, { useState, Suspense } from 'react'
+import React, { useState, Suspense, useEffect } from 'react'
 import { Container, Row, Col } from 'react-bootstrap'
 import './style-2.css'
 import img_4 from '../../img/btn-1.png'
@@ -8,7 +8,6 @@ import img_3 from '../../img/btn-3.png'
 import logo_big from '../../img/logo-big.png'
 import logo_small from '../../img/logo-small.png'
 import MobApp from '../../components/MobApp/MobApp'
-import Calculators from '../Calculators/Calculators'
 import Advantages from '../Advantages/Advantages'
 import Select from 'react-select'
 import { useHistory, Link } from 'react-router-dom'
@@ -156,7 +155,6 @@ const Header = ({ reference, data }) => {
           </Row>
         </Container>
 
-        <Calculators reference={reference} />
         <Advantages />
         <MobApp />
         <About />

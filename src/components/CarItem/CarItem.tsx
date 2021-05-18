@@ -21,48 +21,53 @@ const CarItem = ({ filteredData = [] }: Props) => {
     <div>
       {filteredData.map((item) => {
         return (
-          <Card key={item.id} className="card-style mb-3">
-            {item.images.length === 0 ? (
-              <Card.Img src={imageCar} className="img-feature"></Card.Img>
-            ) : (
-              <Card.Img src={item.image1} className="img-feature"></Card.Img>
-            )}
-            <Card.Body className="card-text">
-              <h5 className="bold">{item.name}</h5>
+          <Link style={{ textDecoration: 'none' }} to={`/carDetails/${item.id}`}>
+            <Card key={item.id} className="card-style mb-3">
+              {item.images.length === 0 ? (
+                <Card.Img src={imageCar} className="img-feature"></Card.Img>
+              ) : (
+                <Card.Img src={item.image1} className="img-feature"></Card.Img>
+              )}
+              <Card.Body className="card-text">
+                <h5 className="bold">{item.name}</h5>
 
-              <h5 className="color-yellow">$ {item.startingPrice}</h5>
+                <h5 className="color-yellow">$ {item.startingPrice}</h5>
 
-              <>
-                <Row className="align-center">
-                  <Col lg={6} md={6} sm={6} xs={6} className="center-items">
-                    <img alt="11" src={icon_2} className="white-icon invert-white" />
-                    {item.odometer} тыс. км
-                  </Col>
-                  <Col lg={6} md={6} sm={6} xs={6} className="center-items">
-                    <img alt="11" src={icon_1} className="icon-small invert-white" />
-                    {/* {item.city} */}
-                    Киев
-                  </Col>
-                </Row>
-                <Row className="align-center">
-                  <Col lg={6} md={6} sm={6} xs={6} className="center-items">
-                    <img alt="11" src={icon_3} className="icon-small invert-white" />
-                    {item.fuel}
-                  </Col>
-                  <Col lg={6} md={6} sm={6} xs={6} className="center-items">
-                    <img alt="11" src={icon_4} className="icon-small invert-white" />
-                    {item.drive}
-                  </Col>
-                </Row>
-              </>
+                <>
+                  <Row className="align-center">
+                    <Col lg={6} md={6} sm={6} xs={6} className="center-items">
+                      <img alt="11" src={icon_2} className="white-icon invert-white" />
+                      {item.odometer} {t('km')}
+                    </Col>
+                    <Col lg={6} md={6} sm={6} xs={6} className="center-items">
+                      <img alt="11" src={icon_1} className="icon-small invert-white" />
+                      {/* {item.city} */}
+                      {t('kyiv')}
+                    </Col>
+                  </Row>
+                  <Row className="align-center">
+                    <Col lg={6} md={6} sm={6} xs={6} className="center-items">
+                      <img alt="11" src={icon_3} className="icon-small invert-white" />
+                      {item.fuel}
+                    </Col>
+                    <Col lg={6} md={6} sm={6} xs={6} className="center-items">
+                      <img alt="11" src={icon_4} className="icon-small invert-white" />
+                      {item.drive}
+                    </Col>
+                  </Row>
+                </>
 
-              <div className="display-flex mt-4">
-                <Link className="btn-item auction-btn mr-2" to={`/carDetails/${item.id}`}>
-                  {t('more')}
-                </Link>
-              </div>
-            </Card.Body>
-          </Card>
+                <div className="display-flex mt-4">
+                  <Link
+                    className="btn-item auction-btn mr-2"
+                    to={`/carDetails/${item.id}`}
+                  >
+                    {t('more')}
+                  </Link>
+                </div>
+              </Card.Body>
+            </Card>
+          </Link>
         )
       })}
     </div>

@@ -2,5 +2,4 @@
 
 ## Todo:
 
-1. use react hook form (complete with step2)
-2. use phone library
+1. TS (types) is not required everywhere.

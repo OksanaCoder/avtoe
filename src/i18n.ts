@@ -3,7 +3,7 @@ import LanguageDetector from 'i18next-browser-languagedetector'
 import { initReactI18next } from 'react-i18next'
 
 const translationUa = {
-  head: 'Досить Мріяти про Авто',
+  head: 'Досить мріяти про Авто',
   subhead: 'для тебе завжди є пропозиції',
   search: 'Пошук...',
   why: 'Чому',
@@ -67,7 +67,7 @@ const translationUa = {
   description: 'Опис',
   extraInfo: 'Додаткова інформація',
   whereLocation: 'Де ми знаходимось ?',
-  buyOut: 'Викупити',
+  buyOut: 'Придбати',
   contactWithUs: "Зв'яжiться з нами",
   detailsByPhone: 'Всі деталі за номерами:',
   cancel: 'Скасувати',
@@ -79,9 +79,11 @@ const translationUa = {
   dataStart: 'Дата старту',
   setBid: 'Поставити ставку',
   revert: 'Скинути',
+  km: 'тис. км',
+  kyiv: 'Київ',
 }
 const translationRu = {
-  head: 'Хватит Мечтать об Автомобиле',
+  head: 'Хватит мечтать об Автомобиле',
   subhead: 'для тебя всегда есть предложения',
   search: 'Поиск...',
   why: 'Почему',
@@ -144,7 +146,7 @@ const translationRu = {
   description: 'Описание',
   extraInfo: 'Дополнительная информация',
   whereLocation: 'Где мы находимся ?',
-  buyOut: 'Выкупить',
+  buyOut: 'Купить',
   contactWithUs: 'Свяжитесь с нами',
   detailsByPhone: 'Все подробности по номерам:',
   cancel: 'Отмена',
@@ -156,6 +158,8 @@ const translationRu = {
   dataStart: 'Дата старта',
   setBid: 'Поставить ставку',
   revert: 'Сбросить',
+  km: 'тыс. км',
+  kyiv: 'Киев',
 }
 
 i18n
