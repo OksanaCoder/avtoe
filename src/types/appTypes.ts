@@ -29,10 +29,11 @@ export type CarType = {
   time: string | number
   status: boolean
 }
+
 export type ArticleType = {
   author: String
   content: String
   date: String
   heading: String
-  images: Array<String>
+  images: string[]
 }
