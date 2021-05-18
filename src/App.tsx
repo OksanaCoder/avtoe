@@ -35,6 +35,9 @@ const App = () => {
   useLayoutEffect(() => {
     window.scrollTo(0, 0)
   })
+
+  const scrollToTop = () => window.scrollTo(0, 0)
+
   const { t } = useTranslation()
   const [data, setData] = useState<CarType[]>([])
   const [dataAuction, setDataAuction] = useState<CarType[]>([])
@@ -126,19 +129,27 @@ const App = () => {
           <Nav className="mob-nav">
             <Nav className="nav-style nav-no-col nav-style-mob">
               <Nav.Link className="nav-item button-nav">
-                <BrowserLink to="/" className="text-white link-nav">
+                <BrowserLink to="/" className="text-white link-nav" onClick={scrollToTop}>
                   <img alt="11" className="img-small" src={home} />
                   {t('main')}
                 </BrowserLink>
               </Nav.Link>
               <Nav.Link className="nav-item button-nav">
-                <BrowserLink to="/catalog" className="text-white link-nav">
+                <BrowserLink
+                  to="/catalog"
+                  className="text-white link-nav"
+                  onClick={scrollToTop}
+                >
                   <img alt="11" className="img-small" src={cart} />
                   Каталог
                 </BrowserLink>
               </Nav.Link>
               <Nav.Link className="nav-item button-nav">
-                <BrowserLink to="/auction" className="text-white link-nav">
+                <BrowserLink
+                  to="/auction"
+                  className="text-white link-nav"
+                  onClick={scrollToTop}
+                >
                   <img alt="11" src={hammer} width="20px" className="mb-1 img-small" />
                   {t('auction')}
                 </BrowserLink>
@@ -147,15 +158,17 @@ const App = () => {
               <a
                 className="text-white link-nav nav-item button-nav mag-link"
                 href="https://oksishukh.wixsite.com/my-site-3"
-                target="_blank"
-                rel="noreferrer"
               >
                 <img alt="11" className="img-small" src={read} />
                 Журнал
               </a>
 
               <Nav.Link className="nav-item text-white link-nav button-nav">
-                <BrowserLink to="/cooperation" className=" text-white link-nav">
+                <BrowserLink
+                  to="/cooperation"
+                  className=" text-white link-nav"
+                  onClick={scrollToTop}
+                >
                   <img alt="11" className="img-small" src={search_black} />
                   {t('willBuy')}
                 </BrowserLink>

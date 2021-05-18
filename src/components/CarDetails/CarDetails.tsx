@@ -26,7 +26,7 @@ type Props = {
 }
 
 const CarDetails = ({ data = [] }: Props) => {
-  const { t, i18n } = useTranslation()
+  const { t } = useTranslation()
   const [item, setItem] = useState<CarType>({} as CarType)
   const { id } = useParams<{ id: string }>()
 
@@ -35,7 +35,7 @@ const CarDetails = ({ data = [] }: Props) => {
     if (found) {
       setItem(found)
     }
-  }, [id])
+  }, [data, id])
 
   let socket = io('http://localhost:4000', {
     query: {
