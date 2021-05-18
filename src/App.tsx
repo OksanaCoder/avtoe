@@ -108,7 +108,8 @@ const App = () => {
         className={classNames(
           { noShow: showed },
           {
-            'd-flex justify-content-between align-center pl-3 pr-3 pt-2 m-0 text-white': !showed,
+            'd-flex justify-content-between align-center pl-3 pr-3 pt-2 m-0 text-white':
+              !showed,
           }
         )}
       >
@@ -146,6 +147,8 @@ const App = () => {
               <a
                 className="text-white link-nav nav-item button-nav mag-link"
                 href="https://oksishukh.wixsite.com/my-site-3"
+                target="_blank"
+                rel="noreferrer"
               >
                 <img alt="11" className="img-small" src={read} />
                 Журнал
