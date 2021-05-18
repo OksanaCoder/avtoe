@@ -18,6 +18,7 @@ import home from './img/home.svg'
 import SignUpForm from './components/SignUpForm/SignUpForm'
 import LoginForm from './components/LoginForm/LoginForm'
 import Cooperation from './components/Cooperation/Cooperation'
+import Magazine from './components/Magazine/Magazine'
 import Auction from './components/Auction/Auction'
 import './components/NavBar/style.css'
 import CarDetails from './components/CarDetails/CarDetails'
@@ -33,10 +34,6 @@ import { useTranslation } from 'react-i18next'
 import ScrollToTop from './components/common/ScrollToTop'
 
 const App = () => {
-  // useLayoutEffect(() => {
-  //   window.scrollTo(0, 0)
-  // })
-
   const scrollToTop = () => window.scrollTo(0, 0)
 
   const { t } = useTranslation()
@@ -113,8 +110,7 @@ const App = () => {
         className={classNames(
           { noShow: showed },
           {
-            'd-flex justify-content-between align-center pl-3 pr-3 pt-2 m-0 text-white':
-              !showed,
+            'd-flex justify-content-between align-center pl-3 pr-3 pt-2 m-0 text-white': !showed,
           }
         )}
       >
@@ -157,13 +153,16 @@ const App = () => {
                 </BrowserLink>
               </Nav.Link>
 
-              <a
-                className="text-white link-nav nav-item button-nav mag-link"
-                href="https://oksishukh.wixsite.com/my-site-3"
-              >
-                <img alt="11" className="img-small" src={read} />
-                Журнал
-              </a>
+              <Nav.Link className="nav-item text-white link-nav button-nav">
+                <BrowserLink
+                  to="/magazine"
+                  className="text-white link-nav"
+                  onClick={scrollToTop}
+                >
+                  <img alt="11" className="img-small" src={read} />
+                  Журнал
+                </BrowserLink>
+              </Nav.Link>
 
               <Nav.Link className="nav-item text-white link-nav button-nav">
                 <BrowserLink
@@ -209,6 +208,9 @@ const App = () => {
       <Route path="/about" exact>
         <About />
       </Route>
+      <Route path="/magazine" exact>
+        <Magazine />
+      </Route>
 
       <Route path="/cooperation" exact>
         <Cooperation dataFindCar={dataFindCar} />
@@ -240,6 +242,7 @@ const App = () => {
       <Route path="/profile" exact>
         <Profile />
       </Route>
+
       <Footer />
     </Router>
   )

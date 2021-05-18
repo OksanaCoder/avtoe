@@ -15,9 +15,6 @@ type Props = {
 
 const Auction = ({ dataAuction = [] }: Props) => {
   const { t } = useTranslation()
-  // useLayoutEffect(() => {
-  //   window.scrollTo(0, 0)
-  // })
 
   const [filteredData, setFilteredData] = useState<CarType[]>([])
 
