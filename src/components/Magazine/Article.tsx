@@ -1,5 +1,5 @@
 import React from 'react'
-import { Container, Row, Col } from 'react-bootstrap'
+import { Row, Col } from 'react-bootstrap'
 import { ArticleType } from '../../types/appTypes'
 import { Link } from 'react-router-dom'
 import './style.css'
@@ -10,11 +10,9 @@ type Props = {
 }
 
 const Article = ({ dataArticles = [] }: Props) => {
-  console.log('articles', dataArticles)
   const { t } = useTranslation()
   return (
     <>
-     
       <Row className="p-2 row-grey">
         {dataArticles.map((item) => {
           return (

@@ -35,7 +35,6 @@ import ScrollToTop from './components/common/ScrollToTop'
 import ArticleDetails from './components/Magazine/ArticleDetails'
 
 const App = () => {
-  
   const scrollToTop = () => window.scrollTo(0, 0)
 
   const { t } = useTranslation()
@@ -125,7 +124,8 @@ const App = () => {
         className={classNames(
           { noShow: showed },
           {
-            'd-flex justify-content-between align-center pl-3 pr-3 pt-2 m-0 text-white': !showed,
+            'd-flex justify-content-between align-center pl-3 pr-3 pt-2 m-0 text-white':
+              !showed,
           }
         )}
       >
@@ -224,7 +224,7 @@ const App = () => {
         <About />
       </Route>
       <Route path="/magazine" exact>
-        <Magazine dataArticles={dataArticles}/>
+        <Magazine dataArticles={dataArticles} />
       </Route>
       <Route exact path="/articleDetails/:id">
         <ArticleDetails dataArticles={dataArticles} />
