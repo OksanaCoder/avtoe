@@ -17,7 +17,7 @@ const Article = ({ dataArticles = [] }: Props) => {
         {dataArticles.map((item) => {
           return (
             <Col
-              lg={2}
+              lg={3}
               md={12}
               sm={12}
               xs={12}
