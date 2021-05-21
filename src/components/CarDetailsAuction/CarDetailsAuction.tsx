@@ -11,7 +11,6 @@ import icon_4 from '../../img/icon_4.png'
 import Moment from 'react-moment'
 import ModalContactUs from '../ModalContactUs/ModalContactUs'
 import { useParams } from 'react-router-dom'
-import io from 'socket.io-client'
 import { CarType } from '../../types/appTypes'
 import { useTranslation } from 'react-i18next'
 
@@ -21,12 +20,6 @@ type Props = {
 
 const CarDetailsAuction = ({ dataAuction = [] }: Props) => {
   const { t } = useTranslation()
-  let socket = io('http://localhost:4000', {
-    query: {
-      token:
-        'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MDU1NWY2OTQ1NDQyNDEwM2NlYmRhODgiLCJpYXQiOjE2MTcyNDUxODB9.s3fOFjdiV3U2DqU3IlPx9ZVtV2PdC9S89_4mMH1Co9k',
-    },
-  })
 
   const [item, setItem] = useState<CarType>()
   const { id } = useParams<{ id: string }>()
@@ -38,34 +31,13 @@ const CarDetailsAuction = ({ dataAuction = [] }: Props) => {
     }
   }, [id, dataAuction])
 
-  useEffect(() => {
-    socket.on('winner', function (data) {
-      console.log(data)
-    })
-    socket.on('buyNowAuction', function (data) {
-      console.log(data)
-    })
-    socket.on('sold', function (data) {
-      console.log(data)
-    })
 
-    socket.on('errorHandler', function (data) {
-      console.log(data)
-    })
-    socket.on('bidInAuction', function (data) {
-      console.log(data)
-    })
-  })
-
-  // const isLoggedIn = useRef(localStorage.getItem('token'))
 
   const [open, setOpenModal] = useState(false)
-  // const history = useHistory()
+
 
   const openModal = () => {
-    socket.emit('buyNowAuction', {
-      auctionId: '606823e6c780943d60b7a09c',
-    })
+
     setOpenModal(true)
   }
   const closeModal = () => {
@@ -73,14 +45,6 @@ const CarDetailsAuction = ({ dataAuction = [] }: Props) => {
   }
   const [bid] = useState<string>()
 
-  // eslint-disable-next-line
-  const sendBid = () => {
-    socket.emit('bidInAuction', {
-      auctionId: '60656f7c18e1b936bc78f21f',
-      bidPrice: bid,
-    })
-    console.log(`your bid is ${bid}`)
-  }
 
   const checkLog = () => {
     alert('Завантажуй додаток !')
@@ -90,7 +54,6 @@ const CarDetailsAuction = ({ dataAuction = [] }: Props) => {
     <>
       <Container fluid className="pb-5">
         <div className="p-5">
-          {/* eslint-disable-next-line */}
           <h5 className="blue-line"></h5>
           <h5 className="header-details">{t('details')}</h5>
           <h6 className="mt-3">{item?.name}</h6>

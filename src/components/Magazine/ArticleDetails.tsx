@@ -2,7 +2,12 @@ import React, { useState, useEffect } from 'react'
 import { Container, Row, Col } from 'react-bootstrap'
 import { ArticleType } from '../../types/appTypes'
 import { useParams } from 'react-router-dom'
-import logo_big from '../../img/logo-big.png'
+// import Moment from 'react-moment'
+import {
+  FacebookIcon,
+  FacebookShareButton,
+  FacebookShareCount
+} from "react-share";
 import './style.css'
 
 type Props = {
@@ -19,7 +24,6 @@ const ArticleDetails = ({ dataArticles = [] }: Props) => {
       setItem(found)
     }
   }, [dataArticles, id])
-
   return (
     <>
       <Row className='back-art'>
@@ -33,6 +37,11 @@ const ArticleDetails = ({ dataArticles = [] }: Props) => {
         <Col>
         <h3 className='text-center m-5 head-desc'>{item?.heading}</h3></Col>
         </Row>
+        {/* <Row>
+        <Moment format="DD/MM/YYYY" style={{ fontSize: '12px' }}>
+                   {item?.date}
+        </Moment>
+        </Row> */}
         <Row>  
           <Col>
           <p className='p-4 art-content'>{item?.content}
@@ -40,10 +49,17 @@ const ArticleDetails = ({ dataArticles = [] }: Props) => {
        
         <Row>
 
-          <Col ><p className='p-4'>Автор: <h6 className='font-italic'>{item?.author}
+          <Col><p className='p-4'>Автор: <h6 className='font-italic'>{item?.author}
             </h6>
-            </p></Col>
+      
+            {/* <FacebookIcon size={32} round={true} /> */}
+            <FacebookShareButton url='https://avtoe.com.ua/'  quote='Журнал avtoe'>
+               <FacebookIcon size={32} round={true}/>
+              </FacebookShareButton>      </p>
+            </Col>
+  
       </Row>
+       
     </Container>
     </>
   )

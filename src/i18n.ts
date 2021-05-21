@@ -82,7 +82,8 @@ const translationUa = {
   km: 'тис. км',
   kyiv: 'Київ',
   businessmen: 'Автобізнесменів',
-  loading: 'Завантаження...'  
+  loading: 'Завантаження...',
+  read: 'Читати'  
 }
 const translationRu = {
   head: 'Хватит мечтать об Автомобиле',
@@ -163,7 +164,8 @@ const translationRu = {
   km: 'тыс. км',
   kyiv: 'Киев',
   businessmen: 'Автобизнесменов',
-  loading: 'Загрузка...'
+  loading: 'Загрузка...',
+  read: 'Читать'
 }
 
 i18n

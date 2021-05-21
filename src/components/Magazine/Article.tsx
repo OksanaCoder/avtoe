@@ -13,16 +13,16 @@ const Article = ({ dataArticles = [] }: Props) => {
   const { t } = useTranslation()
   return (
     <>
-      <Row className="p-5 row-grey">
+      <Row className="p-5 row-grey d-flex justify-content-around">
         {dataArticles.map((item) => {
           return (
             <Col
               lg={2}
-              md={6}
+              md={12}
               sm={12}
               xs={12}
               key={item.id}
-              className="article-item mb-5"
+              className="article-item mb-5 mr-1"
             >
               <Row className="row-article">
                 <Col lg={12} md={12} sm={12} xs={12}></Col>
@@ -39,7 +39,7 @@ const Article = ({ dataArticles = [] }: Props) => {
                       className="btn-item auction-btn mr-2"
                       to={`/articleDetails/${item.id}`}
                     >
-                      {t('more')}
+                      {t('read')}
                     </Link>
                   </div>
                 </Col>
