@@ -14,6 +14,7 @@ const Article = ({ dataArticles = [] }: Props) => {
   const { t } = useTranslation()
   return (
     <>
+     
       <Row className="p-2 row-grey">
         {dataArticles.map((item) => {
           return (

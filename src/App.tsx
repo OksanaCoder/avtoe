@@ -35,6 +35,7 @@ import ScrollToTop from './components/common/ScrollToTop'
 import ArticleDetails from './components/Magazine/ArticleDetails'
 
 const App = () => {
+  
   const scrollToTop = () => window.scrollTo(0, 0)
 
   const { t } = useTranslation()
@@ -223,7 +224,7 @@ const App = () => {
         <About />
       </Route>
       <Route path="/magazine" exact>
-        <Magazine />
+        <Magazine dataArticles={dataArticles}/>
       </Route>
       <Route exact path="/articleDetails/:id">
         <ArticleDetails dataArticles={dataArticles} />

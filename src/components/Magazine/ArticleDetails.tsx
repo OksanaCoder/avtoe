@@ -13,16 +13,19 @@ const ArticleDetails = ({ dataArticles = [] }: Props) => {
   const history = useHistory()
 
   useEffect(() => {
-    const found = dataArticles.find((item) => Number(item.id) === Number(id))
+    const found = dataArticles.find((item) => item.id === Number(id))
     if (found) {
       setItem(found)
     }
   }, [dataArticles, id])
-
+  console.log(dataArticles, 'details')
   return (
     <Container>
-      <Row>
-        <Col>{item.heading}</Col>
+      <Row>  
+        <Col>{item?.heading}</Col>
+        <Col>{item?.content}</Col>
+        <Col>{item?.author}</Col>
+        
       </Row>
     </Container>
   )

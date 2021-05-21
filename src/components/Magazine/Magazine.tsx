@@ -3,6 +3,7 @@ import { Container, Row, Col } from 'react-bootstrap'
 import Article from './Article'
 
 const Magazine = ({ dataArticles = [] }) => {
+  console.log('articles', dataArticles)
   return (
     <>
       <Container fluid style={{ padding: '0' }}>
