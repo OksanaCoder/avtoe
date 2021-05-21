@@ -43,27 +43,6 @@ const Header = ({ reference, data }) => {
     history.push(`/carDetails/${newVal.id}`)
   }
 
-  // const containerStyle = {
-  //   width: '100%',
-  //   height: '400px',
-  //   marginTop: '40px',
-  // }
-
-  // const center = {
-  //   lat: 50.48970142061635,
-  //   lng: 30.488861167016232,
-  // }
-
-  // const locations = [
-  //   {
-  //     name: 'avtoe',
-  //     location: {
-  //       lat: 50.48970142061635,
-  //       lng: 30.488861167016232,
-  //     },
-  //   },
-  // ]
-
   const renderList = () => {
     return data.map((data) => ({ label: data.name, value: data.name, id: data.id }))
   }

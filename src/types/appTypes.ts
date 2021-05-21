@@ -37,4 +37,5 @@ export type ArticleType = {
   date: String
   heading: String
   images: string[]
+  image1: string
 }
