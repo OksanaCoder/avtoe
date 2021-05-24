@@ -13,9 +13,9 @@ const ModalContactUs = (props) => {
       <Modal.Body>
         {t('detailsByPhone')}
         <ul className="list-unstyled pt-3">
-          <li>+38 050 249 09 09</li>
-          <li>+38 093 249 09 09</li>
-          <li>+38 097 249 09 09</li>
+          <li><a className='text-tel' href="tel:+38 050 249 09 09">+38 050 249 09 09</a></li>
+          <li><a className='text-tel' href="tel:+38 093 249 09 09">+38 093 249 09 09</a></li>
+          <li><a className='text-tel' href="tel:+38 097 249 09 09">+38 097 249 09 09</a></li>
         </ul>
       </Modal.Body>
       <Modal.Footer>

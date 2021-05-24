@@ -201,28 +201,28 @@ const CarDetails = ({ data = [] }: Props) => {
             </Row>
 
             <Row className="mt-4 row-modal">
-              <Col> {t('yearProd')}:</Col>
-              <Col> {item.year}</Col>
+              <Col lg={6} md={12} sm={12} xs={12}  className='font-weight-bold'> {t('yearProd')}:</Col>
+              <Col lg={6} md={12} sm={12} xs={12}> {item.year}</Col>
             </Row>
             <Row className="mt-1 row-modal">
-              <Col> {t('privod')}:</Col>
-              <Col> {item.drive}</Col>
+              <Col lg={6} md={12} sm={12} xs={12}  className='font-weight-bold'> {t('privod')}:</Col>
+              <Col lg={6} md={12} sm={12} xs={12}> {item.drive}</Col>
             </Row>
             <Row className="mt-1 row-modal">
-              <Col> {t('color')}:</Col>
-              <Col> {item.color}</Col>
+              <Col lg={6} md={12} sm={12} xs={12} className='font-weight-bold'> {t('color')}:</Col>
+              <Col lg={6} md={12} sm={12} xs={12}> {item.color}</Col>
             </Row>
             <Row className="mt-1 row-modal">
-              <Col>{t('description')}:</Col>
-              <Col>{item.description}</Col>
+              <Col lg={6} md={12} sm={12} xs={12} className='font-weight-bold'>{t('description')}:</Col>
+              <Col lg={6} md={12} sm={12} xs={12}>{item.description}</Col>
             </Row>
             <Row className="mt-1 row-modal">
-              <Col> {t('extraInfo')}:</Col>
-              <Col> {item.extraInfo}</Col>
+              <Col lg={6} md={12} sm={12} xs={12} className='font-weight-bold'> {t('extraInfo')}:</Col>
+              <Col lg={6} md={12} sm={12} xs={12}> {item.extraInfo}</Col>
             </Row>
             <Row className="mt-1 row-modal">
-              <Col> {t('contacts')}:</Col>
-              <Col>
+              <Col lg={6} md={12} sm={12} xs={12} className='font-weight-bold'> {t('contacts')}:</Col>
+              <Col lg={6} md={12} sm={12} xs={12}>
                 <ul className="list-unstyled">
                   <li>+38 050 249 09 09</li>
                   <li> +38 093 249 09 09</li>
@@ -231,8 +231,8 @@ const CarDetails = ({ data = [] }: Props) => {
               </Col>
             </Row>
             <Row className="mt-1 row-modal">
-              <Col> {t('whereLocation')}</Col>
-              <Col>{t('address')}</Col>
+              <Col lg={6} md={12} sm={12} xs={12} className='font-weight-bold'> {t('whereLocation')}</Col>
+              <Col lg={6} md={12} sm={12} xs={12} >{t('address')}</Col>
             </Row>
             <Row className="align-center mt-4">
               <Col>

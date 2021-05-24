@@ -18,14 +18,14 @@ const Footer = () => {
             <img alt="11" src={call} style={{ color: '#fff' }} className="icon-fill" />
             <div className="ml-3 text-white">
               <h6>{t('contacts')}:</h6>
-              <ul className="list-unstyled">
-                <li>+38 050 249 09 09</li>
-                <li>+38 066 249 09 09</li>
-                <li>+38 073 249 09 09</li>
-                <li>+38 093 249 09 09</li>
-                <li>+38 096 249 09 09</li>
-                <li>+38 097 249 09 09</li>
-                <li>+38 098 249 09 09</li>
+              <ul className="list-unstyled color-white">
+                <li><a href="tel:+38 050 249 09 09">+38 050 249 09 09</a></li>
+                <li><a href="tel:+38 066 249 09 09">+38 066 249 09 09</a></li>
+                <li><a href="tel:+38 073 249 09 09">+38 073 249 09 09</a></li>
+                <li><a href="tel:+38 093 249 09 09">+38 093 249 09 09</a></li>
+                <li><a href="tel:+38 096 249 09 09">+38 096 249 09 09</a></li>
+                <li><a href="tel:+38 097 249 09 09">+38 097 249 09 09</a></li>
+                <li><a href="tel:+38 098 249 09 09">+38 098 249 09 09</a></li>
               </ul>
             </div>
           </Col>

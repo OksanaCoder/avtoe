@@ -2,3 +2,6 @@ button.btn-modal {
     padding: 5px 20px !important;
     border-radius: 20px !important;
 }
+.text-tel {
+    text-decoration: none !important;
+}
