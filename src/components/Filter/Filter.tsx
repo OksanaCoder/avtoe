@@ -50,7 +50,7 @@ const Filter = ({ onSearch }: Props) => {
             controlId="exampleForm.ControlSelect1"
             className="col-lg-3 col-md-12 col-sm-12"
           >
-            <Form.Label>Модель</Form.Label>
+            <Form.Label>Марка</Form.Label>
             <Select
               options={optionsBrand}
               className="selectStyle optionStyle"

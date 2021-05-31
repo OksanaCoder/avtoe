@@ -2,6 +2,7 @@ import React from 'react'
 import { Modal, Button } from 'react-bootstrap'
 import './style.css'
 import { useTranslation } from 'react-i18next'
+import call from '../../img/phone.png'
 
 const ModalContactUs = (props) => {
   const { t } = useTranslation()
@@ -13,9 +14,27 @@ const ModalContactUs = (props) => {
       <Modal.Body>
         {t('detailsByPhone')}
         <ul className="list-unstyled pt-3">
-          <li><a className='text-tel' href="tel:+38 050 249 09 09">+38 050 249 09 09</a></li>
-          <li><a className='text-tel' href="tel:+38 093 249 09 09">+38 093 249 09 09</a></li>
-          <li><a className='text-tel' href="tel:+38 097 249 09 09">+38 097 249 09 09</a></li>
+          <li>
+            <a className="text-tel" href="tel:+38 050 249 09 09">
+              {' '}
+              <img src={call} alt="calendar" width="15" className="mr-2" /> +38 050 249 09
+              09
+            </a>
+          </li>
+          <li>
+            <a className="text-tel" href="tel:+38 093 249 09 09">
+              {' '}
+              <img src={call} alt="calendar" width="15" className="mr-2" /> +38 093 249 09
+              09
+            </a>
+          </li>
+          <li>
+            <a className="text-tel" href="tel:+38 097 249 09 09">
+              {' '}
+              <img src={call} alt="calendar" width="15" className="mr-2" /> +38 097 249 09
+              09
+            </a>
+          </li>
         </ul>
       </Modal.Body>
       <Modal.Footer>

@@ -83,7 +83,9 @@ const translationUa = {
   kyiv: 'Київ',
   businessmen: 'Автобізнесменів',
   loading: 'Завантаження...',
-  read: 'Читати'  
+  read: 'Читати',
+  partners: 'Нашi партнери',
+  moreDetails: 'Бiльше iнформації',
 }
 const translationRu = {
   head: 'Хватит мечтать об Автомобиле',
@@ -126,7 +128,7 @@ const translationRu = {
   price: 'Цена',
   last: 'Последние',
   updates: 'Обновления',
-  noCars: 'Авто нету',
+  noCars: 'Авто отсутствует',
   main: 'Главная',
   auction: 'Аукцион',
   willBuy: 'Купим',
@@ -165,7 +167,9 @@ const translationRu = {
   kyiv: 'Киев',
   businessmen: 'Автобизнесменов',
   loading: 'Загрузка...',
-  read: 'Читать'
+  read: 'Читать',
+  partners: 'Наши партнери',
+  moreDetails: 'Больше информации',
 }
 
 i18n

@@ -14,7 +14,18 @@ import bank_2 from '../../img/bank-2.png'
 import bank_3 from '../../img/bank-3.png'
 import bank_4 from '../../img/bank-4.png'
 import bank_5 from '../../img/bank-5.png'
-import hapai from '../../img/hapai.png'
+import accord from '../../img/accord-bank.png'
+import motor from '../../img/motor.png'
+import calendar from '../../img/calendar.png'
+import privod from '../../img/privod.png'
+import locations from '../../img/locations.png'
+import contacts from '../../img/contacts.svg'
+import colors from '../../img/colors.png'
+import more from '../../img/more.svg'
+import pumb from '../../img/pumb.png'
+import bank from '../../img/bank.svg'
+import kpp from '../../img/kpp.png'
+import infomore from '../../img/infomore.svg'
 import ModalContactUs from '../ModalContactUs/ModalContactUs'
 import { useHistory, useParams } from 'react-router-dom'
 import io from 'socket.io-client'
@@ -37,53 +48,20 @@ const CarDetails = ({ data = [] }: Props) => {
     }
   }, [data, id])
 
-  let socket = io('http://localhost:4000', {
-    query: {
-      token:
-        'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MDU1NWY2OTQ1NDQyNDEwM2NlYmRhODgiLCJpYXQiOjE2MTcyNDUxODB9.s3fOFjdiV3U2DqU3IlPx9ZVtV2PdC9S89_4mMH1Co9k',
-    },
-  })
-  useEffect(() => {
-    socket.on('winner', function (data) {
-      console.log(data)
-    })
-    socket.on('buyNowAuction', function (data) {
-      console.log(data)
-    })
-    socket.on('sold', function (data) {
-      console.log(data)
-    })
-
-    socket.on('errorHandler', function (data) {
-      console.log(data)
-    })
-    socket.on('bidInAuction', function (data) {
-      console.log(data)
-    })
-  })
-  const isLoggedIn = useRef(localStorage.getItem('token'))
-  console.log(item, ' for car details')
+  const [showDetails, setShowDetails] = useState(false)
+  const openDetails = () => {
+    setShowDetails(true)
+  }
 
   const [open, setOpenModal] = useState(false)
   const history = useHistory()
   const openModal = () => {
-    socket.emit('buyNowAuction', {
-      auctionId: '606823e6c780943d60b7a09c',
-    })
     setOpenModal(true)
   }
   const closeModal = () => {
     setOpenModal(false)
   }
 
-  const [bid, setBid] = useState(null)
-  const sendBid = () => {
-    socket.emit('bidInAuction', {
-      auctionId: '60656f7c18e1b936bc78f21f',
-      bidPrice: bid,
-    })
-    console.log(`your bid is ${bid}`)
-  }
   const checkLog = () => {
     alert('Please, log in !')
     history.push('/login')
@@ -136,44 +114,57 @@ const CarDetails = ({ data = [] }: Props) => {
               {item.name}
             </h4>
             <small style={{ fontWeight: 'bold' }} className="pl-3 mb-4">
-              Авто в кредит
+              {t('partners')}
             </small>
             <Row className="row-calcs pb-2 pt-3">
               <Col lg={2} md={2} sm={2} xs={2}>
-                <a href="https://privatbank.ua/kredity/kredit-na-avto?utm_source=GSearch&utm_medium=cpc&utm_campaign=UM_Car_Credit_GSearch_conv_Brand&utm_content=UM_Car_Credit_GSearch_conv_Brand_search_Brand_keywords&gclid=Cj0KCQjw4ImEBhDFARIsAGOTMj8s_rafqNPJIOj-JfTPl2JCJ72fRoJ6qkBtRJcm7X4bc9yLE5rePOUaAhWcEALw_wcB">
-                  <img src={bank_1} className="img-bank" alt="bank" />
-                </a>
+                {/* <a href="https://tascombank.ua/you/credits/na_prydbannia_avto"> */}
+                <img src={bank_1} width="50" alt="bank" />
+                {/* </a> */}
               </Col>
               <Col lg={2} md={2} sm={2} xs={2}>
-                <a href="https://ru.otpbank.com.ua/privateclients/crediting/autoshpartners/">
-                  <img src={bank_2} className="img-bank" alt="bank" />
-                </a>
-              </Col>
-              <Col lg={2} md={2} sm={2} xs={2}>
-                <a href="https://alfabank.ru/get-money/autocredit/">
-                  <img src={bank_3} className="img-bank" alt="bank" />
-                </a>
+                {/* <a href="https://alfabank.ru/get-money/autocredit/"> */}
+                <img src={pumb} width="50" alt="bank" />
+                {/* </a> */}
               </Col>
 
               <Col lg={2} md={2} sm={2} xs={2}>
-                <a href="https://tascombank.ua/you/credits/na_prydbannia_avto">
-                  <img src={bank_4} className="img-bank" alt="bank" />
-                </a>
+                {/* <a href="https://ru.otpbank.com.ua/privateclients/crediting/autoshpartners/"> */}
+                <img src={bank_3} width="50" alt="bank" />
+                {/* </a> */}
               </Col>
 
-              {/* <Col lg={2} md={6} sm={6} xs={6}>
-                <a href="https://automoney.ua/calc-builder/">
-                  <img
-                    src="https://cdn.shortpixel.ai/client/q_lossy,ret_img/https://automoney.ua/wp-content/uploads/2020/06/logo.png"
-                    className="img-bank"
-                    alt="bank"
-                  />
-                </a>
-              </Col> */}
               <Col lg={2} md={2} sm={2} xs={2}>
-                <a href="https://hapai.kiev.ua/ru?utm_source=google&utm_medium=cpc&utm_campaign=search_brand_111&gclid=Cj0KCQjwyZmEBhCpARIsALIzmnL2oSFW6py-tWs-bEoEhP1Zf757X3ZNWzbxUEuwVTVqP1UZAxTrQvYaAn9qEALw_wcB">
-                  <img src={bank_5} className="img-bank-last" alt="bank" />
-                </a>
+                {/* <a href="https://privatbank.ua/kredity/kredit-na-avto?utm_source=GSearch&utm_medium=cpc&utm_campaign=UM_Car_Credit_GSearch_conv_Brand&utm_content=UM_Car_Credit_GSearch_conv_Brand_search_Brand_keywords&gclid=Cj0KCQjw4ImEBhDFARIsAGOTMj8s_rafqNPJIOj-JfTPl2JCJ72fRoJ6qkBtRJcm7X4bc9yLE5rePOUaAhWcEALw_wcB"> */}
+                <img src={bank_4} width="50" alt="bank" />
+                {/* </a> */}
+              </Col>
+              <Col lg={2} md={2} sm={2} xs={2}>
+                {/* <a href="https://alfabank.ru/get-money/autocredit/"> */}
+                <img src={bank_5} width="50" alt="bank" />
+                {/* </a> */}
+              </Col>
+            </Row>
+            <Row className="row-calcs pb-2 pt-3">
+              <Col lg={2} md={2} sm={2} xs={2}>
+                {/* <a href="https://alfabank.ru/get-money/autocredit/"> */}
+                <img src={bank} width="50" alt="bank" />
+                {/* </a> */}
+              </Col>
+              <Col lg={2} md={2} sm={2} xs={2}>
+                {/* <a href="https://hapai.kiev.ua/ru?utm_source=google&utm_medium=cpc&utm_campaign=search_brand_111&gclid=Cj0KCQjwyZmEBhCpARIsALIzmnL2oSFW6py-tWs-bEoEhP1Zf757X3ZNWzbxUEuwVTVqP1UZAxTrQvYaAn9qEALw_wcB"> */}
+                <img src={bank_2} width="50" alt="bank" />
+                {/* </a> */}
+              </Col>
+              <Col lg={2} md={2} sm={2} xs={2}>
+                {/* <a href="https://alfabank.ru/get-money/autocredit/"> */}
+                <img src={accord} alt="bank" width="50" />
+                {/* </a> */}
+              </Col>
+              <Col lg={2} md={2} sm={2} xs={2}>
+                {/* <a href="https://alfabank.ru/get-money/autocredit/"> */}
+                <img src={motor} alt="bank" width="50" />
+                {/* </a> */}
               </Col>
             </Row>
 
@@ -195,45 +186,92 @@ const CarDetails = ({ data = [] }: Props) => {
               </Col>
 
               <Col className="center-items">
-                <img src={icon_4} className="icon-small" alt="type drive" />
+                <img src={kpp} className="icon-small" alt="type drive" />
                 {item.drive}
               </Col>
             </Row>
 
             <Row className="mt-4 row-modal">
-              <Col lg={6} md={12} sm={12} xs={12}  className='font-weight-bold'> {t('yearProd')}:</Col>
-              <Col lg={6} md={12} sm={12} xs={12}> {item.year}</Col>
-            </Row>
-            <Row className="mt-1 row-modal">
-              <Col lg={6} md={12} sm={12} xs={12}  className='font-weight-bold'> {t('privod')}:</Col>
-              <Col lg={6} md={12} sm={12} xs={12}> {item.drive}</Col>
-            </Row>
-            <Row className="mt-1 row-modal">
-              <Col lg={6} md={12} sm={12} xs={12} className='font-weight-bold'> {t('color')}:</Col>
-              <Col lg={6} md={12} sm={12} xs={12}> {item.color}</Col>
-            </Row>
-            <Row className="mt-1 row-modal">
-              <Col lg={6} md={12} sm={12} xs={12} className='font-weight-bold'>{t('description')}:</Col>
-              <Col lg={6} md={12} sm={12} xs={12}>{item.description}</Col>
-            </Row>
-            <Row className="mt-1 row-modal">
-              <Col lg={6} md={12} sm={12} xs={12} className='font-weight-bold'> {t('extraInfo')}:</Col>
-              <Col lg={6} md={12} sm={12} xs={12}> {item.extraInfo}</Col>
-            </Row>
-            <Row className="mt-1 row-modal">
-              <Col lg={6} md={12} sm={12} xs={12} className='font-weight-bold'> {t('contacts')}:</Col>
-              <Col lg={6} md={12} sm={12} xs={12}>
-                <ul className="list-unstyled">
-                  <li>+38 050 249 09 09</li>
-                  <li> +38 093 249 09 09</li>
-                  <li> +38 097 249 09 09</li>
-                </ul>
+              <Col lg={12} md={12} sm={12} xs={12} className="font-weight-bold">
+                <img src={calendar} alt="calendar" width="15" className="mr-2" />{' '}
+                {t('yearProd')}:
+              </Col>
+              <Col lg={12} md={12} sm={12} xs={12}>
+                {' '}
+                {item.year}
               </Col>
             </Row>
             <Row className="mt-1 row-modal">
-              <Col lg={6} md={12} sm={12} xs={12} className='font-weight-bold'> {t('whereLocation')}</Col>
-              <Col lg={6} md={12} sm={12} xs={12} >{t('address')}</Col>
+              <Col lg={12} md={12} sm={12} xs={12} className="font-weight-bold">
+                <img src={privod} alt="calendar" width="15" className="mr-2" />{' '}
+                {t('privod')}:
+              </Col>
+              <Col lg={12} md={12} sm={12} xs={12}>
+                {item.drive}
+              </Col>
             </Row>
+            <Row className="mt-1 row-modal">
+              <Col lg={12} md={12} sm={12} xs={12} className="font-weight-bold">
+                <img src={colors} alt="calendar" width="15" className="mr-2" />{' '}
+                {t('color')}:
+              </Col>
+              <Col lg={12} md={12} sm={12} xs={12}>
+                {' '}
+                {item.color}
+              </Col>
+            </Row>
+            <Row>
+              <Col className="mt-3 mb-3 row-modal">
+                <button className="btn-item buy-now" onClick={openDetails}>
+                  {t('moreDetails')}
+                </button>
+              </Col>
+            </Row>
+            {showDetails ? (
+              <>
+                <Row className="mt-1 row-modal">
+                  <Col lg={12} md={12} sm={12} xs={12} className="font-weight-bold">
+                    <img src={more} alt="calendar" width="15" className="mr-2" />{' '}
+                    {t('description')}:
+                  </Col>
+                  <Col lg={12} md={12} sm={12} xs={12}>
+                    {item.description}
+                  </Col>
+                </Row>
+                <Row className="mt-1 row-modal">
+                  <Col lg={12} md={12} sm={12} xs={12} className="font-weight-bold">
+                    <img src={infomore} alt="calendar" width="15" className="mr-2" />{' '}
+                    {t('extraInfo')}:
+                  </Col>
+                  <Col lg={12} md={12} sm={12} xs={12}>
+                    {' '}
+                    {item.extraInfo}
+                  </Col>
+                </Row>
+                <Row className="mt-1 row-modal">
+                  <Col lg={12} md={12} sm={12} xs={12} className="font-weight-bold">
+                    <img src={contacts} alt="calendar" width="15" className="mr-2" />{' '}
+                    {t('contacts')}:
+                  </Col>
+                  <Col lg={12} md={12} sm={12} xs={12}>
+                    <ul className="list-unstyled">
+                      <li>+38 050 249 09 09</li>
+                      <li> +38 093 249 09 09</li>
+                      <li> +38 097 249 09 09</li>
+                    </ul>
+                  </Col>
+                </Row>
+                <Row className="mt-1 row-modal">
+                  <Col lg={12} md={12} sm={12} xs={12} className="font-weight-bold">
+                    <img src={locations} alt="calendar" width="15" className="mr-2" />{' '}
+                    {t('whereLocation')}
+                  </Col>
+                  <Col lg={12} md={12} sm={12} xs={12}>
+                    {t('address')}
+                  </Col>
+                </Row>
+              </>
+            ) : null}
             <Row className="align-center mt-4">
               <Col>
                 <small className="price-details">$ {item.startingPrice}</small>
