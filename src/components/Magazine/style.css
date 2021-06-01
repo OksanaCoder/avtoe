@@ -1,7 +1,9 @@
 .article-item {
   padding: 10px 10px 20px 10px;
+  border: 1px solid rgb(36, 36, 36);
   background: rgb(31, 31, 31);
 }
+
 .head-desc {
   font-weight: 700;
 }

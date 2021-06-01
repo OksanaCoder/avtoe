@@ -13,7 +13,7 @@ const Article = ({ dataArticles = [] }: Props) => {
   const { t } = useTranslation()
   return (
     <>
-      <Row className="p-5 row-grey d-flex justify-content-around">
+      <Row className="p-2 row-grey d-flex justify-content-start">
         {dataArticles.map((item) => {
           return (
             <Col
@@ -22,16 +22,16 @@ const Article = ({ dataArticles = [] }: Props) => {
               sm={12}
               xs={12}
               key={item.id}
-              className="article-item mb-5 mr-1"
+              className="article-item mb-5"
             >
-              <Row className="row-article">
+              <Row className="row-article p-1">
                 <Col lg={12} md={12} sm={12} xs={12}></Col>
                 {item.images.length > 0
                   ? item.images.map((i) => {
                       return <img src={i} className="img-article mb-4" />
                     })
                   : null}
-                <Col lg={12} md={12} sm={12} xs={12}>
+                <Col lg={12} md={12} sm={12} xs={12} className="justify-content-between">
                   <h6>{item.heading.slice(0, 40)}...</h6>
                   <small>{item.content.slice(0, 70)}...</small>
                   <div className="display-flex mt-4">
