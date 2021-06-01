@@ -1,9 +1,10 @@
 export type OptionYear = {
-  value: number
-  label: number
+  value: number | string
+  label: number | string
 }
 
 export const optionsYear: OptionYear[] = [
+  { value: '', label: 'from' },
   { value: 1990, label: 1990 },
   { value: 1991, label: 1991 },
   { value: 1992, label: 1992 },

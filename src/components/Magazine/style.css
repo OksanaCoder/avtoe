@@ -1,9 +1,8 @@
 .article-item {
-  /* border: 1px solid rgba(0, 0, 0, 0.125); */
-  padding: 30px;
+  padding: 10px 10px 20px 10px;
   background: rgb(31, 31, 31);
 }
-.head-desc  {
+.head-desc {
   font-weight: 700;
 }
 .img-article {
@@ -46,12 +45,10 @@
   .head-desc {
     margin: 30px 0 0 !important;
   }
-  
 }
 .article-img {
-width: 50%;
-
+  width: 50%;
 }
 .art-content {
-line-height: 2;
+  line-height: 2;
 }

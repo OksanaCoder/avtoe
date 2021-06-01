@@ -207,7 +207,7 @@ const CarDetails = ({ data = [] }: Props) => {
                 {t('privod')}:
               </Col>
               <Col lg={12} md={12} sm={12} xs={12}>
-                {item.drive}
+                {item.transmission}
               </Col>
             </Row>
             <Row className="mt-1 row-modal">

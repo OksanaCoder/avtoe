@@ -48,7 +48,7 @@ const Filter = ({ onSearch }: Props) => {
         <Row className="form-style">
           <Form.Group
             controlId="exampleForm.ControlSelect1"
-            className="col-lg-3 col-md-12 col-sm-12"
+            className="col-lg-2 col-md-12 col-sm-12"
           >
             <Form.Label>Марка</Form.Label>
             <Select
@@ -61,9 +61,23 @@ const Filter = ({ onSearch }: Props) => {
 
           <Form.Group
             controlId="exampleForm.ControlSelect2"
-            className="col-lg-3 col-md-12 col-sm-12"
+            className="col-lg-1 col-md-12 col-sm-12"
           >
             <Form.Label>{t('year')}</Form.Label>
+            <CreatableSelect
+              options={optionsYear}
+              className="selectStyle optionStyle"
+              isMulti
+              closeMenuOnSelect={false}
+              value={valuesYear}
+              onChange={setValuesYear}
+            />
+          </Form.Group>
+          <Form.Group
+            controlId="exampleForm.ControlSelect2"
+            className="col-lg-1 col-md-12 col-sm-12"
+          >
+            <Form.Label className="d-hidden"></Form.Label>
             <CreatableSelect
               options={optionsYear}
               className="selectStyle optionStyle"
@@ -76,7 +90,7 @@ const Filter = ({ onSearch }: Props) => {
 
           <Form.Group
             controlId="exampleForm.ControlSelect3"
-            className="col-lg-3 col-md-12 col-sm-12"
+            className="col-lg-2 col-md-12 col-sm-12"
           >
             <Form.Label>{t('price')}, $</Form.Label>
             <Select
