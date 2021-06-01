@@ -26,7 +26,8 @@ const Catalog = ({ data = [] }: Props) => {
 
   const onSearch = (
     valueBrand: OptionBrand | null,
-    valuesYear: OptionYear[] | null,
+    valuesYearFrom: OptionYear | null,
+    valuesYearTo: OptionYear | null,
     valuePrice: OptionPrice | null
   ) => {
     setFilteredData(
@@ -34,8 +35,8 @@ const Catalog = ({ data = [] }: Props) => {
         (item) =>
           (valueBrand === null ||
             item.model.toLowerCase() === valueBrand.value.toLowerCase()) &&
-          (valuesYear === null ||
-            valuesYear.map((i) => Number(i.value)).includes(Number(item.year))) &&
+          (valuesYearFrom === null || +valuesYearFrom.value <= +item.year) &&
+          (valuesYearTo === null || +valuesYearTo.value >= +item.year) &&
           (valuePrice === null ||
             (valuePrice.startPrice <= Number(item.startingPrice) &&
               (valuePrice.endPrice === null ||

@@ -4,7 +4,6 @@ export type OptionYear = {
 }
 
 export const optionsYear: OptionYear[] = [
-  { value: '', label: 'from' },
   { value: 1990, label: 1990 },
   { value: 1991, label: 1991 },
   { value: 1992, label: 1992 },
@@ -45,6 +44,7 @@ export type OptionBrand = {
 }
 
 export const optionsBrand: OptionBrand[] = [
+  { value: '', label: 'Select' },
   { value: 'Acura', label: 'Acura' },
   { value: 'Alfa Romeo', label: 'Alfa Romeo' },
   { value: 'Aston Martin', label: 'Aston Martin' },

@@ -17,7 +17,8 @@ import { useTranslation } from 'react-i18next'
 type Props = {
   onSearch: (
     valueBrand: OptionBrand | null,
-    valuesYear: OptionYear[] | null,
+    valuesYearFrom: OptionYear | null,
+    valuesYearTo: OptionYear | null,
     valuePrice: OptionPrice | null
   ) => void
 }
@@ -25,18 +26,20 @@ type Props = {
 const Filter = ({ onSearch }: Props) => {
   const { t } = useTranslation()
   const [valueBrand, setValueBrand] = useState<OptionBrand | null>(null)
-  const [valuesYear, setValuesYear] = useState<OptionYear[] | null>(null)
+  const [valuesYearFrom, setValuesYearFrom] = useState<OptionYear | null>(null)
+  const [valuesYearTo, setValuesYearTo] = useState<OptionYear | null>(null)
   const [valuePrice, setValuePrice] = useState<OptionPrice | null>(null)
 
   const handleSearch = () => {
-    onSearch(valueBrand, valuesYear, valuePrice)
+    onSearch(valueBrand, valuesYearFrom, valuesYearTo, valuePrice)
   }
 
   const handleRevert = () => {
     setValueBrand(null)
-    setValuesYear(null)
+    setValuesYearFrom(null)
+    setValuesYearTo(null)
     setValuePrice(null)
-    onSearch(null, null, null)
+    onSearch(null, null, null, null)
   }
 
   return (
@@ -67,10 +70,9 @@ const Filter = ({ onSearch }: Props) => {
             <CreatableSelect
               options={optionsYear}
               className="selectStyle optionStyle"
-              isMulti
               closeMenuOnSelect={false}
-              value={valuesYear}
-              onChange={setValuesYear}
+              value={valuesYearFrom}
+              onChange={setValuesYearFrom}
             />
           </Form.Group>
           <Form.Group
@@ -81,10 +83,9 @@ const Filter = ({ onSearch }: Props) => {
             <CreatableSelect
               options={optionsYear}
               className="selectStyle optionStyle"
-              isMulti
               closeMenuOnSelect={false}
-              value={valuesYear}
-              onChange={setValuesYear}
+              value={valuesYearTo}
+              onChange={setValuesYearTo}
             />
           </Form.Group>
 
