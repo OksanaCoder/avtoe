@@ -1,15 +1,15 @@
-@import url("https://use.typekit.net/qin7miy.css");
+@import url('https://use.typekit.net/qin7miy.css');
 body {
   font-family: muli, sans-serif;
 }
-.background { 
+.background {
   background: url('../../img/back-1.png') no-repeat;
-  background-size: cover;  
+  background-size: cover;
   height: 100vh;
 }
 .flex-center {
-    text-align: center;
-    padding-top: 20vh;
+  text-align: center;
+  padding-top: 20vh;
 }
 .flex-center-arrow {
   text-align: center;
@@ -38,20 +38,16 @@ body {
   align-items: center;
 }
 .btn-search {
-
-  background-color: #F7BA04 !important;
+  background-color: #f7ba04 !important;
   border-radius: 20px !important;
   border: none !important;
   margin-top: 15px;
-
 }
 button.btn-search.btn.btn-primary {
   color: #000 !important;
   font-weight: 700;
   padding: 7px 80px !important;
-
 }
 .arrow-down {
-   width: 60px;
+  width: 60px;
 }
-

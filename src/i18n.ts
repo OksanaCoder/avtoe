@@ -86,6 +86,8 @@ const translationUa = {
   read: 'Читати',
   partners: 'Нашi партнери',
   moreDetails: 'Бiльше iнформації',
+  yearFrom: 'від',
+  yearTo: 'до',
 }
 const translationRu = {
   head: 'Хватит мечтать об Автомобиле',
@@ -170,6 +172,8 @@ const translationRu = {
   read: 'Читать',
   partners: 'Наши партнери',
   moreDetails: 'Больше информации',
+  yearFrom: 'от',
+  yearTo: 'до',
 }
 
 i18n

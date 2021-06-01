@@ -59,33 +59,38 @@ const Filter = ({ onSearch }: Props) => {
               className="selectStyle optionStyle"
               value={valueBrand}
               onChange={setValueBrand}
+              isClearable
             />
           </Form.Group>
 
           <Form.Group
             controlId="exampleForm.ControlSelect2"
-            className="col-lg-1 col-md-12 col-sm-12"
+            className="col-lg-2 col-md-12 col-sm-12"
           >
-            <Form.Label>{t('year')}</Form.Label>
+            <Form.Label>
+              {t('year')} ({t('yearFrom')})
+            </Form.Label>
             <CreatableSelect
               options={optionsYear}
               className="selectStyle optionStyle"
               closeMenuOnSelect={false}
               value={valuesYearFrom}
               onChange={setValuesYearFrom}
+              isClearable
             />
           </Form.Group>
           <Form.Group
             controlId="exampleForm.ControlSelect2"
-            className="col-lg-1 col-md-12 col-sm-12"
+            className="col-lg-2 col-md-12 col-sm-12"
           >
-            <Form.Label className="d-hidden"></Form.Label>
+            <Form.Label>({t('yearTo')})</Form.Label>
             <CreatableSelect
               options={optionsYear}
               className="selectStyle optionStyle"
               closeMenuOnSelect={false}
               value={valuesYearTo}
               onChange={setValuesYearTo}
+              isClearable
             />
           </Form.Group>
 
@@ -105,6 +110,7 @@ const Filter = ({ onSearch }: Props) => {
                 }`
               }
               getOptionValue={(option) => option.id}
+              isClearable
             />
           </Form.Group>
 

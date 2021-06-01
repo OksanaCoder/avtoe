@@ -44,7 +44,6 @@ export type OptionBrand = {
 }
 
 export const optionsBrand: OptionBrand[] = [
-  { value: '', label: 'Select' },
   { value: 'Acura', label: 'Acura' },
   { value: 'Alfa Romeo', label: 'Alfa Romeo' },
   { value: 'Aston Martin', label: 'Aston Martin' },
