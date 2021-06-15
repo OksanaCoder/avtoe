@@ -34,8 +34,8 @@ export type ArticleType = {
   id: string
   author: String
   content: String
-  date: String
+  date: string
   heading: String
   images: string[]
-  image1: string 
+  image1: string
 }

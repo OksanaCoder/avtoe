@@ -59,6 +59,7 @@ const Filter = ({ onSearch }: Props) => {
               className="selectStyle optionStyle"
               value={valueBrand}
               onChange={setValueBrand}
+              placeholder={t('chooseFilter')}
               isClearable
             />
           </Form.Group>
@@ -77,6 +78,7 @@ const Filter = ({ onSearch }: Props) => {
               value={valuesYearFrom}
               onChange={setValuesYearFrom}
               isClearable
+              placeholder={t('chooseFilter')}
             />
           </Form.Group>
           <Form.Group
@@ -91,6 +93,7 @@ const Filter = ({ onSearch }: Props) => {
               value={valuesYearTo}
               onChange={setValuesYearTo}
               isClearable
+              placeholder={t('chooseFilter')}
             />
           </Form.Group>
 
@@ -111,6 +114,7 @@ const Filter = ({ onSearch }: Props) => {
               }
               getOptionValue={(option) => option.id}
               isClearable
+              placeholder={t('chooseFilter')}
             />
           </Form.Group>
 

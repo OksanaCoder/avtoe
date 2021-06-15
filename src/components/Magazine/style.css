@@ -25,6 +25,9 @@
 .back-art {
   padding: 50px;
 }
+.font-time {
+  font-size: 12px;
+}
 @media (max-width: 500px) {
   .mobile-font {
     font-size: 25px !important;

@@ -26,9 +26,9 @@ import pumb from '../../img/pumb.png'
 import bank from '../../img/bank.svg'
 import kpp from '../../img/kpp.png'
 import infomore from '../../img/infomore.svg'
+import nocar from '../../img/nocar.jpeg'
 import ModalContactUs from '../ModalContactUs/ModalContactUs'
 import { useHistory, useParams } from 'react-router-dom'
-import io from 'socket.io-client'
 import { CarType } from '../../types/appTypes'
 import { useTranslation } from 'react-i18next'
 
@@ -79,34 +79,33 @@ const CarDetails = ({ data = [] }: Props) => {
         <Row>
           <Col>
             <Carousel>
-              {item.image1 ? (
-                <div>
-                  <img src={item.image1} />
-                </div>
-              ) : (
-                <div>
-                  <img src={imageCar} />
-                </div>
-              )}
+              {item.images &&
+                item.images.map((i) => {
+                  return (
+                    <div>
+                      <img src={i} alt="car" />
+                    </div>
+                  )
+                })}
 
-              {item.image2 ? (
+              {/* {item.images.length === 0 && (
                 <div>
-                  <img src={item.image2} />
+                  <img src={nocar} alt="no-car" />
+                </div>
+              )} */}
+              {/* {item.images.length === 0 ? (
+                <div>
+                  <img src={nocar} alt="no-car" />
                 </div>
               ) : (
-                <div>
-                  <img src={imageCar} />
-                </div>
-              )}
-              {item.image3 ? (
-                <div>
-                  <img src={item.image3} />
-                </div>
-              ) : (
-                <div>
-                  <img src={imageCar} />
-                </div>
-              )}
+                item.images.map((i) => {
+                  return (
+                    <div>
+                      <img src={i} alt="car" />
+                    </div>
+                  )
+                })
+              )} */}
             </Carousel>
           </Col>
           <Col>

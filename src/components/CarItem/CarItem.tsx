@@ -5,6 +5,7 @@ import icon_1 from '../../img/location.png'
 import icon_2 from '../../img/speedometer.png'
 import icon_3 from '../../img/petrol.png'
 import icon_4 from '../../img/icon_4.png'
+import nocar from '../../img/nocar.jpeg'
 import { Col, Row, Card } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import { CarType } from '../../types/appTypes'
@@ -28,7 +29,7 @@ const CarItem = ({ filteredData = [] }: Props) => {
           >
             <Card className="card-style mb-3">
               {item.images.length === 0 ? (
-                <Card.Img src={imageCar} className="img-feature"></Card.Img>
+                <Card.Img src={nocar} className="img-feature"></Card.Img>
               ) : (
                 <Card.Img src={item.image1} className="img-feature"></Card.Img>
               )}
