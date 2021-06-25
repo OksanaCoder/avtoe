@@ -34,7 +34,10 @@ const CarItem = ({ filteredData = [] }: Props) => {
                 <Card.Img src={item.image1} className="img-feature"></Card.Img>
               )}
               <Card.Body className="card-text">
-                <h5 className="bold">{item.name}</h5>
+                <h5 className="bold">
+                  {item.make}
+                  <small className="style-spacing ml-2">{item.model}</small>
+                </h5>
 
                 <h5 className="color-yellow">$ {item.startingPrice}</h5>
 

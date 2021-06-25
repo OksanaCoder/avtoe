@@ -77,13 +77,13 @@ const CarDetails = ({ data = [] }: Props) => {
           <h6 className="mt-3">{item.name}</h6>
         </div>
         <Row>
-          <Col>
+          <Col lg={6} md={6} sm={12} xs={12}>
             <Carousel>
               {item.images &&
                 item.images.map((i) => {
                   return (
                     <div>
-                      <img src={i} alt="car" />
+                      <img src={i} alt="car" className="car-details-img" />
                     </div>
                   )
                 })}
@@ -108,7 +108,7 @@ const CarDetails = ({ data = [] }: Props) => {
               )} */}
             </Carousel>
           </Col>
-          <Col>
+          <Col lg={6} md={6} sm={12} xs={12}>
             <h4 style={{ fontWeight: 'bold' }} className="pl-3">
               {item.name}
             </h4>

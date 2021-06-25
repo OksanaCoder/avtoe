@@ -129,3 +129,6 @@ button.btn-bid.btn.btn-primary {
 .invert-white {
   filter: invert(100%);
 }
+.style-spacing {
+  letter-spacing: 1px;
+}
