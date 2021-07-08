@@ -26,14 +26,14 @@ const Article = ({ dataArticles = [] }: Props) => {
             >
               <Row className="row-article p-1">
                 <Col lg={12} md={12} sm={12} xs={12}></Col>
-                {item.images.length > 0
+                {/* {item.images.length > 0
                   ? item.images.map((i) => {
                       return <img src={i} className="img-article mb-4" />
                     })
-                  : null}
+                  : null} */}
                 <Col lg={12} md={12} sm={12} xs={12} className="justify-content-between">
-                  <h6>{item.heading.slice(0, 40)}...</h6>
-                  <small>{item.content.slice(0, 70)}...</small>
+                  <h6>{item.Title.slice(0, 40)}...</h6>
+                  <small>{item.Description.slice(0, 70)}...</small>
                   <div className="display-flex mt-4">
                     <Link
                       className="btn-item auction-btn mr-2"

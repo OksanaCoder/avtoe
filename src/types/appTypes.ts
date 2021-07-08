@@ -49,12 +49,19 @@ export type CarType = {
   url: string
   id:  string | number
 }
+// export type ArticleType = {
+//   id: string
+//   author: String
+//   content: String
+//   date: string
+//   heading: String
+//   images: string[]
+//   image1: string
+// }
 export type ArticleType = {
   id: string
-  author: String
-  content: String
-  date: string
-  heading: String
+  Author: String
+  Description: String
+  Title: String
   images: string[]
-  image1: string
 }

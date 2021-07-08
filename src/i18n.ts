@@ -87,7 +87,8 @@ const translationUa = {
   moreDetails: 'Бiльше iнформації',
   yearFrom: 'від',
   yearTo: 'до',
-  noCarsAuction: 'Аукцiони тимчасово вiдсутнi'
+  noCarsAuction: 'Аукцiони тимчасово вiдсутнi',
+  chooseFilter: 'Усi'
 }
 const translationRu = {
   head: 'Хватит мечтать об Автомобиле',
@@ -175,7 +176,8 @@ const translationRu = {
   moreDetails: 'Больше информации',
   yearFrom: 'от',
   yearTo: 'до',
-  noCarsAuction: 'Аукционы временно недоступны'
+  noCarsAuction: 'Аукционы временно недоступны',
+  chooseFilter: 'Все'
 }
 
 i18n

@@ -9,11 +9,11 @@ const CarSearch = ({ dataFindCar }) => {
         return (
           <Fragment key={index}>
             <Col lg={6} md={6} sm={12} xs={12}>
-              <h5 className="bold">{i.name}</h5>
+              <h5 className="bold">{i.Name}</h5>
               <hr className="line" />
             </Col>
             <Col lg={6} md={6} sm={12}>
-              <p>{i.description}</p>
+              <p>{i.Description}</p>
               <hr />
             </Col>
           </Fragment>

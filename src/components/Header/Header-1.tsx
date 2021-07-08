@@ -44,7 +44,7 @@ const Header = ({ reference, data }) => {
   }
 
   const renderList = () => {
-    return data.map((data) => ({ label: data.name, value: data.name, id: data.id }))
+    return data.map((data) => ({ label: data.Title, value: data.Title, id: data.id }))
   }
 
   return (
@@ -112,21 +112,21 @@ const Header = ({ reference, data }) => {
 
           <Row className="text-center mt-5">
             <Col>
-              <Link to={`/catalog/легкові`} className="img-wrapper">
+              <Link to={`/catalog/passenger`} className="img-wrapper">
                 <img alt="11" src={img_4} className="mr-2 ml-2 white-fill" width="70px" />
               </Link>
 
-              <Link to={`/catalog/мото`} className="img-wrapper">
+              <Link to={`/catalog/moto`} className="img-wrapper">
                 {' '}
                 <img alt="11" src={img_1} width="70px" className="white-fill mr-2" />
               </Link>
 
-              <Link to={`/catalog/позашляховики`} className="img-wrapper">
+              <Link to={`/catalog/suv`} className="img-wrapper">
                 {' '}
                 <img alt="11" src={img_2} width="70px" className="white-fill" />
               </Link>
 
-              <Link to={`/catalog/автобус`} className="img-wrapper">
+              <Link to={`/catalog/bus`} className="img-wrapper">
                 {' '}
                 <img alt="11" src={img_3} width="70px" className="white-fill ml-1" />
               </Link>

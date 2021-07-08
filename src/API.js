@@ -123,7 +123,7 @@ export const allArticles = () => {
   return new Promise(async (resolve, reject) => {
     try {
       let response = await axios.get(
-        `${baseURL}/api/v1/article`,
+        `${baseURL}/articles`,
         {},
         { headers: new Headers({ 'Content-Type': 'application/json' }) }
       )
@@ -137,7 +137,7 @@ export const singleArticle = (id) => {
   return new Promise(async (resolve, reject) => {
     try {
       let response = await axios.get(
-        `${baseURL}/api/v1/article/${id}`,
+        `${baseURL}/articles/${id}`,
         {},
         { headers: new Headers({ 'Content-Type': 'application/json' }) }
       )
@@ -151,7 +151,7 @@ export const allAdvertisments = () => {
   return new Promise(async (resolve, reject) => {
     try {
       let response = await axios.get(
-        `${baseURL}/api/v1/findCar`,
+        `${baseURL}/find-cars`,
         {},
         { headers: new Headers({ 'Content-Type': 'application/json' }) }
       )
@@ -165,7 +165,7 @@ export const singleAd = (id) => {
   return new Promise(async (resolve, reject) => {
     try {
       let response = await axios.get(
-        `${baseURL}/api/v1/findCar/${id}`,
+        `${baseURL}/find-cars/${id}`,
         {},
         { headers: new Headers({ 'Content-Type': 'application/json' }) }
       )
