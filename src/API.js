@@ -1,5 +1,6 @@
 import axios from 'axios'
-const baseURL = 'https://avtoe-main-server.herokuapp.com'
+// const baseURL = 'https://avtoe-main-server.herokuapp.com'
+const baseURL = 'https://avtoe-admin.herokuapp.com'
 export const loginAPI = ({ password, email }) => {
   return new Promise(async (resolve, reject) => {
     try {
@@ -65,7 +66,7 @@ export const allCars = () => {
   return new Promise(async (resolve, reject) => {
     try {
       let response = await axios.get(
-        `${baseURL}/api/v1/car`,
+        `${baseURL}/cars`,
         {},
         { headers: new Headers({ 'Content-Type': 'application/json' }) }
       )
@@ -79,7 +80,7 @@ export const singleCar = (id) => {
   return new Promise(async (resolve, reject) => {
     try {
       let response = await axios.get(
-        `${baseURL}/api/v1/car/${id}`,
+        `${baseURL}/cars/${id}`,
         {},
         { headers: new Headers({ 'Content-Type': 'application/json' }) }
       )

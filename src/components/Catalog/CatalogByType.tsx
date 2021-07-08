@@ -13,7 +13,7 @@ const CatalogByType = ({ data = [] }: Props) => {
 
   useEffect(() => {
     if (type) {
-      setFilteredData(data.filter((item) => item.type === type))
+      setFilteredData(data.filter((item) => item.Type === type))
     }
   }, [data, type])
 

@@ -34,13 +34,13 @@ const Catalog = ({ data = [] }: Props) => {
       data.filter(
         (item) =>
           (valueBrand === null ||
-            item.model.toLowerCase() === valueBrand.value.toLowerCase()) &&
-          (valuesYearFrom === null || +valuesYearFrom.value <= +item.year) &&
-          (valuesYearTo === null || +valuesYearTo.value >= +item.year) &&
+            item.Model.toLowerCase() === valueBrand.value.toLowerCase()) &&
+          (valuesYearFrom === null || +valuesYearFrom.value <= +item.Year) &&
+          (valuesYearTo === null || +valuesYearTo.value >= +item.Year) &&
           (valuePrice === null ||
-            (valuePrice.startPrice <= Number(item.startingPrice) &&
+            (valuePrice.startPrice <= Number(item.Price) &&
               (valuePrice.endPrice === null ||
-                Number(item.startingPrice) <= valuePrice.endPrice)))
+                Number(item.Price) <= valuePrice.endPrice)))
       )
     )
   }

@@ -26,7 +26,7 @@ const CarItemAuction = ({ dataAuction = [] }: Props) => {
             ) : (
               <div className="d-flex flex-direction-column">
                 <Card.Img src={item.images[0]} className="img-feature"></Card.Img>
-                <div className="bottom-img text-dark ">
+                {/* <div className="bottom-img text-dark ">
                   {item.startingDate ? (
                     <h6>
                       <img src={countdown} className="mt-1 mr-2" alt="countdown" />
@@ -35,16 +35,16 @@ const CarItemAuction = ({ dataAuction = [] }: Props) => {
                       </Moment>
                     </h6>
                   ) : null}{' '}
-                </div>
+                </div> */}
               </div>
             )}
             <Card.Body className="card-text">
               <div className="d-flex">
-                <h5 className="mr-2 bold">{item.model}</h5>
-                <h5 className="bold">{item.make}</h5>
+                <h5 className="mr-2 bold">{item.Model}</h5>
+                <h5 className="bold">{item.Make}</h5>
               </div>
 
-              {item.status ? (
+              {/* {item.status ? (
                 <div className="active-auction d-flex align-center mb-3">
                   <small className="ml-3">{t('activeStatus')}</small>
                 </div>
@@ -52,7 +52,7 @@ const CarItemAuction = ({ dataAuction = [] }: Props) => {
                 <div className="inactive-auction d-flex align-center mb-3">
                   <small className="ml-3">{t('passiveStatus')}</small>
                 </div>
-              )}
+              )} */}
 
               <div className="d-flex justify-content-between">
                 <Row className="flex-col-row">
@@ -60,7 +60,7 @@ const CarItemAuction = ({ dataAuction = [] }: Props) => {
                     <small>{t('startBid')}:</small>
                   </Col>
                   <Col>
-                    <h6 className="color-yellow">$ {item.startingPrice}</h6>
+                    {/* <h6 className="color-yellow">$ {item.startingPrice}</h6> */}
                   </Col>
                 </Row>
                 <Row className="flex-col-row">
@@ -68,7 +68,7 @@ const CarItemAuction = ({ dataAuction = [] }: Props) => {
                     <small>{t('buyOutPrice')}:</small>
                   </Col>
                   <Col>
-                    <h6 className="color-yellow">$ {item.buyNowPrice}</h6>
+                    {/* <h6 className="color-yellow">$ {item.buyNowPrice}</h6> */}
                   </Col>
                 </Row>
               </div>

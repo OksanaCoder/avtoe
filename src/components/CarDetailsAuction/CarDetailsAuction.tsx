@@ -56,7 +56,7 @@ const CarDetailsAuction = ({ dataAuction = [] }: Props) => {
         <div className="p-5">
           <h5 className="blue-line"></h5>
           <h5 className="header-details">{t('details')}</h5>
-          <h6 className="mt-3">{item?.name}</h6>
+          <h6 className="mt-3">{item?.Title}</h6>
         </div>
         <Row>
           <Col>
@@ -81,56 +81,56 @@ const CarDetailsAuction = ({ dataAuction = [] }: Props) => {
   </Row>*/ }
              <Row className="mt-1 row-modal">
                <Col>{t('dataStart')}:</Col>
-              <Col>
+              {/* <Col>
                  <Moment format="DD/MM/YYYY HH:mm" style={{ fontWeight: 700 }}>
                    {item?.startingDate}
                  </Moment>
-               </Col>
+               </Col> */}
              </Row> 
           </Col>
           <Col>
             <h4 style={{ fontWeight: 'bold' }} className="pl-3">
               {t('startBid')}:{' '}
-              <small className="price-details-small border-dark">
+              {/* <small className="price-details-small border-dark">
                 $ {item?.startingPrice}
-              </small>
+              </small> */}
             </h4>
             <h5 style={{ fontWeight: 'bold' }} className="pl-3 mb-4">
               {t('buyOutPrice')}:{' '}
               <small className="price-details-small border-dark">
-                $ {item?.buyNowPrice}
+                {/* $ {item?.buyNowPrice} */}
               </small>
             </h5>
 
             <Row className="align-center mt-3">
               <Col className="center-items">
                 <img alt="11" src={icon_2} className="icon-small" />
-                {item?.odometer} тис. км
+                {item?.Odometer} тис. км
               </Col>
               <Col className="center-items">
                 <img alt="11" src={icon_1} className="icon-small" />
-                {item?.city}
+                {/* {item?.city} */}
                 Київ
               </Col>
             </Row>
             <Row className="align-center mb-3">
               <Col className="center-items">
                 <img alt="11" src={icon_3} className="icon-small" />
-                {item?.fuel}
+                {item?.Fuel}
               </Col>
               <Col className="center-items">
                 <img alt="11" src={icon_4} className="icon-small" />
-                {item?.drive}
+                {/* {item?.drive} */}
               </Col>
             </Row>
 
             <Row className="mt-4 row-modal">
               <Col lg={6} md={12} sm={12} xs={12}  className='font-weight-bold'> {t('year')}:</Col>
-              <Col lg={6} md={12} sm={12} xs={12}  > {item?.year}</Col>
+              <Col lg={6} md={12} sm={12} xs={12}  > {item?.Year}</Col>
             </Row>
             <Row className="mt-1 row-modal">
               <Col lg={6} md={12} sm={12} xs={12}  className='font-weight-bold'> {t('privod')}:</Col>
-              <Col lg={6} md={12} sm={12} xs={12}  > {item?.drive}</Col>
+              {/* <Col lg={6} md={12} sm={12} xs={12}  > {item?.drive}</Col> */}
             </Row>
             <Row className="mt-1 row-modal">
               <Col lg={6} md={12} sm={12} xs={12}  className='font-weight-bold'> {t('color')}:</Col>
@@ -142,7 +142,7 @@ const CarDetailsAuction = ({ dataAuction = [] }: Props) => {
             </Row>
             <Row className="mt-1 row-modal">
               <Col lg={6} md={12} sm={12} xs={12}  className='font-weight-bold'> {t('extraInfo')}:</Col>
-              <Col lg={6} md={12} sm={12} xs={12}  > {item?.extraInfo}</Col>
+              <Col lg={6} md={12} sm={12} xs={12}  > {item?.extra_info}</Col>
             </Row>
             <Row className="mt-1 row-modal">
               <Col lg={6} md={12} sm={12} xs={12}  className='font-weight-bold'> {t('contacts')}:</Col>

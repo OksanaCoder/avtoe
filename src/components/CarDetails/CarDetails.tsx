@@ -74,12 +74,12 @@ const CarDetails = ({ data = [] }: Props) => {
         <div className="p-5">
           <h5 className="blue-line"></h5>
           <h5 className="header-details">{t('details')}</h5>
-          <h6 className="mt-3">{item.name}</h6>
+          <h6 className="mt-3">{item.Title}</h6>
         </div>
         <Row>
           <Col>
             <Carousel>
-              {item.image1 ? (
+              {/* {item.image1 ? (
                 <div>
                   <img src={item.image1} />
                 </div>
@@ -106,12 +106,13 @@ const CarDetails = ({ data = [] }: Props) => {
                 <div>
                   <img src={imageCar} />
                 </div>
-              )}
+              )} */}
+              
             </Carousel>
           </Col>
           <Col>
             <h4 style={{ fontWeight: 'bold' }} className="pl-3">
-              {item.name}
+              {item.Title}
             </h4>
             <small style={{ fontWeight: 'bold' }} className="pl-3 mb-4">
               {t('partners')}
@@ -171,23 +172,23 @@ const CarDetails = ({ data = [] }: Props) => {
             <Row className="align-center mt-3">
               <Col className="center-items">
                 <img src={icon_2} className="icon-small" alt="odometer" />
-                {item.odometer} тис. км
+                {item.Odometer} тис. км
               </Col>
               <Col className="center-items">
                 <img src={icon_1} className="icon-small" alt="city" />
-                {item.city}
+                {/* {item.city} */}
                 Київ
               </Col>
             </Row>
             <Row className="align-center mb-3">
               <Col className="center-items">
                 <img src={icon_3} className="icon-small" alt="fuel" />
-                {item.fuel}
+                {item.Fuel}
               </Col>
 
               <Col className="center-items">
                 <img src={kpp} className="icon-small" alt="type drive" />
-                {item.drive}
+                {/* {item.drive} */}
               </Col>
             </Row>
 
@@ -198,7 +199,7 @@ const CarDetails = ({ data = [] }: Props) => {
               </Col>
               <Col lg={12} md={12} sm={12} xs={12}>
                 {' '}
-                {item.year}
+                {item.Year}
               </Col>
             </Row>
             <Row className="mt-1 row-modal">
@@ -245,7 +246,7 @@ const CarDetails = ({ data = [] }: Props) => {
                   </Col>
                   <Col lg={12} md={12} sm={12} xs={12}>
                     {' '}
-                    {item.extraInfo}
+                    {item.extra_info}
                   </Col>
                 </Row>
                 <Row className="mt-1 row-modal">
@@ -274,7 +275,7 @@ const CarDetails = ({ data = [] }: Props) => {
             ) : null}
             <Row className="align-center mt-4">
               <Col>
-                <small className="price-details">$ {item.startingPrice}</small>
+                <small className="price-details">$ {item.Price}</small>
               </Col>
               <Col>
                 <button className="btn-item buy-now" onClick={openModal}>

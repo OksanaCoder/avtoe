@@ -28,13 +28,13 @@ const Auction = ({ dataAuction = [] }: Props) => {
       dataAuction.filter(
         (item) =>
           (valueBrand === null ||
-            item.model.toLowerCase() === valueBrand.value.toLowerCase()) &&
-          (valuesYearFrom === null || +valuesYearFrom.value <= +item.year) &&
-          (valuesYearTo === null || +valuesYearTo.value >= +item.year) &&
+            item.Model.toLowerCase() === valueBrand.value.toLowerCase()) &&
+          (valuesYearFrom === null || +valuesYearFrom.value <= +item.Year) &&
+          (valuesYearTo === null || +valuesYearTo.value >= +item.Year) &&
           (valuePrice === null ||
-            (valuePrice.startPrice <= Number(item.startingPrice) &&
+            (valuePrice.startPrice <= Number(item.Price) &&
               (valuePrice.endPrice === null ||
-                Number(item.startingPrice) <= valuePrice.endPrice)))
+                Number(item.Price) <= valuePrice.endPrice)))
       )
     )
   }
@@ -75,7 +75,7 @@ const Auction = ({ dataAuction = [] }: Props) => {
         <Container style={{ background: '#262626' }} className="pb-5" fluid>
           <Row className="p-5">
             <div className="heading-style">
-              <h6>Авто відсутні</h6>
+              <h6>{t('noCarsAuction')}</h6>
             </div>
           </Row>
         </Container>
