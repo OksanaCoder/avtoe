@@ -38,6 +38,10 @@
   color: #fff;
   font-weight: 700;
 }
+.carousel .slide img {
+  height: 312px;
+  object-fit: cover;
+}
 @media (max-width: 500px) {
   .row-modal .col {
     font-size: 10px;
@@ -48,5 +52,9 @@
   }
   .row-modal {
     margin-bottom: 20px;
+  }
+  .carousel .slide img {
+    height: 312px;
+    object-fit: cover;
   }
 }

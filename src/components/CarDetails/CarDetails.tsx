@@ -26,9 +26,9 @@ import pumb from '../../img/pumb.png'
 import bank from '../../img/bank.svg'
 import kpp from '../../img/kpp.png'
 import infomore from '../../img/infomore.svg'
+import nocar from '../../img/nocar.jpeg'
 import ModalContactUs from '../ModalContactUs/ModalContactUs'
 import { useHistory, useParams } from 'react-router-dom'
-import io from 'socket.io-client'
 import { CarType } from '../../types/appTypes'
 import { useTranslation } from 'react-i18next'
 
@@ -77,7 +77,7 @@ const CarDetails = ({ data = [] }: Props) => {
           <h6 className="mt-3">{item.Title}</h6>
         </div>
         <Row>
-          <Col>
+          <Col lg={6} md={6} sm={12} xs={12}>
             <Carousel>
               {/* {item.image1 ? (
                 <div>
@@ -89,18 +89,14 @@ const CarDetails = ({ data = [] }: Props) => {
                 </div>
               )}
 
-              {item.image2 ? (
+              {/* {item.images.length === 0 && (
                 <div>
-                  <img src={item.image2} />
+                  <img src={nocar} alt="no-car" />
                 </div>
-              ) : (
+              )} */}
+              {/* {item.images.length === 0 ? (
                 <div>
-                  <img src={imageCar} />
-                </div>
-              )}
-              {item.image3 ? (
-                <div>
-                  <img src={item.image3} />
+                  <img src={nocar} alt="no-car" />
                 </div>
               ) : (
                 <div>
@@ -110,7 +106,7 @@ const CarDetails = ({ data = [] }: Props) => {
               
             </Carousel>
           </Col>
-          <Col>
+          <Col lg={6} md={6} sm={12} xs={12}>
             <h4 style={{ fontWeight: 'bold' }} className="pl-3">
               {item.Title}
             </h4>

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { Container, Row, Col } from 'react-bootstrap'
 import { ArticleType } from '../../types/appTypes'
 import { useParams } from 'react-router-dom'
-// import Moment from 'react-moment'
+import Moment from 'react-moment'
 import { FacebookIcon, FacebookShareButton, FacebookShareCount } from 'react-share'
 import './style.css'
 
@@ -39,7 +39,7 @@ const ArticleDetails = ({ dataArticles = [] }: Props) => {
           </Col>
         </Row>
 
-        <Row>
+        <Row className="d-flex justify-content-between align-center">
           <Col>
             <p className="p-4">
               Автор: <h6 className="font-italic">{item?.author}</h6>
@@ -48,6 +48,11 @@ const ArticleDetails = ({ dataArticles = [] }: Props) => {
                 <FacebookIcon size={32} round={true} />
               </FacebookShareButton>{' '}
             </p>
+          </Col>
+          <Col className="text-right">
+            <Moment format="DD/MM/YYYY hh:mm" className="font-time">
+              {item?.date}
+            </Moment>
           </Col>
         </Row>
       </Container>

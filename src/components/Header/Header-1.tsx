@@ -112,21 +112,21 @@ const Header = ({ reference, data }) => {
 
           <Row className="text-center mt-5">
             <Col>
-              <Link to={`/catalog/PASSENGER`} className="img-wrapper">
+              <Link to={`/catalog/легкові`} className="img-wrapper">
                 <img alt="11" src={img_4} className="mr-2 ml-2 white-fill" width="70px" />
               </Link>
 
-              <Link to={`/catalog/BIKE`} className="img-wrapper">
+              <Link to={`/catalog/мото`} className="img-wrapper">
                 {' '}
                 <img alt="11" src={img_1} width="70px" className="white-fill mr-2" />
               </Link>
 
-              <Link to={`/catalog/SUV`} className="img-wrapper">
+              <Link to={`/catalog/позашляховики`} className="img-wrapper">
                 {' '}
                 <img alt="11" src={img_2} width="70px" className="white-fill" />
               </Link>
 
-              <Link to={`/catalog/BUS`} className="img-wrapper">
+              <Link to={`/catalog/автобус`} className="img-wrapper">
                 {' '}
                 <img alt="11" src={img_3} width="70px" className="white-fill ml-1" />
               </Link>
