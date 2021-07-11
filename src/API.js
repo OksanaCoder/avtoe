@@ -95,7 +95,7 @@ export const allAuctions = () => {
   return new Promise(async (resolve, reject) => {
     try {
       let response = await axios.get(
-        `${baseURL}/api/v1/auction/all/live`,
+        `${baseURL}/auctions`,
         {},
         { headers: new Headers({ 'Content-Type': 'application/json' }) }
       )
@@ -109,7 +109,7 @@ export const singleAuction = (id) => {
   return new Promise(async (resolve, reject) => {
     try {
       let response = await axios.get(
-        `${baseURL}/api/v1/auction/${id}`,
+        `${baseURL}/auctions/${id}`,
         {},
         { headers: new Headers({ 'Content-Type': 'application/json' }) }
       )

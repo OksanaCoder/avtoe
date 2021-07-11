@@ -34,7 +34,7 @@ const Catalog = ({ data = [] }: Props) => {
       data.filter(
         (item) =>
           (valueBrand === null ||
-            item.Model.toLowerCase() === valueBrand.value.toLowerCase()) &&
+            item.Make.toLowerCase() === valueBrand.value.toLowerCase()) &&
           (valuesYearFrom === null || +valuesYearFrom.value <= +item.Year) &&
           (valuesYearTo === null || +valuesYearTo.value >= +item.Year) &&
           (valuePrice === null ||

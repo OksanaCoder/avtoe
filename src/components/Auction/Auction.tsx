@@ -5,19 +5,19 @@ import './style.css'
 import CarItemAuction from '../CarItemAuction/CarItemAuction'
 import Filter from '../Filter/Filter'
 import { Row, Container, Col } from 'react-bootstrap'
-import { CarType } from '../../types/appTypes'
+import { AuctionResponse } from '../../types/appTypes'
 import { useTranslation } from 'react-i18next'
 import { OptionBrand, OptionPrice, OptionYear } from '../Filter/FilterHelper'
 
 type Props = {
-  dataAuction: CarType[]
+  dataAuction: AuctionResponse[]
 }
 
 const Auction = ({ dataAuction = [] }: Props) => {
   const { t } = useTranslation()
 
-  const [filteredData, setFilteredData] = useState<CarType[]>([])
-
+  const [filteredData, setFilteredData] = useState<AuctionResponse[]>([])
+  console.log(filteredData, 'aucitons')
   const onSearch = (
     valueBrand: OptionBrand | null,
     valuesYearFrom: OptionYear | null,
@@ -28,13 +28,13 @@ const Auction = ({ dataAuction = [] }: Props) => {
       dataAuction.filter(
         (item) =>
           (valueBrand === null ||
-            item.Model.toLowerCase() === valueBrand.value.toLowerCase()) &&
-          (valuesYearFrom === null || +valuesYearFrom.value <= +item.Year) &&
-          (valuesYearTo === null || +valuesYearTo.value >= +item.Year) &&
+            item.car.Make.toLowerCase() === valueBrand.value.toLowerCase()) &&
+          (valuesYearFrom === null || +valuesYearFrom.value <= +item.car.Year) &&
+          (valuesYearTo === null || +valuesYearTo.value >= +item.car.Year) &&
           (valuePrice === null ||
-            (valuePrice.startPrice <= Number(item.Price) &&
+            (valuePrice.startPrice <= Number(item.car.Price) &&
               (valuePrice.endPrice === null ||
-                Number(item.Price) <= valuePrice.endPrice)))
+                Number(item.car.Price) <= valuePrice.endPrice)))
       )
     )
   }

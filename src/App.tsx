@@ -28,7 +28,7 @@ import Profile from './components/Profile/Profile'
 import { allAuctions, allCars, allAdvertisments, allArticles } from './API'
 import CarDetailsAuction from './components/CarDetailsAuction/CarDetailsAuction'
 import classNames from 'classnames'
-import { CarType } from './types/appTypes'
+import { AuctionResponse, CarType } from './types/appTypes'
 import CatalogByType from './components/Catalog/CatalogByType'
 import { useTranslation } from 'react-i18next'
 import ScrollToTop from './components/common/ScrollToTop'
@@ -39,7 +39,7 @@ const App = () => {
 
   const { t } = useTranslation()
   const [data, setData] = useState<CarType[]>([])
-  const [dataAuction, setDataAuction] = useState<CarType[]>([])
+  const [dataAuction, setDataAuction] = useState<AuctionResponse[]>([])
   const [dataFindCar, setDataFindCar] = useState([])
   const [dataArticles, setDataArticles] = useState([])
   const [logged, setLogged] = useState(false)

@@ -25,7 +25,14 @@ const ArticleDetails = ({ dataArticles = [] }: Props) => {
     <>
       <Row className="back-art">
         <Col className="text-center">
-          {/* <img src={item?.image1} className="article-img" /> */}
+          {item.images &&
+            item.images.map((i) => {
+              return (
+                <div>
+                  <img src={i.url} alt="article" className="article-img" />
+                </div>
+              )
+            })}
         </Col>
       </Row>
       <Container>

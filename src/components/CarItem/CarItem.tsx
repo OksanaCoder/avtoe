@@ -29,11 +29,12 @@ const CarItem = ({ filteredData = [] }: Props) => {
             to={`/carDetails/${item.id}`}
           >
             <Card className="card-style mb-3">
-              {/* {item.images.length === 0 ? (
+              {item.images.length === 0 ? (
                 <Card.Img src={imageCar} className="img-feature"></Card.Img>
               ) : (
                 <Card.Img src={item.images[0].url} className="img-feature"></Card.Img>
-              )} */}
+              )}
+
               <Card.Body className="card-text">
                 <h5 className="bold">{item.Title}</h5>
 
@@ -58,7 +59,7 @@ const CarItem = ({ filteredData = [] }: Props) => {
                     </Col>
                     <Col lg={6} md={6} sm={6} xs={6} className="center-items">
                       <img alt="11" src={icon_4} className="icon-small invert-white" />
-                      {/* {item.Drive} */}
+                      {item.KPP}
                     </Col>
                   </Row>
                 </>

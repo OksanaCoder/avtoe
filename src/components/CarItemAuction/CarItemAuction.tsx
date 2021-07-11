@@ -7,10 +7,10 @@ import countdown from '../../img/time.svg'
 import Moment from 'react-moment'
 import { Col, Row, Card } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
-import { CarType } from '../../types/appTypes'
+import { AuctionResponse } from '../../types/appTypes'
 
 type Props = {
-  dataAuction: CarType[]
+  dataAuction: AuctionResponse[]
 }
 
 const CarItemAuction = ({ dataAuction = [] }: Props) => {
@@ -21,27 +21,27 @@ const CarItemAuction = ({ dataAuction = [] }: Props) => {
       {dataAuction.map((item) => {
         return (
           <Card key={item.id} className="card-style mb-3">
-            {item.images[0] === undefined ? (
+            {item.car.images[0].url === undefined ? (
               <Card.Img src={imageCar} className="img-feature"></Card.Img>
             ) : (
               <div className="d-flex flex-direction-column">
-                <Card.Img src={item.images[0]} className="img-feature"></Card.Img>
-                {/* <div className="bottom-img text-dark ">
-                  {item.startingDate ? (
+                <Card.Img src={item.car.images[0].url} className="img-feature"></Card.Img>
+                <div className="bottom-img text-dark ">
+                  {item.Date ? (
                     <h6>
                       <img src={countdown} className="mt-1 mr-2" alt="countdown" />
                       <Moment format="DD/MM/YYYY HH:mm" style={{ fontSize: '12px' }}>
-                        {item.startingDate}
+                        {item.Date}
                       </Moment>
                     </h6>
                   ) : null}{' '}
-                </div> */}
+                </div>
               </div>
             )}
             <Card.Body className="card-text">
               <div className="d-flex">
-                <h5 className="mr-2 bold">{item.Model}</h5>
-                <h5 className="bold">{item.Make}</h5>
+                <h5 className="mr-2 bold">{item.car.Model}</h5>
+                <h5 className="bold">{item.car.Make}</h5>
               </div>
 
               {/* {item.status ? (
@@ -60,7 +60,7 @@ const CarItemAuction = ({ dataAuction = [] }: Props) => {
                     <small>{t('startBid')}:</small>
                   </Col>
                   <Col>
-                    {/* <h6 className="color-yellow">$ {item.startingPrice}</h6> */}
+                    <h6 className="color-yellow">$ {item.startingPrice}</h6>
                   </Col>
                 </Row>
                 <Row className="flex-col-row">
@@ -68,7 +68,7 @@ const CarItemAuction = ({ dataAuction = [] }: Props) => {
                     <small>{t('buyOutPrice')}:</small>
                   </Col>
                   <Col>
-                    {/* <h6 className="color-yellow">$ {item.buyNowPrice}</h6> */}
+                    <h6 className="color-yellow">$ {item.car.Price}</h6>
                   </Col>
                 </Row>
               </div>
