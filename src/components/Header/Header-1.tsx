@@ -116,11 +116,6 @@ const Header = ({ reference, data }) => {
                 <img alt="11" src={img_4} className="mr-2 ml-2 white-fill" width="70px" />
               </Link>
 
-              <Link to={`/catalog/moto`} className="img-wrapper">
-                {' '}
-                <img alt="11" src={img_1} width="70px" className="white-fill mr-2" />
-              </Link>
-
               <Link to={`/catalog/suv`} className="img-wrapper">
                 {' '}
                 <img alt="11" src={img_2} width="70px" className="white-fill" />
@@ -129,6 +124,11 @@ const Header = ({ reference, data }) => {
               <Link to={`/catalog/bus`} className="img-wrapper">
                 {' '}
                 <img alt="11" src={img_3} width="70px" className="white-fill ml-1" />
+              </Link>
+
+              <Link to={`/catalog/moto`} className="img-wrapper">
+                {' '}
+                <img alt="11" src={img_1} width="70px" className="white-fill mr-2" />
               </Link>
             </Col>
           </Row>
