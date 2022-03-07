@@ -37,7 +37,7 @@ const RequestForm = (props) => {
     Сообщение: ${comment}  
     
     Номер тел: ${phone}`
-    const API_URL = `https://api.telegram.org/bot1747833143:AAGmm2CnUrkYCyHIdVzEkgJVg2HfNUCba28/sendMessage?chat_id=987210358&text=${bodyMessage}&parse_mode=HTML`
+
     return axios.post(API_URL, {
       username,
       phone,
